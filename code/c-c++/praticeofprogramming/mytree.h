@@ -17,14 +17,18 @@ public:
 	
 	tagTreeNode *Insert(tagTreeNode *newp);
 	tagTreeNode *LookUp(char *name);
-	void ApplyInorder(void(*fn)(tagTreeNode*, void*), void *arg);
+	void ApplyPostOrder(void(*fn)(tagTreeNode*, void*), void *arg);
 	tagTreeNode *GetTree();
 	void FreeTree();
 	//Test
-	void PrintNode(void *arg);
+	void PrintNode();
+	void _PrintNode(tagTreeNode* treep, void *arg);
+	tagTreeNode* NewNode(char *name, int value);
 private:
-	tagTreeNode *Insert(tagTreeNode *treep, tagTreeNode *newp);
-	tagTreeNode *LookUp(tagTreeNode *treep, char *name);
+	tagTreeNode *_Insert(tagTreeNode *treep, tagTreeNode *newp);
+	tagTreeNode *_LookUp(tagTreeNode *treep, char *name);
+	void _ApplyPostOrder(tagTreeNode* treep, void(*fn)(tagTreeNode*, void*), void *arg);
+	//void _PrintNode(tagTreeNode* treep, void *arg);
 private:
 	tagTreeNode *m_pHead;
-}
+};

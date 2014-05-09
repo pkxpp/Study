@@ -53,16 +53,47 @@ tagTreeNode* CTree::Insert(tagTreeNode *newp)
 }
 
 
+void CTree::ApplyPostOrder(void(*fn)(tagTreeNode*, void*), void *arg)
+{
+	ApplyPostOrder(m_pHead, fn, arg);
+}
+
 tagTreeNode* CTree::GetTree()
 {
 	return m_pHead;
 }
 
-void CTree::ApplyInorder(void(*fn)(tagTreeNode*, void*), void *arg);
+void CTree::_ApplyPostOrder(tagTreeNode* treep, void(*fn)(tagTreeNode*, void*), void *arg)
+{
+	if(treep == NULL)
+		return;
+	_ApplyPostOrder(treep->left, fn, arg);
+	_ApplyPostOrder(treep->right, fn, arg);
+	(*fn)(treep, arg);
+}
 
 void CTree::FreeTree()
 {}
 
 //test
-void CTree::PrintNode(void *arg);
+void CTree::_PrintNode(tagTreeNode* treep, void *arg)
+{
+	char *fmt = (char*)arg;
+	printf(fmt, treep->name, treep->value);
+}
 	
+void CTree::PrintNode()
+{
+	_ApplyPostOrder(m_pHead, _PrintNode, "%s, %d\n");
+}
+
+
+tagTreeNode* CTree::NewNode(char *name, int value){
+	tagTreeNode *newp;
+	newp = new tagTreeNode();//(Nameval*)emalloc(sizeof(Nameval));
+	newp->name = name;
+	newp->value = value;
+	newp->left= NULL;
+	newp->right = NULL:
+	return newp;
+}
