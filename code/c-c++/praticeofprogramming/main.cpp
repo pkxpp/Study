@@ -8,10 +8,11 @@ void TestTree()
 	{
 		int nValue = rand();
 		char szName[32] = {0};
-		sprintf(szName, "pktree%d", nValue);
+		sprintf(szName, "pktree%d", i);
 		cout << "szName: " << szName << ", "
 			<< "nValue: " << nValue << endl;
 		tagTreeNode *newp = t.NewNode(szName, nValue);
+		cout << "newp: " << newp << endl;
 		t.Insert(newp);
 	}
 	
@@ -21,8 +22,8 @@ void TestTree()
 
 int main()
 {
-	CTree t();
-		
+	//CTree t();
+	TestTree();	
 
 	return 0;	
 }

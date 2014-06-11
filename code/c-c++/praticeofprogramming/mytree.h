@@ -3,7 +3,7 @@
 using namespace std;
 
 typedef struct tagTreeNode{
-	char 	*name;
+	char 	name[32];
 	int	value;
 	tagTreeNode	*left;
 	tagTreeNode	*right;

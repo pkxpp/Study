@@ -14,9 +14,12 @@ CTree::~CTree(){
 tagTreeNode* CTree::_Insert(tagTreeNode *treep, tagTreeNode *newp)
 {
 	int cmp;
-	if(m_pHead == NULL)
+	if(treep == NULL)
 		return newp;
 	cmp = strcmp(newp->name, treep->name);
+	cout << "treep: " << treep << ", " << treep->name << ", " << endl
+		<< "newp: " << newp
+		<< newp->name << ", " << cmp << endl;
 	if (cmp == 0)
 		cout << "insert: duplicate entry " << newp->name << " ignored" << endl;
 	else if (cmp < 0 )
@@ -49,13 +52,16 @@ tagTreeNode* CTree::LookUp(char *name)
 
 tagTreeNode* CTree::Insert(tagTreeNode *newp)
 {
-	return _Insert(m_pHead, newp);
+	cout << "Insert: " 
+		<< "m_pHead: " << m_pHead << ", " << endl
+		<< "newp: " << newp << endl;
+	return m_pHead = _Insert(m_pHead, newp);
 }
 
 
 void CTree::ApplyPostOrder(void(*fn)(tagTreeNode*, void*), void *arg)
 {
-	ApplyPostOrder(m_pHead, fn, arg);
+	_ApplyPostOrder(m_pHead, fn, arg);
 }
 
 tagTreeNode* CTree::GetTree()
@@ -65,6 +71,7 @@ tagTreeNode* CTree::GetTree()
 
 void CTree::_ApplyPostOrder(tagTreeNode* treep, void(*fn)(tagTreeNode*, void*), void *arg)
 {
+	cout << "_ApplyPostOrder: " << treep << endl;
 	if(treep == NULL)
 		return;
 	_ApplyPostOrder(treep->left, fn, arg);
@@ -81,19 +88,25 @@ void CTree::_PrintNode(tagTreeNode* treep, void *arg)
 	char *fmt = (char*)arg;
 	printf(fmt, treep->name, treep->value);
 }
+void __PrintNode(tagTreeNode* treep, void *arg)
+{
+	char *fmt = (char*)arg;
+	printf(fmt, treep->name, treep->value);
+}
 	
 void CTree::PrintNode()
 {
-	_ApplyPostOrder(m_pHead, _PrintNode, "%s, %d\n");
+	_ApplyPostOrder(m_pHead, __PrintNode, (void*)"%s, %d\n");
 }
 
 
 tagTreeNode* CTree::NewNode(char *name, int value){
 	tagTreeNode *newp;
 	newp = new tagTreeNode();//(Nameval*)emalloc(sizeof(Nameval));
-	newp->name = name;
+	//newp->name = name;
+	strncpy(newp->name, name, sizeof(newp->name));
 	newp->value = value;
 	newp->left= NULL;
-	newp->right = NULL:
+	newp->right = NULL;
 	return newp;
 }
