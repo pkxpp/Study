@@ -17,6 +17,7 @@ public:
 	
 	tagTreeNode *Insert(tagTreeNode *newp);
 	tagTreeNode *LookUp(char *name);
+	tagTreeNode *NrLookUp(char *name);
 	void ApplyPostOrder(void(*fn)(tagTreeNode*, void*), void *arg);
 	tagTreeNode *GetTree();
 	void FreeTree();
@@ -27,6 +28,7 @@ public:
 private:
 	tagTreeNode *_Insert(tagTreeNode *treep, tagTreeNode *newp);
 	tagTreeNode *_LookUp(tagTreeNode *treep, char *name);
+	tagTreeNode *_NrLookUp(tagTreeNode *treep, char *name);
 	void _ApplyPostOrder(tagTreeNode* treep, void(*fn)(tagTreeNode*, void*), void *arg);
 	//void _PrintNode(tagTreeNode* treep, void *arg);
 private:

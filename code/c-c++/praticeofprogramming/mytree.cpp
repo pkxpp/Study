@@ -17,9 +17,9 @@ tagTreeNode* CTree::_Insert(tagTreeNode *treep, tagTreeNode *newp)
 	if(treep == NULL)
 		return newp;
 	cmp = strcmp(newp->name, treep->name);
-	cout << "treep: " << treep << ", " << treep->name << ", " << endl
-		<< "newp: " << newp
-		<< newp->name << ", " << cmp << endl;
+	//cout << "treep: " << treep << ", " << treep->name << ", " << endl
+	//	<< "newp: " << newp
+	//	<< newp->name << ", " << cmp << endl;
 	if (cmp == 0)
 		cout << "insert: duplicate entry " << newp->name << " ignored" << endl;
 	else if (cmp < 0 )
@@ -43,18 +43,35 @@ tagTreeNode* CTree::_LookUp(tagTreeNode *treep, char *name)
 		return _LookUp(treep->right, name);
 }
 
+tagTreeNode* CTree::_NrLookUp(tagTreeNode *treep, char *name)
+{
+	int cmp;
+	while (treep != NULL){
+		cmp = strcmp(name, treep->name);
+		if (cmp == 0)
+			return treep;
+		else if (cmp < 0)
+			treep = treep->left;
+		else
+			treep = treep->right;
+	}
+}
 
 tagTreeNode* CTree::LookUp(char *name)
 {
 	return _LookUp(m_pHead, name);
 }
 
+tagTreeNode* CTree::NrLookUp(char *name)
+{
+	return _NrLookUp(m_pHead, name);
+}
 
 tagTreeNode* CTree::Insert(tagTreeNode *newp)
 {
-	cout << "Insert: " 
-		<< "m_pHead: " << m_pHead << ", " << endl
-		<< "newp: " << newp << endl;
+	//cout << "Insert: " 
+	//	<< "m_pHead: " << m_pHead << ", " << endl
+	//	<< "newp: " << newp << endl;
 	return m_pHead = _Insert(m_pHead, newp);
 }
 
@@ -64,14 +81,29 @@ void CTree::ApplyPostOrder(void(*fn)(tagTreeNode*, void*), void *arg)
 	_ApplyPostOrder(m_pHead, fn, arg);
 }
 
+void CTree::ApplyInOrder(void(*fn)(tagTreeNode*, void*), void *arg)
+{
+	_ApplyInOrder(m_pHead, fn, arg);
+}
+
 tagTreeNode* CTree::GetTree()
 {
 	return m_pHead;
 }
 
+void CTree::_ApplyInOrder(tagTreeNode* treep, void(*fn)(tagTreeNode*, void*), void *arg)
+{
+	//cout << "_ApplyPostOrder: " << treep << endl;
+	if(treep == NULL)
+		return;
+	_ApplyPostOrder(treep->left, fn, arg);
+	(*fn)(treep, arg);
+	_ApplyPostOrder(treep->right, fn, arg);
+}
+
 void CTree::_ApplyPostOrder(tagTreeNode* treep, void(*fn)(tagTreeNode*, void*), void *arg)
 {
-	cout << "_ApplyPostOrder: " << treep << endl;
+	//cout << "_ApplyPostOrder: " << treep << endl;
 	if(treep == NULL)
 		return;
 	_ApplyPostOrder(treep->left, fn, arg);
