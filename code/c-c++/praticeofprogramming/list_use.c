@@ -1,10 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <malloc.h>
+#include <string.h>
 
 enum {
 	NPREF	= 2,
 	NHASH	= 4093,	/* size of state hash table array */
-	MAXGENT	= 10000,	/* maximum words generated */
-}
+	MAXGEN	= 10000,	/* maximum words generated */
+};
+
+enum {MULTIPLIER = 31};
 
 typedef struct State State;
 typedef struct Suffix Suffix;
@@ -16,15 +21,18 @@ struct State{	/* prefix + suffix list */
 };
 
 struct Suffix{	/* list of suffixes */
-{
 	char	*word;	/* suffix */
 	Suffix	*next;	/* next in list of suffixes */
 };
 
 State *statetab[NHASH];	/* hash table of states */
 
+/* function declartion */
+void add(char *prefix[NPREF], char *suffix);
+void addsuffix(State *sp, char *suffix);
+
 /* hash: */
-unsigned int hast( char *s[NPREF])
+unsigned int hash( char *s[NPREF])
 {
 	unsigned int h;
 	unsigned char *p;
@@ -54,7 +62,7 @@ State* lookup(char *prefix[NPREF], int create)
 			return sp;
 	}
 	if (create){
-		sp = (State *) emalloc(sizeof(State));
+		sp = (State *) malloc(sizeof(State));
 		for (i = 0; i < NPREF; i++)
 			sp->pref[i] = prefix[i];
 		sp->suf = NULL;
@@ -72,7 +80,7 @@ void build(char *prefix[NPREF], FILE *f)
 	/* create a format string; */
 	sprintf(fmt, "%%%ds", sizeof(buf)-1);
 	while (fscanf(f, fmt, buf) != EOF)
-		add(prefix, estrdup(buf));
+		add(prefix, (char*)strdup(buf));
 }
 
 /* add: add word to */
@@ -91,7 +99,7 @@ void add(char *prefix[NPREF], char *suffix)
 void addsuffix(State *sp, char *suffix)
 {
 	Suffix *suf;
-	suf = (Suffix *) emalloc(sizeof(Suffix));
+	suf = (Suffix *) malloc(sizeof(Suffix));
 	suf->word = suffix;
 	suf->next = sp->suf;
 	sp->suf = suf;
@@ -108,13 +116,21 @@ void generate(int nwords)
 	int i, nmatch;
 	
 	for (i = 0; i < NPREF; i++)	/* reset initial prefix */
-		if (rand() % ++nmatch == 0)	/* prob = 1/nmatch */
-			w = suf->word;
-	if (strcmp(w, NONWORD) == 0 )
-		break;
-	printf("%s\n", w);
-	memmove(prefix, prefix+1, (NPREF-1)*sizeof(prefix[0]));
-	prefix[NPREF-1] = w;
+		prefix[i] = NONWORD;
+	
+	for (i = 0; i < NPREF; i++){
+		sp = lookup(prefix, 0);
+		nmatch = 0;
+		for (suf = sp->suf; suf != NULL; suf = suf->next)
+			if (rand() % ++nmatch == 0)	/* prob = 1/nmatch */
+				w = suf->word;
+		if (strcmp(w, NONWORD) == 0 )
+			break;
+		printf("%s\n", w);
+		memmove(prefix, prefix+1, (NPREF-1)*sizeof(prefix[0]));
+		prefix[NPREF-1] = w;
+	}
+
 }
 
 /* markov main: markov-chain random text generation */
