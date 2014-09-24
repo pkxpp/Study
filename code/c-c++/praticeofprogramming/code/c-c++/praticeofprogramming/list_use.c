@@ -66,7 +66,7 @@ State* lookup(char *prefix[NPREF], int create)
 		for (i = 0; i < NPREF; i++)
 			sp->pref[i] = prefix[i];
 		sp->suf = NULL;
-		sp->next = statetab[h];		//insert into the first
+		sp->next = statetab[h];
 		statetab[h] = sp;
 	}
 	return sp;
@@ -87,7 +87,6 @@ void build(char *prefix[NPREF], FILE *f)
 void add(char *prefix[NPREF], char *suffix)
 {
 	State *sp;
-	//printf("[test]suffix: %s\n", suffix);
 	
 	sp = lookup(prefix, 1);		/* create if not found */
 	addsuffix(sp, suffix);
@@ -119,7 +118,7 @@ void generate(int nwords)
 	for (i = 0; i < NPREF; i++)	/* reset initial prefix */
 		prefix[i] = NONWORD;
 	
-	for (i = 0; i < nwords; i++){
+	for (i = 0; i < NPREF; i++){
 		sp = lookup(prefix, 0);
 		nmatch = 0;
 		for (suf = sp->suf; suf != NULL; suf = suf->next)
@@ -134,52 +133,15 @@ void generate(int nwords)
 
 }
 
-void print_prefix(char *pref)
-{
-	if (strcmp(pref, NONWORD) == 0 )
-		printf("NONWORD");
-	else
-		printf("%s", pref);
-}
-
-//print State *statetab[NHASH];	/* hash table of states */
-void print_tab()
-{
-	int i, h, n;
-	State *sp;
-	Suffix *suf;
-	for (n = 0; n < NHASH; n++)
-	{
-		sp = statetab[n];
-		if (sp == NULL)
-			continue;
-		printf("hash-%d:\n", n);
-		for (; sp != NULL; sp = sp->next){
-			printf("\tprefix:");
-			for(i = 0; i < NPREF; i++)
-				printf("%s, ", sp->pref[i]);
-			printf("\n");
-			printf("\tsuf: ");
-			for(suf = sp->suf; suf != NULL; suf = suf->next)
-				printf("%s, ", suf->word);
-			printf("\n\n");
-		}
-	}
-}
-
 /* markov main: markov-chain random text generation */
 int main(void)
 {
 	int i, nwords = MAXGEN;
 	char *prefix[NPREF];		/* current input prefix */
-	//string sentence = "Show your flowchars and conceal your tables and I will be mystified. Show your tables and your flowcharts will be obvious. (end)";
-	//isstringstream in(sentence);
 	for (i = 0; i < NPREF; i++)	/* set up initial prefix */
 		prefix[i] = NONWORD;
-	//build(prefix, in);
 	build(prefix, stdin);
-	add(prefix, NONWORD);
-	//print_tab();
+	add(prefix, stdin);
 	generate(nwords);
 	return 0;
 }
