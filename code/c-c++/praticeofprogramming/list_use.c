@@ -122,9 +122,12 @@ void generate(int nwords)
 	for (i = 0; i < nwords; i++){
 		sp = lookup(prefix, 0);
 		nmatch = 0;
-		for (suf = sp->suf; suf != NULL; suf = suf->next)
-			if (rand() % ++nmatch == 0)	/* prob = 1/nmatch */
+		for (suf = sp->suf; suf != NULL; suf = suf->next){
+			int nRand = rand();
+			printf("nRand: %d\n", nRand);
+			if (nRand % ++nmatch == 0)	/* prob = 1/nmatch */
 				w = suf->word;
+		}
 		if (strcmp(w, NONWORD) == 0 )
 			break;
 		printf("%s\n", w);
@@ -170,6 +173,7 @@ void print_tab()
 /* markov main: markov-chain random text generation */
 int main(void)
 {
+	//srand(time(NULL));
 	int i, nwords = MAXGEN;
 	char *prefix[NPREF];		/* current input prefix */
 	//string sentence = "Show your flowchars and conceal your tables and I will be mystified. Show your tables and your flowcharts will be obvious. (end)";
