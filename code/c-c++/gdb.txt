@@ -1,0 +1,8 @@
+Argument required (starting display address).
+No symbol table is loaded.  Use the "file" command.
+No symbol table is loaded.  Use the "file" command.
+A debugging session is active.
+
+	Inferior 2 [process 26706] will be killed.
+
+Quit anyway? (y or n) 
