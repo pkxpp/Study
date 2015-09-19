@@ -1,0 +1,4 @@
+(1)upgrade g++ to 4.8.2 from 4.1.2
+[Refrence]http://www.21ops.com/linux/14922.html
+* notify: the g++ 4.8.2 is in /usr/local/bin, but not in /usr/bin./usr/bin/g++ is also 4.1.2
+(2)compile commond must add parameter: -std=c++11
