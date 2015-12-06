@@ -1590,15 +1590,15 @@ int _main()
 			exchange_elem(n, 19, xStart, yStart, 0, vecIgnore);
 			//c2
 			cout << "c2 start........................" << endl;
-			exchange_elem(n, 91, xStart, yStart+1, 0, vecIgnore);
+			//exchange_elem(n, 91, xStart, yStart+1, 0, vecIgnore);
 			
 			//c3
 			cout << "c3 start........................" << endl;
-			exchange_elem(n, 8, xStart+1, yStart, 0, vecIgnore);
+			//exchange_elem(n, 8, xStart+1, yStart, 0, vecIgnore);
 
 			//c4
 			cout << "c4 start........................" << endl;
-			exchange_elem(n, 20, xStart+1, yStart+1, 0, vecIgnore);
+			//exchange_elem(n, 20, xStart+1, yStart+1, 0, vecIgnore);
 			cout << "After all check is: " <<  check(n) << endl;
 			
 			//
