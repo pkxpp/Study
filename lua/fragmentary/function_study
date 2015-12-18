@@ -1,0 +1,22 @@
+--2014/01/14
+--(1)closure:非全局函数中的递归
+--[[
+local fact = function(n)
+	if n == 0 then
+		return 1;
+	else
+		return n * fact(n-1)
+	end
+end
+]]
+
+local fact1
+fact1 = function(n)
+	if n == 0 then
+		return 1;
+	else
+		return n * fact1(n-1);
+	end
+end
+
+print(fact1(3))
