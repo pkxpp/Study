@@ -1,0 +1,10 @@
+1. #table
+(1)
+【http://hi.baidu.com/wipgxjyxzhbdfsd/item/3b39b0f3b3d399b631c19970】
+luaH_next()：ltable.c
+	讲的是遍历，pairs()。先遍历array，然后遍历hash table
+luaH_getn()：ltable.c
+	说是获取table的边界，这里的定义不是很明白。先使用二分查找array，如果有值得话，就返回，然后再去hash table中查找。这里就有点不明白了，在array中返回，而不管hash table了是啥意思？要闹哪样？
+
+	
+(2)
