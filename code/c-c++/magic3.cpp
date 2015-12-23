@@ -315,14 +315,14 @@ int main()
 			exchange_elem(n, 19, xStart, yStart, 0, vecIgnore);
 			//c2
 			cout << "c2 start........................" << endl;
-			exchange_elem(n, 91, xStart, yStart+1, 0, vecIgnore);
+			//exchange_elem(n, 91, xStart, yStart+1, 0, vecIgnore);
 			//c3
 			cout << "c3 start........................" << endl;
-			exchange_elem(n, 8, xStart+1, yStart, 0, vecIgnore);
+			//exchange_elem(n, 8, xStart+1, yStart, 0, vecIgnore);
 
 			//c4
 			cout << "c4 start........................" << endl;
-			exchange_elem(n, 20, xStart+1, yStart+1, 0, vecIgnore);
+			//exchange_elem(n, 20, xStart+1, yStart+1, 0, vecIgnore);
 			cout << "After all check is: " <<  check(n) << endl;
 			
 			//
@@ -357,9 +357,9 @@ int main()
 			*/
 			vector<Position> vecPos;
 			cout << "start process positive diagnol ... " << endl;
-			process_diagnol(0, n, vecPos);
+			//process_diagnol(0, n, vecPos);
 			cout << "start process negative diagnol ... " << endl;
-			process_diagnol(1, n, vecPos);
+			//process_diagnol(1, n, vecPos);
 			cout << "After all check is: " <<  check(n) << endl;
 			//vecIgnore.push_back();
 			/*cout << "Addition2 start......... " << endl;
@@ -1606,15 +1606,15 @@ int _main()
 			exchange_elem(n, 19, xStart, yStart, 0, vecIgnore);
 			//c2
 			cout << "c2 start........................" << endl;
-			exchange_elem(n, 91, xStart, yStart+1, 0, vecIgnore);
+			//exchange_elem(n, 91, xStart, yStart+1, 0, vecIgnore);
 			
 			//c3
 			cout << "c3 start........................" << endl;
-			exchange_elem(n, 8, xStart+1, yStart, 0, vecIgnore);
+			//exchange_elem(n, 8, xStart+1, yStart, 0, vecIgnore);
 
 			//c4
 			cout << "c4 start........................" << endl;
-			exchange_elem(n, 20, xStart+1, yStart+1, 0, vecIgnore);
+			//exchange_elem(n, 20, xStart+1, yStart+1, 0, vecIgnore);
 			cout << "After all check is: " <<  check(n) << endl;
 			
 			//
@@ -1649,8 +1649,8 @@ int _main()
 			
 			cout << "start process negative diagnol ... " << endl;
 			vector<Position> vecPos;
-			process_diagnol(0, n, vecPos);
-			process_diagnol(1, n, vecPos);
+			//process_diagnol(0, n, vecPos);
+			//process_diagnol(1, n, vecPos);
 			cout << "After all check is: " <<  check(n) << endl;
 			//vecIgnore.push_back();
 			/*cout << "Addition2 start......... " << endl;
