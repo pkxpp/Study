@@ -54,6 +54,969 @@ nSrcIndex, nDstIndex: 3, 4
 	79	81	13	20	97	29	31	63	45	47
 	10	12	94	96	78	35	37	69	46	28
 	11	18	100	77	84	36	43	75	27	34
+}, nSumA = 347, nSumB = 318,sub = -10,ret: 29
+}, nSumA = 260, nSumB = 238,sub = -10,ret: 22
+}, nSumA = 251, nSumB = 231,sub = -10,ret: 20
+}, nSumA = 230, nSumB = 217,sub = -10,ret: 13
+}, nSumA = 168, nSumB = 162,sub = -10,ret: 6
+}, nSumA = 124, nSumB = 130,sub = -10,ret: -6
+}, nSumA = 53, nSumB = 66,sub = -10,ret: -13
+}, nSumA = 71, nSumB = 64,sub = -10,ret: 7
+}, nSumA = 97, nSumB = 98,sub = -10,ret: -1
+}, nSumA = 44, nSumB = 32,sub = -10,ret: 12
+}, nSumA = 115, nSumB = 96,sub = -10,ret: 19
+}, nSumA = 186, nSumB = 185,sub = -10,ret: 1
+}, nSumA = 115, nSumB = 121,sub = -10,ret: -6
+}, nSumA = 62, nSumB = 55,sub = -10,ret: 7
+}, nSumA = 133, nSumB = 119,sub = -10,ret: 14
+}, nSumA = 159, nSumB = 153,sub = -10,ret: 6
+}, nSumA = 106, nSumB = 87,sub = -10,ret: 19
+}, nSumA = 177, nSumB = 151,sub = -10,ret: 26
+}, nSumA = 189, nSumB = 176,sub = -10,ret: 13
+}, nSumA = 145, nSumB = 144,sub = -10,ret: 1
+}, nSumA = 74, nSumB = 80,sub = -10,ret: -6
+}, nSumA = 21, nSumB = 14,sub = -10,ret: 7
+}, nSumA = 92, nSumB = 78,sub = -10,ret: 14
+}, nSumA = 118, nSumB = 112,sub = -10,ret: 6
+}, nSumA = 65, nSumB = 46,sub = -10,ret: 19
+}, nSumA = 136, nSumB = 110,sub = -10,ret: 26
+}, nSumA = 207, nSumB = 199,sub = -10,ret: 8
+}, nSumA = 136, nSumB = 135,sub = -10,ret: 1
+}, nSumA = 83, nSumB = 69,sub = -10,ret: 14
+}, nSumA = 154, nSumB = 133,sub = -10,ret: 21
+}, nSumA = 180, nSumB = 167,sub = -10,ret: 13
+}, nSumA = 127, nSumB = 101,sub = -10,ret: 26
+}, nSumA = 198, nSumB = 165,sub = -10,ret: 33
+}, nSumA = 239, nSumB = 224,sub = -10,ret: 15
+}, nSumA = 177, nSumB = 169,sub = -10,ret: 8
+}, nSumA = 133, nSumB = 137,sub = -10,ret: -4
+}, nSumA = 62, nSumB = 73,sub = -10,ret: -11
+}, nSumA = 9, nSumB = 7,sub = -10,ret: 2
+}, nSumA = 80, nSumB = 71,sub = -10,ret: 9
+}, nSumA = 106, nSumB = 105,sub = -10,ret: 1
+}, nSumA = 53, nSumB = 39,sub = -10,ret: 14
+}, nSumA = 124, nSumB = 103,sub = -10,ret: 21
+}, nSumA = 195, nSumB = 192,sub = -10,ret: 3
+}, nSumA = 124, nSumB = 128,sub = -10,ret: -4
+}, nSumA = 71, nSumB = 62,sub = -10,ret: 9
+}, nSumA = 142, nSumB = 126,sub = -10,ret: 16
+}, nSumA = 168, nSumB = 160,sub = -10,ret: 8
+}, nSumA = 115, nSumB = 94,sub = -10,ret: 21
+}, nSumA = 186, nSumB = 158,sub = -10,ret: 28
+}, nSumA = 198, nSumB = 183,sub = -10,ret: 15
+}, nSumA = 154, nSumB = 151,sub = -10,ret: 3
+}, nSumA = 83, nSumB = 87,sub = -10,ret: -4
+}, nSumA = 30, nSumB = 21,sub = -10,ret: 9
+}, nSumA = 101, nSumB = 85,sub = -10,ret: 16
+}, nSumA = 127, nSumB = 119,sub = -10,ret: 8
+}, nSumA = 74, nSumB = 53,sub = -10,ret: 21
+}, nSumA = 145, nSumB = 117,sub = -10,ret: 28
+}, nSumA = 216, nSumB = 206,sub = -10,ret: 10
+}, nSumA = 145, nSumB = 142,sub = -10,ret: 3
+}, nSumA = 92, nSumB = 76,sub = -10,ret: 16
+}, nSumA = 163, nSumB = 140,sub = -10,ret: 23
+}, nSumA = 189, nSumB = 174,sub = -10,ret: 15
+}, nSumA = 136, nSumB = 108,sub = -10,ret: 28
+}, nSumA = 207, nSumB = 172,sub = -10,ret: 35
+}, nSumA = 338, nSumB = 311,sub = -10,ret: 27
+}, nSumA = 317, nSumB = 297,sub = -10,ret: 20
+}, nSumA = 255, nSumB = 242,sub = -10,ret: 13
+}, nSumA = 211, nSumB = 210,sub = -10,ret: 1
+}, nSumA = 140, nSumB = 146,sub = -10,ret: -6
+}, nSumA = 87, nSumB = 80,sub = -10,ret: 7
+}, nSumA = 158, nSumB = 144,sub = -10,ret: 14
+}, nSumA = 184, nSumB = 178,sub = -10,ret: 6
+}, nSumA = 131, nSumB = 112,sub = -10,ret: 19
+}, nSumA = 202, nSumB = 176,sub = -10,ret: 26
+}, nSumA = 273, nSumB = 265,sub = -10,ret: 8
+}, nSumA = 202, nSumB = 201,sub = -10,ret: 1
+}, nSumA = 149, nSumB = 135,sub = -10,ret: 14
+}, nSumA = 220, nSumB = 199,sub = -10,ret: 21
+}, nSumA = 246, nSumB = 233,sub = -10,ret: 13
+}, nSumA = 193, nSumB = 167,sub = -10,ret: 26
+}, nSumA = 264, nSumB = 231,sub = -10,ret: 33
+}, nSumA = 276, nSumB = 256,sub = -10,ret: 20
+}, nSumA = 232, nSumB = 224,sub = -10,ret: 8
+}, nSumA = 161, nSumB = 160,sub = -10,ret: 1
+}, nSumA = 108, nSumB = 94,sub = -10,ret: 14
+}, nSumA = 179, nSumB = 158,sub = -10,ret: 21
+}, nSumA = 205, nSumB = 192,sub = -10,ret: 13
+}, nSumA = 152, nSumB = 126,sub = -10,ret: 26
+}, nSumA = 223, nSumB = 190,sub = -10,ret: 33
+}, nSumA = 294, nSumB = 279,sub = -10,ret: 15
+}, nSumA = 223, nSumB = 215,sub = -10,ret: 8
+}, nSumA = 170, nSumB = 149,sub = -10,ret: 21
+}, nSumA = 241, nSumB = 213,sub = -10,ret: 28
+}, nSumA = 267, nSumB = 247,sub = -10,ret: 20
+}, nSumA = 214, nSumB = 181,sub = -10,ret: 33
+}, nSumA = 285, nSumB = 245,sub = -10,ret: 40
+}, nSumA = 326, nSumB = 304,sub = -10,ret: 22
+}, nSumA = 264, nSumB = 249,sub = -10,ret: 15
+}, nSumA = 220, nSumB = 217,sub = -10,ret: 3
+}, nSumA = 149, nSumB = 153,sub = -10,ret: -4
+}, nSumA = 96, nSumB = 87,sub = -10,ret: 9
+}, nSumA = 167, nSumB = 151,sub = -10,ret: 16
+}, nSumA = 193, nSumB = 185,sub = -10,ret: 8
+}, nSumA = 140, nSumB = 119,sub = -10,ret: 21
+}, nSumA = 211, nSumB = 183,sub = -10,ret: 28
+}, nSumA = 282, nSumB = 272,sub = -10,ret: 10
+}, nSumA = 211, nSumB = 208,sub = -10,ret: 3
+}, nSumA = 158, nSumB = 142,sub = -10,ret: 16
+}, nSumA = 229, nSumB = 206,sub = -10,ret: 23
+}, nSumA = 255, nSumB = 240,sub = -10,ret: 15
+}, nSumA = 202, nSumB = 174,sub = -10,ret: 28
+}, nSumA = 273, nSumB = 238,sub = -10,ret: 35
+}, nSumA = 285, nSumB = 263,sub = -10,ret: 22
+}, nSumA = 241, nSumB = 231,sub = -10,ret: 10
+}, nSumA = 170, nSumB = 167,sub = -10,ret: 3
+}, nSumA = 117, nSumB = 101,sub = -10,ret: 16
+}, nSumA = 188, nSumB = 165,sub = -10,ret: 23
+}, nSumA = 214, nSumB = 199,sub = -10,ret: 15
+}, nSumA = 161, nSumB = 133,sub = -10,ret: 28
+}, nSumA = 232, nSumB = 197,sub = -10,ret: 35
+}, nSumA = 303, nSumB = 286,sub = -10,ret: 17
+}, nSumA = 232, nSumB = 222,sub = -10,ret: 10
+}, nSumA = 179, nSumB = 156,sub = -10,ret: 23
+}, nSumA = 250, nSumB = 220,sub = -10,ret: 30
+}, nSumA = 276, nSumB = 254,sub = -10,ret: 22
+}, nSumA = 223, nSumB = 188,sub = -10,ret: 35
+}, nSumA = 294, nSumB = 252,sub = -10,ret: 42
+}, nSumA = 345, nSumB = 336,sub = -10,ret: 9
+}, nSumA = 336, nSumB = 329,sub = -10,ret: 7
+}, nSumA = 315, nSumB = 315,sub = -10,ret: 0
+}, nSumA = 253, nSumB = 260,sub = -10,ret: -7
+}, nSumA = 209, nSumB = 228,sub = -10,ret: -19
+}, nSumA = 138, nSumB = 164,sub = -10,ret: -26
+}, nSumA = 85, nSumB = 98,sub = -10,ret: -13
+}, nSumA = 156, nSumB = 162,sub = -10,ret: -6
+}, nSumA = 182, nSumB = 196,sub = -10,ret: -14
+}, nSumA = 129, nSumB = 130,sub = -10,ret: -1
+}, nSumA = 200, nSumB = 194,sub = -10,ret: 6
+}, nSumA = 271, nSumB = 283,sub = -10,ret: -12
+}, nSumA = 200, nSumB = 219,sub = -10,ret: -19
+}, nSumA = 147, nSumB = 153,sub = -10,ret: -6
+}, nSumA = 218, nSumB = 217,sub = -10,ret: 1
+}, nSumA = 244, nSumB = 251,sub = -10,ret: -7
+}, nSumA = 191, nSumB = 185,sub = -10,ret: 6
+}, nSumA = 262, nSumB = 249,sub = -10,ret: 13
+}, nSumA = 274, nSumB = 274,sub = -10,ret: 0
+}, nSumA = 230, nSumB = 242,sub = -10,ret: -12
+}, nSumA = 159, nSumB = 178,sub = -10,ret: -19
+}, nSumA = 106, nSumB = 112,sub = -10,ret: -6
+}, nSumA = 177, nSumB = 176,sub = -10,ret: 1
+}, nSumA = 203, nSumB = 210,sub = -10,ret: -7
+}, nSumA = 150, nSumB = 144,sub = -10,ret: 6
+}, nSumA = 221, nSumB = 208,sub = -10,ret: 13
+}, nSumA = 292, nSumB = 297,sub = -10,ret: -5
+}, nSumA = 221, nSumB = 233,sub = -10,ret: -12
+}, nSumA = 168, nSumB = 167,sub = -10,ret: 1
+}, nSumA = 239, nSumB = 231,sub = -10,ret: 8
+}, nSumA = 265, nSumB = 265,sub = -10,ret: 0
+}, nSumA = 212, nSumB = 199,sub = -10,ret: 13
+}, nSumA = 283, nSumB = 263,sub = -10,ret: 20
+}, nSumA = 324, nSumB = 322,sub = -10,ret: 2
+}, nSumA = 262, nSumB = 267,sub = -10,ret: -5
+}, nSumA = 218, nSumB = 235,sub = -10,ret: -17
+}, nSumA = 147, nSumB = 171,sub = -10,ret: -24
+}, nSumA = 94, nSumB = 105,sub = -10,ret: -11
+}, nSumA = 165, nSumB = 169,sub = -10,ret: -4
+}, nSumA = 191, nSumB = 203,sub = -10,ret: -12
+}, nSumA = 138, nSumB = 137,sub = -10,ret: 1
+}, nSumA = 209, nSumB = 201,sub = -10,ret: 8
+}, nSumA = 280, nSumB = 290,sub = -10,ret: -10
+}, nSumA = 321, nSumB = 425,sub = -10,ret: -104
+}, nSumA = 241, nSumB = 419,sub = -10,ret: -178
+}, nSumA = 232, nSumB = 331,sub = -10,ret: -99
+}, nSumA = 218, nSumB = 236,sub = -10,ret: -18
+}, nSumA = 156, nSumB = 180,sub = -10,ret: -24
+}, nSumA = 124, nSumB = 142,sub = -10,ret: -18
+}, nSumA = 53, nSumB = 72,sub = -10,ret: -19
+}, nSumA = 71, nSumB = 70,sub = -10,ret: 1
+}, nSumA = 85, nSumB = 110,sub = -10,ret: -25
+}, nSumA = 32, nSumB = 38,sub = -10,ret: -6
+}, nSumA = 103, nSumB = 108,sub = -10,ret: -5
+}, nSumA = 186, nSumB = 198,sub = -10,ret: -12
+}, nSumA = 115, nSumB = 128,sub = -10,ret: -13
+}, nSumA = 62, nSumB = 56,sub = -10,ret: 6
+}, nSumA = 133, nSumB = 126,sub = -10,ret: 7
+}, nSumA = 147, nSumB = 166,sub = -10,ret: -19
+}, nSumA = 94, nSumB = 94,sub = -10,ret: 0
+}, nSumA = 165, nSumB = 164,sub = -10,ret: 1
+}, nSumA = 170, nSumB = 275,sub = -10,ret: -105
+}, nSumA = 138, nSumB = 237,sub = -10,ret: -99
+}, nSumA = 67, nSumB = 167,sub = -10,ret: -100
+}, nSumA = 14, nSumB = 95,sub = -10,ret: -81
+}, nSumA = 85, nSumB = 165,sub = -10,ret: -80
+}, nSumA = 99, nSumB = 205,sub = -10,ret: -106
+}, nSumA = 46, nSumB = 133,sub = -10,ret: -87
+}, nSumA = 117, nSumB = 203,sub = -10,ret: -86
+}, nSumA = 200, nSumB = 293,sub = -10,ret: -93
+}, nSumA = 129, nSumB = 223,sub = -10,ret: -94
+}, nSumA = 76, nSumB = 151,sub = -10,ret: -75
+}, nSumA = 147, nSumB = 221,sub = -10,ret: -74
+}, nSumA = 161, nSumB = 261,sub = -10,ret: -100
+}, nSumA = 108, nSumB = 189,sub = -10,ret: -81
+}, nSumA = 179, nSumB = 259,sub = -10,ret: -80
+}, nSumA = 227, nSumB = 324,sub = -10,ret: -97
+}, nSumA = 165, nSumB = 268,sub = -10,ret: -103
+}, nSumA = 133, nSumB = 230,sub = -10,ret: -97
+}, nSumA = 62, nSumB = 160,sub = -10,ret: -98
+}, nSumA = 9, nSumB = 88,sub = -10,ret: -79
+}, nSumA = 80, nSumB = 158,sub = -10,ret: -78
+}, nSumA = 94, nSumB = 198,sub = -10,ret: -104
+}, nSumA = 41, nSumB = 126,sub = -10,ret: -85
+}, nSumA = 112, nSumB = 196,sub = -10,ret: -84
+}, nSumA = 195, nSumB = 286,sub = -10,ret: -91
+}, nSumA = 124, nSumB = 216,sub = -10,ret: -92
+}, nSumA = 71, nSumB = 144,sub = -10,ret: -73
+}, nSumA = 142, nSumB = 214,sub = -10,ret: -72
+}, nSumA = 156, nSumB = 254,sub = -10,ret: -98
+}, nSumA = 103, nSumB = 182,sub = -10,ret: -79
+}, nSumA = 174, nSumB = 252,sub = -10,ret: -78
+}, nSumA = 179, nSumB = 363,sub = -10,ret: -184
+}, nSumA = 147, nSumB = 325,sub = -10,ret: -178
+}, nSumA = 76, nSumB = 255,sub = -10,ret: -179
+}, nSumA = 23, nSumB = 183,sub = -10,ret: -160
+}, nSumA = 94, nSumB = 253,sub = -10,ret: -159
+}, nSumA = 108, nSumB = 293,sub = -10,ret: -185
+}, nSumA = 55, nSumB = 221,sub = -10,ret: -166
+}, nSumA = 126, nSumB = 291,sub = -10,ret: -165
+}, nSumA = 209, nSumB = 381,sub = -10,ret: -172
+}, nSumA = 138, nSumB = 311,sub = -10,ret: -173
+}, nSumA = 85, nSumB = 239,sub = -10,ret: -154
+}, nSumA = 156, nSumB = 309,sub = -10,ret: -153
+}, nSumA = 170, nSumB = 349,sub = -10,ret: -179
+}, nSumA = 117, nSumB = 277,sub = -10,ret: -160
+}, nSumA = 188, nSumB = 347,sub = -10,ret: -159
+}, nSumA = 312, nSumB = 337,sub = -10,ret: -25
+}, nSumA = 298, nSumB = 242,sub = -10,ret: 56
+}, nSumA = 236, nSumB = 186,sub = -10,ret: 50
+}, nSumA = 204, nSumB = 148,sub = -10,ret: 56
+}, nSumA = 133, nSumB = 78,sub = -10,ret: 55
+}, nSumA = 80, nSumB = 6,sub = -10,ret: 74
+}, nSumA = 151, nSumB = 76,sub = -10,ret: 75
+}, nSumA = 165, nSumB = 116,sub = -10,ret: 49
+}, nSumA = 112, nSumB = 44,sub = -10,ret: 68
+}, nSumA = 183, nSumB = 114,sub = -10,ret: 69
+}, nSumA = 266, nSumB = 204,sub = -10,ret: 62
+}, nSumA = 195, nSumB = 134,sub = -10,ret: 61
+}, nSumA = 142, nSumB = 62,sub = -10,ret: 80
+}, nSumA = 213, nSumB = 132,sub = -10,ret: 81
+}, nSumA = 227, nSumB = 172,sub = -10,ret: 55
+}, nSumA = 174, nSumB = 100,sub = -10,ret: 74
+}, nSumA = 245, nSumB = 170,sub = -10,ret: 75
+}, nSumA = 250, nSumB = 281,sub = -10,ret: -31
+}, nSumA = 218, nSumB = 243,sub = -10,ret: -25
+}, nSumA = 147, nSumB = 173,sub = -10,ret: -26
+}, nSumA = 94, nSumB = 101,sub = -10,ret: -7
+}, nSumA = 165, nSumB = 171,sub = -10,ret: -6
+}, nSumA = 179, nSumB = 211,sub = -10,ret: -32
+}, nSumA = 126, nSumB = 139,sub = -10,ret: -13
+}, nSumA = 197, nSumB = 209,sub = -10,ret: -12
+}, nSumA = 280, nSumB = 299,sub = -10,ret: -19
+}, nSumA = 209, nSumB = 229,sub = -10,ret: -20
+}, nSumA = 156, nSumB = 157,sub = -10,ret: -1
+}, nSumA = 227, nSumB = 227,sub = -10,ret: 0
+}, nSumA = 241, nSumB = 267,sub = -10,ret: -26
+}, nSumA = 188, nSumB = 195,sub = -10,ret: -7
+}, nSumA = 259, nSumB = 265,sub = -10,ret: -6
+}, nSumA = 307, nSumB = 330,sub = -10,ret: -23
+}, nSumA = 245, nSumB = 274,sub = -10,ret: -29
+}, nSumA = 213, nSumB = 236,sub = -10,ret: -23
+}, nSumA = 142, nSumB = 166,sub = -10,ret: -24
+}, nSumA = 89, nSumB = 94,sub = -10,ret: -5
+}, nSumA = 160, nSumB = 164,sub = -10,ret: -4
+}, nSumA = 174, nSumB = 204,sub = -10,ret: -30
+}, nSumA = 121, nSumB = 132,sub = -10,ret: -11
+}, nSumA = 192, nSumB = 202,sub = -10,ret: -10
+}, nSumA = 321, nSumB = 356,sub = -10,ret: -35
+}, nSumA = 241, nSumB = 332,sub = -10,ret: -91
+}, nSumA = 232, nSumB = 256,sub = -10,ret: -24
+}, nSumA = 218, nSumB = 173,sub = -10,ret: 45
+}, nSumA = 156, nSumB = 124,sub = -10,ret: 32
+}, nSumA = 124, nSumB = 73,sub = -10,ret: 51
+}, nSumA = 53, nSumB = 40,sub = -10,ret: 13
+}, nSumA = 71, nSumB = 33,sub = -10,ret: 38
+}, nSumA = 85, nSumB = 91,sub = -10,ret: -6
+}, nSumA = 32, nSumB = 51,sub = -10,ret: -19
+}, nSumA = 103, nSumB = 84,sub = -10,ret: 19
+}, nSumA = 186, nSumB = 122,sub = -10,ret: 64
+}, nSumA = 115, nSumB = 89,sub = -10,ret: 26
+}, nSumA = 62, nSumB = 49,sub = -10,ret: 13
+}, nSumA = 133, nSumB = 82,sub = -10,ret: 51
+}, nSumA = 147, nSumB = 140,sub = -10,ret: 7
+}, nSumA = 94, nSumB = 100,sub = -10,ret: -6
+}, nSumA = 165, nSumB = 133,sub = -10,ret: 32
+}, nSumA = 170, nSumB = 207,sub = -10,ret: -37
+}, nSumA = 138, nSumB = 156,sub = -10,ret: -18
+}, nSumA = 67, nSumB = 123,sub = -10,ret: -56
+}, nSumA = 14, nSumB = 83,sub = -10,ret: -69
+}, nSumA = 85, nSumB = 116,sub = -10,ret: -31
+}, nSumA = 99, nSumB = 174,sub = -10,ret: -75
+}, nSumA = 46, nSumB = 134,sub = -10,ret: -88
+}, nSumA = 117, nSumB = 167,sub = -10,ret: -50
+}, nSumA = 200, nSumB = 205,sub = -10,ret: -5
+}, nSumA = 129, nSumB = 172,sub = -10,ret: -43
+}, nSumA = 76, nSumB = 132,sub = -10,ret: -56
+}, nSumA = 147, nSumB = 165,sub = -10,ret: -18
+}, nSumA = 161, nSumB = 223,sub = -10,ret: -62
+}, nSumA = 108, nSumB = 183,sub = -10,ret: -75
+}, nSumA = 179, nSumB = 216,sub = -10,ret: -37
+}, nSumA = 227, nSumB = 249,sub = -10,ret: -22
+}, nSumA = 165, nSumB = 200,sub = -10,ret: -35
+}, nSumA = 133, nSumB = 149,sub = -10,ret: -16
+}, nSumA = 62, nSumB = 116,sub = -10,ret: -54
+}, nSumA = 9, nSumB = 76,sub = -10,ret: -67
+}, nSumA = 80, nSumB = 109,sub = -10,ret: -29
+}, nSumA = 94, nSumB = 167,sub = -10,ret: -73
+}, nSumA = 41, nSumB = 127,sub = -10,ret: -86
+}, nSumA = 112, nSumB = 160,sub = -10,ret: -48
+}, nSumA = 195, nSumB = 198,sub = -10,ret: -3
+}, nSumA = 124, nSumB = 165,sub = -10,ret: -41
+}, nSumA = 71, nSumB = 125,sub = -10,ret: -54
+}, nSumA = 142, nSumB = 158,sub = -10,ret: -16
+}, nSumA = 156, nSumB = 216,sub = -10,ret: -60
+}, nSumA = 103, nSumB = 176,sub = -10,ret: -73
+}, nSumA = 174, nSumB = 209,sub = -10,ret: -35
+}, nSumA = 179, nSumB = 283,sub = -10,ret: -104
+}, nSumA = 147, nSumB = 232,sub = -10,ret: -85
+}, nSumA = 76, nSumB = 199,sub = -10,ret: -123
+}, nSumA = 23, nSumB = 159,sub = -10,ret: -136
+}, nSumA = 94, nSumB = 192,sub = -10,ret: -98
+}, nSumA = 108, nSumB = 250,sub = -10,ret: -142
+}, nSumA = 55, nSumB = 210,sub = -10,ret: -155
+}, nSumA = 126, nSumB = 243,sub = -10,ret: -117
+}, nSumA = 209, nSumB = 281,sub = -10,ret: -72
+}, nSumA = 138, nSumB = 248,sub = -10,ret: -110
+}, nSumA = 85, nSumB = 208,sub = -10,ret: -123
+}, nSumA = 156, nSumB = 241,sub = -10,ret: -85
+}, nSumA = 170, nSumB = 299,sub = -10,ret: -129
+}, nSumA = 117, nSumB = 259,sub = -10,ret: -142
+}, nSumA = 188, nSumB = 292,sub = -10,ret: -104
+}, nSumA = 312, nSumB = 280,sub = -10,ret: 32
+}, nSumA = 298, nSumB = 197,sub = -10,ret: 101
+}, nSumA = 236, nSumB = 148,sub = -10,ret: 88
+}, nSumA = 204, nSumB = 97,sub = -10,ret: 107
+}, nSumA = 133, nSumB = 64,sub = -10,ret: 69
+}, nSumA = 80, nSumB = 24,sub = -10,ret: 56
+}, nSumA = 151, nSumB = 57,sub = -10,ret: 94
+}, nSumA = 165, nSumB = 115,sub = -10,ret: 50
+}, nSumA = 112, nSumB = 75,sub = -10,ret: 37
+}, nSumA = 183, nSumB = 108,sub = -10,ret: 75
+}, nSumA = 266, nSumB = 146,sub = -10,ret: 120
+}, nSumA = 195, nSumB = 113,sub = -10,ret: 82
+}, nSumA = 142, nSumB = 73,sub = -10,ret: 69
+}, nSumA = 213, nSumB = 106,sub = -10,ret: 107
+}, nSumA = 227, nSumB = 164,sub = -10,ret: 63
+}, nSumA = 174, nSumB = 124,sub = -10,ret: 50
+}, nSumA = 245, nSumB = 157,sub = -10,ret: 88
+}, nSumA = 250, nSumB = 231,sub = -10,ret: 19
+}, nSumA = 218, nSumB = 180,sub = -10,ret: 38
+}, nSumA = 147, nSumB = 147,sub = -10,ret: 0
+}, nSumA = 94, nSumB = 107,sub = -10,ret: -13
+}, nSumA = 165, nSumB = 140,sub = -10,ret: 25
+}, nSumA = 179, nSumB = 198,sub = -10,ret: -19
+}, nSumA = 126, nSumB = 158,sub = -10,ret: -32
+}, nSumA = 197, nSumB = 191,sub = -10,ret: 6
+}, nSumA = 280, nSumB = 229,sub = -10,ret: 51
+}, nSumA = 209, nSumB = 196,sub = -10,ret: 13
+}, nSumA = 156, nSumB = 156,sub = -10,ret: 0
+}, nSumA = 227, nSumB = 189,sub = -10,ret: 38
+}, nSumA = 241, nSumB = 247,sub = -10,ret: -6
+}, nSumA = 188, nSumB = 207,sub = -10,ret: -19
+}, nSumA = 259, nSumB = 240,sub = -10,ret: 19
+}, nSumA = 307, nSumB = 273,sub = -10,ret: 34
+}, nSumA = 245, nSumB = 224,sub = -10,ret: 21
+}, nSumA = 213, nSumB = 173,sub = -10,ret: 40
+}, nSumA = 142, nSumB = 140,sub = -10,ret: 2
+}, nSumA = 89, nSumB = 100,sub = -10,ret: -11
+}, nSumA = 160, nSumB = 133,sub = -10,ret: 27
+}, nSumA = 174, nSumB = 191,sub = -10,ret: -17
+}, nSumA = 121, nSumB = 151,sub = -10,ret: -30
+}, nSumA = 192, nSumB = 184,sub = -10,ret: 8
+}, nSumA = 275, nSumB = 222,sub = -10,ret: 53
+}, nSumA = 204, nSumB = 189,sub = -10,ret: 15
+}, nSumA = 151, nSumB = 149,sub = -10,ret: 2
+}, nSumA = 222, nSumB = 182,sub = -10,ret: 40
+}, nSumA = 236, nSumB = 240,sub = -10,ret: -4
+}, nSumA = 183, nSumB = 200,sub = -10,ret: -17
+}, nSumA = 254, nSumB = 233,sub = -10,ret: 21
+}, nSumA = 259, nSumB = 307,sub = -10,ret: -48
+}, nSumA = 227, nSumB = 256,sub = -10,ret: -29
+}, nSumA = 156, nSumB = 223,sub = -10,ret: -67
+}, nSumA = 103, nSumB = 183,sub = -10,ret: -80
+}, nSumA = 174, nSumB = 216,sub = -10,ret: -42
+}, nSumA = 188, nSumB = 274,sub = -10,ret: -86
+}, nSumA = 135, nSumB = 234,sub = -10,ret: -99
+}, nSumA = 206, nSumB = 267,sub = -10,ret: -61
+}, nSumA = 289, nSumB = 305,sub = -10,ret: -16
+}, nSumA = 218, nSumB = 272,sub = -10,ret: -54
+}, nSumA = 165, nSumB = 232,sub = -10,ret: -67
+}, nSumA = 236, nSumB = 265,sub = -10,ret: -29
+}, nSumA = 250, nSumB = 323,sub = -10,ret: -73
+}, nSumA = 197, nSumB = 283,sub = -10,ret: -86
+}, nSumA = 268, nSumB = 316,sub = -10,ret: -48
+}, nSumA = 326, nSumB = 349,sub = -10,ret: -23
+}, nSumA = 317, nSumB = 273,sub = -10,ret: 44
+}, nSumA = 303, nSumB = 190,sub = -10,ret: 113
+}, nSumA = 241, nSumB = 141,sub = -10,ret: 100
+}, nSumA = 209, nSumB = 90,sub = -10,ret: 119
+}, nSumA = 138, nSumB = 57,sub = -10,ret: 81
+}, nSumA = 85, nSumB = 17,sub = -10,ret: 68
+}, nSumA = 156, nSumB = 50,sub = -10,ret: 106
+}, nSumA = 170, nSumB = 108,sub = -10,ret: 62
+}, nSumA = 117, nSumB = 68,sub = -10,ret: 49
+}, nSumA = 188, nSumB = 101,sub = -10,ret: 87
+}, nSumA = 271, nSumB = 139,sub = -10,ret: 132
+}, nSumA = 200, nSumB = 106,sub = -10,ret: 94
+}, nSumA = 147, nSumB = 66,sub = -10,ret: 81
+}, nSumA = 218, nSumB = 99,sub = -10,ret: 119
+}, nSumA = 232, nSumB = 157,sub = -10,ret: 75
+}, nSumA = 179, nSumB = 117,sub = -10,ret: 62
+}, nSumA = 250, nSumB = 150,sub = -10,ret: 100
+}, nSumA = 255, nSumB = 224,sub = -10,ret: 31
+}, nSumA = 223, nSumB = 173,sub = -10,ret: 50
+}, nSumA = 152, nSumB = 140,sub = -10,ret: 12
+}, nSumA = 99, nSumB = 100,sub = -10,ret: -1
+}, nSumA = 170, nSumB = 133,sub = -10,ret: 37
+}, nSumA = 184, nSumB = 191,sub = -10,ret: -7
+}, nSumA = 131, nSumB = 151,sub = -10,ret: -20
+}, nSumA = 202, nSumB = 184,sub = -10,ret: 18
+}, nSumA = 285, nSumB = 222,sub = -10,ret: 63
+}, nSumA = 214, nSumB = 189,sub = -10,ret: 25
+}, nSumA = 161, nSumB = 149,sub = -10,ret: 12
+}, nSumA = 232, nSumB = 182,sub = -10,ret: 50
+}, nSumA = 246, nSumB = 240,sub = -10,ret: 6
+}, nSumA = 193, nSumB = 200,sub = -10,ret: -7
+}, nSumA = 264, nSumB = 233,sub = -10,ret: 31
+}, nSumA = 312, nSumB = 266,sub = -10,ret: 46
+}, nSumA = 250, nSumB = 217,sub = -10,ret: 33
+}, nSumA = 218, nSumB = 166,sub = -10,ret: 52
+}, nSumA = 147, nSumB = 133,sub = -10,ret: 14
+}, nSumA = 94, nSumB = 93,sub = -10,ret: 1
+}, nSumA = 165, nSumB = 126,sub = -10,ret: 39
+}, nSumA = 179, nSumB = 184,sub = -10,ret: -5
+}, nSumA = 126, nSumB = 144,sub = -10,ret: -18
+}, nSumA = 197, nSumB = 177,sub = -10,ret: 20
+}, nSumA = 280, nSumB = 215,sub = -10,ret: 65
+}, nSumA = 209, nSumB = 182,sub = -10,ret: 27
+}, nSumA = 156, nSumB = 142,sub = -10,ret: 14
+}, nSumA = 227, nSumB = 175,sub = -10,ret: 52
+}, nSumA = 241, nSumB = 233,sub = -10,ret: 8
+}, nSumA = 188, nSumB = 193,sub = -10,ret: -5
+}, nSumA = 259, nSumB = 226,sub = -10,ret: 33
+}, nSumA = 264, nSumB = 300,sub = -10,ret: -36
+}, nSumA = 232, nSumB = 249,sub = -10,ret: -17
+}, nSumA = 161, nSumB = 216,sub = -10,ret: -55
+}, nSumA = 108, nSumB = 176,sub = -10,ret: -68
+}, nSumA = 179, nSumB = 209,sub = -10,ret: -30
+}, nSumA = 193, nSumB = 267,sub = -10,ret: -74
+}, nSumA = 140, nSumB = 227,sub = -10,ret: -87
+}, nSumA = 211, nSumB = 260,sub = -10,ret: -49
+}, nSumA = 294, nSumB = 298,sub = -10,ret: -4
+}, nSumA = 223, nSumB = 265,sub = -10,ret: -42
+}, nSumA = 170, nSumB = 225,sub = -10,ret: -55
+}, nSumA = 241, nSumB = 258,sub = -10,ret: -17
+}, nSumA = 255, nSumB = 316,sub = -10,ret: -61
+}, nSumA = 202, nSumB = 276,sub = -10,ret: -74
+}, nSumA = 273, nSumB = 309,sub = -10,ret: -36
+}, nSumA = 397, nSumB = 297,sub = -10,ret: 100
+}, nSumA = 383, nSumB = 214,sub = -10,ret: 169
+}, nSumA = 321, nSumB = 165,sub = -10,ret: 156
+}, nSumA = 289, nSumB = 114,sub = -10,ret: 175
+}, nSumA = 218, nSumB = 81,sub = -10,ret: 137
+}, nSumA = 165, nSumB = 41,sub = -10,ret: 124
+}, nSumA = 236, nSumB = 74,sub = -10,ret: 162
+}, nSumA = 250, nSumB = 132,sub = -10,ret: 118
+}, nSumA = 197, nSumB = 92,sub = -10,ret: 105
+}, nSumA = 268, nSumB = 125,sub = -10,ret: 143
+}, nSumA = 351, nSumB = 163,sub = -10,ret: 188
+}, nSumA = 280, nSumB = 130,sub = -10,ret: 150
+}, nSumA = 227, nSumB = 90,sub = -10,ret: 137
+}, nSumA = 298, nSumB = 123,sub = -10,ret: 175
+}, nSumA = 312, nSumB = 181,sub = -10,ret: 131
+}, nSumA = 259, nSumB = 141,sub = -10,ret: 118
+}, nSumA = 330, nSumB = 174,sub = -10,ret: 156
+}, nSumA = 335, nSumB = 248,sub = -10,ret: 87
+}, nSumA = 303, nSumB = 197,sub = -10,ret: 106
+}, nSumA = 232, nSumB = 164,sub = -10,ret: 68
+}, nSumA = 179, nSumB = 124,sub = -10,ret: 55
+}, nSumA = 250, nSumB = 157,sub = -10,ret: 93
+}, nSumA = 264, nSumB = 215,sub = -10,ret: 49
+}, nSumA = 211, nSumB = 175,sub = -10,ret: 36
+}, nSumA = 282, nSumB = 208,sub = -10,ret: 74
+}, nSumA = 365, nSumB = 246,sub = -10,ret: 119
+}, nSumA = 294, nSumB = 213,sub = -10,ret: 81
+}, nSumA = 241, nSumB = 173,sub = -10,ret: 68
+}, nSumA = 312, nSumB = 206,sub = -10,ret: 106
+}, nSumA = 326, nSumB = 264,sub = -10,ret: 62
+}, nSumA = 273, nSumB = 224,sub = -10,ret: 49
+}, nSumA = 344, nSumB = 257,sub = -10,ret: 87
+}, nSumA = 392, nSumB = 290,sub = -10,ret: 102
+}, nSumA = 330, nSumB = 241,sub = -10,ret: 89
+}, nSumA = 298, nSumB = 190,sub = -10,ret: 108
+}, nSumA = 227, nSumB = 157,sub = -10,ret: 70
+}, nSumA = 174, nSumB = 117,sub = -10,ret: 57
+}, nSumA = 245, nSumB = 150,sub = -10,ret: 95
+}, nSumA = 259, nSumB = 208,sub = -10,ret: 51
+}, nSumA = 206, nSumB = 168,sub = -10,ret: 38
+}, nSumA = 277, nSumB = 201,sub = -10,ret: 76
+}, nSumA = 360, nSumB = 239,sub = -10,ret: 121
+}, nSumA = 289, nSumB = 206,sub = -10,ret: 83
+}, nSumA = 236, nSumB = 166,sub = -10,ret: 70
+}, nSumA = 307, nSumB = 199,sub = -10,ret: 108
+}, nSumA = 321, nSumB = 257,sub = -10,ret: 64
+}, nSumA = 268, nSumB = 217,sub = -10,ret: 51
+}, nSumA = 339, nSumB = 250,sub = -10,ret: 89
+}, nSumA = 344, nSumB = 324,sub = -10,ret: 20
+}, nSumA = 312, nSumB = 273,sub = -10,ret: 39
+}, nSumA = 241, nSumB = 240,sub = -10,ret: 1
+}, nSumA = 188, nSumB = 200,sub = -10,ret: -12
+}, nSumA = 259, nSumB = 233,sub = -10,ret: 26
+}, nSumA = 273, nSumB = 291,sub = -10,ret: -18
+}, nSumA = 220, nSumB = 251,sub = -10,ret: -31
+}, nSumA = 291, nSumB = 284,sub = -10,ret: 7
+}, nSumA = 374, nSumB = 322,sub = -10,ret: 52
+}, nSumA = 303, nSumB = 289,sub = -10,ret: 14
+}, nSumA = 250, nSumB = 249,sub = -10,ret: 1
+}, nSumA = 321, nSumB = 282,sub = -10,ret: 39
+}, nSumA = 335, nSumB = 340,sub = -10,ret: -5
+}, nSumA = 282, nSumB = 300,sub = -10,ret: -18
+}, nSumA = 353, nSumB = 333,sub = -10,ret: 20
+}, nSumA = 406, nSumB = 373,sub = -10,ret: 33
+}, nSumA = 321, nSumB = 343,sub = -10,ret: -22
+}, nSumA = 241, nSumB = 338,sub = -10,ret: -97
+}, nSumA = 232, nSumB = 256,sub = -10,ret: -24
+}, nSumA = 218, nSumB = 167,sub = -10,ret: 51
+}, nSumA = 156, nSumB = 137,sub = -10,ret: 19
+}, nSumA = 124, nSumB = 80,sub = -10,ret: 44
+}, nSumA = 53, nSumB = 41,sub = -10,ret: 12
+}, nSumA = 71, nSumB = 39,sub = -10,ret: 32
+}, nSumA = 85, nSumB = 98,sub = -10,ret: -13
+}, nSumA = 32, nSumB = 57,sub = -10,ret: -25
+}, nSumA = 103, nSumB = 96,sub = -10,ret: 7
+}, nSumA = 186, nSumB = 110,sub = -10,ret: 76
+}, nSumA = 115, nSumB = 71,sub = -10,ret: 44
+}, nSumA = 62, nSumB = 30,sub = -10,ret: 32
+}, nSumA = 133, nSumB = 69,sub = -10,ret: 64
+}, nSumA = 147, nSumB = 128,sub = -10,ret: 19
+}, nSumA = 94, nSumB = 87,sub = -10,ret: 7
+}, nSumA = 165, nSumB = 126,sub = -10,ret: 39
+}, nSumA = 170, nSumB = 226,sub = -10,ret: -56
+}, nSumA = 138, nSumB = 169,sub = -10,ret: -31
+}, nSumA = 67, nSumB = 130,sub = -10,ret: -63
+}, nSumA = 14, nSumB = 89,sub = -10,ret: -75
+}, nSumA = 85, nSumB = 128,sub = -10,ret: -43
+}, nSumA = 99, nSumB = 187,sub = -10,ret: -88
+}, nSumA = 46, nSumB = 146,sub = -10,ret: -100
+}, nSumA = 117, nSumB = 185,sub = -10,ret: -68
+}, nSumA = 200, nSumB = 199,sub = -10,ret: 1
+}, nSumA = 129, nSumB = 160,sub = -10,ret: -31
+}, nSumA = 76, nSumB = 119,sub = -10,ret: -43
+}, nSumA = 147, nSumB = 158,sub = -10,ret: -11
+}, nSumA = 161, nSumB = 217,sub = -10,ret: -56
+}, nSumA = 108, nSumB = 176,sub = -10,ret: -68
+}, nSumA = 179, nSumB = 215,sub = -10,ret: -36
+}, nSumA = 227, nSumB = 249,sub = -10,ret: -22
+}, nSumA = 165, nSumB = 219,sub = -10,ret: -54
+}, nSumA = 133, nSumB = 162,sub = -10,ret: -29
+}, nSumA = 62, nSumB = 123,sub = -10,ret: -61
+}, nSumA = 9, nSumB = 82,sub = -10,ret: -73
+}, nSumA = 80, nSumB = 121,sub = -10,ret: -41
+}, nSumA = 94, nSumB = 180,sub = -10,ret: -86
+}, nSumA = 41, nSumB = 139,sub = -10,ret: -98
+}, nSumA = 112, nSumB = 178,sub = -10,ret: -66
+}, nSumA = 195, nSumB = 192,sub = -10,ret: 3
+}, nSumA = 124, nSumB = 153,sub = -10,ret: -29
+}, nSumA = 71, nSumB = 112,sub = -10,ret: -41
+}, nSumA = 142, nSumB = 151,sub = -10,ret: -9
+}, nSumA = 156, nSumB = 210,sub = -10,ret: -54
+}, nSumA = 103, nSumB = 169,sub = -10,ret: -66
+}, nSumA = 174, nSumB = 208,sub = -10,ret: -34
+}, nSumA = 179, nSumB = 308,sub = -10,ret: -129
+}, nSumA = 147, nSumB = 251,sub = -10,ret: -104
+}, nSumA = 76, nSumB = 212,sub = -10,ret: -136
+}, nSumA = 23, nSumB = 171,sub = -10,ret: -148
+}, nSumA = 94, nSumB = 210,sub = -10,ret: -116
+}, nSumA = 108, nSumB = 269,sub = -10,ret: -161
+}, nSumA = 55, nSumB = 228,sub = -10,ret: -173
+}, nSumA = 126, nSumB = 267,sub = -10,ret: -141
+}, nSumA = 209, nSumB = 281,sub = -10,ret: -72
+}, nSumA = 138, nSumB = 242,sub = -10,ret: -104
+}, nSumA = 85, nSumB = 201,sub = -10,ret: -116
+}, nSumA = 156, nSumB = 240,sub = -10,ret: -84
+}, nSumA = 170, nSumB = 299,sub = -10,ret: -129
+}, nSumA = 117, nSumB = 258,sub = -10,ret: -141
+}, nSumA = 188, nSumB = 297,sub = -10,ret: -109
+}, nSumA = 312, nSumB = 261,sub = -10,ret: 51
+}, nSumA = 298, nSumB = 172,sub = -10,ret: 126
+}, nSumA = 236, nSumB = 142,sub = -10,ret: 94
+}, nSumA = 204, nSumB = 85,sub = -10,ret: 119
+}, nSumA = 133, nSumB = 46,sub = -10,ret: 87
+}, nSumA = 80, nSumB = 5,sub = -10,ret: 75
+}, nSumA = 151, nSumB = 44,sub = -10,ret: 107
+}, nSumA = 165, nSumB = 103,sub = -10,ret: 62
+}, nSumA = 112, nSumB = 62,sub = -10,ret: 50
+}, nSumA = 183, nSumB = 101,sub = -10,ret: 82
+}, nSumA = 266, nSumB = 115,sub = -10,ret: 151
+}, nSumA = 195, nSumB = 76,sub = -10,ret: 119
+}, nSumA = 142, nSumB = 35,sub = -10,ret: 107
+}, nSumA = 213, nSumB = 74,sub = -10,ret: 139
+}, nSumA = 227, nSumB = 133,sub = -10,ret: 94
+}, nSumA = 174, nSumB = 92,sub = -10,ret: 82
+}, nSumA = 245, nSumB = 131,sub = -10,ret: 114
+}, nSumA = 250, nSumB = 231,sub = -10,ret: 19
+}, nSumA = 218, nSumB = 174,sub = -10,ret: 44
+}, nSumA = 147, nSumB = 135,sub = -10,ret: 12
+}, nSumA = 94, nSumB = 94,sub = -10,ret: 0
+}, nSumA = 165, nSumB = 133,sub = -10,ret: 32
+}, nSumA = 179, nSumB = 192,sub = -10,ret: -13
+}, nSumA = 126, nSumB = 151,sub = -10,ret: -25
+}, nSumA = 197, nSumB = 190,sub = -10,ret: 7
+}, nSumA = 280, nSumB = 204,sub = -10,ret: 76
+}, nSumA = 209, nSumB = 165,sub = -10,ret: 44
+}, nSumA = 156, nSumB = 124,sub = -10,ret: 32
+}, nSumA = 227, nSumB = 163,sub = -10,ret: 64
+}, nSumA = 241, nSumB = 222,sub = -10,ret: 19
+}, nSumA = 188, nSumB = 181,sub = -10,ret: 7
+}, nSumA = 259, nSumB = 220,sub = -10,ret: 39
+}, nSumA = 307, nSumB = 254,sub = -10,ret: 53
+}, nSumA = 245, nSumB = 224,sub = -10,ret: 21
+}, nSumA = 213, nSumB = 167,sub = -10,ret: 46
+}, nSumA = 142, nSumB = 128,sub = -10,ret: 14
+}, nSumA = 89, nSumB = 87,sub = -10,ret: 2
+}, nSumA = 160, nSumB = 126,sub = -10,ret: 34
+}, nSumA = 174, nSumB = 185,sub = -10,ret: -11
+}, nSumA = 121, nSumB = 144,sub = -10,ret: -23
+}, nSumA = 192, nSumB = 183,sub = -10,ret: 9
+}, nSumA = 275, nSumB = 197,sub = -10,ret: 78
+}, nSumA = 204, nSumB = 158,sub = -10,ret: 46
+}, nSumA = 151, nSumB = 117,sub = -10,ret: 34
+}, nSumA = 222, nSumB = 156,sub = -10,ret: 66
+}, nSumA = 236, nSumB = 215,sub = -10,ret: 21
+}, nSumA = 183, nSumB = 174,sub = -10,ret: 9
+}, nSumA = 254, nSumB = 213,sub = -10,ret: 41
+}, nSumA = 259, nSumB = 313,sub = -10,ret: -54
+}, nSumA = 227, nSumB = 256,sub = -10,ret: -29
+}, nSumA = 156, nSumB = 217,sub = -10,ret: -61
+}, nSumA = 103, nSumB = 176,sub = -10,ret: -73
+}, nSumA = 174, nSumB = 215,sub = -10,ret: -41
+}, nSumA = 188, nSumB = 274,sub = -10,ret: -86
+}, nSumA = 135, nSumB = 233,sub = -10,ret: -98
+}, nSumA = 206, nSumB = 272,sub = -10,ret: -66
+}, nSumA = 289, nSumB = 286,sub = -10,ret: 3
+}, nSumA = 218, nSumB = 247,sub = -10,ret: -29
+}, nSumA = 165, nSumB = 206,sub = -10,ret: -41
+}, nSumA = 236, nSumB = 245,sub = -10,ret: -9
+}, nSumA = 250, nSumB = 304,sub = -10,ret: -54
+}, nSumA = 197, nSumB = 263,sub = -10,ret: -66
+}, nSumA = 268, nSumB = 302,sub = -10,ret: -34
+}, nSumA = 326, nSumB = 361,sub = -10,ret: -35
+}, nSumA = 317, nSumB = 279,sub = -10,ret: 38
+}, nSumA = 303, nSumB = 190,sub = -10,ret: 113
+}, nSumA = 241, nSumB = 160,sub = -10,ret: 81
+}, nSumA = 209, nSumB = 103,sub = -10,ret: 106
+}, nSumA = 138, nSumB = 64,sub = -10,ret: 74
+}, nSumA = 85, nSumB = 23,sub = -10,ret: 62
+}, nSumA = 156, nSumB = 62,sub = -10,ret: 94
+}, nSumA = 170, nSumB = 121,sub = -10,ret: 49
+}, nSumA = 117, nSumB = 80,sub = -10,ret: 37
+}, nSumA = 188, nSumB = 119,sub = -10,ret: 69
+}, nSumA = 271, nSumB = 133,sub = -10,ret: 138
+}, nSumA = 200, nSumB = 94,sub = -10,ret: 106
+}, nSumA = 147, nSumB = 53,sub = -10,ret: 94
+}, nSumA = 218, nSumB = 92,sub = -10,ret: 126
+}, nSumA = 232, nSumB = 151,sub = -10,ret: 81
+}, nSumA = 179, nSumB = 110,sub = -10,ret: 69
+}, nSumA = 250, nSumB = 149,sub = -10,ret: 101
+}, nSumA = 255, nSumB = 249,sub = -10,ret: 6
+}, nSumA = 223, nSumB = 192,sub = -10,ret: 31
+}, nSumA = 152, nSumB = 153,sub = -10,ret: -1
+}, nSumA = 99, nSumB = 112,sub = -10,ret: -13
+}, nSumA = 170, nSumB = 151,sub = -10,ret: 19
+}, nSumA = 184, nSumB = 210,sub = -10,ret: -26
+}, nSumA = 131, nSumB = 169,sub = -10,ret: -38
+}, nSumA = 202, nSumB = 208,sub = -10,ret: -6
+}, nSumA = 285, nSumB = 222,sub = -10,ret: 63
+}, nSumA = 214, nSumB = 183,sub = -10,ret: 31
+}, nSumA = 161, nSumB = 142,sub = -10,ret: 19
+}, nSumA = 232, nSumB = 181,sub = -10,ret: 51
+}, nSumA = 246, nSumB = 240,sub = -10,ret: 6
+}, nSumA = 193, nSumB = 199,sub = -10,ret: -6
+}, nSumA = 264, nSumB = 238,sub = -10,ret: 26
+}, nSumA = 312, nSumB = 272,sub = -10,ret: 40
+}, nSumA = 250, nSumB = 242,sub = -10,ret: 8
+}, nSumA = 218, nSumB = 185,sub = -10,ret: 33
+}, nSumA = 147, nSumB = 146,sub = -10,ret: 1
+}, nSumA = 94, nSumB = 105,sub = -10,ret: -11
+}, nSumA = 165, nSumB = 144,sub = -10,ret: 21
+}, nSumA = 179, nSumB = 203,sub = -10,ret: -24
+}, nSumA = 126, nSumB = 162,sub = -10,ret: -36
+}, nSumA = 197, nSumB = 201,sub = -10,ret: -4
+}, nSumA = 280, nSumB = 215,sub = -10,ret: 65
+}, nSumA = 209, nSumB = 176,sub = -10,ret: 33
+}, nSumA = 156, nSumB = 135,sub = -10,ret: 21
+}, nSumA = 227, nSumB = 174,sub = -10,ret: 53
+}, nSumA = 241, nSumB = 233,sub = -10,ret: 8
+}, nSumA = 188, nSumB = 192,sub = -10,ret: -4
+}, nSumA = 259, nSumB = 231,sub = -10,ret: 28
+}, nSumA = 264, nSumB = 331,sub = -10,ret: -67
+}, nSumA = 232, nSumB = 274,sub = -10,ret: -42
+}, nSumA = 161, nSumB = 235,sub = -10,ret: -74
+}, nSumA = 108, nSumB = 194,sub = -10,ret: -86
+}, nSumA = 179, nSumB = 233,sub = -10,ret: -54
+}, nSumA = 193, nSumB = 292,sub = -10,ret: -99
+}, nSumA = 140, nSumB = 251,sub = -10,ret: -111
+}, nSumA = 211, nSumB = 290,sub = -10,ret: -79
+}, nSumA = 294, nSumB = 304,sub = -10,ret: -10
+}, nSumA = 321, nSumB = 300,sub = -10,ret: 21
+}, nSumA = 241, nSumB = 219,sub = -10,ret: 22
+}, nSumA = 232, nSumB = 206,sub = -10,ret: 26
+}, nSumA = 218, nSumB = 186,sub = -10,ret: 32
+}, nSumA = 156, nSumB = 155,sub = -10,ret: 1
+}, nSumA = 124, nSumB = 92,sub = -10,ret: 32
+}, nSumA = 53, nSumB = 47,sub = -10,ret: 6
+}, nSumA = 71, nSumB = 45,sub = -10,ret: 26
+}, nSumA = 85, nSumB = 110,sub = -10,ret: -25
+}, nSumA = 32, nSumB = 63,sub = -10,ret: -31
+}, nSumA = 103, nSumB = 108,sub = -10,ret: -5
+}, nSumA = 186, nSumB = 123,sub = -10,ret: 63
+}, nSumA = 115, nSumB = 78,sub = -10,ret: 37
+}, nSumA = 62, nSumB = 31,sub = -10,ret: 31
+}, nSumA = 133, nSumB = 76,sub = -10,ret: 57
+}, nSumA = 147, nSumB = 141,sub = -10,ret: 6
+}, nSumA = 94, nSumB = 94,sub = -10,ret: 0
+}, nSumA = 165, nSumB = 139,sub = -10,ret: 26
+}, nSumA = 170, nSumB = 175,sub = -10,ret: -5
+}, nSumA = 138, nSumB = 112,sub = -10,ret: 26
+}, nSumA = 67, nSumB = 67,sub = -10,ret: 0
+}, nSumA = 14, nSumB = 20,sub = -10,ret: -6
+}, nSumA = 85, nSumB = 65,sub = -10,ret: 20
+}, nSumA = 99, nSumB = 130,sub = -10,ret: -31
+}, nSumA = 46, nSumB = 83,sub = -10,ret: -37
+}, nSumA = 117, nSumB = 128,sub = -10,ret: -11
+}, nSumA = 200, nSumB = 143,sub = -10,ret: 57
+}, nSumA = 129, nSumB = 98,sub = -10,ret: 31
+}, nSumA = 76, nSumB = 51,sub = -10,ret: 25
+}, nSumA = 147, nSumB = 96,sub = -10,ret: 51
+}, nSumA = 161, nSumB = 161,sub = -10,ret: 0
+}, nSumA = 108, nSumB = 114,sub = -10,ret: -6
+}, nSumA = 179, nSumB = 159,sub = -10,ret: 20
+}, nSumA = 227, nSumB = 199,sub = -10,ret: 28
+}, nSumA = 165, nSumB = 168,sub = -10,ret: -3
+}, nSumA = 133, nSumB = 105,sub = -10,ret: 28
+}, nSumA = 62, nSumB = 60,sub = -10,ret: 2
+}, nSumA = 9, nSumB = 13,sub = -10,ret: -4
+}, nSumA = 80, nSumB = 58,sub = -10,ret: 22
+}, nSumA = 94, nSumB = 123,sub = -10,ret: -29
+}, nSumA = 41, nSumB = 76,sub = -10,ret: -35
+}, nSumA = 112, nSumB = 121,sub = -10,ret: -9
+}, nSumA = 195, nSumB = 136,sub = -10,ret: 59
+}, nSumA = 124, nSumB = 91,sub = -10,ret: 33
+}, nSumA = 71, nSumB = 44,sub = -10,ret: 27
+}, nSumA = 142, nSumB = 89,sub = -10,ret: 53
+}, nSumA = 156, nSumB = 154,sub = -10,ret: 2
+}, nSumA = 103, nSumB = 107,sub = -10,ret: -4
+}, nSumA = 174, nSumB = 152,sub = -10,ret: 22
+}, nSumA = 179, nSumB = 188,sub = -10,ret: -9
+}, nSumA = 147, nSumB = 125,sub = -10,ret: 22
+}, nSumA = 76, nSumB = 80,sub = -10,ret: -4
+}, nSumA = 23, nSumB = 33,sub = -10,ret: -10
+}, nSumA = 321, nSumB = 382,sub = -10,ret: -61
+}, nSumA = 241, nSumB = 370,sub = -10,ret: -129
+}, nSumA = 232, nSumB = 276,sub = -10,ret: -44
+}, nSumA = 218, nSumB = 180,sub = -10,ret: 38
+}, nSumA = 156, nSumB = 143,sub = -10,ret: 13
+}, nSumA = 124, nSumB = 74,sub = -10,ret: 50
+}, nSumA = 53, nSumB = 28,sub = -10,ret: 25
+}, nSumA = 71, nSumB = 46,sub = -10,ret: 25
+}, nSumA = 85, nSumB = 97,sub = -10,ret: -12
+}, nSumA = 32, nSumB = 69,sub = -10,ret: -37
+}, nSumA = 103, nSumB = 115,sub = -10,ret: -12
+}, nSumA = 186, nSumB = 111,sub = -10,ret: 75
+}, nSumA = 115, nSumB = 65,sub = -10,ret: 50
+}, nSumA = 62, nSumB = 37,sub = -10,ret: 25
+}, nSumA = 133, nSumB = 83,sub = -10,ret: 50
+}, nSumA = 147, nSumB = 134,sub = -10,ret: 13
+}, nSumA = 94, nSumB = 106,sub = -10,ret: -12
+}, nSumA = 165, nSumB = 152,sub = -10,ret: 13
+}, nSumA = 170, nSumB = 239,sub = -10,ret: -69
+}, nSumA = 138, nSumB = 170,sub = -10,ret: -32
+}, nSumA = 67, nSumB = 124,sub = -10,ret: -57
+}, nSumA = 14, nSumB = 96,sub = -10,ret: -82
+}, nSumA = 85, nSumB = 142,sub = -10,ret: -57
+}, nSumA = 99, nSumB = 193,sub = -10,ret: -94
+}, nSumA = 46, nSumB = 165,sub = -10,ret: -119
+}, nSumA = 117, nSumB = 211,sub = -10,ret: -94
+}, nSumA = 200, nSumB = 207,sub = -10,ret: -7
+}, nSumA = 129, nSumB = 161,sub = -10,ret: -32
+}, nSumA = 76, nSumB = 133,sub = -10,ret: -57
+}, nSumA = 147, nSumB = 179,sub = -10,ret: -32
+}, nSumA = 161, nSumB = 230,sub = -10,ret: -69
+}, nSumA = 108, nSumB = 202,sub = -10,ret: -94
+}, nSumA = 179, nSumB = 248,sub = -10,ret: -69
+}, nSumA = 227, nSumB = 274,sub = -10,ret: -47
+}, nSumA = 165, nSumB = 237,sub = -10,ret: -72
+}, nSumA = 133, nSumB = 168,sub = -10,ret: -35
+}, nSumA = 62, nSumB = 122,sub = -10,ret: -60
+}, nSumA = 9, nSumB = 94,sub = -10,ret: -85
+}, nSumA = 80, nSumB = 140,sub = -10,ret: -60
+}, nSumA = 94, nSumB = 191,sub = -10,ret: -97
+}, nSumA = 41, nSumB = 163,sub = -10,ret: -122
+}, nSumA = 112, nSumB = 209,sub = -10,ret: -97
+}, nSumA = 195, nSumB = 205,sub = -10,ret: -10
+}, nSumA = 321, nSumB = 374,sub = -10,ret: -53
+}, nSumA = 241, nSumB = 356,sub = -10,ret: -115
+}, nSumA = 232, nSumB = 256,sub = -10,ret: -24
+}, nSumA = 218, nSumB = 179,sub = -10,ret: 39
+}, nSumA = 156, nSumB = 136,sub = -10,ret: 20
+}, nSumA = 124, nSumB = 61,sub = -10,ret: 63
+}, nSumA = 53, nSumB = 34,sub = -10,ret: 19
+}, nSumA = 71, nSumB = 27,sub = -10,ret: 44
+}, nSumA = 85, nSumB = 109,sub = -10,ret: -24
+}, nSumA = 32, nSumB = 75,sub = -10,ret: -43
+}, nSumA = 103, nSumB = 102,sub = -10,ret: 1
+}, nSumA = 186, nSumB = 104,sub = -10,ret: 82
+}, nSumA = 115, nSumB = 77,sub = -10,ret: 38
+}, nSumA = 62, nSumB = 43,sub = -10,ret: 19
+}, nSumA = 133, nSumB = 70,sub = -10,ret: 63
+}, nSumA = 147, nSumB = 152,sub = -10,ret: -5
+}, nSumA = 94, nSumB = 118,sub = -10,ret: -24
+}, nSumA = 165, nSumB = 145,sub = -10,ret: 20
+}, nSumA = 170, nSumB = 213,sub = -10,ret: -43
+}, nSumA = 138, nSumB = 138,sub = -10,ret: 0
+}, nSumA = 67, nSumB = 111,sub = -10,ret: -44
+}, nSumA = 14, nSumB = 77,sub = -10,ret: -63
+}, nSumA = 85, nSumB = 104,sub = -10,ret: -19
+}, nSumA = 99, nSumB = 186,sub = -10,ret: -87
+}, nSumA = 46, nSumB = 152,sub = -10,ret: -106
+}, nSumA = 117, nSumB = 179,sub = -10,ret: -62
+}, nSumA = 200, nSumB = 181,sub = -10,ret: 19
+}, nSumA = 129, nSumB = 154,sub = -10,ret: -25
+}, nSumA = 76, nSumB = 120,sub = -10,ret: -44
+}, nSumA = 147, nSumB = 147,sub = -10,ret: 0
+}, nSumA = 161, nSumB = 229,sub = -10,ret: -68
+}, nSumA = 108, nSumB = 195,sub = -10,ret: -87
+}, nSumA = 179, nSumB = 222,sub = -10,ret: -43
+}, nSumA = 227, nSumB = 279,sub = -10,ret: -52
+}, nSumA = 165, nSumB = 236,sub = -10,ret: -71
+}, nSumA = 133, nSumB = 161,sub = -10,ret: -28
+}, nSumA = 62, nSumB = 134,sub = -10,ret: -72
+}, nSumA = 9, nSumB = 100,sub = -10,ret: -91
+}, nSumA = 80, nSumB = 127,sub = -10,ret: -47
+}, nSumA = 94, nSumB = 209,sub = -10,ret: -115
+}, nSumA = 41, nSumB = 175,sub = -10,ret: -134
+}, nSumA = 112, nSumB = 202,sub = -10,ret: -90
+}, nSumA = 195, nSumB = 204,sub = -10,ret: -9
+}, nSumA = 124, nSumB = 177,sub = -10,ret: -53
+}, nSumA = 71, nSumB = 143,sub = -10,ret: -72
+}, nSumA = 142, nSumB = 170,sub = -10,ret: -28
+}, nSumA = 156, nSumB = 252,sub = -10,ret: -96
+}, nSumA = 103, nSumB = 218,sub = -10,ret: -115
+}, nSumA = 174, nSumB = 245,sub = -10,ret: -71
+}, nSumA = 179, nSumB = 313,sub = -10,ret: -134
+}, nSumA = 147, nSumB = 238,sub = -10,ret: -91
+}, nSumA = 76, nSumB = 211,sub = -10,ret: -135
+}, nSumA = 23, nSumB = 177,sub = -10,ret: -154
+}, nSumA = 94, nSumB = 204,sub = -10,ret: -110
+}, nSumA = 108, nSumB = 286,sub = -10,ret: -178
+}, nSumA = 55, nSumB = 252,sub = -10,ret: -197
+}, nSumA = 126, nSumB = 279,sub = -10,ret: -153
+}, nSumA = 209, nSumB = 281,sub = -10,ret: -72
+}, nSumA = 138, nSumB = 254,sub = -10,ret: -116
+}, nSumA = 85, nSumB = 220,sub = -10,ret: -135
+}, nSumA = 156, nSumB = 247,sub = -10,ret: -91
+}, nSumA = 170, nSumB = 329,sub = -10,ret: -159
+}, nSumA = 117, nSumB = 295,sub = -10,ret: -178
+}, nSumA = 188, nSumB = 322,sub = -10,ret: -134
+}, nSumA = 312, nSumB = 274,sub = -10,ret: 38
+}, nSumA = 298, nSumB = 197,sub = -10,ret: 101
+}, nSumA = 236, nSumB = 154,sub = -10,ret: 82
+}, nSumA = 204, nSumB = 79,sub = -10,ret: 125
+}, nSumA = 133, nSumB = 52,sub = -10,ret: 81
+}, nSumA = 80, nSumB = 18,sub = -10,ret: 62
+}, nSumA = 151, nSumB = 45,sub = -10,ret: 106
+}, nSumA = 165, nSumB = 127,sub = -10,ret: 38
+}, nSumA = 112, nSumB = 93,sub = -10,ret: 19
+}, nSumA = 183, nSumB = 120,sub = -10,ret: 63
+}, nSumA = 266, nSumB = 122,sub = -10,ret: 144
+}, nSumA = 195, nSumB = 95,sub = -10,ret: 100
+}, nSumA = 142, nSumB = 61,sub = -10,ret: 81
+}, nSumA = 213, nSumB = 88,sub = -10,ret: 125
+}, nSumA = 227, nSumB = 170,sub = -10,ret: 57
+}, nSumA = 174, nSumB = 136,sub = -10,ret: 38
+}, nSumA = 245, nSumB = 163,sub = -10,ret: 82
+}, nSumA = 250, nSumB = 231,sub = -10,ret: 19
+}, nSumA = 218, nSumB = 156,sub = -10,ret: 62
+}, nSumA = 147, nSumB = 129,sub = -10,ret: 18
+}, nSumA = 94, nSumB = 95,sub = -10,ret: -1
+}, nSumA = 165, nSumB = 122,sub = -10,ret: 43
+}, nSumA = 179, nSumB = 204,sub = -10,ret: -25
+}, nSumA = 126, nSumB = 170,sub = -10,ret: -44
+}, nSumA = 197, nSumB = 197,sub = -10,ret: 0
+}, nSumA = 280, nSumB = 199,sub = -10,ret: 81
+}, nSumA = 209, nSumB = 172,sub = -10,ret: 37
+}, nSumA = 156, nSumB = 138,sub = -10,ret: 18
+}, nSumA = 227, nSumB = 165,sub = -10,ret: 62
+}, nSumA = 241, nSumB = 247,sub = -10,ret: -6
+}, nSumA = 188, nSumB = 213,sub = -10,ret: -25
+}, nSumA = 259, nSumB = 240,sub = -10,ret: 19
+}, nSumA = 307, nSumB = 297,sub = -10,ret: 10
+}, nSumA = 245, nSumB = 254,sub = -10,ret: -9
+}, nSumA = 213, nSumB = 179,sub = -10,ret: 34
+}, nSumA = 142, nSumB = 152,sub = -10,ret: -10
+}, nSumA = 321, nSumB = 349,sub = -10,ret: -28
+}, nSumA = 241, nSumB = 256,sub = -10,ret: -15
+}, nSumA = 232, nSumB = 231,sub = -10,ret: 1
+}, nSumA = 218, nSumB = 229,sub = -10,ret: -11
+}, nSumA = 156, nSumB = 161,sub = -10,ret: -5
+}, nSumA = 124, nSumB = 111,sub = -10,ret: 13
+}, nSumA = 53, nSumB = 59,sub = -10,ret: -6
+}, nSumA = 71, nSumB = 52,sub = -10,ret: 19
+}, nSumA = 85, nSumB = 109,sub = -10,ret: -24
+}, nSumA = 32, nSumB = 50,sub = -10,ret: -18
+}, nSumA = 103, nSumB = 102,sub = -10,ret: 1
+}, nSumA = 186, nSumB = 179,sub = -10,ret: 7
+}, nSumA = 115, nSumB = 127,sub = -10,ret: -12
+}, nSumA = 62, nSumB = 68,sub = -10,ret: -6
+}, nSumA = 133, nSumB = 120,sub = -10,ret: 13
+}, nSumA = 147, nSumB = 177,sub = -10,ret: -30
+}, nSumA = 94, nSumB = 118,sub = -10,ret: -24
+}, nSumA = 165, nSumB = 170,sub = -10,ret: -5
+}, nSumA = 170, nSumB = 163,sub = -10,ret: 7
+}, nSumA = 138, nSumB = 113,sub = -10,ret: 25
+}, nSumA = 67, nSumB = 61,sub = -10,ret: 6
+}, nSumA = 14, nSumB = 2,sub = -10,ret: 12
+}, nSumA = 85, nSumB = 54,sub = -10,ret: 31
+}, nSumA = 99, nSumB = 111,sub = -10,ret: -12
+}, nSumA = 46, nSumB = 52,sub = -10,ret: -6
+}, nSumA = 117, nSumB = 104,sub = -10,ret: 13
+}, nSumA = 200, nSumB = 181,sub = -10,ret: 19
+}, nSumA = 129, nSumB = 129,sub = -10,ret: 0
+}, nSumA = 76, nSumB = 70,sub = -10,ret: 6
+}, nSumA = 147, nSumB = 122,sub = -10,ret: 25
+}, nSumA = 161, nSumB = 179,sub = -10,ret: -18
+}, nSumA = 108, nSumB = 120,sub = -10,ret: -12
+}, nSumA = 179, nSumB = 172,sub = -10,ret: 7
+}, nSumA = 227, nSumB = 254,sub = -10,ret: -27
+}, nSumA = 165, nSumB = 186,sub = -10,ret: -21
+}, nSumA = 133, nSumB = 136,sub = -10,ret: -3
+}, nSumA = 62, nSumB = 84,sub = -10,ret: -22
+}, nSumA = 9, nSumB = 25,sub = -10,ret: -16
+}, nSumA = 80, nSumB = 77,sub = -10,ret: 3
+}, nSumA = 94, nSumB = 134,sub = -10,ret: -40
+}, nSumA = 41, nSumB = 75,sub = -10,ret: -34
+}, nSumA = 112, nSumB = 127,sub = -10,ret: -15
+}, nSumA = 195, nSumB = 204,sub = -10,ret: -9
+}, nSumA = 124, nSumB = 152,sub = -10,ret: -28
+}, nSumA = 71, nSumB = 93,sub = -10,ret: -22
+}, nSumA = 142, nSumB = 145,sub = -10,ret: -3
+}, nSumA = 156, nSumB = 202,sub = -10,ret: -46
+}, nSumA = 103, nSumB = 143,sub = -10,ret: -40
+}, nSumA = 174, nSumB = 195,sub = -10,ret: -21
+}, nSumA = 179, nSumB = 188,sub = -10,ret: -9
+}, nSumA = 147, nSumB = 138,sub = -10,ret: 9
+}, nSumA = 76, nSumB = 86,sub = -10,ret: -10
 I Find it at last!!!
 FindResult: 1, nRrcNum: 19, size: 3
 	92	99	1	8	15	67	74	26	58	65
@@ -72,1552 +1035,3 @@ x, y, dstX, dstY = 3,2,4,4
 vecElem.size: 8
 SubElem size:255
 nSrcIndex, nDstIndex: 2, 4
-	92	85	4	98	86	17	23	79	10	11
-	99	80	6	87	93	24	5	81	12	18
-	1	25	88	7	9	76	82	13	94	100
-	8	2	95	21	14	83	89	20	96	77
-	15	16	22	3	19	90	91	97	78	84
-	67	73	54	60	61	42	48	29	35	36
-	74	62	56	55	68	49	30	31	37	43
-	26	32	38	44	50	51	57	63	69	75
-	58	71	70	64	52	33	39	45	46	27
-	65	59	72	66	53	40	41	47	28	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 19, size: 2
-	92	99	74	8	1	67	15	26	58	65
-	85	80	62	2	16	73	25	32	71	59
-	4	6	88	95	22	54	56	38	70	72
-	98	87	55	21	7	60	3	44	64	66
-	86	93	9	14	[31m19[0m	[31m61[0m	68	50	52	53
-	17	24	76	83	[31m90[0m	[31m42[0m	49	51	33	40
-	23	5	30	89	91	48	82	57	39	41
-	79	81	31	20	97	29	13	63	45	47
-	10	12	37	96	78	35	94	69	46	28
-	11	18	43	77	84	36	100	75	27	34
-After check is: 1, nTag = 1
-c2 start........................
-swap:(6, 4)-->(4, 5)
-after swap: 
-	92	99	74	8	1	67	15	26	58	65
-	85	80	62	2	16	73	25	32	71	59
-	4	6	88	95	22	54	56	38	70	72
-	98	87	55	21	7	60	3	44	64	66
-	86	93	9	14	[31m19[0m	[31m91[0m	68	50	52	53
-	17	24	76	83	[31m90[0m	[31m42[0m	49	51	33	40
-	23	5	30	89	61	48	82	57	39	41
-	79	81	31	20	97	29	13	63	45	47
-	10	12	37	96	78	35	94	69	46	28
-	11	18	43	77	84	36	100	75	27	34
-nDstNum, nSrcNum, nTag: 61, 91, 0
-x, y, dstX, dstY = 6,4,4,5
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 6, 4
-	92	99	74	8	1	67	15	26	58	65
-	85	80	62	2	16	73	25	32	71	59
-	4	6	88	95	22	54	56	38	70	72
-	98	87	55	21	7	60	3	44	64	66
-	86	93	9	14	19	91	68	50	52	53
-	17	24	76	83	90	42	49	51	33	40
-	23	5	30	89	61	48	82	57	39	41
-	79	81	31	20	97	29	13	63	45	47
-	10	12	37	96	78	35	94	69	46	28
-	11	18	43	77	84	36	100	75	27	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 91, size: 4
-	92	99	74	8	1	67	15	26	58	65
-	23	80	62	14	16	73	82	50	52	53
-	4	6	88	95	22	54	56	38	70	72
-	98	87	55	21	7	60	3	44	64	66
-	86	93	9	2	[31m19[0m	[31m91[0m	68	57	39	41
-	17	24	76	83	[31m90[0m	[31m42[0m	49	51	33	40
-	85	5	30	89	61	48	25	32	71	59
-	79	81	31	20	97	29	13	63	45	47
-	10	12	37	96	78	35	94	69	46	28
-	11	18	43	77	84	36	100	75	27	34
-After check is: 0, nTag = 0
-nDstNum, nSrcNum, nTag: 61, 91, 1
-x, y, dstX, dstY = 6,4,4,5
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 4, 5
-	92	23	4	98	86	17	85	79	10	11
-	99	80	6	87	93	24	5	81	12	18
-	74	62	88	55	9	76	30	31	37	43
-	8	14	95	21	2	83	89	20	96	77
-	1	16	22	7	19	90	61	97	78	84
-	67	73	54	60	91	42	48	29	35	36
-	15	82	56	3	68	49	25	13	94	100
-	26	50	38	44	57	51	32	63	69	75
-	58	52	70	64	39	33	71	45	46	27
-	65	53	72	66	41	40	59	47	28	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 91, size: 2
-	92	99	74	8	1	67	15	26	58	65
-	23	80	16	14	62	73	82	50	52	53
-	4	6	54	95	88	22	56	38	70	72
-	98	87	55	21	7	60	3	44	64	66
-	86	93	9	2	[31m19[0m	[31m91[0m	68	57	39	41
-	17	24	76	83	[31m90[0m	[31m42[0m	49	51	33	40
-	85	5	30	89	61	48	25	32	71	59
-	79	81	29	20	97	31	13	63	45	47
-	10	12	78	96	37	35	94	69	46	28
-	11	18	84	77	43	36	100	75	27	34
-After check is: 1, nTag = 1
-c3 start........................
-swap:(0, 3)-->(5, 4)
-after swap: 
-	92	99	74	90	1	67	15	26	58	65
-	23	80	16	14	62	73	82	50	52	53
-	4	6	54	95	88	22	56	38	70	72
-	98	87	55	21	7	60	3	44	64	66
-	86	93	9	2	[31m19[0m	[31m91[0m	68	57	39	41
-	17	24	76	83	[31m8[0m	[31m42[0m	49	51	33	40
-	85	5	30	89	61	48	25	32	71	59
-	79	81	29	20	97	31	13	63	45	47
-	10	12	78	96	37	35	94	69	46	28
-	11	18	84	77	43	36	100	75	27	34
-nDstNum, nSrcNum, nTag: 90, 8, 0
-x, y, dstX, dstY = 0,3,5,4
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 0, 5
-	92	99	74	90	1	67	15	26	58	65
-	23	80	16	14	62	73	82	50	52	53
-	4	6	54	95	88	22	56	38	70	72
-	98	87	55	21	7	60	3	44	64	66
-	86	93	9	2	19	91	68	57	39	41
-	17	24	76	83	8	42	49	51	33	40
-	85	5	30	89	61	48	25	32	71	59
-	79	81	29	20	97	31	13	63	45	47
-	10	12	78	96	37	35	94	69	46	28
-	11	18	84	77	43	36	100	75	27	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 8, size: 2
-	92	6	54	90	1	67	15	38	70	72
-	23	80	16	14	62	73	82	50	52	53
-	4	24	74	95	88	22	49	26	58	65
-	98	87	55	21	7	60	3	44	64	66
-	86	93	9	2	[31m19[0m	[31m91[0m	68	57	39	41
-	17	99	76	83	[31m8[0m	[31m42[0m	56	51	33	40
-	85	5	30	89	61	48	25	32	71	59
-	79	81	29	20	97	31	13	63	45	47
-	10	12	78	96	37	35	94	69	46	28
-	11	18	84	77	43	36	100	75	27	34
-After check is: 0, nTag = 0
-nDstNum, nSrcNum, nTag: 90, 8, 1
-x, y, dstX, dstY = 0,3,5,4
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 3, 4
-	92	23	4	98	86	17	85	79	10	11
-	6	80	24	87	93	99	5	81	12	18
-	54	16	74	55	9	76	30	29	78	84
-	90	14	95	21	2	83	89	20	96	77
-	1	62	88	7	19	8	61	97	37	43
-	67	73	22	60	91	42	48	31	35	36
-	15	82	49	3	68	56	25	13	94	100
-	38	50	26	44	57	51	32	63	69	75
-	70	52	58	64	39	33	71	45	46	27
-	72	53	65	66	41	40	59	47	28	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 8, size: 3
-	92	1	54	90	6	67	15	38	70	72
-	23	62	16	14	80	73	82	50	52	53
-	4	24	74	95	88	22	49	26	58	65
-	98	87	55	21	7	60	3	44	64	66
-	86	93	9	2	[31m19[0m	[31m91[0m	68	57	39	41
-	17	99	76	83	[31m8[0m	[31m42[0m	56	51	33	40
-	85	5	30	89	61	48	25	32	71	59
-	79	20	29	81	97	31	13	63	45	47
-	10	37	78	12	96	35	94	69	46	28
-	11	77	84	18	43	36	100	75	27	34
-After check is: 1, nTag = 1
-c4 start........................
-swap:(7, 1)-->(5, 5)
-after swap: 
-	92	1	54	90	6	67	15	38	70	72
-	23	62	16	14	80	73	82	50	52	53
-	4	24	74	95	88	22	49	26	58	65
-	98	87	55	21	7	60	3	44	64	66
-	86	93	9	2	[31m19[0m	[31m91[0m	68	57	39	41
-	17	99	76	83	[31m8[0m	[31m20[0m	56	51	33	40
-	85	5	30	89	61	48	25	32	71	59
-	79	42	29	81	97	31	13	63	45	47
-	10	37	78	12	96	35	94	69	46	28
-	11	77	84	18	43	36	100	75	27	34
-nDstNum, nSrcNum, nTag: 42, 20, 0
-x, y, dstX, dstY = 7,1,5,5
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 7, 5
-	92	1	54	90	6	67	15	38	70	72
-	23	62	16	14	80	73	82	50	52	53
-	4	24	74	95	88	22	49	26	58	65
-	98	87	55	21	7	60	3	44	64	66
-	86	93	9	2	19	91	68	57	39	41
-	17	99	76	83	8	20	56	51	33	40
-	85	5	30	89	61	48	25	32	71	59
-	79	42	29	81	97	31	13	63	45	47
-	10	37	78	12	96	35	94	69	46	28
-	11	77	84	18	43	36	100	75	27	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 20, size: 5
-	92	1	54	90	6	67	15	38	70	72
-	23	62	16	14	80	73	82	50	52	53
-	79	24	29	83	88	22	56	51	33	40
-	98	87	55	21	7	60	3	44	64	66
-	86	93	9	2	[31m19[0m	[31m91[0m	68	57	39	41
-	17	99	76	81	[31m8[0m	[31m20[0m	49	63	45	47
-	85	5	30	89	61	48	25	32	71	59
-	4	42	74	95	97	31	13	26	58	65
-	10	37	78	12	96	35	94	69	46	28
-	11	77	84	18	43	36	100	75	27	34
-After check is: 0, nTag = 0
-nDstNum, nSrcNum, nTag: 42, 20, 1
-x, y, dstX, dstY = 7,1,5,5
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 1, 5
-	92	23	79	98	86	17	85	4	10	11
-	1	62	24	87	93	99	5	42	37	77
-	54	16	29	55	9	76	30	74	78	84
-	90	14	83	21	2	81	89	95	12	18
-	6	80	88	7	19	8	61	97	96	43
-	67	73	22	60	91	20	48	31	35	36
-	15	82	56	3	68	49	25	13	94	100
-	38	50	51	44	57	63	32	26	69	75
-	70	52	33	64	39	45	71	58	46	27
-	72	53	40	66	41	47	59	65	28	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 20, size: 3
-	92	15	54	90	6	67	1	38	70	72
-	23	62	16	14	80	82	73	50	52	53
-	79	24	29	83	88	22	56	51	33	40
-	98	3	55	21	7	60	87	44	64	66
-	86	93	9	2	[31m19[0m	[31m91[0m	68	57	39	41
-	17	99	76	81	[31m8[0m	[31m20[0m	49	63	45	47
-	85	25	30	89	61	48	5	32	71	59
-	4	13	74	95	97	42	31	26	58	65
-	10	94	78	12	96	37	35	69	46	28
-	11	77	84	18	43	36	100	75	27	34
-After check is: 1, nTag = 1
-sum1, sum2, sum = 354, 629, 505
-After all check is: 0
-Additon start......... 
-start process positive diagnol ... 
-After sort is: 
-6, 4, 5, 3, 7, 2, 9, 8, 1, 0, 
-swap:(9, 6)-->(6, 6)
-after swap: 
-	92	15	54	90	6	67	1	38	70	72
-	23	62	16	14	80	82	73	50	52	53
-	79	24	29	83	88	22	56	51	33	40
-	98	3	55	21	7	60	87	44	64	66
-	86	93	9	2	[31m19[0m	[31m91[0m	68	57	39	41
-	17	99	76	81	[31m8[0m	[31m20[0m	49	63	45	47
-	85	25	30	89	61	48	100	32	71	59
-	4	13	74	95	97	42	31	26	58	65
-	10	94	78	12	96	37	35	69	46	28
-	11	77	84	18	43	36	5	75	27	34
-nDstNum, nSrcNum, nTag: 5, 100, 0
-x, y, dstX, dstY = 9,6,6,6
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 9, 6
-	92	15	54	90	6	67	1	38	70	72
-	23	62	16	14	80	82	73	50	52	53
-	79	24	29	83	88	22	56	51	33	40
-	98	3	55	21	7	60	87	44	64	66
-	86	93	9	2	19	91	68	57	39	41
-	17	99	76	81	8	20	49	63	45	47
-	85	25	30	89	61	48	100	32	71	59
-	4	13	74	95	97	42	31	26	58	65
-	10	94	78	12	96	37	35	69	46	28
-	11	77	84	18	43	36	5	75	27	34
-FindResult: 0, nRrcNum: 100, size: 0
-	92	15	54	90	6	67	1	38	70	72
-	23	62	16	14	80	82	73	50	52	53
-	79	24	29	83	88	22	56	51	33	40
-	98	3	55	21	7	60	87	44	64	66
-	86	93	9	2	[31m19[0m	[31m91[0m	68	57	39	41
-	17	99	76	81	[31m8[0m	[31m20[0m	49	63	45	47
-	85	25	30	89	61	48	100	32	71	59
-	4	13	74	95	97	42	31	26	58	65
-	10	94	78	12	96	37	35	69	46	28
-	11	77	84	18	43	36	5	75	27	34
-After check is: 0, nTag = 0
-100 not find, and next
-swap:(5, 1)-->(6, 6)
-after swap: 
-	92	15	54	90	6	67	1	38	70	72
-	23	62	16	14	80	82	73	50	52	53
-	79	24	29	83	88	22	56	51	33	40
-	98	3	55	21	7	60	87	44	64	66
-	86	93	9	2	[31m19[0m	[31m91[0m	68	57	39	41
-	17	5	76	81	[31m8[0m	[31m20[0m	49	63	45	47
-	85	25	30	89	61	48	99	32	71	59
-	4	13	74	95	97	42	31	26	58	65
-	10	94	78	12	96	37	35	69	46	28
-	11	77	84	18	43	36	100	75	27	34
-nDstNum, nSrcNum, nTag: 5, 99, 0
-x, y, dstX, dstY = 5,1,6,6
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 5, 6
-	92	15	54	90	6	67	1	38	70	72
-	23	62	16	14	80	82	73	50	52	53
-	79	24	29	83	88	22	56	51	33	40
-	98	3	55	21	7	60	87	44	64	66
-	86	93	9	2	19	91	68	57	39	41
-	17	5	76	81	8	20	49	63	45	47
-	85	25	30	89	61	48	99	32	71	59
-	4	13	74	95	97	42	31	26	58	65
-	10	94	78	12	96	37	35	69	46	28
-	11	77	84	18	43	36	100	75	27	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 99, size: 2
-	92	15	54	90	6	67	1	38	70	72
-	23	62	16	14	80	82	73	50	52	53
-	79	24	29	83	88	22	56	51	33	40
-	98	3	55	21	7	60	87	44	64	66
-	86	93	9	2	[31m19[0m	[31m91[0m	68	57	39	41
-	85	5	76	81	[31m8[0m	[31m20[0m	49	63	71	47
-	17	25	30	89	61	48	99	32	45	59
-	4	13	74	95	97	42	31	26	58	65
-	10	94	78	12	96	37	35	69	46	28
-	11	77	84	18	43	36	100	75	27	34
-After check is: 0, nTag = 0
-nDstNum, nSrcNum, nTag: 5, 99, 1
-x, y, dstX, dstY = 5,1,6,6
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 1, 6
-	92	23	79	98	86	85	17	4	10	11
-	15	62	24	3	93	5	25	13	94	77
-	54	16	29	55	9	76	30	74	78	84
-	90	14	83	21	2	81	89	95	12	18
-	6	80	88	7	19	8	61	97	96	43
-	67	82	22	60	91	20	48	42	37	36
-	1	73	56	87	68	49	99	31	35	100
-	38	50	51	44	57	63	32	26	69	75
-	70	52	33	64	39	71	45	58	46	27
-	72	53	40	66	41	47	59	65	28	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 99, size: 4
-	92	15	54	90	6	67	1	38	70	72
-	23	62	16	14	80	82	73	50	52	53
-	79	24	29	83	88	22	40	51	33	56
-	98	3	55	21	7	60	87	44	64	66
-	86	93	9	2	[31m19[0m	[31m91[0m	41	57	39	68
-	85	47	76	81	[31m8[0m	[31m20[0m	5	63	71	49
-	17	25	30	89	61	48	99	32	45	59
-	4	65	74	95	97	42	31	26	58	13
-	10	94	78	12	96	37	28	69	46	35
-	11	77	84	18	43	36	100	75	27	34
-After check is: 1, nTag = 1
-Binggo! bSubFind: 1, nSum: 448
-	92	15	54	90	6	67	1	38	70	72
-	23	62	16	14	80	82	73	50	52	53
-	79	24	29	83	88	22	40	51	33	56
-	98	3	55	21	7	60	87	44	64	66
-	86	93	9	2	[31m19[0m	[31m91[0m	41	57	39	68
-	85	47	76	81	[31m8[0m	[31m20[0m	5	63	71	49
-	17	25	30	89	61	48	99	32	45	59
-	4	65	74	95	97	42	31	26	58	13
-	10	94	78	12	96	37	28	69	46	35
-	11	77	84	18	43	36	100	75	27	34
-sum1, sum2, sum = 448, 629, 505
-After all check is: 0
-End a circle, index: 6, bSubFind: 1
-swap:(9, 6)-->(3, 3)
-after swap: 
-	92	15	54	90	6	67	1	38	70	72
-	23	62	16	14	80	82	73	50	52	53
-	79	24	29	83	88	22	40	51	33	56
-	98	3	55	100	7	60	87	44	64	66
-	86	93	9	2	[31m19[0m	[31m91[0m	41	57	39	68
-	85	47	76	81	[31m8[0m	[31m20[0m	5	63	71	49
-	17	25	30	89	61	48	99	32	45	59
-	4	65	74	95	97	42	31	26	58	13
-	10	94	78	12	96	37	28	69	46	35
-	11	77	84	18	43	36	21	75	27	34
-nDstNum, nSrcNum, nTag: 21, 100, 0
-x, y, dstX, dstY = 9,6,3,3
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 9, 3
-	92	15	54	90	6	67	1	38	70	72
-	23	62	16	14	80	82	73	50	52	53
-	79	24	29	83	88	22	40	51	33	56
-	98	3	55	100	7	60	87	44	64	66
-	86	93	9	2	19	91	41	57	39	68
-	85	47	76	81	8	20	5	63	71	49
-	17	25	30	89	61	48	99	32	45	59
-	4	65	74	95	97	42	31	26	58	13
-	10	94	78	12	96	37	28	69	46	35
-	11	77	84	18	43	36	21	75	27	34
-FindResult: 0, nRrcNum: 100, size: 0
-	92	15	54	90	6	67	1	38	70	72
-	23	62	16	14	80	82	73	50	52	53
-	79	24	29	83	88	22	40	51	33	56
-	98	3	55	100	7	60	87	44	64	66
-	86	93	9	2	[31m19[0m	[31m91[0m	41	57	39	68
-	85	47	76	81	[31m8[0m	[31m20[0m	5	63	71	49
-	17	25	30	89	61	48	99	32	45	59
-	4	65	74	95	97	42	31	26	58	13
-	10	94	78	12	96	37	28	69	46	35
-	11	77	84	18	43	36	21	75	27	34
-After check is: 0, nTag = 0
-100 not find, and next
-swap:(6, 6)-->(3, 3)
-after swap: 
-	92	15	54	90	6	67	1	38	70	72
-	23	62	16	14	80	82	73	50	52	53
-	79	24	29	83	88	22	40	51	33	56
-	98	3	55	99	7	60	87	44	64	66
-	86	93	9	2	[31m19[0m	[31m91[0m	41	57	39	68
-	85	47	76	81	[31m8[0m	[31m20[0m	5	63	71	49
-	17	25	30	89	61	48	21	32	45	59
-	4	65	74	95	97	42	31	26	58	13
-	10	94	78	12	96	37	28	69	46	35
-	11	77	84	18	43	36	100	75	27	34
-nDstNum, nSrcNum, nTag: 21, 99, 0
-x, y, dstX, dstY = 6,6,3,3
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 6, 3
-	92	15	54	90	6	67	1	38	70	72
-	23	62	16	14	80	82	73	50	52	53
-	79	24	29	83	88	22	40	51	33	56
-	98	3	55	99	7	60	87	44	64	66
-	86	93	9	2	19	91	41	57	39	68
-	85	47	76	81	8	20	5	63	71	49
-	17	25	30	89	61	48	21	32	45	59
-	4	65	74	95	97	42	31	26	58	13
-	10	94	78	12	96	37	28	69	46	35
-	11	77	84	18	43	36	100	75	27	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 99, size: 3
-	92	15	54	90	6	67	1	38	70	72
-	23	62	16	14	80	82	73	50	52	53
-	79	24	29	83	88	22	40	51	33	56
-	98	3	9	99	7	60	87	44	39	59
-	17	93	55	2	[31m19[0m	[31m91[0m	41	57	64	66
-	85	47	76	81	[31m8[0m	[31m20[0m	5	63	71	49
-	86	25	30	89	61	48	21	32	45	68
-	4	65	74	95	97	42	31	26	58	13
-	10	94	78	12	96	37	28	69	46	35
-	11	77	84	18	43	36	100	75	27	34
-After check is: 0, nTag = 0
-nDstNum, nSrcNum, nTag: 21, 99, 1
-x, y, dstX, dstY = 6,6,3,3
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 6, 3
-	92	23	79	98	17	85	86	4	10	11
-	15	62	24	3	93	47	25	65	94	77
-	54	16	29	9	55	76	30	74	78	84
-	90	14	83	99	2	81	89	95	12	18
-	6	80	88	7	19	8	61	97	96	43
-	67	82	22	60	91	20	48	42	37	36
-	1	73	40	87	41	5	21	31	28	100
-	38	50	51	44	57	63	32	26	69	75
-	70	52	33	39	64	71	45	58	46	27
-	72	53	56	59	66	49	68	13	35	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 99, size: 4
-	92	15	54	1	6	67	90	38	70	72
-	23	62	16	73	80	82	14	50	52	53
-	79	24	29	83	88	22	40	51	33	56
-	98	3	9	99	7	60	87	44	39	59
-	17	93	55	2	[31m19[0m	[31m91[0m	41	57	64	66
-	85	47	76	81	[31m8[0m	[31m20[0m	5	63	71	49
-	86	25	30	89	61	48	21	32	45	68
-	4	65	74	31	97	42	95	26	58	13
-	10	94	78	28	96	37	12	69	46	35
-	11	77	84	18	43	36	100	75	27	34
-After check is: 1, nTag = 1
-Binggo! bSubFind: 1, nSum: 448
-	92	15	54	1	6	67	90	38	70	72
-	23	62	16	73	80	82	14	50	52	53
-	79	24	29	83	88	22	40	51	33	56
-	98	3	9	99	7	60	87	44	39	59
-	17	93	55	2	[31m19[0m	[31m91[0m	41	57	64	66
-	85	47	76	81	[31m8[0m	[31m20[0m	5	63	71	49
-	86	25	30	89	61	48	21	32	45	68
-	4	65	74	31	97	42	95	26	58	13
-	10	94	78	28	96	37	12	69	46	35
-	11	77	84	18	43	36	100	75	27	34
-sum1, sum2, sum = 448, 629, 505
-After all check is: 0
-End a circle, index: 3, bSubFind: 1
-swap:(9, 6)-->(7, 7)
-after swap: 
-	92	15	54	1	6	67	90	38	70	72
-	23	62	16	73	80	82	14	50	52	53
-	79	24	29	83	88	22	40	51	33	56
-	98	3	9	99	7	60	87	44	39	59
-	17	93	55	2	[31m19[0m	[31m91[0m	41	57	64	66
-	85	47	76	81	[31m8[0m	[31m20[0m	5	63	71	49
-	86	25	30	89	61	48	21	32	45	68
-	4	65	74	31	97	42	95	100	58	13
-	10	94	78	28	96	37	12	69	46	35
-	11	77	84	18	43	36	26	75	27	34
-nDstNum, nSrcNum, nTag: 26, 100, 0
-x, y, dstX, dstY = 9,6,7,7
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 9, 7
-	92	15	54	1	6	67	90	38	70	72
-	23	62	16	73	80	82	14	50	52	53
-	79	24	29	83	88	22	40	51	33	56
-	98	3	9	99	7	60	87	44	39	59
-	17	93	55	2	19	91	41	57	64	66
-	85	47	76	81	8	20	5	63	71	49
-	86	25	30	89	61	48	21	32	45	68
-	4	65	74	31	97	42	95	100	58	13
-	10	94	78	28	96	37	12	69	46	35
-	11	77	84	18	43	36	26	75	27	34
-FindResult: 0, nRrcNum: 100, size: 0
-	92	15	54	1	6	67	90	38	70	72
-	23	62	16	73	80	82	14	50	52	53
-	79	24	29	83	88	22	40	51	33	56
-	98	3	9	99	7	60	87	44	39	59
-	17	93	55	2	[31m19[0m	[31m91[0m	41	57	64	66
-	85	47	76	81	[31m8[0m	[31m20[0m	5	63	71	49
-	86	25	30	89	61	48	21	32	45	68
-	4	65	74	31	97	42	95	100	58	13
-	10	94	78	28	96	37	12	69	46	35
-	11	77	84	18	43	36	26	75	27	34
-After check is: 0, nTag = 0
-100 not find, and next
-swap:(3, 3)-->(7, 7)
-after swap: 
-	92	15	54	1	6	67	90	38	70	72
-	23	62	16	73	80	82	14	50	52	53
-	79	24	29	83	88	22	40	51	33	56
-	98	3	9	26	7	60	87	44	39	59
-	17	93	55	2	[31m19[0m	[31m91[0m	41	57	64	66
-	85	47	76	81	[31m8[0m	[31m20[0m	5	63	71	49
-	86	25	30	89	61	48	21	32	45	68
-	4	65	74	31	97	42	95	99	58	13
-	10	94	78	28	96	37	12	69	46	35
-	11	77	84	18	43	36	100	75	27	34
-nDstNum, nSrcNum, nTag: 26, 99, 0
-x, y, dstX, dstY = 3,3,7,7
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 3, 7
-	92	15	54	1	6	67	90	38	70	72
-	23	62	16	73	80	82	14	50	52	53
-	79	24	29	83	88	22	40	51	33	56
-	98	3	9	26	7	60	87	44	39	59
-	17	93	55	2	19	91	41	57	64	66
-	85	47	76	81	8	20	5	63	71	49
-	86	25	30	89	61	48	21	32	45	68
-	4	65	74	31	97	42	95	99	58	13
-	10	94	78	28	96	37	12	69	46	35
-	11	77	84	18	43	36	100	75	27	34
-FindResult: 0, nRrcNum: 99, size: 0
-	92	15	54	1	6	67	90	38	70	72
-	23	62	16	73	80	82	14	50	52	53
-	79	24	29	83	88	22	40	51	33	56
-	98	3	9	26	7	60	87	44	39	59
-	17	93	55	2	[31m19[0m	[31m91[0m	41	57	64	66
-	85	47	76	81	[31m8[0m	[31m20[0m	5	63	71	49
-	86	25	30	89	61	48	21	32	45	68
-	4	65	74	31	97	42	95	99	58	13
-	10	94	78	28	96	37	12	69	46	35
-	11	77	84	18	43	36	100	75	27	34
-After check is: 0, nTag = 0
-99 not find, and next
-swap:(3, 0)-->(7, 7)
-after swap: 
-	92	15	54	1	6	67	90	38	70	72
-	23	62	16	73	80	82	14	50	52	53
-	79	24	29	83	88	22	40	51	33	56
-	26	3	9	99	7	60	87	44	39	59
-	17	93	55	2	[31m19[0m	[31m91[0m	41	57	64	66
-	85	47	76	81	[31m8[0m	[31m20[0m	5	63	71	49
-	86	25	30	89	61	48	21	32	45	68
-	4	65	74	31	97	42	95	98	58	13
-	10	94	78	28	96	37	12	69	46	35
-	11	77	84	18	43	36	100	75	27	34
-nDstNum, nSrcNum, nTag: 26, 98, 0
-x, y, dstX, dstY = 3,0,7,7
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 3, 7
-	92	15	54	1	6	67	90	38	70	72
-	23	62	16	73	80	82	14	50	52	53
-	79	24	29	83	88	22	40	51	33	56
-	26	3	9	99	7	60	87	44	39	59
-	17	93	55	2	19	91	41	57	64	66
-	85	47	76	81	8	20	5	63	71	49
-	86	25	30	89	61	48	21	32	45	68
-	4	65	74	31	97	42	95	98	58	13
-	10	94	78	28	96	37	12	69	46	35
-	11	77	84	18	43	36	100	75	27	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 98, size: 6
-	92	15	54	1	6	67	90	38	70	72
-	23	62	16	73	80	82	14	50	52	53
-	79	65	29	31	97	42	40	51	58	13
-	26	3	9	99	88	60	87	44	33	56
-	17	93	55	2	[31m19[0m	[31m91[0m	41	57	64	66
-	85	47	76	81	[31m8[0m	[31m20[0m	5	63	71	49
-	86	25	30	89	61	48	21	32	45	68
-	4	24	74	83	7	22	95	98	39	59
-	10	94	78	28	96	37	12	69	46	35
-	11	77	84	18	43	36	100	75	27	34
-After check is: 0, nTag = 0
-nDstNum, nSrcNum, nTag: 26, 98, 1
-x, y, dstX, dstY = 3,0,7,7
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 0, 7
-	92	23	79	26	17	85	86	4	10	11
-	15	62	65	3	93	47	25	24	94	77
-	54	16	29	9	55	76	30	74	78	84
-	1	73	31	99	2	81	89	83	28	18
-	6	80	97	88	19	8	61	7	96	43
-	67	82	42	60	91	20	48	22	37	36
-	90	14	40	87	41	5	21	95	12	100
-	38	50	51	44	57	63	32	98	69	75
-	70	52	58	33	64	71	45	39	46	27
-	72	53	13	56	66	49	68	59	35	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 98, size: 4
-	92	15	54	1	6	67	90	38	70	72
-	50	62	16	73	80	82	14	23	52	53
-	79	65	29	31	97	42	40	51	58	13
-	26	3	9	99	88	60	87	44	33	56
-	57	93	55	2	[31m19[0m	[31m91[0m	41	17	64	66
-	85	47	76	81	[31m8[0m	[31m20[0m	5	63	71	49
-	32	25	30	89	61	48	21	86	45	68
-	4	24	74	83	7	22	95	98	39	59
-	69	94	78	28	96	37	12	10	46	35
-	11	77	84	18	43	36	100	75	27	34
-After check is: 1, nTag = 1
-Binggo! bSubFind: 1, nSum: 520
-	92	15	54	1	6	67	90	38	70	72
-	50	62	16	73	80	82	14	23	52	53
-	79	65	29	31	97	42	40	51	58	13
-	26	3	9	99	88	60	87	44	33	56
-	57	93	55	2	[31m19[0m	[31m91[0m	41	17	64	66
-	85	47	76	81	[31m8[0m	[31m20[0m	5	63	71	49
-	32	25	30	89	61	48	21	86	45	68
-	4	24	74	83	7	22	95	98	39	59
-	69	94	78	28	96	37	12	10	46	35
-	11	77	84	18	43	36	100	75	27	34
-sum1, sum2, sum = 520, 629, 505
-After all check is: 0
-Additon start......... nSum = 520
-nNeed: 77
-nX, nY: 9, 1
-Addition: nNeed = 77, 0, a[][] = 
-	92	15	54	1	6	67	90	38	70	72
-	50	62	16	73	80	82	14	23	52	53
-	79	65	29	31	97	42	40	51	58	13
-	26	3	9	99	88	60	87	44	33	56
-	57	93	55	2	[31m19[0m	[31m91[0m	41	17	64	66
-	85	47	76	81	[31m8[0m	[31m20[0m	5	63	71	49
-	32	25	30	89	61	48	21	86	45	68
-	4	24	74	83	7	22	95	98	39	59
-	69	94	78	28	96	37	12	10	46	35
-	11	77	84	18	43	36	100	75	27	34
-swap:(9, 1)-->(0, 0)
-after swap: 
-	77	15	54	1	6	67	90	38	70	72
-	50	62	16	73	80	82	14	23	52	53
-	79	65	29	31	97	42	40	51	58	13
-	26	3	9	99	88	60	87	44	33	56
-	57	93	55	2	[31m19[0m	[31m91[0m	41	17	64	66
-	85	47	76	81	[31m8[0m	[31m20[0m	5	63	71	49
-	32	25	30	89	61	48	21	86	45	68
-	4	24	74	83	7	22	95	98	39	59
-	69	94	78	28	96	37	12	10	46	35
-	11	92	84	18	43	36	100	75	27	34
-nDstNum, nSrcNum, nTag: 92, 77, 0
-x, y, dstX, dstY = 9,1,0,0
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 9, 0
-	77	15	54	1	6	67	90	38	70	72
-	50	62	16	73	80	82	14	23	52	53
-	79	65	29	31	97	42	40	51	58	13
-	26	3	9	99	88	60	87	44	33	56
-	57	93	55	2	19	91	41	17	64	66
-	85	47	76	81	8	20	5	63	71	49
-	32	25	30	89	61	48	21	86	45	68
-	4	24	74	83	7	22	95	98	39	59
-	69	94	78	28	96	37	12	10	46	35
-	11	92	84	18	43	36	100	75	27	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 77, size: 1
-	77	15	54	1	6	82	90	38	70	72
-	50	62	16	73	43	67	14	75	52	53
-	79	65	29	31	97	42	40	51	58	13
-	26	3	9	99	88	60	87	44	33	56
-	57	93	55	2	[31m19[0m	[31m91[0m	41	17	64	66
-	85	47	76	81	[31m8[0m	[31m20[0m	5	63	71	49
-	32	25	30	89	61	48	21	86	45	68
-	4	24	74	83	7	22	95	98	39	59
-	69	94	78	28	96	37	12	10	46	35
-	11	92	84	18	80	36	100	23	27	34
-After check is: 0, nTag = 0
-nDstNum, nSrcNum, nTag: 92, 77, 1
-x, y, dstX, dstY = 9,1,0,0
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 1, 0
-	77	50	79	26	57	85	32	4	69	11
-	15	62	65	3	93	47	25	24	94	92
-	54	16	29	9	55	76	30	74	78	84
-	1	73	31	99	2	81	89	83	28	18
-	6	43	97	88	19	8	61	7	96	80
-	82	67	42	60	91	20	48	22	37	36
-	90	14	40	87	41	5	21	95	12	100
-	38	75	51	44	17	63	86	98	10	23
-	70	52	58	33	64	71	45	39	46	27
-	72	53	13	56	66	49	68	59	35	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 77, size: 3
-	77	15	54	1	6	82	90	38	70	72
-	50	62	16	73	43	67	14	75	52	53
-	65	13	29	31	97	42	40	51	58	79
-	26	3	9	99	88	60	87	44	33	56
-	66	93	55	2	[31m19[0m	[31m91[0m	41	17	64	57
-	85	49	76	81	[31m8[0m	[31m20[0m	5	63	71	47
-	32	25	30	89	61	48	21	86	45	68
-	24	59	74	83	7	22	95	98	39	4
-	69	94	78	28	96	37	12	10	46	35
-	11	92	84	18	80	36	100	23	27	34
-After check is: 1, nTag = 1
-sum1, sum2, sum = 505, 629, 505
-After all check is: 0
-The End and result is 1
-sum1, sum2, sum = 505, 629, 505
-check all is: 0
-	77	15	54	1	6	82	90	38	70	72
-	50	62	16	73	43	67	14	75	52	53
-	65	13	29	31	97	42	40	51	58	79
-	26	3	9	99	88	60	87	44	33	56
-	66	93	55	2	[31m19[0m	[31m91[0m	41	17	64	57
-	85	49	76	81	[31m8[0m	[31m20[0m	5	63	71	47
-	32	25	30	89	61	48	21	86	45	68
-	24	59	74	83	7	22	95	98	39	4
-	69	94	78	28	96	37	12	10	46	35
-	11	92	84	18	80	36	100	23	27	34
-Not Find the end!
-start process negative diagnol ... 
-After sort is: 
-5, 9, 2, 1, 0, 7, 3, 6, 4, 8, 
-swap:(9, 6)-->(9, 0)
-after swap: 
-	77	15	54	1	6	82	90	38	70	72
-	50	62	16	73	43	67	14	75	52	53
-	65	13	29	31	97	42	40	51	58	79
-	26	3	9	99	88	60	87	44	33	56
-	66	93	55	2	[31m19[0m	[31m91[0m	41	17	64	57
-	85	49	76	81	[31m8[0m	[31m20[0m	5	63	71	47
-	32	25	30	89	61	48	21	86	45	68
-	24	59	74	83	7	22	95	98	39	4
-	69	94	78	28	96	37	12	10	46	35
-	100	92	84	18	80	36	11	23	27	34
-nDstNum, nSrcNum, nTag: 11, 100, 0
-x, y, dstX, dstY = 9,6,9,0
-vecElem.size: 9
-SubElem size:511
-nSrcIndex, nDstIndex: 9, 9
-	77	15	54	1	6	82	90	38	70	72
-	50	62	16	73	43	67	14	75	52	53
-	65	13	29	31	97	42	40	51	58	79
-	26	3	9	99	88	60	87	44	33	56
-	66	93	55	2	19	91	41	17	64	57
-	85	49	76	81	8	20	5	63	71	47
-	32	25	30	89	61	48	21	86	45	68
-	24	59	74	83	7	22	95	98	39	4
-	69	94	78	28	96	37	12	10	46	35
-	100	92	84	18	80	36	11	23	27	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 100, size: 3
-	77	15	54	1	6	82	90	38	70	72
-	50	62	16	73	43	67	14	75	52	53
-	65	13	29	31	97	42	40	51	58	79
-	26	3	9	99	88	60	87	44	33	56
-	66	93	55	2	[31m19[0m	[31m91[0m	41	17	64	57
-	85	49	76	81	[31m8[0m	[31m20[0m	5	63	71	47
-	32	25	30	89	61	48	21	86	45	68
-	24	59	74	83	7	22	95	98	39	4
-	69	94	78	28	96	37	12	10	46	35
-	100	92	84	18	80	36	11	23	27	34
-After check is: 0, nTag = 0
-nDstNum, nSrcNum, nTag: 11, 100, 1
-x, y, dstX, dstY = 9,6,9,0
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 6, 0
-	77	50	65	26	66	85	32	24	69	100
-	15	62	13	3	93	49	25	59	94	92
-	54	16	29	9	55	76	30	74	78	84
-	1	73	31	99	2	81	89	83	28	18
-	6	43	97	88	19	8	61	7	96	80
-	82	67	42	60	91	20	48	22	37	36
-	90	14	40	87	41	5	21	95	12	11
-	38	75	51	44	17	63	86	98	10	23
-	70	52	58	33	64	71	45	39	46	27
-	72	53	79	56	57	47	68	4	35	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 100, size: 5
-	77	15	54	1	6	82	90	38	70	72
-	14	62	50	73	43	67	16	75	52	53
-	65	13	29	31	97	42	40	51	58	79
-	9	3	26	99	88	60	87	44	33	56
-	41	93	66	2	[31m19[0m	[31m91[0m	55	17	64	57
-	76	49	85	81	[31m8[0m	[31m20[0m	5	63	71	47
-	30	25	32	89	61	48	21	86	45	68
-	24	59	74	83	7	22	95	98	39	4
-	69	94	78	28	96	37	12	10	46	35
-	100	92	11	18	80	36	84	23	27	34
-After check is: 1, nTag = 1
-Binggo! bSubFind: 1, nSum: 718
-	77	15	54	1	6	82	90	38	70	72
-	14	62	50	73	43	67	16	75	52	53
-	65	13	29	31	97	42	40	51	58	79
-	9	3	26	99	88	60	87	44	33	56
-	41	93	66	2	[31m19[0m	[31m91[0m	55	17	64	57
-	76	49	85	81	[31m8[0m	[31m20[0m	5	63	71	47
-	30	25	32	89	61	48	21	86	45	68
-	24	59	74	83	7	22	95	98	39	4
-	69	94	78	28	96	37	12	10	46	35
-	100	92	11	18	80	36	84	23	27	34
-sum1, sum2, sum = 505, 718, 505
-After all check is: 0
-End a circle, index: 9, bSubFind: 1
-swap:(9, 0)-->(2, 7)
-after swap: 
-	77	15	54	1	6	82	90	38	70	72
-	14	62	50	73	43	67	16	75	52	53
-	65	13	29	31	97	42	40	100	58	79
-	9	3	26	99	88	60	87	44	33	56
-	41	93	66	2	[31m19[0m	[31m91[0m	55	17	64	57
-	76	49	85	81	[31m8[0m	[31m20[0m	5	63	71	47
-	30	25	32	89	61	48	21	86	45	68
-	24	59	74	83	7	22	95	98	39	4
-	69	94	78	28	96	37	12	10	46	35
-	51	92	11	18	80	36	84	23	27	34
-nDstNum, nSrcNum, nTag: 51, 100, 0
-x, y, dstX, dstY = 9,0,2,7
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 9, 2
-	77	15	54	1	6	82	90	38	70	72
-	14	62	50	73	43	67	16	75	52	53
-	65	13	29	31	97	42	40	100	58	79
-	9	3	26	99	88	60	87	44	33	56
-	41	93	66	2	19	91	55	17	64	57
-	76	49	85	81	8	20	5	63	71	47
-	30	25	32	89	61	48	21	86	45	68
-	24	59	74	83	7	22	95	98	39	4
-	69	94	78	28	96	37	12	10	46	35
-	51	92	11	18	80	36	84	23	27	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 100, size: 3
-	77	15	54	1	6	82	90	38	70	72
-	14	62	50	18	97	42	16	75	52	79
-	65	13	29	31	80	36	40	100	58	53
-	9	3	26	99	88	60	87	44	33	56
-	41	93	66	2	[31m19[0m	[31m91[0m	55	17	64	57
-	76	49	85	81	[31m8[0m	[31m20[0m	5	63	71	47
-	30	25	32	89	61	48	21	86	45	68
-	24	59	74	83	7	22	95	98	39	4
-	69	94	78	28	96	37	12	10	46	35
-	51	92	11	73	43	67	84	23	27	34
-After check is: 0, nTag = 0
-nDstNum, nSrcNum, nTag: 51, 100, 1
-x, y, dstX, dstY = 9,0,2,7
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 0, 7
-	77	14	65	9	41	76	30	24	69	51
-	15	62	13	3	93	49	25	59	94	92
-	54	50	29	26	66	85	32	74	78	11
-	1	18	31	99	2	81	89	83	28	73
-	6	97	80	88	19	8	61	7	96	43
-	82	42	36	60	91	20	48	22	37	67
-	90	16	40	87	55	5	21	95	12	84
-	38	75	100	44	17	63	86	98	10	23
-	70	52	58	33	64	71	45	39	46	27
-	72	79	53	56	57	47	68	4	35	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 100, size: 2
-	77	15	54	1	6	82	90	38	70	72
-	79	62	50	18	97	42	16	14	52	75
-	65	13	29	31	80	36	40	100	58	53
-	9	3	26	99	88	60	87	56	33	44
-	41	93	66	2	[31m19[0m	[31m91[0m	55	17	64	57
-	76	49	85	81	[31m8[0m	[31m20[0m	5	63	71	47
-	68	25	32	89	61	48	21	86	45	30
-	4	59	74	83	7	22	95	98	39	24
-	35	94	78	28	96	37	12	10	46	69
-	51	92	11	73	43	67	84	23	27	34
-After check is: 1, nTag = 1
-Binggo! bSubFind: 1, nSum: 718
-	77	15	54	1	6	82	90	38	70	72
-	79	62	50	18	97	42	16	14	52	75
-	65	13	29	31	80	36	40	100	58	53
-	9	3	26	99	88	60	87	56	33	44
-	41	93	66	2	[31m19[0m	[31m91[0m	55	17	64	57
-	76	49	85	81	[31m8[0m	[31m20[0m	5	63	71	47
-	68	25	32	89	61	48	21	86	45	30
-	4	59	74	83	7	22	95	98	39	24
-	35	94	78	28	96	37	12	10	46	69
-	51	92	11	73	43	67	84	23	27	34
-sum1, sum2, sum = 505, 718, 505
-After all check is: 0
-End a circle, index: 2, bSubFind: 1
-swap:(2, 7)-->(1, 8)
-after swap: 
-	77	15	54	1	6	82	90	38	70	72
-	79	62	50	18	97	42	16	14	100	75
-	65	13	29	31	80	36	40	52	58	53
-	9	3	26	99	88	60	87	56	33	44
-	41	93	66	2	[31m19[0m	[31m91[0m	55	17	64	57
-	76	49	85	81	[31m8[0m	[31m20[0m	5	63	71	47
-	68	25	32	89	61	48	21	86	45	30
-	4	59	74	83	7	22	95	98	39	24
-	35	94	78	28	96	37	12	10	46	69
-	51	92	11	73	43	67	84	23	27	34
-nDstNum, nSrcNum, nTag: 52, 100, 0
-x, y, dstX, dstY = 2,7,1,8
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 2, 1
-	77	15	54	1	6	82	90	38	70	72
-	79	62	50	18	97	42	16	14	100	75
-	65	13	29	31	80	36	40	52	58	53
-	9	3	26	99	88	60	87	56	33	44
-	41	93	66	2	19	91	55	17	64	57
-	76	49	85	81	8	20	5	63	71	47
-	68	25	32	89	61	48	21	86	45	30
-	4	59	74	83	7	22	95	98	39	24
-	35	94	78	28	96	37	12	10	46	69
-	51	92	11	73	43	67	84	23	27	34
-FindResult: 0, nRrcNum: 100, size: 0
-	77	15	54	1	6	82	90	38	70	72
-	79	62	50	18	97	42	16	14	100	75
-	65	13	29	31	80	36	40	52	58	53
-	9	3	26	99	88	60	87	56	33	44
-	41	93	66	2	[31m19[0m	[31m91[0m	55	17	64	57
-	76	49	85	81	[31m8[0m	[31m20[0m	5	63	71	47
-	68	25	32	89	61	48	21	86	45	30
-	4	59	74	83	7	22	95	98	39	24
-	35	94	78	28	96	37	12	10	46	69
-	51	92	11	73	43	67	84	23	27	34
-After check is: 0, nTag = 0
-100 not find, and next
-swap:(3, 3)-->(1, 8)
-after swap: 
-	77	15	54	1	6	82	90	38	70	72
-	79	62	50	18	97	42	16	14	99	75
-	65	13	29	31	80	36	40	100	58	53
-	9	3	26	52	88	60	87	56	33	44
-	41	93	66	2	[31m19[0m	[31m91[0m	55	17	64	57
-	76	49	85	81	[31m8[0m	[31m20[0m	5	63	71	47
-	68	25	32	89	61	48	21	86	45	30
-	4	59	74	83	7	22	95	98	39	24
-	35	94	78	28	96	37	12	10	46	69
-	51	92	11	73	43	67	84	23	27	34
-nDstNum, nSrcNum, nTag: 52, 99, 0
-x, y, dstX, dstY = 3,3,1,8
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 3, 1
-	77	15	54	1	6	82	90	38	70	72
-	79	62	50	18	97	42	16	14	99	75
-	65	13	29	31	80	36	40	100	58	53
-	9	3	26	52	88	60	87	56	33	44
-	41	93	66	2	19	91	55	17	64	57
-	76	49	85	81	8	20	5	63	71	47
-	68	25	32	89	61	48	21	86	45	30
-	4	59	74	83	7	22	95	98	39	24
-	35	94	78	28	96	37	12	10	46	69
-	51	92	11	73	43	67	84	23	27	34
-FindResult: 0, nRrcNum: 99, size: 0
-	77	15	54	1	6	82	90	38	70	72
-	79	62	50	18	97	42	16	14	99	75
-	65	13	29	31	80	36	40	100	58	53
-	9	3	26	52	88	60	87	56	33	44
-	41	93	66	2	[31m19[0m	[31m91[0m	55	17	64	57
-	76	49	85	81	[31m8[0m	[31m20[0m	5	63	71	47
-	68	25	32	89	61	48	21	86	45	30
-	4	59	74	83	7	22	95	98	39	24
-	35	94	78	28	96	37	12	10	46	69
-	51	92	11	73	43	67	84	23	27	34
-After check is: 0, nTag = 0
-99 not find, and next
-swap:(7, 7)-->(1, 8)
-after swap: 
-	77	15	54	1	6	82	90	38	70	72
-	79	62	50	18	97	42	16	14	98	75
-	65	13	29	31	80	36	40	100	58	53
-	9	3	26	99	88	60	87	56	33	44
-	41	93	66	2	[31m19[0m	[31m91[0m	55	17	64	57
-	76	49	85	81	[31m8[0m	[31m20[0m	5	63	71	47
-	68	25	32	89	61	48	21	86	45	30
-	4	59	74	83	7	22	95	52	39	24
-	35	94	78	28	96	37	12	10	46	69
-	51	92	11	73	43	67	84	23	27	34
-nDstNum, nSrcNum, nTag: 52, 98, 0
-x, y, dstX, dstY = 7,7,1,8
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 7, 1
-	77	15	54	1	6	82	90	38	70	72
-	79	62	50	18	97	42	16	14	98	75
-	65	13	29	31	80	36	40	100	58	53
-	9	3	26	99	88	60	87	56	33	44
-	41	93	66	2	19	91	55	17	64	57
-	76	49	85	81	8	20	5	63	71	47
-	68	25	32	89	61	48	21	86	45	30
-	4	59	74	83	7	22	95	52	39	24
-	35	94	78	28	96	37	12	10	46	69
-	51	92	11	73	43	67	84	23	27	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 98, size: 6
-	77	15	54	1	6	82	90	38	70	72
-	4	62	78	28	96	42	12	10	98	75
-	65	13	29	31	80	36	40	100	58	53
-	9	3	26	99	88	60	87	56	33	44
-	41	93	66	2	[31m19[0m	[31m91[0m	55	17	64	57
-	76	49	85	81	[31m8[0m	[31m20[0m	5	63	71	47
-	68	25	32	89	61	48	21	86	45	30
-	35	59	74	83	7	37	95	52	39	24
-	79	94	50	18	97	22	16	14	46	69
-	51	92	11	73	43	67	84	23	27	34
-After check is: 0, nTag = 0
-nDstNum, nSrcNum, nTag: 52, 98, 1
-x, y, dstX, dstY = 7,7,1,8
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 7, 8
-	77	4	65	9	41	76	68	35	79	51
-	15	62	13	3	93	49	25	59	94	92
-	54	78	29	26	66	85	32	74	50	11
-	1	28	31	99	2	81	89	83	18	73
-	6	96	80	88	19	8	61	7	97	43
-	82	42	36	60	91	20	48	37	22	67
-	90	12	40	87	55	5	21	95	16	84
-	38	10	100	56	17	63	86	52	14	23
-	70	98	58	33	64	71	45	39	46	27
-	72	75	53	44	57	47	30	24	69	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 98, size: 3
-	77	38	54	1	6	82	90	15	70	72
-	4	62	78	28	96	42	12	10	98	75
-	65	13	29	31	80	36	40	100	58	53
-	9	3	26	99	88	60	87	56	33	44
-	41	93	66	2	[31m19[0m	[31m91[0m	55	17	64	57
-	76	71	85	81	[31m8[0m	[31m20[0m	5	63	49	47
-	68	45	32	89	61	48	21	86	25	30
-	35	59	74	83	7	37	95	52	39	24
-	79	94	50	18	97	22	16	14	46	69
-	51	27	11	73	43	67	84	92	23	34
-After check is: 1, nTag = 1
-Binggo! bSubFind: 1, nSum: 764
-	77	38	54	1	6	82	90	15	70	72
-	4	62	78	28	96	42	12	10	98	75
-	65	13	29	31	80	36	40	100	58	53
-	9	3	26	99	88	60	87	56	33	44
-	41	93	66	2	[31m19[0m	[31m91[0m	55	17	64	57
-	76	71	85	81	[31m8[0m	[31m20[0m	5	63	49	47
-	68	45	32	89	61	48	21	86	25	30
-	35	59	74	83	7	37	95	52	39	24
-	79	94	50	18	97	22	16	14	46	69
-	51	27	11	73	43	67	84	92	23	34
-sum1, sum2, sum = 459, 764, 505
-After all check is: 0
-End a circle, index: 1, bSubFind: 1
-swap:(2, 7)-->(0, 9)
-after swap: 
-	77	38	54	1	6	82	90	15	70	100
-	4	62	78	28	96	42	12	10	98	75
-	65	13	29	31	80	36	40	72	58	53
-	9	3	26	99	88	60	87	56	33	44
-	41	93	66	2	[31m19[0m	[31m91[0m	55	17	64	57
-	76	71	85	81	[31m8[0m	[31m20[0m	5	63	49	47
-	68	45	32	89	61	48	21	86	25	30
-	35	59	74	83	7	37	95	52	39	24
-	79	94	50	18	97	22	16	14	46	69
-	51	27	11	73	43	67	84	92	23	34
-nDstNum, nSrcNum, nTag: 72, 100, 0
-x, y, dstX, dstY = 2,7,0,9
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 2, 0
-	77	38	54	1	6	82	90	15	70	100
-	4	62	78	28	96	42	12	10	98	75
-	65	13	29	31	80	36	40	72	58	53
-	9	3	26	99	88	60	87	56	33	44
-	41	93	66	2	19	91	55	17	64	57
-	76	71	85	81	8	20	5	63	49	47
-	68	45	32	89	61	48	21	86	25	30
-	35	59	74	83	7	37	95	52	39	24
-	79	94	50	18	97	22	16	14	46	69
-	51	27	11	73	43	67	84	92	23	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 100, size: 4
-	77	38	11	1	6	82	40	92	58	100
-	4	62	78	28	96	42	12	10	98	75
-	65	27	29	73	43	36	84	72	23	53
-	9	3	26	99	88	60	87	56	33	44
-	41	93	66	2	[31m19[0m	[31m91[0m	55	17	64	57
-	76	71	85	81	[31m8[0m	[31m20[0m	5	63	49	47
-	68	45	32	89	61	48	21	86	25	30
-	35	59	74	83	7	37	95	52	39	24
-	79	94	50	18	97	22	16	14	46	69
-	51	13	54	31	80	67	90	15	70	34
-After check is: 0, nTag = 0
-nDstNum, nSrcNum, nTag: 72, 100, 1
-x, y, dstX, dstY = 2,7,0,9
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 7, 9
-	77	4	65	9	41	76	68	35	79	51
-	38	62	27	3	93	71	45	59	94	13
-	11	78	29	26	66	85	32	74	50	54
-	1	28	73	99	2	81	89	83	18	31
-	6	96	43	88	19	8	61	7	97	80
-	82	42	36	60	91	20	48	37	22	67
-	40	12	84	87	55	5	21	95	16	90
-	92	10	72	56	17	63	86	52	14	15
-	58	98	23	33	64	49	25	39	46	70
-	100	75	53	44	57	47	30	24	69	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 100, size: 4
-	77	38	11	1	6	82	40	92	58	100
-	4	62	78	28	96	42	12	10	98	75
-	65	27	29	73	43	36	84	72	23	53
-	9	3	56	99	88	60	87	26	33	44
-	41	93	57	2	[31m19[0m	[31m91[0m	55	17	64	66
-	76	71	47	81	[31m8[0m	[31m20[0m	5	85	49	63
-	68	45	30	89	61	48	21	86	25	32
-	35	59	74	83	7	37	95	52	39	24
-	79	94	69	18	97	22	16	50	46	14
-	51	13	54	31	80	67	90	15	70	34
-After check is: 1, nTag = 1
-Binggo! bSubFind: 1, nSum: 764
-	77	38	11	1	6	82	40	92	58	100
-	4	62	78	28	96	42	12	10	98	75
-	65	27	29	73	43	36	84	72	23	53
-	9	3	56	99	88	60	87	26	33	44
-	41	93	57	2	[31m19[0m	[31m91[0m	55	17	64	66
-	76	71	47	81	[31m8[0m	[31m20[0m	5	85	49	63
-	68	45	30	89	61	48	21	86	25	32
-	35	59	74	83	7	37	95	52	39	24
-	79	94	69	18	97	22	16	50	46	14
-	51	13	54	31	80	67	90	15	70	34
-sum1, sum2, sum = 459, 764, 505
-After all check is: 0
-End a circle, index: 0, bSubFind: 1
-swap:(0, 9)-->(7, 2)
-after swap: 
-	77	38	11	1	6	82	40	92	58	74
-	4	62	78	28	96	42	12	10	98	75
-	65	27	29	73	43	36	84	72	23	53
-	9	3	56	99	88	60	87	26	33	44
-	41	93	57	2	[31m19[0m	[31m91[0m	55	17	64	66
-	76	71	47	81	[31m8[0m	[31m20[0m	5	85	49	63
-	68	45	30	89	61	48	21	86	25	32
-	35	59	100	83	7	37	95	52	39	24
-	79	94	69	18	97	22	16	50	46	14
-	51	13	54	31	80	67	90	15	70	34
-nDstNum, nSrcNum, nTag: 74, 100, 0
-x, y, dstX, dstY = 0,9,7,2
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 0, 7
-	77	38	11	1	6	82	40	92	58	74
-	4	62	78	28	96	42	12	10	98	75
-	65	27	29	73	43	36	84	72	23	53
-	9	3	56	99	88	60	87	26	33	44
-	41	93	57	2	19	91	55	17	64	66
-	76	71	47	81	8	20	5	85	49	63
-	68	45	30	89	61	48	21	86	25	32
-	35	59	100	83	7	37	95	52	39	24
-	79	94	69	18	97	22	16	50	46	14
-	51	13	54	31	80	67	90	15	70	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 100, size: 6
-	77	38	11	73	6	36	40	92	58	74
-	4	62	78	28	96	42	12	10	98	75
-	35	59	29	83	43	37	84	72	39	24
-	9	3	56	99	88	60	87	26	33	44
-	41	93	57	2	[31m19[0m	[31m91[0m	55	17	64	66
-	76	71	47	81	[31m8[0m	[31m20[0m	5	85	49	63
-	68	45	30	89	61	48	21	86	25	32
-	65	27	100	1	7	82	95	52	23	53
-	79	94	69	18	97	22	16	50	46	14
-	51	13	54	31	80	67	90	15	70	34
-After check is: 0, nTag = 0
-nDstNum, nSrcNum, nTag: 74, 100, 1
-x, y, dstX, dstY = 0,9,7,2
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 9, 2
-	77	4	35	9	41	76	68	65	79	51
-	38	62	59	3	93	71	45	27	94	13
-	11	78	29	56	57	47	30	100	69	54
-	73	28	83	99	2	81	89	1	18	31
-	6	96	43	88	19	8	61	7	97	80
-	36	42	37	60	91	20	48	82	22	67
-	40	12	84	87	55	5	21	95	16	90
-	92	10	72	26	17	85	86	52	50	15
-	58	98	39	33	64	49	25	23	46	70
-	74	75	24	44	66	63	32	53	14	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 100, size: 3
-	77	38	11	73	6	36	40	92	58	74
-	4	62	78	28	96	42	12	10	98	75
-	35	59	29	83	43	37	84	72	39	24
-	56	3	44	99	88	60	87	26	33	9
-	57	93	41	2	[31m19[0m	[31m91[0m	55	17	64	66
-	63	71	47	81	[31m8[0m	[31m20[0m	5	85	49	76
-	30	45	32	89	61	48	21	86	25	68
-	53	27	100	1	7	82	95	52	23	65
-	79	94	69	18	97	22	16	50	46	14
-	51	13	54	31	80	67	90	15	70	34
-After check is: 1, nTag = 1
-Binggo! bSubFind: 1, nSum: 764
-	77	38	11	73	6	36	40	92	58	74
-	4	62	78	28	96	42	12	10	98	75
-	35	59	29	83	43	37	84	72	39	24
-	56	3	44	99	88	60	87	26	33	9
-	57	93	41	2	[31m19[0m	[31m91[0m	55	17	64	66
-	63	71	47	81	[31m8[0m	[31m20[0m	5	85	49	76
-	30	45	32	89	61	48	21	86	25	68
-	53	27	100	1	7	82	95	52	23	65
-	79	94	69	18	97	22	16	50	46	14
-	51	13	54	31	80	67	90	15	70	34
-sum1, sum2, sum = 459, 764, 505
-After all check is: 0
-End a circle, index: 7, bSubFind: 1
-swap:(7, 2)-->(3, 6)
-after swap: 
-	77	38	11	73	6	36	40	92	58	74
-	4	62	78	28	96	42	12	10	98	75
-	35	59	29	83	43	37	84	72	39	24
-	56	3	44	99	88	60	100	26	33	9
-	57	93	41	2	[31m19[0m	[31m91[0m	55	17	64	66
-	63	71	47	81	[31m8[0m	[31m20[0m	5	85	49	76
-	30	45	32	89	61	48	21	86	25	68
-	53	27	87	1	7	82	95	52	23	65
-	79	94	69	18	97	22	16	50	46	14
-	51	13	54	31	80	67	90	15	70	34
-nDstNum, nSrcNum, nTag: 87, 100, 0
-x, y, dstX, dstY = 7,2,3,6
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 7, 3
-	77	38	11	73	6	36	40	92	58	74
-	4	62	78	28	96	42	12	10	98	75
-	35	59	29	83	43	37	84	72	39	24
-	56	3	44	99	88	60	100	26	33	9
-	57	93	41	2	19	91	55	17	64	66
-	63	71	47	81	8	20	5	85	49	76
-	30	45	32	89	61	48	21	86	25	68
-	53	27	87	1	7	82	95	52	23	65
-	79	94	69	18	97	22	16	50	46	14
-	51	13	54	31	80	67	90	15	70	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 100, size: 4
-	77	38	11	73	6	36	40	92	58	74
-	4	62	78	28	96	42	12	10	98	75
-	35	59	29	83	43	37	84	72	39	24
-	56	3	44	99	7	82	100	26	23	65
-	57	93	41	2	[31m19[0m	[31m91[0m	55	17	64	66
-	63	71	47	81	[31m8[0m	[31m20[0m	5	85	49	76
-	30	45	32	89	61	48	21	86	25	68
-	53	27	87	1	88	60	95	52	33	9
-	79	94	69	18	97	22	16	50	46	14
-	51	13	54	31	80	67	90	15	70	34
-After check is: 0, nTag = 0
-nDstNum, nSrcNum, nTag: 87, 100, 1
-x, y, dstX, dstY = 7,2,3,6
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 2, 6
-	77	4	35	56	57	63	30	53	79	51
-	38	62	59	3	93	71	45	27	94	13
-	11	78	29	44	41	47	32	87	69	54
-	73	28	83	99	2	81	89	1	18	31
-	6	96	43	7	19	8	61	88	97	80
-	36	42	37	82	91	20	48	60	22	67
-	40	12	84	100	55	5	21	95	16	90
-	92	10	72	26	17	85	86	52	50	15
-	58	98	39	23	64	49	25	33	46	70
-	74	75	24	65	66	76	68	9	14	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 100, size: 3
-	77	40	11	73	6	36	38	92	58	74
-	4	62	78	28	96	42	12	10	98	75
-	35	59	29	83	43	37	84	72	39	24
-	56	3	44	99	7	82	100	26	23	65
-	57	93	41	2	[31m19[0m	[31m91[0m	55	17	64	66
-	63	5	47	81	[31m8[0m	[31m20[0m	71	85	49	76
-	30	32	45	89	61	48	21	86	25	68
-	53	27	87	1	88	60	95	52	33	9
-	79	94	69	18	97	22	16	50	46	14
-	51	90	54	31	80	67	13	15	70	34
-After check is: 1, nTag = 1
-Binggo! bSubFind: 1, nSum: 764
-	77	40	11	73	6	36	38	92	58	74
-	4	62	78	28	96	42	12	10	98	75
-	35	59	29	83	43	37	84	72	39	24
-	56	3	44	99	7	82	100	26	23	65
-	57	93	41	2	[31m19[0m	[31m91[0m	55	17	64	66
-	63	5	47	81	[31m8[0m	[31m20[0m	71	85	49	76
-	30	32	45	89	61	48	21	86	25	68
-	53	27	87	1	88	60	95	52	33	9
-	79	94	69	18	97	22	16	50	46	14
-	51	90	54	31	80	67	13	15	70	34
-sum1, sum2, sum = 459, 764, 505
-After all check is: 0
-End a circle, index: 3, bSubFind: 1
-swap:(3, 6)-->(6, 3)
-after swap: 
-	77	40	11	73	6	36	38	92	58	74
-	4	62	78	28	96	42	12	10	98	75
-	35	59	29	83	43	37	84	72	39	24
-	56	3	44	99	7	82	89	26	23	65
-	57	93	41	2	[31m19[0m	[31m91[0m	55	17	64	66
-	63	5	47	81	[31m8[0m	[31m20[0m	71	85	49	76
-	30	32	45	100	61	48	21	86	25	68
-	53	27	87	1	88	60	95	52	33	9
-	79	94	69	18	97	22	16	50	46	14
-	51	90	54	31	80	67	13	15	70	34
-nDstNum, nSrcNum, nTag: 89, 100, 0
-x, y, dstX, dstY = 3,6,6,3
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 3, 6
-	77	40	11	73	6	36	38	92	58	74
-	4	62	78	28	96	42	12	10	98	75
-	35	59	29	83	43	37	84	72	39	24
-	56	3	44	99	7	82	89	26	23	65
-	57	93	41	2	19	91	55	17	64	66
-	63	5	47	81	8	20	71	85	49	76
-	30	32	45	100	61	48	21	86	25	68
-	53	27	87	1	88	60	95	52	33	9
-	79	94	69	18	97	22	16	50	46	14
-	51	90	54	31	80	67	13	15	70	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 100, size: 1
-	77	40	11	73	6	36	38	92	58	74
-	4	62	78	28	96	42	12	10	98	75
-	35	59	29	83	7	48	84	72	23	65
-	56	3	44	99	43	82	89	26	39	24
-	57	93	41	2	[31m19[0m	[31m91[0m	55	17	64	66
-	63	5	47	81	[31m8[0m	[31m20[0m	71	85	49	76
-	30	32	45	100	61	37	21	86	25	68
-	53	27	87	1	88	60	95	52	33	9
-	79	94	69	18	97	22	16	50	46	14
-	51	90	54	31	80	67	13	15	70	34
-After check is: 0, nTag = 0
-nDstNum, nSrcNum, nTag: 89, 100, 1
-x, y, dstX, dstY = 3,6,6,3
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 6, 3
-	77	4	35	56	57	63	30	53	79	51
-	40	62	59	3	93	5	32	27	94	90
-	11	78	29	44	41	47	45	87	69	54
-	73	28	83	99	2	81	100	1	18	31
-	6	96	7	43	19	8	61	88	97	80
-	36	42	48	82	91	20	37	60	22	67
-	38	12	84	89	55	71	21	95	16	13
-	92	10	72	26	17	85	86	52	50	15
-	58	98	23	39	64	49	25	33	46	70
-	74	75	65	24	66	76	68	9	14	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 100, size: 3
-	77	40	11	73	6	38	36	92	58	74
-	4	62	78	12	96	28	42	10	98	75
-	35	59	29	84	7	83	48	72	23	65
-	56	3	44	99	43	82	89	26	39	24
-	57	93	41	2	[31m19[0m	[31m91[0m	55	17	64	66
-	63	5	47	81	[31m8[0m	[31m20[0m	71	85	49	76
-	30	32	45	100	61	37	21	86	25	68
-	53	27	87	1	88	95	60	52	33	9
-	79	94	69	22	97	18	16	50	46	14
-	51	90	54	31	80	13	67	15	70	34
-After check is: 1, nTag = 1
-Binggo! bSubFind: 1, nSum: 764
-	77	40	11	73	6	38	36	92	58	74
-	4	62	78	12	96	28	42	10	98	75
-	35	59	29	84	7	83	48	72	23	65
-	56	3	44	99	43	82	89	26	39	24
-	57	93	41	2	[31m19[0m	[31m91[0m	55	17	64	66
-	63	5	47	81	[31m8[0m	[31m20[0m	71	85	49	76
-	30	32	45	100	61	37	21	86	25	68
-	53	27	87	1	88	95	60	52	33	9
-	79	94	69	22	97	18	16	50	46	14
-	51	90	54	31	80	13	67	15	70	34
-sum1, sum2, sum = 459, 764, 505
-After all check is: 0
-End a circle, index: 6, bSubFind: 1
-swap:(6, 3)-->(8, 1)
-after swap: 
-	77	40	11	73	6	38	36	92	58	74
-	4	62	78	12	96	28	42	10	98	75
-	35	59	29	84	7	83	48	72	23	65
-	56	3	44	99	43	82	89	26	39	24
-	57	93	41	2	[31m19[0m	[31m91[0m	55	17	64	66
-	63	5	47	81	[31m8[0m	[31m20[0m	71	85	49	76
-	30	32	45	94	61	37	21	86	25	68
-	53	27	87	1	88	95	60	52	33	9
-	79	100	69	22	97	18	16	50	46	14
-	51	90	54	31	80	13	67	15	70	34
-nDstNum, nSrcNum, nTag: 94, 100, 0
-x, y, dstX, dstY = 6,3,8,1
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 6, 8
-	77	40	11	73	6	38	36	92	58	74
-	4	62	78	12	96	28	42	10	98	75
-	35	59	29	84	7	83	48	72	23	65
-	56	3	44	99	43	82	89	26	39	24
-	57	93	41	2	19	91	55	17	64	66
-	63	5	47	81	8	20	71	85	49	76
-	30	32	45	94	61	37	21	86	25	68
-	53	27	87	1	88	95	60	52	33	9
-	79	100	69	22	97	18	16	50	46	14
-	51	90	54	31	80	13	67	15	70	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 100, size: 2
-	77	40	11	73	6	38	36	92	58	74
-	4	62	78	12	96	28	42	10	98	75
-	35	59	29	84	7	83	48	72	23	65
-	56	3	44	99	43	82	89	26	39	24
-	57	93	41	2	[31m19[0m	[31m91[0m	55	17	64	66
-	63	5	47	81	[31m8[0m	[31m20[0m	71	85	49	76
-	30	90	45	94	80	37	21	15	25	68
-	53	27	87	1	88	95	60	52	33	9
-	79	100	54	31	97	18	16	50	46	14
-	51	32	69	22	61	13	67	86	70	34
-After check is: 0, nTag = 0
-nDstNum, nSrcNum, nTag: 94, 100, 1
-x, y, dstX, dstY = 6,3,8,1
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 3, 1
-	77	4	35	56	57	63	30	53	79	51
-	40	62	59	3	93	5	90	27	100	32
-	11	78	29	44	41	47	45	87	54	69
-	73	12	84	99	2	81	94	1	31	22
-	6	96	7	43	19	8	80	88	97	61
-	38	28	83	82	91	20	37	95	18	13
-	36	42	48	89	55	71	21	60	16	67
-	92	10	72	26	17	85	15	52	50	86
-	58	98	23	39	64	49	25	33	46	70
-	74	75	65	24	66	76	68	9	14	34
-FindResult: 0, nRrcNum: 100, size: 0
-	77	40	11	73	6	38	36	92	58	74
-	4	62	78	12	96	28	42	10	98	75
-	35	59	29	84	7	83	48	72	23	65
-	56	3	44	99	43	82	89	26	39	24
-	57	93	41	2	[31m19[0m	[31m91[0m	55	17	64	66
-	63	5	47	81	[31m8[0m	[31m20[0m	71	85	49	76
-	30	90	45	94	80	37	21	15	25	68
-	53	27	87	1	88	95	60	52	33	9
-	79	100	54	31	97	18	16	50	46	14
-	51	32	69	22	61	13	67	86	70	34
-After check is: 0, nTag = 1
-100 not find, and next
-swap:(3, 3)-->(8, 1)
-after swap: 
-	77	40	11	73	6	38	36	92	58	74
-	4	62	78	12	96	28	42	10	98	75
-	35	59	29	84	7	83	48	72	23	65
-	56	3	44	94	43	82	89	26	39	24
-	57	93	41	2	[31m19[0m	[31m91[0m	55	17	64	66
-	63	5	47	81	[31m8[0m	[31m20[0m	71	85	49	76
-	30	32	45	100	61	37	21	86	25	68
-	53	27	87	1	88	95	60	52	33	9
-	79	99	69	22	97	18	16	50	46	14
-	51	90	54	31	80	13	67	15	70	34
-nDstNum, nSrcNum, nTag: 94, 99, 0
-x, y, dstX, dstY = 3,3,8,1
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 3, 8
-	77	40	11	73	6	38	36	92	58	74
-	4	62	78	12	96	28	42	10	98	75
-	35	59	29	84	7	83	48	72	23	65
-	56	3	44	94	43	82	89	26	39	24
-	57	93	41	2	19	91	55	17	64	66
-	63	5	47	81	8	20	71	85	49	76
-	30	32	45	100	61	37	21	86	25	68
-	53	27	87	1	88	95	60	52	33	9
-	79	99	69	22	97	18	16	50	46	14
-	51	90	54	31	80	13	67	15	70	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 99, size: 4
-	77	40	11	73	6	38	36	92	58	74
-	4	62	78	12	96	28	42	10	98	75
-	35	59	29	84	7	83	48	72	23	65
-	56	3	69	94	97	18	89	26	39	14
-	57	93	41	2	[31m19[0m	[31m91[0m	55	17	64	66
-	63	5	47	81	[31m8[0m	[31m20[0m	71	85	49	76
-	30	32	45	100	61	37	21	86	25	68
-	53	27	87	1	88	95	60	52	33	9
-	79	99	44	22	43	82	16	50	46	24
-	51	90	54	31	80	13	67	15	70	34
-After check is: 0, nTag = 0
-nDstNum, nSrcNum, nTag: 94, 99, 1
-x, y, dstX, dstY = 3,3,8,1
-vecElem.size: 8
-SubElem size:255
-nSrcIndex, nDstIndex: 3, 1
-	77	4	35	56	57	63	30	53	79	51
-	40	62	59	3	93	5	32	27	99	90
-	11	78	29	69	41	47	45	87	44	54
-	73	12	84	94	2	81	100	1	22	31
-	6	96	7	97	19	8	61	88	43	80
-	38	28	83	18	91	20	37	95	82	13
-	36	42	48	89	55	71	21	60	16	67
-	92	10	72	26	17	85	86	52	50	15
-	58	98	23	39	64	49	25	33	46	70
-	74	75	65	14	66	76	68	9	24	34
-I Find it at last!!!
-FindResult: 1, nRrcNum: 99, size: 4
-	77	40	11	92	6	38	36	73	58	74
-	4	62	78	10	96	28	42	12	98	75
-	35	59	29	84	7	83	48	72	23	65
-	56	3	69	94	97	18	89	26	39	14
-	57	17	41	2	[31m19[0m	[31m91[0m	55	93	64	66
-	63	81	47	85	[31m8[0m	[31m20[0m	71	5	49	76
-	30	86	45	100	61	37	21	32	25	68
-	53	27	87	1	88	95	60	52	33	9
-	79	99	44	22	43	82	16	50	46	24
-	51	31	54	15	80	13	67	90	70	34
-After check is: 1, nTag = 1
-Binggo! bSubFind: 1, nSum: 769
-	77	40	11	92	6	38	36	73	58	74
-	4	62	78	10	96	28	42	12	98	75
-	35	59	29	84	7	83	48	72	23	65
-	56	3	69	94	97	18	89	26	39	14
-	57	17	41	2	[31m19[0m	[31m91[0m	55	93	64	66
-	63	81	47	85	[31m8[0m	[31m20[0m	71	5	49	76
-	30	86	45	100	61	37	21	32	25	68
-	53	27	87	1	88	95	60	52	33	9
-	79	99	44	22	43	82	16	50	46	24
-	51	31	54	15	80	13	67	90	70	34
-sum1, sum2, sum = 454, 769, 505
-After all check is: 0
-End a circle, index: 8, bSubFind: 1
-Not Find the end!
-sum1, sum2, sum = 454, 769, 505
-After all check is: 0
