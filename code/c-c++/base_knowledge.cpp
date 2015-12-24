@@ -142,6 +142,26 @@ void testStrtoul()
 }
 
 ///////////////////////////////////////////////////////////
+//4.square bracket 
+void testSquareBracket()
+{
+	int ptr[3] = {1, 2, 3};
+	cout << "ptr[2] = " << ptr[2] << endl;
+	cout << "*(ptr + 2) = " << *(ptr+2) << endl;
+	cout << " *(2 + ptr) = " << *(2+ptr) << endl;
+	cout << " 2[ptr] = " << 2[ptr] << endl;
+}
+
+///////////////////////////////////////////////////////////
+//5.equal symbol
+// * it does'n effect!
+void testEqualSymbol()
+{
+	int a = 1;
+	int b = 2;
+	//cout << "a && b = " << a and b << endl;
+}
+///////////////////////////////////////////////////////////
 int main()
 {
 	//CB *b = new CB(1, 3);
@@ -163,6 +183,12 @@ int main()
 	}
 	printf("nCount = %d\n", nCount);*/
 	//3.
-	testStrtoul();
+	//testStrtoul();
+
+	// 4.
+	//testSquareBracket();
+
+	// 5.
+	testEqualSymbol();
 	return 0;
 }
