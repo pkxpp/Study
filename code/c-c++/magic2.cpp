@@ -149,25 +149,6 @@ int main()
 		for(int nTest = 0; nTest < testIgnore.size(); nTest++)
 			cout << testIgnore[nTest] << ", ";
 		cout << "end" << endl;
-		//test
-		//for(i=0;i<n;i++)
-		//{
-		//	for(j=0;j<n;j++)
-			//printf("%5d",a[i][j]);
-		//	printf("\t%d",a[i][j]);
-		//	printf("\n");
-		//}
-		//transfer_1(n);
-		//printf("After Transfer:\n");
-		//print_a(n);
-
-		//transfer_2(n);
-		//printf("After Transfer 2:\n");
-		//print_a(n);
-		//cout << "test check_simple satart: " << endl;
-		//check_simple(n);
-		//cout << "test check_simple end: " << endl;
-		//return 0;
 		
 		vector<int> vec;
 		//find_sub(a[1], a[2], n, 7, vec);
@@ -192,116 +173,7 @@ int main()
 			int c4 = a[xStart+1][yStart+1];
 			int x, y;
 			cout << "c1, c2, c3, c4 = " << c1 << ", " << c2 << ", " << c3 << ", " << c4 << endl;
-			/*
-			find_index(19, n, x, y);
-			cout << "19@ = " << x << ", " << y << endl;
-			vec.clear();
-			int arr1[256] = {0};
-			int arr2[256] = {0};
-			//x compute
-			int nCount1 = 0;
-			int nCount2 = 0;
-			int b[256][256] = {0};
-			for(int i = 0; i < n; i++)
-				for (int j = 0; j < n; j++)
-					b[i][j] = a[i][j];
-			swap_elem(xStart, yStart, x, y);
-			cout << "After swap: " << endl;
-			print_a(n);
-			cout << "compute test start " << endl;
-			vector<int> vecIgnore;
-			vecIgnore.push_back(4);
-			vecIgnore.push_back(5);
-			vector<int> vecCompute = compute_col(a[x], a[xStart], n, c1-19, 1, vecIgnore);
-			swap_vec(x, xStart, vecCompute, 0);
-			cout << "compute test end " << endl;
-			print_a(n);
-			cout << "After check is: " <<  check_simple(n) << endl;
-			print_a(n);
-			cout << "c1 col start... " << c1 << endl;
-		
-			equal_transfor(n, x, y, c1, xStart, yStart, 1, vecIgnore);
-			*/
-			//cout << "after col: " << endl;
-			//print_a(n);
-			//return 0;
 			
-			//c2
-			/*
-			cout << "c2 start..............." << endl;
-			find_index(91, n, x, y);
-			vecCompute.clear();
-			swap_elem(xStart, yStart+1, x, y);
-			vector<int> vecElem;
-			for( int i=0; i<n; ++i )
-			{
-				if(i != x && i != xStart)
-					vecElem.push_back(i);
-			};
-			vector<vector<int> > SubElem = SubSet( vecElem);
-			cout << "................................" << endl;
-			bak_array(n, a);
-			bool bFind = false;
-			//vector<int> vecIgnore;
-			//vecIgnore.push_back(4);
-			//vecIgnore.push_back(5);
-			for( int i=0; i<static_cast<int>(SubElem.size()); ++i )
-			{
-				//cout << "{ ";
-				get_bak(n, 0);
-				int nSubSize = static_cast<int>(SubElem[i].size());
-				int n1 = x;
-				int n2 = 0;
-				cout << "new sub set: " << nSubSize << endl;
-				vecCompute.clear();
-				for( int j=0; j<static_cast<int>(SubElem[i].size()); ++j )
-				{	
-					int nIndex = SubElem[i][j];
-					n2 = nIndex;
-					vecCompute.clear();
-					cout << "n1, n2, check: " << n1 << ", " << n2 << ", " << check_simple(n) << endl;
-					if (j == 0 || n1 == x){
-						vecCompute = compute_col(a[x], a[n2], n, c2-91, 1, vecIgnore);
-					}
-					//else if(j == nSubSize - 1)
-					//	vecCompute = compute_col(a[nIndex], a[xStart], n, c2-91, 1);
-					else
-						vecCompute = compute_col(a[n1], a[n2], n, c2-91, 0, vecIgnore);
-			
-					if (vecCompute.size() > 0 ){
-						swap_vec(n1, n2, vecCompute, 0);
-						n1 = n2;
-						break;
-					}
-					//cout << SubElem[i][j];
-					//if( (j!=static_cast<int>(SubElem[i].size()-1)) )
-					//	cout << ", ";
-				}
-				//cout << " }";
-				//cout << endl;
-				vecCompute.clear();
-				vecCompute = compute_col(a[n2], a[xStart], n, c2-91, 1, vecIgnore);
-				if (vecCompute.size() > 0 ){
-					swap_vec(n2, xStart, vecCompute, 0);
-					cout << "I Find it at last!!!" << endl;
-					bFind = true;
-					break;
-				}
-			};
-			cout << "Find: " << bFind << ", c2: " << vecCompute.size() << endl;
-			print_a(n);
-			cout << "After check is: " <<  check_simple(n) << endl;
-			cout << "................................" << endl;
-			equal_transfor(n, x, y, c2, xStart, yStart+1, 1, vecIgnore);
-			*/
-
-			//cout << "x, y, c2: " << x << ", " << y << ", " << c2 << endl;
-			//vecCompute = compute_col(a[x], a[xStart], n, c2-91, 1);
-			//swap_vec(x, xStart, vecCompute);
-			//cout << "c2: " << vecCompute.size() << endl;
-			//print_a(n);
-			//cout << "After check is: " <<  check_simple(n) << endl;
-
 			vector<int> vecIgnore;
 			vecIgnore.push_back(4);
 			vecIgnore.push_back(5);
@@ -310,14 +182,14 @@ int main()
 			exchange_elem(n, 19, xStart, yStart, 0, vecIgnore);
 			//c2
 			cout << "c2 start........................" << endl;
-			exchange_elem(n, 91, xStart, yStart+1, 0, vecIgnore);
+			//exchange_elem(n, 91, xStart, yStart+1, 0, vecIgnore);
 			//c3
 			cout << "c3 start........................" << endl;
-			exchange_elem(n, 8, xStart+1, yStart, 0, vecIgnore);
+			//exchange_elem(n, 8, xStart+1, yStart, 0, vecIgnore);
 
 			//c4
 			cout << "c4 start........................" << endl;
-			exchange_elem(n, 20, xStart+1, yStart+1, 0, vecIgnore);
+			//exchange_elem(n, 20, xStart+1, yStart+1, 0, vecIgnore);
 			cout << "After all check is: " <<  check(n) << endl;
 			
 			//
@@ -328,28 +200,7 @@ int main()
 			//vecIgnore.push_back();
 			cout << "Additon start......... " << endl;
 			g_nIgnoreTag = 1;
-			/*
-			for(int k = 0; k < n; k++){
-				//exchange_elem(n, a[0][n-1]-2, 0, n-1, 0, vecIgnore);
-				for(int i = 0; i < n; i++)
-					for (int j = 0; j < n; j++)
-						a[i][j] = b[i][j];
-				cout << "Addition: " << k << ", a[][] = " << endl;
-				print_a(n);
-				bool bRet = false;
-				bRet = exchange_elem(n, a[k][n-k-1]-2, k, n-k-1, 0, vecIgnore);
-				if (bRet)	
-				{
-					cout << "The End and result is " << bRet << endl;
-					break;
-				}
-			}
-			cout << "After all check is: " <<  check(n) << endl;
-			// another
-			for(int i = 0; i < n; i++)
-				for (int j = 0; j < n; j++)
-					b[i][j] = a[i][j];
-			*/
+			
 			vector<Position> vecPos;
 			cout << "start process positive diagnol ... " << endl;
 			process_diagnol(0, n, vecPos);
@@ -357,101 +208,6 @@ int main()
 			process_diagnol(1, n, vecPos);
 			cout << "After all check is: " <<  check(n) << endl;
 			//vecIgnore.push_back();
-			/*cout << "Addition2 start......... " << endl;
-			g_nIgnoreTag = 1;
-			int nFindNum = 0;
-			for(int k = 0; k < n; ){
-				if (k == 4 || k == 5)
-				{
-					k++;
-					continue;
-				}
-				for(int i = 0; i < n; i++)
-					for (int j = 0; j < n; j++)
-						a[i][j] = b[i][j];
-				int nSum = 0;
-				for(int i = 0; i < n; i++)
-					nSum += a[i][i];
-				cout << "Addition2: " << k << ", nSum=" << nSum << ", a[][] = " << endl;
-				print_a(n);
-				bool bRet = false;
-				if (nSum - a[k][k] > 100){
-					//while(1)
-					{
-						if(100-k > nFindNum)
-						{
-							nFindNum = 100-k;
-						}
-						else
-							nFindNum -= 1;
-					}
-				}
-				while(1){
-					if(nFindNum != 19 && nFindNum != 91 && nFindNum != 8 && nFindNum != 20)
-						break;
-					else
-						nFindNum--;
-				}
-				bRet = exchange_elem(n, nFindNum, k, k, 0, vecIgnore);
-				if (bRet && nFindNum < 100)	
-				{
-					cout << "The End and result is " << bRet << endl;
-					break;
-				}
-				k++;
-			}
-			cout << "After all check is: " <<  check(n) << endl;*/
-			// another
-			/*for(int i = 0; i < n; i++)
-				for (int j = 0; j < n; j++)
-					b[i][j] = a[i][j];
-			//vecIgnore.push_back();
-			cout << "Additon3 start......... " << endl;
-			g_nIgnoreTag = 1;
-			for(int k = 0; k < n; k++){
-				//exchange_elem(n, a[0][n-1]-2, 0, n-1, 0, vecIgnore);
-				for(int i = 0; i < n; i++)
-					for (int j = 0; j < n; j++)
-						a[i][j] = b[i][j];
-				cout << "Addition3: " << k << ", a[][] = " << endl;
-				print_a(n);
-				bool bRet = false;
-				bRet = exchange_elem(n, a[k][n-k-1]-2, k, n-k-1, 0, vecIgnore);
-				if (bRet)	
-				{
-					cout << "The End and result is " << bRet << endl;
-					break;
-				}
-			}
-			cout << "After all check is: " <<  check(n) << endl;*/
-
-
-			/*for(int k = 0; k < n; k++){
-				//arr1
-				if (k != x && (k+x) != n-1)
-				{
-					arr1[nCount1] = a[x][k];
-					nCount1++;
-				}
-				//arr2
-				if (k != xStart && (k+xStart) != n-1)
-				{
-					arr2[nCount2] = a[xStart][k];
-					nCount2++;
-				}
-			}	
-			cout << "nCount1, nCount2: " << nCount1 << ", " << nCount2 << endl;
-			find_sub(arr1, arr2, nCount1, c1-19, vec);
-			
-			if (vec.size() > 0 )
-			{
-				printf("After find_sub: \n");
-				for(int k = 0; k < vec.size(); k++)
-					cout << vec[k] << ", ";
-				cout << endl;
-			}
-			else	
-				printf("Not Find result\n");*/
 		} 
 	}
 	//
@@ -505,10 +261,13 @@ vector<int> compute_col(int arrA[], int arrB[], int n, int sub, bool tag, vector
 		}
 	}
 	//cout << endl;
-	//cout << "coupute_col, size: " << vecRet.size() << ", result is: ";
-	//for (int i = 0; i < vecRet.size(); i++)
-	//	cout << vecRet[i] << ", ";
-	//cout << endl;
+	// print the swpa index
+	if (vec.size() > 0) {
+		cout << "coupute_col, size: " << vec.size() << ", result is: ";
+		for (int i = 0; i < vecRet.size(); i++)
+			cout << vecRet[i] << ", ";
+		cout << endl;
+	}
 	return vecRet;
 }
 
@@ -532,44 +291,6 @@ void swap_vec(int x1, int x2, vector<int> vec, int nTag)
 		p[x2][index] = nTemp;
 	}
 }
-/*
-int cmp_arr(int n, int srcX, int srcY, int dstX, int dstY)
-{
-	
-			vec.clear();
-			int arr1[256] = {0};
-			int arr2[256] = {0};
-			//x compute
-			int nCount1 = 0;
-			int nCount2 = 0;
-			for(int k = 0; k < n; k++){
-				//arr1
-				if (k != x && (k+x) != n-1)
-				{
-					arr1[nCount1] = a[x][k];
-					nCount1++;
-				}
-				//arr2
-				if (k != xStart && (k+xStart) != n-1)
-				{
-					arr2[nCount2] = a[xStart][k];
-					nCount2++;
-				}
-			}	
-			cout << "nCount1, nCount2: " << nCount1 << ", " << nCount2 << endl;
-			find_sub(arr1, arr2, nCount1, c1-19, vec);
-			
-			if (vec.size() > 0 )
-			{
-				printf("After find_sub: \n");
-				for(int k = 0; k < vec.size(); k++)
-					cout << vec[k] << ", ";
-				cout << endl;
-			}
-			else	
-				printf("Not Find result\n");
-}*/
-
 
 int find_index(int nNum, int n, int &x, int &y)
 {
@@ -906,80 +627,17 @@ bool exchange_elem(int n, int nNum, int dstX, int dstY, int nTag, vector<int> ve
 	//vecIgnore.push_back(4);
 	//vecIgnore.push_back(5);
 	bool bRet = false;
+	cout << "/*row began ****************************************/"
 	bool bRet1 = equal_transfor(n, x, y, dstNum, dstX, dstY, 0, vecIgnore);
 	if ( !bRet1){
 		get_bak(n, 0);
 		return bRet1;
 	}
+	cout << "/*col began ****************************************/"
 	bool bRet2 = equal_transfor(n, x, y, dstNum, dstX, dstY, 1, vecIgnore);
 	if ( !bRet2)
 		get_bak(n, 1);
 	return (bRet1 && bRet2);
-	/*vector<int> vecElem;
-			
-	//decide is col or row
-	for( int i=0; i<n; ++i )
-	{
-		if (nTag == 0)
-			if(i != y && i != dstY)
-				vecElem.push_back(i);
-		else
-			if(i != x && i != dstX)
-				vecElem.push_back(i);
-	};
-	if (nTag == 1)
-		p = aT;
-	vector<vector<int> > SubElem = SubSet( vecElem);
-	bak_array(n);
-	bool bFind = false;
-	for( int i=0; i<static_cast<int>(SubElem.size()); ++i )
-	{
-		//cout << "{ ";
-		get_bak(n);
-		int nSubSize = static_cast<int>(SubElem[i].size());
-		int n1 = x;
-		int n2 = 0;
-		cout << "new sub set: " << nSubSize << endl;
-		vecCompute.clear();
-		for( int j=0; j<static_cast<int>(SubElem[i].size()); ++j )
-		{	
-			int nIndex = SubElem[i][j];
-			n2 = nIndex;
-			vecCompute.clear();
-			cout << "n1, n2, check: " << n1 << ", " << n2 << ", " << check_simple(n) << endl;
-			if (j == 0 || n1 == x){
-				vecCompute = compute_col(p[x], p[n2], n, dstNum-nNum, 1);
-			}
-			//else if(j == nSubSize - 1)
-			//	vecCompute = compute_col(a[nIndex], a[xStart], n, c2-91, 1);
-			else
-				vecCompute = compute_col(p[n1], p[n2], n, dstNum-nNum, 0);
-			
-			if (vecCompute.size() > 0 ){
-				swap_vec(n1, n2, vecCompute);
-				n1 = n2;
-				break;
-			}
-			//cout << SubElem[i][j];
-			//if( (j!=static_cast<int>(SubElem[i].size()-1)) )
-			//	cout << ", ";
-		}
-		//cout << " }";
-		//cout << endl;
-		vecCompute.clear();
-		vecCompute = compute_col(p[n2], p[dstX], n, dstNum-nNum, 1);
-		if (vecCompute.size() > 0 ){
-			swap_vec(n2, dstX, vecCompute);
-			cout << "I Find it at last!!!" << endl;
-			bFind = true;
-			break;
-		}
-	};
-	cout << "Find: " << bFind << ", dstNum: " << dstNum << ", size: " << vecCompute.size() << endl;
-	print_a(n);
-	cout << "After check is: " <<  check_simple(n) << endl;
-	cout << "................................" << endl;
-	*/
 }
 
 
@@ -993,7 +651,7 @@ bool equal_transfor(int n, int srcX, int srcY, int srcNum, int dstX, int dstY, i
 	//srcNum = a[srcX][srcY];		// after swap
 	int nDstNum = srcNum;		// before swap:because after transfer rol then col the num has changed!
 	int nSrcNum = a[dstX][dstY];		// before swap
-	cout << "nDstNum, nSrcNum, nTag: " << nDstNum << ", " << nSrcNum << ", " << nTag << endl;
+	cout << "nDstNum, nSrcNum, isCol(nTag): " << nDstNum << ", " << nSrcNum << ", " << nTag << endl;
 	vector<int> vecCompute;
 	//find_index(nNum, n, x, y);
 	if (srcX == dstX && srcY == dstY)
@@ -1058,6 +716,7 @@ bool equal_transfor(int n, int srcX, int srcY, int srcNum, int dstX, int dstY, i
 		//	cout << SubElem[i][ii] << ", ";
 		//cout << "}" << endl;
 		vecCompute.clear();
+		// swap srcindex with other lines except the destindex
 		for( int j=0; j<static_cast<int>(SubElem[i].size()); ++j )
 		{	
 			int nIndex = SubElem[i][j];
@@ -1076,6 +735,7 @@ bool equal_transfor(int n, int srcX, int srcY, int srcNum, int dstX, int dstY, i
 			else
 				vecCompute = compute_col(p[n1], p[n2], n, nDstNum-nSrcNum, 0, vecIgnore);
 			
+			cout << "n1, n2, check: " << n1 << "<->" << n2 << ", " << check_simple(n) << ",compute.size =  " << vecCompute.size() << endl;
 			if (vecCompute.size() > 0 ){
 				swap_vec(n1, n2, vecCompute, nTag);
 				n1 = n2;
@@ -1088,8 +748,9 @@ bool equal_transfor(int n, int srcX, int srcY, int srcNum, int dstX, int dstY, i
 		}
 		//cout << " }";
 		//cout << endl;
+		// swap other lines with the dstindex, so other lines is the middle point
 		vecCompute.clear();
-		//cout << "exchange (" << n2 << ")<-->(" << nDstIndex << ")" << endl;
+		cout << "exchange (" << n2 << ")<-->(" << nDstIndex << ")" << endl;
 		if (g_nIgnoreTag == 1)
 			get_ignore(n, n2, nDstIndex, vecIgnore);
 		vecCompute = compute_col(p[n2], p[nDstIndex], n, nDstNum-nSrcNum, 1, vecIgnore);
@@ -1100,7 +761,7 @@ bool equal_transfor(int n, int srcX, int srcY, int srcNum, int dstX, int dstY, i
 			break;
 		}
 	};
-	cout << "FindResult: " << bFind << ", nRrcNum: " << nSrcNum << ", size: " << vecCompute.size() << endl;
+	cout << "FindResult: " << bFind << ", nSrcNum: " << nSrcNum << ", size: " << vecCompute.size() << endl;
 	if ( !bFind)
 		get_bak(n, nTag);
 
@@ -1388,355 +1049,6 @@ bool process_diagnol(int nTag, int n, vector<Position> vecPos)
 	///////////////////////////////////////////////////////////////
 }
 
-int _main()
-{
-	int i,j,n,k,t,p,x;
-	int nSrc[] = {19, 91, 8, 20};
-	cout << "========================================================" << endl;
-	scanf("%d",&n);
-	sum=(n*n+1)*n/2;
-	if(n%2==1) ins(n);//奇数幻方
-	if(n%4==2)//单偶数幻方
-	{
-		k=n/2;
-		ins(k);
-		for(i=0;i<k;i++)
-			for(j=0;j<k;j++)
-			{
-				a[i][j+k]=a[i][j]+2*k*k; //(3)
-				a[i+k][j]=a[i][j]+3*k*k; //(4)
-				a[i+k][j+k]=a[i][j]+k*k; //(2)
-			}
-		t=(n-2)/4;
-		for(i=0;i<k;i++)
-		for(j=0;j<k;j++)
-		{
-			if((j<t)&&(i<t))
-			{
-				p=a[i][j];
-				a[i][j]=a[i+k][j];
-				a[i+k][j]=p;
-			}
-			if((j<t)&&(i>k-t-1))
-			{
-				p=a[i][j];
-				a[i][j]=a[i+k][j];
-				a[i+k][j]=p;
-			}
-			if((i>=t&&i<=k-t-1)&&(j>=t&&j<t*2))
-			{
-				p=a[i][j];
-				a[i][j]=a[i+k][j];
-				a[i+k][j]=p;
-			}
-			if(j>1&&j<=t)
-			{
-				p=a[i][j+k];
-				a[i][j+k]=a[i+k][j+k];
-				a[i+k][j+k]=p;
-			}
-		}
-	}
-	if(n%4==0)//双偶数幻方
-	{
-		x=1;
-		for(i=0;i<n;i++)
-			for(j=0;j<n;j++)
-				a[i][j]=x++;
-		for(i=0;i<n;i++)
-			for(j=0;j<n;j++)
-			{
-				if(i%4==0&&abs(i-j)%4==0)
-					for(k=0;k<4;k++)
-						a[i+k][j+k]=n*n-a[i+k][j+k]+1;
-				else if(i%4==3&&(i+j)%4==3)
-					for(k=0;k<4;k++)
-						a[i-k][j+k]=n*n-a[i-k][j+k]+1;
-			}
-	}
-	if(check(n)==1)
-	{
-		print_a(n);
-		//get aT
-		for(int ia = 0; ia < n; ia++)
-			for (int ja = 0; ja < n; ja++)
-				aT[ia][ja] = a[ja][ia];
-		cout << "aT: " << endl;
-		print_array(aT, n);
-			
-		//a[][],
-		if(n%2 == 0)
-		{
-			int xStart = n/2-1;
-			int yStart = n/2-1;
-			int c1 = a[xStart][yStart];
-			int c2 = a[xStart][yStart+1];
-			int c3 = a[xStart+1][yStart];
-			int c4 = a[xStart+1][yStart+1];
-			int x, y;
-			cout << "c1, c2, c3, c4 = " << c1 << ", " << c2 << ", " << c3 << ", " << c4 << endl;
-			/*
-			find_index(19, n, x, y);
-			cout << "19@ = " << x << ", " << y << endl;
-			//vec.clear();
-			int arr1[256] = {0};
-			int arr2[256] = {0};
-			//x compute
-			int nCount1 = 0;
-			int nCount2 = 0;
-			int b[256][256] = {0};
-			for(int i = 0; i < n; i++)
-				for (int j = 0; j < n; j++)
-					b[i][j] = a[i][j];
-			swap_elem(xStart, yStart, x, y);
-			cout << "After swap: " << endl;
-			print_a(n);
-			cout << "compute test start " << endl;
-			vector<int> vecIgnore;
-			vecIgnore.push_back(4);
-			vecIgnore.push_back(5);
-			vector<int> vecCompute = compute_col(a[x], a[xStart], n, c1-19, 1, vecIgnore);
-			swap_vec(x, xStart, vecCompute, 0);
-			cout << "compute test end " << endl;
-			print_a(n);
-			cout << "After check is: " <<  check_simple(n) << endl;
-			print_a(n);
-			cout << "c1 col start... " << c1 << endl;
-		
-			equal_transfor(n, x, y, c1, xStart, yStart, 1, vecIgnore);
-			//cout << "after col: " << endl;
-			//print_a(n);
-			//return 0;
-			
-			//c2
-			cout << "c2 start..............." << endl;
-			find_index(91, n, x, y);
-			vecCompute.clear();
-			swap_elem(xStart, yStart+1, x, y);
-			vector<int> vecElem;
-			for( int i=0; i<n; ++i )
-			{
-				if(i != x && i != xStart)
-					vecElem.push_back(i);
-			};
-			vector<vector<int> > SubElem = SubSet( vecElem);
-			cout << "................................" << endl;
-			bak_array(n, a);
-			bool bFind = false;
-			//vector<int> vecIgnore;
-			//vecIgnore.push_back(4);
-			//vecIgnore.push_back(5);
-			for( int i=0; i<static_cast<int>(SubElem.size()); ++i )
-			{
-				//cout << "{ ";
-				get_bak(n, 0);
-				int nSubSize = static_cast<int>(SubElem[i].size());
-				int n1 = x;
-				int n2 = 0;
-				cout << "new sub set: " << nSubSize << endl;
-				vecCompute.clear();
-				for( int j=0; j<static_cast<int>(SubElem[i].size()); ++j )
-				{	
-					int nIndex = SubElem[i][j];
-					n2 = nIndex;
-					vecCompute.clear();
-					cout << "n1, n2, check: " << n1 << ", " << n2 << ", " << check_simple(n) << endl;
-					if (j == 0 || n1 == x){
-						vecCompute = compute_col(a[x], a[n2], n, c2-91, 1, vecIgnore);
-					}
-					//else if(j == nSubSize - 1)
-					//	vecCompute = compute_col(a[nIndex], a[xStart], n, c2-91, 1);
-					else
-						vecCompute = compute_col(a[n1], a[n2], n, c2-91, 0, vecIgnore);
-			
-					if (vecCompute.size() > 0 ){
-						swap_vec(n1, n2, vecCompute, 0);
-						n1 = n2;
-						break;
-					}
-					//cout << SubElem[i][j];
-					//if( (j!=static_cast<int>(SubElem[i].size()-1)) )
-					//	cout << ", ";
-				}
-				//cout << " }";
-				//cout << endl;
-				vecCompute.clear();
-				vecCompute = compute_col(a[n2], a[xStart], n, c2-91, 1, vecIgnore);
-				if (vecCompute.size() > 0 ){
-					swap_vec(n2, xStart, vecCompute, 0);
-					cout << "I Find it at last!!!" << endl;
-					bFind = true;
-					break;
-				}
-			};
-			cout << "Find: " << bFind << ", c2: " << vecCompute.size() << endl;
-			print_a(n);
-			cout << "After check is: " <<  check_simple(n) << endl;
-			cout << "................................" << endl;
-			equal_transfor(n, x, y, c2, xStart, yStart+1, 1, vecIgnore);*/
-
-			//cout << "x, y, c2: " << x << ", " << y << ", " << c2 << endl;
-			//vecCompute = compute_col(a[x], a[xStart], n, c2-91, 1);
-			//swap_vec(x, xStart, vecCompute);
-			//cout << "c2: " << vecCompute.size() << endl;
-			//print_a(n);
-			//cout << "After check is: " <<  check_simple(n) << endl;
-			//c1
-			vector<int> vecIgnore;
-			vecIgnore.push_back(4);
-			vecIgnore.push_back(5);
-
-			cout << "c1 start........................" << endl;
-			exchange_elem(n, 19, xStart, yStart, 0, vecIgnore);
-			//c2
-			cout << "c2 start........................" << endl;
-			exchange_elem(n, 91, xStart, yStart+1, 0, vecIgnore);
-			
-			//c3
-			cout << "c3 start........................" << endl;
-			exchange_elem(n, 8, xStart+1, yStart, 0, vecIgnore);
-
-			//c4
-			cout << "c4 start........................" << endl;
-			exchange_elem(n, 20, xStart+1, yStart+1, 0, vecIgnore);
-			cout << "After all check is: " <<  check(n) << endl;
-			
-			//
-			int b[256][256] = {0};
-			for(int i = 0; i < n; i++)
-				for (int j = 0; j < n; j++)
-					b[i][j] = a[i][j];
-			//vecIgnore.push_back();
-			/*
-			cout << "Additon start......... " << endl;
-			g_nIgnoreTag = 1;
-			for(int k = 0; k < n; k++){
-				//exchange_elem(n, a[0][n-1]-2, 0, n-1, 0, vecIgnore);
-				for(int i = 0; i < n; i++)
-					for (int j = 0; j < n; j++)
-						a[i][j] = b[i][j];
-				cout << "Addition: " << k << ", a[][] = " << endl;
-				print_a(n);
-				bool bRet = false;
-				bRet = exchange_elem(n, a[k][n-k-1]-2, k, n-k-1, 0, vecIgnore);
-				if (bRet)	
-				{
-					cout << "The End and result is " << bRet << endl;
-					break;
-				}
-			}
-			cout << "After all check is: " <<  check(n) << endl;*/
-			// another
-			for(int i = 0; i < n; i++)
-				for (int j = 0; j < n; j++)
-					b[i][j] = a[i][j];
-			
-			cout << "start process negative diagnol ... " << endl;
-			vector<Position> vecPos;
-			process_diagnol(0, n, vecPos);
-			process_diagnol(1, n, vecPos);
-			cout << "After all check is: " <<  check(n) << endl;
-			//vecIgnore.push_back();
-			/*cout << "Addition2 start......... " << endl;
-			g_nIgnoreTag = 1;
-			int nFindNum = 0;
-			for(int k = 0; k < n; ){
-				if (k == 4 || k == 5)
-				{
-					k++;
-					continue;
-				}
-				for(int i = 0; i < n; i++)
-					for (int j = 0; j < n; j++)
-						a[i][j] = b[i][j];
-				int nSum = 0;
-				for(int i = 0; i < n; i++)
-					nSum += a[i][i];
-				cout << "Addition2: " << k << ", nSum=" << nSum << ", a[][] = " << endl;
-				print_a(n);
-				bool bRet = false;
-				if (nSum - a[k][k] > 100){
-					//while(1)
-					{
-						if(100-k > nFindNum)
-						{
-							nFindNum = 100-k;
-						}
-						else
-							nFindNum -= 1;
-					}
-				}
-				while(1){
-					if(nFindNum != 19 && nFindNum != 91 && nFindNum != 8 && nFindNum != 20)
-						break;
-					else
-						nFindNum--;
-				}
-				bRet = exchange_elem(n, nFindNum, k, k, 0, vecIgnore);
-				if (bRet && nFindNum < 100)	
-				{
-					cout << "The End and result is " << bRet << endl;
-					break;
-				}
-				k++;
-			}
-			cout << "After all check is: " <<  check(n) << endl;*/
-			// another
-			/*for(int i = 0; i < n; i++)
-				for (int j = 0; j < n; j++)
-					b[i][j] = a[i][j];
-			//vecIgnore.push_back();
-			cout << "Additon3 start......... " << endl;
-			g_nIgnoreTag = 1;
-			for(int k = 0; k < n; k++){
-				//exchange_elem(n, a[0][n-1]-2, 0, n-1, 0, vecIgnore);
-				for(int i = 0; i < n; i++)
-					for (int j = 0; j < n; j++)
-						a[i][j] = b[i][j];
-				cout << "Addition3: " << k << ", a[][] = " << endl;
-				print_a(n);
-				bool bRet = false;
-				bRet = exchange_elem(n, a[k][n-k-1]-2, k, n-k-1, 0, vecIgnore);
-				if (bRet)	
-				{
-					cout << "The End and result is " << bRet << endl;
-					break;
-				}
-			}
-			cout << "After all check is: " <<  check(n) << endl;*/
-
-
-			/*for(int k = 0; k < n; k++){
-				//arr1
-				if (k != x && (k+x) != n-1)
-				{
-					arr1[nCount1] = a[x][k];
-					nCount1++;
-				}
-				//arr2
-				if (k != xStart && (k+xStart) != n-1)
-				{
-					arr2[nCount2] = a[xStart][k];
-					nCount2++;
-				}
-			}	
-			cout << "nCount1, nCount2: " << nCount1 << ", " << nCount2 << endl;
-			find_sub(arr1, arr2, nCount1, c1-19, vec);
-			
-			if (vec.size() > 0 )
-			{
-				printf("After find_sub: \n");
-				for(int k = 0; k < vec.size(); k++)
-					cout << vec[k] << ", ";
-				cout << endl;
-			}
-			else	
-				printf("Not Find result\n");*/
-		} 
-	}
-	//
-	return 0;
-}
 //./magic | tee log
 
 
