@@ -187,14 +187,14 @@ int main()
 			exchange_elem(n, 19, xStart, yStart, 0, vecIgnore);
 			//c2
 			cout << "c2 start........................" << endl;
-			//exchange_elem(n, 91, xStart, yStart+1, 0, vecIgnore);
+			exchange_elem(n, 88, xStart, yStart+1, 0, vecIgnore);
 			//c3
 			cout << "c3 start........................" << endl;
-			//exchange_elem(n, 8, xStart+1, yStart, 0, vecIgnore);
+			exchange_elem(n, 11, xStart+1, yStart, 0, vecIgnore);
 
 			//c4
 			cout << "c4 start........................" << endl;
-			//exchange_elem(n, 20, xStart+1, yStart+1, 0, vecIgnore);
+			exchange_elem(n, 28, xStart+1, yStart+1, 0, vecIgnore);
 			cout << "After all check is: " <<  check(n) << endl;
 			
 			//
@@ -397,6 +397,7 @@ void get_transfer(int n)
 int check(int n)//检验是否是幻方
 {
 	int i,j,sum1=0,sum2;
+	// row
 	for(i=0;i<n;i++)
 	{
 		for(j=0;j<n;j++)
@@ -404,6 +405,7 @@ int check(int n)//检验是否是幻方
 		if(sum1!=sum) return 0;
 		sum1=0;
 	}
+	// col
 	for(i=0;i<n;i++)
 	{
 		for(j=0;j<n;j++)
@@ -411,6 +413,7 @@ int check(int n)//检验是否是幻方
 		if(sum1!=sum) return 0;
 		sum1=0;
 	}
+	// dialgonal
 	for(sum1=0,sum2=0,i=0,j=0;i<n;i++,j++)
 	{
 		sum1+=a[i][j];
@@ -747,7 +750,9 @@ bool equal_transfor(int n, int srcX, int srcY, int srcNum, int dstX, int dstY, i
 	//vector<int> vecIgnore;		
 	//vecIgnore.push_back(4);
 	//vecIgnore.push_back(5);
-	for( int i=0; i<static_cast<int>(SubElem.size()); ++i )
+	// method: 1->swap all subset; 2->swap line by line
+	//for( int i=0; i<static_cast<int>(SubElem.size()); ++i )
+	for( int i=0; i<static_cast<int>(vecElem.size()); ++i )
 	{
 		//cout << "{ ";
 		get_bak(n, nTag);
@@ -761,17 +766,23 @@ bool equal_transfor(int n, int srcX, int srcY, int srcNum, int dstX, int dstY, i
 		//	cout << SubElem[i][ii] << ", ";
 		//cout << "}" << endl;
 		vecCompute.clear();
-		for( int j=0; j<static_cast<int>(SubElem[i].size()); ++j )
+		//for( int j=0; j<static_cast<int>(SubElem[i].size()); ++j )
+		if (true)
 		{	
-			int nIndex = SubElem[i][j];
-			n2 = nIndex;
+			// method 1
+			//int nIndex = SubElem[i][j];
+			//n2 = nIndex;
+			
+			// method 2
+			n2 = vecElem[i];
 			//cout << "\tj=" << j << endl;
 			vecCompute.clear();
 			//vecIgnore.clear();
 			if (g_nIgnoreTag == 1)
 				get_ignore(n, n1, n2, vecIgnore);
 			//cout << "n1, n2, check: " << n1 << ", " << n2 << ", " << check_simple(n) << endl;
-			if (j == 0 || n1 == nSrcIndex ){
+			//if (j == 0 || n1 == nSrcIndex ){
+			if ( n1 == nSrcIndex ){
 				vecCompute = compute_col(p[n1], p[n2], n, nDstNum-nSrcNum, 1, vecIgnore);
 			}
 			//else if(j == nSubSize - 1)

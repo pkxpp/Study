@@ -54,976 +54,15 @@ nSrcIndex, nDstIndex: 3, 4
 	79	81	13	20	97	29	31	63	45	47
 	10	12	94	96	78	35	37	69	46	28
 	11	18	100	77	84	36	43	75	27	34
-}, nSumA = 347, nSumB = 318,sub = -10,ret: 29
-}, nSumA = 260, nSumB = 238,sub = -10,ret: 22
-}, nSumA = 251, nSumB = 231,sub = -10,ret: 20
-}, nSumA = 230, nSumB = 217,sub = -10,ret: 13
-}, nSumA = 168, nSumB = 162,sub = -10,ret: 6
-}, nSumA = 124, nSumB = 130,sub = -10,ret: -6
-}, nSumA = 53, nSumB = 66,sub = -10,ret: -13
-}, nSumA = 71, nSumB = 64,sub = -10,ret: 7
-}, nSumA = 97, nSumB = 98,sub = -10,ret: -1
-}, nSumA = 44, nSumB = 32,sub = -10,ret: 12
-}, nSumA = 115, nSumB = 96,sub = -10,ret: 19
-}, nSumA = 186, nSumB = 185,sub = -10,ret: 1
-}, nSumA = 115, nSumB = 121,sub = -10,ret: -6
-}, nSumA = 62, nSumB = 55,sub = -10,ret: 7
-}, nSumA = 133, nSumB = 119,sub = -10,ret: 14
-}, nSumA = 159, nSumB = 153,sub = -10,ret: 6
-}, nSumA = 106, nSumB = 87,sub = -10,ret: 19
-}, nSumA = 177, nSumB = 151,sub = -10,ret: 26
-}, nSumA = 189, nSumB = 176,sub = -10,ret: 13
-}, nSumA = 145, nSumB = 144,sub = -10,ret: 1
-}, nSumA = 74, nSumB = 80,sub = -10,ret: -6
-}, nSumA = 21, nSumB = 14,sub = -10,ret: 7
-}, nSumA = 92, nSumB = 78,sub = -10,ret: 14
-}, nSumA = 118, nSumB = 112,sub = -10,ret: 6
-}, nSumA = 65, nSumB = 46,sub = -10,ret: 19
-}, nSumA = 136, nSumB = 110,sub = -10,ret: 26
-}, nSumA = 207, nSumB = 199,sub = -10,ret: 8
-}, nSumA = 136, nSumB = 135,sub = -10,ret: 1
-}, nSumA = 83, nSumB = 69,sub = -10,ret: 14
-}, nSumA = 154, nSumB = 133,sub = -10,ret: 21
-}, nSumA = 180, nSumB = 167,sub = -10,ret: 13
-}, nSumA = 127, nSumB = 101,sub = -10,ret: 26
-}, nSumA = 198, nSumB = 165,sub = -10,ret: 33
-}, nSumA = 239, nSumB = 224,sub = -10,ret: 15
-}, nSumA = 177, nSumB = 169,sub = -10,ret: 8
-}, nSumA = 133, nSumB = 137,sub = -10,ret: -4
-}, nSumA = 62, nSumB = 73,sub = -10,ret: -11
-}, nSumA = 9, nSumB = 7,sub = -10,ret: 2
-}, nSumA = 80, nSumB = 71,sub = -10,ret: 9
-}, nSumA = 106, nSumB = 105,sub = -10,ret: 1
-}, nSumA = 53, nSumB = 39,sub = -10,ret: 14
-}, nSumA = 124, nSumB = 103,sub = -10,ret: 21
-}, nSumA = 195, nSumB = 192,sub = -10,ret: 3
-}, nSumA = 124, nSumB = 128,sub = -10,ret: -4
-}, nSumA = 71, nSumB = 62,sub = -10,ret: 9
-}, nSumA = 142, nSumB = 126,sub = -10,ret: 16
-}, nSumA = 168, nSumB = 160,sub = -10,ret: 8
-}, nSumA = 115, nSumB = 94,sub = -10,ret: 21
-}, nSumA = 186, nSumB = 158,sub = -10,ret: 28
-}, nSumA = 198, nSumB = 183,sub = -10,ret: 15
-}, nSumA = 154, nSumB = 151,sub = -10,ret: 3
-}, nSumA = 83, nSumB = 87,sub = -10,ret: -4
-}, nSumA = 30, nSumB = 21,sub = -10,ret: 9
-}, nSumA = 101, nSumB = 85,sub = -10,ret: 16
-}, nSumA = 127, nSumB = 119,sub = -10,ret: 8
-}, nSumA = 74, nSumB = 53,sub = -10,ret: 21
-}, nSumA = 145, nSumB = 117,sub = -10,ret: 28
-}, nSumA = 216, nSumB = 206,sub = -10,ret: 10
-}, nSumA = 145, nSumB = 142,sub = -10,ret: 3
-}, nSumA = 92, nSumB = 76,sub = -10,ret: 16
-}, nSumA = 163, nSumB = 140,sub = -10,ret: 23
-}, nSumA = 189, nSumB = 174,sub = -10,ret: 15
-}, nSumA = 136, nSumB = 108,sub = -10,ret: 28
-}, nSumA = 207, nSumB = 172,sub = -10,ret: 35
-}, nSumA = 338, nSumB = 311,sub = -10,ret: 27
-}, nSumA = 317, nSumB = 297,sub = -10,ret: 20
-}, nSumA = 255, nSumB = 242,sub = -10,ret: 13
-}, nSumA = 211, nSumB = 210,sub = -10,ret: 1
-}, nSumA = 140, nSumB = 146,sub = -10,ret: -6
-}, nSumA = 87, nSumB = 80,sub = -10,ret: 7
-}, nSumA = 158, nSumB = 144,sub = -10,ret: 14
-}, nSumA = 184, nSumB = 178,sub = -10,ret: 6
-}, nSumA = 131, nSumB = 112,sub = -10,ret: 19
-}, nSumA = 202, nSumB = 176,sub = -10,ret: 26
-}, nSumA = 273, nSumB = 265,sub = -10,ret: 8
-}, nSumA = 202, nSumB = 201,sub = -10,ret: 1
-}, nSumA = 149, nSumB = 135,sub = -10,ret: 14
-}, nSumA = 220, nSumB = 199,sub = -10,ret: 21
-}, nSumA = 246, nSumB = 233,sub = -10,ret: 13
-}, nSumA = 193, nSumB = 167,sub = -10,ret: 26
-}, nSumA = 264, nSumB = 231,sub = -10,ret: 33
-}, nSumA = 276, nSumB = 256,sub = -10,ret: 20
-}, nSumA = 232, nSumB = 224,sub = -10,ret: 8
-}, nSumA = 161, nSumB = 160,sub = -10,ret: 1
-}, nSumA = 108, nSumB = 94,sub = -10,ret: 14
-}, nSumA = 179, nSumB = 158,sub = -10,ret: 21
-}, nSumA = 205, nSumB = 192,sub = -10,ret: 13
-}, nSumA = 152, nSumB = 126,sub = -10,ret: 26
-}, nSumA = 223, nSumB = 190,sub = -10,ret: 33
-}, nSumA = 294, nSumB = 279,sub = -10,ret: 15
-}, nSumA = 223, nSumB = 215,sub = -10,ret: 8
-}, nSumA = 170, nSumB = 149,sub = -10,ret: 21
-}, nSumA = 241, nSumB = 213,sub = -10,ret: 28
-}, nSumA = 267, nSumB = 247,sub = -10,ret: 20
-}, nSumA = 214, nSumB = 181,sub = -10,ret: 33
-}, nSumA = 285, nSumB = 245,sub = -10,ret: 40
-}, nSumA = 326, nSumB = 304,sub = -10,ret: 22
-}, nSumA = 264, nSumB = 249,sub = -10,ret: 15
-}, nSumA = 220, nSumB = 217,sub = -10,ret: 3
-}, nSumA = 149, nSumB = 153,sub = -10,ret: -4
-}, nSumA = 96, nSumB = 87,sub = -10,ret: 9
-}, nSumA = 167, nSumB = 151,sub = -10,ret: 16
-}, nSumA = 193, nSumB = 185,sub = -10,ret: 8
-}, nSumA = 140, nSumB = 119,sub = -10,ret: 21
-}, nSumA = 211, nSumB = 183,sub = -10,ret: 28
-}, nSumA = 282, nSumB = 272,sub = -10,ret: 10
-}, nSumA = 211, nSumB = 208,sub = -10,ret: 3
-}, nSumA = 158, nSumB = 142,sub = -10,ret: 16
-}, nSumA = 229, nSumB = 206,sub = -10,ret: 23
-}, nSumA = 255, nSumB = 240,sub = -10,ret: 15
-}, nSumA = 202, nSumB = 174,sub = -10,ret: 28
-}, nSumA = 273, nSumB = 238,sub = -10,ret: 35
-}, nSumA = 285, nSumB = 263,sub = -10,ret: 22
-}, nSumA = 241, nSumB = 231,sub = -10,ret: 10
-}, nSumA = 170, nSumB = 167,sub = -10,ret: 3
-}, nSumA = 117, nSumB = 101,sub = -10,ret: 16
-}, nSumA = 188, nSumB = 165,sub = -10,ret: 23
-}, nSumA = 214, nSumB = 199,sub = -10,ret: 15
-}, nSumA = 161, nSumB = 133,sub = -10,ret: 28
-}, nSumA = 232, nSumB = 197,sub = -10,ret: 35
-}, nSumA = 303, nSumB = 286,sub = -10,ret: 17
-}, nSumA = 232, nSumB = 222,sub = -10,ret: 10
-}, nSumA = 179, nSumB = 156,sub = -10,ret: 23
-}, nSumA = 250, nSumB = 220,sub = -10,ret: 30
-}, nSumA = 276, nSumB = 254,sub = -10,ret: 22
-}, nSumA = 223, nSumB = 188,sub = -10,ret: 35
-}, nSumA = 294, nSumB = 252,sub = -10,ret: 42
-}, nSumA = 345, nSumB = 336,sub = -10,ret: 9
-}, nSumA = 336, nSumB = 329,sub = -10,ret: 7
-}, nSumA = 315, nSumB = 315,sub = -10,ret: 0
-}, nSumA = 253, nSumB = 260,sub = -10,ret: -7
-}, nSumA = 209, nSumB = 228,sub = -10,ret: -19
-}, nSumA = 138, nSumB = 164,sub = -10,ret: -26
-}, nSumA = 85, nSumB = 98,sub = -10,ret: -13
-}, nSumA = 156, nSumB = 162,sub = -10,ret: -6
-}, nSumA = 182, nSumB = 196,sub = -10,ret: -14
-}, nSumA = 129, nSumB = 130,sub = -10,ret: -1
-}, nSumA = 200, nSumB = 194,sub = -10,ret: 6
-}, nSumA = 271, nSumB = 283,sub = -10,ret: -12
-}, nSumA = 200, nSumB = 219,sub = -10,ret: -19
-}, nSumA = 147, nSumB = 153,sub = -10,ret: -6
-}, nSumA = 218, nSumB = 217,sub = -10,ret: 1
-}, nSumA = 244, nSumB = 251,sub = -10,ret: -7
-}, nSumA = 191, nSumB = 185,sub = -10,ret: 6
-}, nSumA = 262, nSumB = 249,sub = -10,ret: 13
-}, nSumA = 274, nSumB = 274,sub = -10,ret: 0
-}, nSumA = 230, nSumB = 242,sub = -10,ret: -12
-}, nSumA = 159, nSumB = 178,sub = -10,ret: -19
-}, nSumA = 106, nSumB = 112,sub = -10,ret: -6
-}, nSumA = 177, nSumB = 176,sub = -10,ret: 1
-}, nSumA = 203, nSumB = 210,sub = -10,ret: -7
-}, nSumA = 150, nSumB = 144,sub = -10,ret: 6
-}, nSumA = 221, nSumB = 208,sub = -10,ret: 13
-}, nSumA = 292, nSumB = 297,sub = -10,ret: -5
-}, nSumA = 221, nSumB = 233,sub = -10,ret: -12
-}, nSumA = 168, nSumB = 167,sub = -10,ret: 1
-}, nSumA = 239, nSumB = 231,sub = -10,ret: 8
-}, nSumA = 265, nSumB = 265,sub = -10,ret: 0
-}, nSumA = 212, nSumB = 199,sub = -10,ret: 13
-}, nSumA = 283, nSumB = 263,sub = -10,ret: 20
-}, nSumA = 324, nSumB = 322,sub = -10,ret: 2
-}, nSumA = 262, nSumB = 267,sub = -10,ret: -5
-}, nSumA = 218, nSumB = 235,sub = -10,ret: -17
-}, nSumA = 147, nSumB = 171,sub = -10,ret: -24
-}, nSumA = 94, nSumB = 105,sub = -10,ret: -11
-}, nSumA = 165, nSumB = 169,sub = -10,ret: -4
-}, nSumA = 191, nSumB = 203,sub = -10,ret: -12
-}, nSumA = 138, nSumB = 137,sub = -10,ret: 1
-}, nSumA = 209, nSumB = 201,sub = -10,ret: 8
-}, nSumA = 280, nSumB = 290,sub = -10,ret: -10
-}, nSumA = 321, nSumB = 425,sub = -10,ret: -104
-}, nSumA = 241, nSumB = 419,sub = -10,ret: -178
-}, nSumA = 232, nSumB = 331,sub = -10,ret: -99
-}, nSumA = 218, nSumB = 236,sub = -10,ret: -18
-}, nSumA = 156, nSumB = 180,sub = -10,ret: -24
-}, nSumA = 124, nSumB = 142,sub = -10,ret: -18
-}, nSumA = 53, nSumB = 72,sub = -10,ret: -19
-}, nSumA = 71, nSumB = 70,sub = -10,ret: 1
-}, nSumA = 85, nSumB = 110,sub = -10,ret: -25
-}, nSumA = 32, nSumB = 38,sub = -10,ret: -6
-}, nSumA = 103, nSumB = 108,sub = -10,ret: -5
-}, nSumA = 186, nSumB = 198,sub = -10,ret: -12
-}, nSumA = 115, nSumB = 128,sub = -10,ret: -13
-}, nSumA = 62, nSumB = 56,sub = -10,ret: 6
-}, nSumA = 133, nSumB = 126,sub = -10,ret: 7
-}, nSumA = 147, nSumB = 166,sub = -10,ret: -19
-}, nSumA = 94, nSumB = 94,sub = -10,ret: 0
-}, nSumA = 165, nSumB = 164,sub = -10,ret: 1
-}, nSumA = 170, nSumB = 275,sub = -10,ret: -105
-}, nSumA = 138, nSumB = 237,sub = -10,ret: -99
-}, nSumA = 67, nSumB = 167,sub = -10,ret: -100
-}, nSumA = 14, nSumB = 95,sub = -10,ret: -81
-}, nSumA = 85, nSumB = 165,sub = -10,ret: -80
-}, nSumA = 99, nSumB = 205,sub = -10,ret: -106
-}, nSumA = 46, nSumB = 133,sub = -10,ret: -87
-}, nSumA = 117, nSumB = 203,sub = -10,ret: -86
-}, nSumA = 200, nSumB = 293,sub = -10,ret: -93
-}, nSumA = 129, nSumB = 223,sub = -10,ret: -94
-}, nSumA = 76, nSumB = 151,sub = -10,ret: -75
-}, nSumA = 147, nSumB = 221,sub = -10,ret: -74
-}, nSumA = 161, nSumB = 261,sub = -10,ret: -100
-}, nSumA = 108, nSumB = 189,sub = -10,ret: -81
-}, nSumA = 179, nSumB = 259,sub = -10,ret: -80
-}, nSumA = 227, nSumB = 324,sub = -10,ret: -97
-}, nSumA = 165, nSumB = 268,sub = -10,ret: -103
-}, nSumA = 133, nSumB = 230,sub = -10,ret: -97
-}, nSumA = 62, nSumB = 160,sub = -10,ret: -98
-}, nSumA = 9, nSumB = 88,sub = -10,ret: -79
-}, nSumA = 80, nSumB = 158,sub = -10,ret: -78
-}, nSumA = 94, nSumB = 198,sub = -10,ret: -104
-}, nSumA = 41, nSumB = 126,sub = -10,ret: -85
-}, nSumA = 112, nSumB = 196,sub = -10,ret: -84
-}, nSumA = 195, nSumB = 286,sub = -10,ret: -91
-}, nSumA = 124, nSumB = 216,sub = -10,ret: -92
-}, nSumA = 71, nSumB = 144,sub = -10,ret: -73
-}, nSumA = 142, nSumB = 214,sub = -10,ret: -72
-}, nSumA = 156, nSumB = 254,sub = -10,ret: -98
-}, nSumA = 103, nSumB = 182,sub = -10,ret: -79
-}, nSumA = 174, nSumB = 252,sub = -10,ret: -78
-}, nSumA = 179, nSumB = 363,sub = -10,ret: -184
-}, nSumA = 147, nSumB = 325,sub = -10,ret: -178
-}, nSumA = 76, nSumB = 255,sub = -10,ret: -179
-}, nSumA = 23, nSumB = 183,sub = -10,ret: -160
-}, nSumA = 94, nSumB = 253,sub = -10,ret: -159
-}, nSumA = 108, nSumB = 293,sub = -10,ret: -185
-}, nSumA = 55, nSumB = 221,sub = -10,ret: -166
-}, nSumA = 126, nSumB = 291,sub = -10,ret: -165
-}, nSumA = 209, nSumB = 381,sub = -10,ret: -172
-}, nSumA = 138, nSumB = 311,sub = -10,ret: -173
-}, nSumA = 85, nSumB = 239,sub = -10,ret: -154
-}, nSumA = 156, nSumB = 309,sub = -10,ret: -153
-}, nSumA = 170, nSumB = 349,sub = -10,ret: -179
-}, nSumA = 117, nSumB = 277,sub = -10,ret: -160
-}, nSumA = 188, nSumB = 347,sub = -10,ret: -159
-}, nSumA = 312, nSumB = 337,sub = -10,ret: -25
-}, nSumA = 298, nSumB = 242,sub = -10,ret: 56
-}, nSumA = 236, nSumB = 186,sub = -10,ret: 50
-}, nSumA = 204, nSumB = 148,sub = -10,ret: 56
-}, nSumA = 133, nSumB = 78,sub = -10,ret: 55
-}, nSumA = 80, nSumB = 6,sub = -10,ret: 74
-}, nSumA = 151, nSumB = 76,sub = -10,ret: 75
-}, nSumA = 165, nSumB = 116,sub = -10,ret: 49
-}, nSumA = 112, nSumB = 44,sub = -10,ret: 68
-}, nSumA = 183, nSumB = 114,sub = -10,ret: 69
-}, nSumA = 266, nSumB = 204,sub = -10,ret: 62
-}, nSumA = 195, nSumB = 134,sub = -10,ret: 61
-}, nSumA = 142, nSumB = 62,sub = -10,ret: 80
-}, nSumA = 213, nSumB = 132,sub = -10,ret: 81
-}, nSumA = 227, nSumB = 172,sub = -10,ret: 55
-}, nSumA = 174, nSumB = 100,sub = -10,ret: 74
-}, nSumA = 245, nSumB = 170,sub = -10,ret: 75
-}, nSumA = 250, nSumB = 281,sub = -10,ret: -31
-}, nSumA = 218, nSumB = 243,sub = -10,ret: -25
-}, nSumA = 147, nSumB = 173,sub = -10,ret: -26
-}, nSumA = 94, nSumB = 101,sub = -10,ret: -7
-}, nSumA = 165, nSumB = 171,sub = -10,ret: -6
-}, nSumA = 179, nSumB = 211,sub = -10,ret: -32
-}, nSumA = 126, nSumB = 139,sub = -10,ret: -13
-}, nSumA = 197, nSumB = 209,sub = -10,ret: -12
-}, nSumA = 280, nSumB = 299,sub = -10,ret: -19
-}, nSumA = 209, nSumB = 229,sub = -10,ret: -20
-}, nSumA = 156, nSumB = 157,sub = -10,ret: -1
-}, nSumA = 227, nSumB = 227,sub = -10,ret: 0
-}, nSumA = 241, nSumB = 267,sub = -10,ret: -26
-}, nSumA = 188, nSumB = 195,sub = -10,ret: -7
-}, nSumA = 259, nSumB = 265,sub = -10,ret: -6
-}, nSumA = 307, nSumB = 330,sub = -10,ret: -23
-}, nSumA = 245, nSumB = 274,sub = -10,ret: -29
-}, nSumA = 213, nSumB = 236,sub = -10,ret: -23
-}, nSumA = 142, nSumB = 166,sub = -10,ret: -24
-}, nSumA = 89, nSumB = 94,sub = -10,ret: -5
-}, nSumA = 160, nSumB = 164,sub = -10,ret: -4
-}, nSumA = 174, nSumB = 204,sub = -10,ret: -30
-}, nSumA = 121, nSumB = 132,sub = -10,ret: -11
-}, nSumA = 192, nSumB = 202,sub = -10,ret: -10
-}, nSumA = 321, nSumB = 356,sub = -10,ret: -35
-}, nSumA = 241, nSumB = 332,sub = -10,ret: -91
-}, nSumA = 232, nSumB = 256,sub = -10,ret: -24
-}, nSumA = 218, nSumB = 173,sub = -10,ret: 45
-}, nSumA = 156, nSumB = 124,sub = -10,ret: 32
-}, nSumA = 124, nSumB = 73,sub = -10,ret: 51
-}, nSumA = 53, nSumB = 40,sub = -10,ret: 13
-}, nSumA = 71, nSumB = 33,sub = -10,ret: 38
-}, nSumA = 85, nSumB = 91,sub = -10,ret: -6
-}, nSumA = 32, nSumB = 51,sub = -10,ret: -19
-}, nSumA = 103, nSumB = 84,sub = -10,ret: 19
-}, nSumA = 186, nSumB = 122,sub = -10,ret: 64
-}, nSumA = 115, nSumB = 89,sub = -10,ret: 26
-}, nSumA = 62, nSumB = 49,sub = -10,ret: 13
-}, nSumA = 133, nSumB = 82,sub = -10,ret: 51
-}, nSumA = 147, nSumB = 140,sub = -10,ret: 7
-}, nSumA = 94, nSumB = 100,sub = -10,ret: -6
-}, nSumA = 165, nSumB = 133,sub = -10,ret: 32
-}, nSumA = 170, nSumB = 207,sub = -10,ret: -37
-}, nSumA = 138, nSumB = 156,sub = -10,ret: -18
-}, nSumA = 67, nSumB = 123,sub = -10,ret: -56
-}, nSumA = 14, nSumB = 83,sub = -10,ret: -69
-}, nSumA = 85, nSumB = 116,sub = -10,ret: -31
-}, nSumA = 99, nSumB = 174,sub = -10,ret: -75
-}, nSumA = 46, nSumB = 134,sub = -10,ret: -88
-}, nSumA = 117, nSumB = 167,sub = -10,ret: -50
-}, nSumA = 200, nSumB = 205,sub = -10,ret: -5
-}, nSumA = 129, nSumB = 172,sub = -10,ret: -43
-}, nSumA = 76, nSumB = 132,sub = -10,ret: -56
-}, nSumA = 147, nSumB = 165,sub = -10,ret: -18
-}, nSumA = 161, nSumB = 223,sub = -10,ret: -62
-}, nSumA = 108, nSumB = 183,sub = -10,ret: -75
-}, nSumA = 179, nSumB = 216,sub = -10,ret: -37
-}, nSumA = 227, nSumB = 249,sub = -10,ret: -22
-}, nSumA = 165, nSumB = 200,sub = -10,ret: -35
-}, nSumA = 133, nSumB = 149,sub = -10,ret: -16
-}, nSumA = 62, nSumB = 116,sub = -10,ret: -54
-}, nSumA = 9, nSumB = 76,sub = -10,ret: -67
-}, nSumA = 80, nSumB = 109,sub = -10,ret: -29
-}, nSumA = 94, nSumB = 167,sub = -10,ret: -73
-}, nSumA = 41, nSumB = 127,sub = -10,ret: -86
-}, nSumA = 112, nSumB = 160,sub = -10,ret: -48
-}, nSumA = 195, nSumB = 198,sub = -10,ret: -3
-}, nSumA = 124, nSumB = 165,sub = -10,ret: -41
-}, nSumA = 71, nSumB = 125,sub = -10,ret: -54
-}, nSumA = 142, nSumB = 158,sub = -10,ret: -16
-}, nSumA = 156, nSumB = 216,sub = -10,ret: -60
-}, nSumA = 103, nSumB = 176,sub = -10,ret: -73
-}, nSumA = 174, nSumB = 209,sub = -10,ret: -35
-}, nSumA = 179, nSumB = 283,sub = -10,ret: -104
-}, nSumA = 147, nSumB = 232,sub = -10,ret: -85
-}, nSumA = 76, nSumB = 199,sub = -10,ret: -123
-}, nSumA = 23, nSumB = 159,sub = -10,ret: -136
-}, nSumA = 94, nSumB = 192,sub = -10,ret: -98
-}, nSumA = 108, nSumB = 250,sub = -10,ret: -142
-}, nSumA = 55, nSumB = 210,sub = -10,ret: -155
-}, nSumA = 126, nSumB = 243,sub = -10,ret: -117
-}, nSumA = 209, nSumB = 281,sub = -10,ret: -72
-}, nSumA = 138, nSumB = 248,sub = -10,ret: -110
-}, nSumA = 85, nSumB = 208,sub = -10,ret: -123
-}, nSumA = 156, nSumB = 241,sub = -10,ret: -85
-}, nSumA = 170, nSumB = 299,sub = -10,ret: -129
-}, nSumA = 117, nSumB = 259,sub = -10,ret: -142
-}, nSumA = 188, nSumB = 292,sub = -10,ret: -104
-}, nSumA = 312, nSumB = 280,sub = -10,ret: 32
-}, nSumA = 298, nSumB = 197,sub = -10,ret: 101
-}, nSumA = 236, nSumB = 148,sub = -10,ret: 88
-}, nSumA = 204, nSumB = 97,sub = -10,ret: 107
-}, nSumA = 133, nSumB = 64,sub = -10,ret: 69
-}, nSumA = 80, nSumB = 24,sub = -10,ret: 56
-}, nSumA = 151, nSumB = 57,sub = -10,ret: 94
-}, nSumA = 165, nSumB = 115,sub = -10,ret: 50
-}, nSumA = 112, nSumB = 75,sub = -10,ret: 37
-}, nSumA = 183, nSumB = 108,sub = -10,ret: 75
-}, nSumA = 266, nSumB = 146,sub = -10,ret: 120
-}, nSumA = 195, nSumB = 113,sub = -10,ret: 82
-}, nSumA = 142, nSumB = 73,sub = -10,ret: 69
-}, nSumA = 213, nSumB = 106,sub = -10,ret: 107
-}, nSumA = 227, nSumB = 164,sub = -10,ret: 63
-}, nSumA = 174, nSumB = 124,sub = -10,ret: 50
-}, nSumA = 245, nSumB = 157,sub = -10,ret: 88
-}, nSumA = 250, nSumB = 231,sub = -10,ret: 19
-}, nSumA = 218, nSumB = 180,sub = -10,ret: 38
-}, nSumA = 147, nSumB = 147,sub = -10,ret: 0
-}, nSumA = 94, nSumB = 107,sub = -10,ret: -13
-}, nSumA = 165, nSumB = 140,sub = -10,ret: 25
-}, nSumA = 179, nSumB = 198,sub = -10,ret: -19
-}, nSumA = 126, nSumB = 158,sub = -10,ret: -32
-}, nSumA = 197, nSumB = 191,sub = -10,ret: 6
-}, nSumA = 280, nSumB = 229,sub = -10,ret: 51
-}, nSumA = 209, nSumB = 196,sub = -10,ret: 13
-}, nSumA = 156, nSumB = 156,sub = -10,ret: 0
-}, nSumA = 227, nSumB = 189,sub = -10,ret: 38
-}, nSumA = 241, nSumB = 247,sub = -10,ret: -6
-}, nSumA = 188, nSumB = 207,sub = -10,ret: -19
-}, nSumA = 259, nSumB = 240,sub = -10,ret: 19
-}, nSumA = 307, nSumB = 273,sub = -10,ret: 34
-}, nSumA = 245, nSumB = 224,sub = -10,ret: 21
-}, nSumA = 213, nSumB = 173,sub = -10,ret: 40
-}, nSumA = 142, nSumB = 140,sub = -10,ret: 2
-}, nSumA = 89, nSumB = 100,sub = -10,ret: -11
-}, nSumA = 160, nSumB = 133,sub = -10,ret: 27
-}, nSumA = 174, nSumB = 191,sub = -10,ret: -17
-}, nSumA = 121, nSumB = 151,sub = -10,ret: -30
-}, nSumA = 192, nSumB = 184,sub = -10,ret: 8
-}, nSumA = 275, nSumB = 222,sub = -10,ret: 53
-}, nSumA = 204, nSumB = 189,sub = -10,ret: 15
-}, nSumA = 151, nSumB = 149,sub = -10,ret: 2
-}, nSumA = 222, nSumB = 182,sub = -10,ret: 40
-}, nSumA = 236, nSumB = 240,sub = -10,ret: -4
-}, nSumA = 183, nSumB = 200,sub = -10,ret: -17
-}, nSumA = 254, nSumB = 233,sub = -10,ret: 21
-}, nSumA = 259, nSumB = 307,sub = -10,ret: -48
-}, nSumA = 227, nSumB = 256,sub = -10,ret: -29
-}, nSumA = 156, nSumB = 223,sub = -10,ret: -67
-}, nSumA = 103, nSumB = 183,sub = -10,ret: -80
-}, nSumA = 174, nSumB = 216,sub = -10,ret: -42
-}, nSumA = 188, nSumB = 274,sub = -10,ret: -86
-}, nSumA = 135, nSumB = 234,sub = -10,ret: -99
-}, nSumA = 206, nSumB = 267,sub = -10,ret: -61
-}, nSumA = 289, nSumB = 305,sub = -10,ret: -16
-}, nSumA = 218, nSumB = 272,sub = -10,ret: -54
-}, nSumA = 165, nSumB = 232,sub = -10,ret: -67
-}, nSumA = 236, nSumB = 265,sub = -10,ret: -29
-}, nSumA = 250, nSumB = 323,sub = -10,ret: -73
-}, nSumA = 197, nSumB = 283,sub = -10,ret: -86
-}, nSumA = 268, nSumB = 316,sub = -10,ret: -48
-}, nSumA = 326, nSumB = 349,sub = -10,ret: -23
-}, nSumA = 317, nSumB = 273,sub = -10,ret: 44
-}, nSumA = 303, nSumB = 190,sub = -10,ret: 113
-}, nSumA = 241, nSumB = 141,sub = -10,ret: 100
-}, nSumA = 209, nSumB = 90,sub = -10,ret: 119
-}, nSumA = 138, nSumB = 57,sub = -10,ret: 81
-}, nSumA = 85, nSumB = 17,sub = -10,ret: 68
-}, nSumA = 156, nSumB = 50,sub = -10,ret: 106
-}, nSumA = 170, nSumB = 108,sub = -10,ret: 62
-}, nSumA = 117, nSumB = 68,sub = -10,ret: 49
-}, nSumA = 188, nSumB = 101,sub = -10,ret: 87
-}, nSumA = 271, nSumB = 139,sub = -10,ret: 132
-}, nSumA = 200, nSumB = 106,sub = -10,ret: 94
-}, nSumA = 147, nSumB = 66,sub = -10,ret: 81
-}, nSumA = 218, nSumB = 99,sub = -10,ret: 119
-}, nSumA = 232, nSumB = 157,sub = -10,ret: 75
-}, nSumA = 179, nSumB = 117,sub = -10,ret: 62
-}, nSumA = 250, nSumB = 150,sub = -10,ret: 100
-}, nSumA = 255, nSumB = 224,sub = -10,ret: 31
-}, nSumA = 223, nSumB = 173,sub = -10,ret: 50
-}, nSumA = 152, nSumB = 140,sub = -10,ret: 12
-}, nSumA = 99, nSumB = 100,sub = -10,ret: -1
-}, nSumA = 170, nSumB = 133,sub = -10,ret: 37
-}, nSumA = 184, nSumB = 191,sub = -10,ret: -7
-}, nSumA = 131, nSumB = 151,sub = -10,ret: -20
-}, nSumA = 202, nSumB = 184,sub = -10,ret: 18
-}, nSumA = 285, nSumB = 222,sub = -10,ret: 63
-}, nSumA = 214, nSumB = 189,sub = -10,ret: 25
-}, nSumA = 161, nSumB = 149,sub = -10,ret: 12
-}, nSumA = 232, nSumB = 182,sub = -10,ret: 50
-}, nSumA = 246, nSumB = 240,sub = -10,ret: 6
-}, nSumA = 193, nSumB = 200,sub = -10,ret: -7
-}, nSumA = 264, nSumB = 233,sub = -10,ret: 31
-}, nSumA = 312, nSumB = 266,sub = -10,ret: 46
-}, nSumA = 250, nSumB = 217,sub = -10,ret: 33
-}, nSumA = 218, nSumB = 166,sub = -10,ret: 52
-}, nSumA = 147, nSumB = 133,sub = -10,ret: 14
-}, nSumA = 94, nSumB = 93,sub = -10,ret: 1
-}, nSumA = 165, nSumB = 126,sub = -10,ret: 39
-}, nSumA = 179, nSumB = 184,sub = -10,ret: -5
-}, nSumA = 126, nSumB = 144,sub = -10,ret: -18
-}, nSumA = 197, nSumB = 177,sub = -10,ret: 20
-}, nSumA = 280, nSumB = 215,sub = -10,ret: 65
-}, nSumA = 209, nSumB = 182,sub = -10,ret: 27
-}, nSumA = 156, nSumB = 142,sub = -10,ret: 14
-}, nSumA = 227, nSumB = 175,sub = -10,ret: 52
-}, nSumA = 241, nSumB = 233,sub = -10,ret: 8
-}, nSumA = 188, nSumB = 193,sub = -10,ret: -5
-}, nSumA = 259, nSumB = 226,sub = -10,ret: 33
-}, nSumA = 264, nSumB = 300,sub = -10,ret: -36
-}, nSumA = 232, nSumB = 249,sub = -10,ret: -17
-}, nSumA = 161, nSumB = 216,sub = -10,ret: -55
-}, nSumA = 108, nSumB = 176,sub = -10,ret: -68
-}, nSumA = 179, nSumB = 209,sub = -10,ret: -30
-}, nSumA = 193, nSumB = 267,sub = -10,ret: -74
-}, nSumA = 140, nSumB = 227,sub = -10,ret: -87
-}, nSumA = 211, nSumB = 260,sub = -10,ret: -49
-}, nSumA = 294, nSumB = 298,sub = -10,ret: -4
-}, nSumA = 223, nSumB = 265,sub = -10,ret: -42
-}, nSumA = 170, nSumB = 225,sub = -10,ret: -55
-}, nSumA = 241, nSumB = 258,sub = -10,ret: -17
-}, nSumA = 255, nSumB = 316,sub = -10,ret: -61
-}, nSumA = 202, nSumB = 276,sub = -10,ret: -74
-}, nSumA = 273, nSumB = 309,sub = -10,ret: -36
-}, nSumA = 397, nSumB = 297,sub = -10,ret: 100
-}, nSumA = 383, nSumB = 214,sub = -10,ret: 169
-}, nSumA = 321, nSumB = 165,sub = -10,ret: 156
-}, nSumA = 289, nSumB = 114,sub = -10,ret: 175
-}, nSumA = 218, nSumB = 81,sub = -10,ret: 137
-}, nSumA = 165, nSumB = 41,sub = -10,ret: 124
-}, nSumA = 236, nSumB = 74,sub = -10,ret: 162
-}, nSumA = 250, nSumB = 132,sub = -10,ret: 118
-}, nSumA = 197, nSumB = 92,sub = -10,ret: 105
-}, nSumA = 268, nSumB = 125,sub = -10,ret: 143
-}, nSumA = 351, nSumB = 163,sub = -10,ret: 188
-}, nSumA = 280, nSumB = 130,sub = -10,ret: 150
-}, nSumA = 227, nSumB = 90,sub = -10,ret: 137
-}, nSumA = 298, nSumB = 123,sub = -10,ret: 175
-}, nSumA = 312, nSumB = 181,sub = -10,ret: 131
-}, nSumA = 259, nSumB = 141,sub = -10,ret: 118
-}, nSumA = 330, nSumB = 174,sub = -10,ret: 156
-}, nSumA = 335, nSumB = 248,sub = -10,ret: 87
-}, nSumA = 303, nSumB = 197,sub = -10,ret: 106
-}, nSumA = 232, nSumB = 164,sub = -10,ret: 68
-}, nSumA = 179, nSumB = 124,sub = -10,ret: 55
-}, nSumA = 250, nSumB = 157,sub = -10,ret: 93
-}, nSumA = 264, nSumB = 215,sub = -10,ret: 49
-}, nSumA = 211, nSumB = 175,sub = -10,ret: 36
-}, nSumA = 282, nSumB = 208,sub = -10,ret: 74
-}, nSumA = 365, nSumB = 246,sub = -10,ret: 119
-}, nSumA = 294, nSumB = 213,sub = -10,ret: 81
-}, nSumA = 241, nSumB = 173,sub = -10,ret: 68
-}, nSumA = 312, nSumB = 206,sub = -10,ret: 106
-}, nSumA = 326, nSumB = 264,sub = -10,ret: 62
-}, nSumA = 273, nSumB = 224,sub = -10,ret: 49
-}, nSumA = 344, nSumB = 257,sub = -10,ret: 87
-}, nSumA = 392, nSumB = 290,sub = -10,ret: 102
-}, nSumA = 330, nSumB = 241,sub = -10,ret: 89
-}, nSumA = 298, nSumB = 190,sub = -10,ret: 108
-}, nSumA = 227, nSumB = 157,sub = -10,ret: 70
-}, nSumA = 174, nSumB = 117,sub = -10,ret: 57
-}, nSumA = 245, nSumB = 150,sub = -10,ret: 95
-}, nSumA = 259, nSumB = 208,sub = -10,ret: 51
-}, nSumA = 206, nSumB = 168,sub = -10,ret: 38
-}, nSumA = 277, nSumB = 201,sub = -10,ret: 76
-}, nSumA = 360, nSumB = 239,sub = -10,ret: 121
-}, nSumA = 289, nSumB = 206,sub = -10,ret: 83
-}, nSumA = 236, nSumB = 166,sub = -10,ret: 70
-}, nSumA = 307, nSumB = 199,sub = -10,ret: 108
-}, nSumA = 321, nSumB = 257,sub = -10,ret: 64
-}, nSumA = 268, nSumB = 217,sub = -10,ret: 51
-}, nSumA = 339, nSumB = 250,sub = -10,ret: 89
-}, nSumA = 344, nSumB = 324,sub = -10,ret: 20
-}, nSumA = 312, nSumB = 273,sub = -10,ret: 39
-}, nSumA = 241, nSumB = 240,sub = -10,ret: 1
-}, nSumA = 188, nSumB = 200,sub = -10,ret: -12
-}, nSumA = 259, nSumB = 233,sub = -10,ret: 26
-}, nSumA = 273, nSumB = 291,sub = -10,ret: -18
-}, nSumA = 220, nSumB = 251,sub = -10,ret: -31
-}, nSumA = 291, nSumB = 284,sub = -10,ret: 7
-}, nSumA = 374, nSumB = 322,sub = -10,ret: 52
-}, nSumA = 303, nSumB = 289,sub = -10,ret: 14
-}, nSumA = 250, nSumB = 249,sub = -10,ret: 1
-}, nSumA = 321, nSumB = 282,sub = -10,ret: 39
-}, nSumA = 335, nSumB = 340,sub = -10,ret: -5
-}, nSumA = 282, nSumB = 300,sub = -10,ret: -18
-}, nSumA = 353, nSumB = 333,sub = -10,ret: 20
-}, nSumA = 406, nSumB = 373,sub = -10,ret: 33
-}, nSumA = 321, nSumB = 343,sub = -10,ret: -22
-}, nSumA = 241, nSumB = 338,sub = -10,ret: -97
-}, nSumA = 232, nSumB = 256,sub = -10,ret: -24
-}, nSumA = 218, nSumB = 167,sub = -10,ret: 51
-}, nSumA = 156, nSumB = 137,sub = -10,ret: 19
-}, nSumA = 124, nSumB = 80,sub = -10,ret: 44
-}, nSumA = 53, nSumB = 41,sub = -10,ret: 12
-}, nSumA = 71, nSumB = 39,sub = -10,ret: 32
-}, nSumA = 85, nSumB = 98,sub = -10,ret: -13
-}, nSumA = 32, nSumB = 57,sub = -10,ret: -25
-}, nSumA = 103, nSumB = 96,sub = -10,ret: 7
-}, nSumA = 186, nSumB = 110,sub = -10,ret: 76
-}, nSumA = 115, nSumB = 71,sub = -10,ret: 44
-}, nSumA = 62, nSumB = 30,sub = -10,ret: 32
-}, nSumA = 133, nSumB = 69,sub = -10,ret: 64
-}, nSumA = 147, nSumB = 128,sub = -10,ret: 19
-}, nSumA = 94, nSumB = 87,sub = -10,ret: 7
-}, nSumA = 165, nSumB = 126,sub = -10,ret: 39
-}, nSumA = 170, nSumB = 226,sub = -10,ret: -56
-}, nSumA = 138, nSumB = 169,sub = -10,ret: -31
-}, nSumA = 67, nSumB = 130,sub = -10,ret: -63
-}, nSumA = 14, nSumB = 89,sub = -10,ret: -75
-}, nSumA = 85, nSumB = 128,sub = -10,ret: -43
-}, nSumA = 99, nSumB = 187,sub = -10,ret: -88
-}, nSumA = 46, nSumB = 146,sub = -10,ret: -100
-}, nSumA = 117, nSumB = 185,sub = -10,ret: -68
-}, nSumA = 200, nSumB = 199,sub = -10,ret: 1
-}, nSumA = 129, nSumB = 160,sub = -10,ret: -31
-}, nSumA = 76, nSumB = 119,sub = -10,ret: -43
-}, nSumA = 147, nSumB = 158,sub = -10,ret: -11
-}, nSumA = 161, nSumB = 217,sub = -10,ret: -56
-}, nSumA = 108, nSumB = 176,sub = -10,ret: -68
-}, nSumA = 179, nSumB = 215,sub = -10,ret: -36
-}, nSumA = 227, nSumB = 249,sub = -10,ret: -22
-}, nSumA = 165, nSumB = 219,sub = -10,ret: -54
-}, nSumA = 133, nSumB = 162,sub = -10,ret: -29
-}, nSumA = 62, nSumB = 123,sub = -10,ret: -61
-}, nSumA = 9, nSumB = 82,sub = -10,ret: -73
-}, nSumA = 80, nSumB = 121,sub = -10,ret: -41
-}, nSumA = 94, nSumB = 180,sub = -10,ret: -86
-}, nSumA = 41, nSumB = 139,sub = -10,ret: -98
-}, nSumA = 112, nSumB = 178,sub = -10,ret: -66
-}, nSumA = 195, nSumB = 192,sub = -10,ret: 3
-}, nSumA = 124, nSumB = 153,sub = -10,ret: -29
-}, nSumA = 71, nSumB = 112,sub = -10,ret: -41
-}, nSumA = 142, nSumB = 151,sub = -10,ret: -9
-}, nSumA = 156, nSumB = 210,sub = -10,ret: -54
-}, nSumA = 103, nSumB = 169,sub = -10,ret: -66
-}, nSumA = 174, nSumB = 208,sub = -10,ret: -34
-}, nSumA = 179, nSumB = 308,sub = -10,ret: -129
-}, nSumA = 147, nSumB = 251,sub = -10,ret: -104
-}, nSumA = 76, nSumB = 212,sub = -10,ret: -136
-}, nSumA = 23, nSumB = 171,sub = -10,ret: -148
-}, nSumA = 94, nSumB = 210,sub = -10,ret: -116
-}, nSumA = 108, nSumB = 269,sub = -10,ret: -161
-}, nSumA = 55, nSumB = 228,sub = -10,ret: -173
-}, nSumA = 126, nSumB = 267,sub = -10,ret: -141
-}, nSumA = 209, nSumB = 281,sub = -10,ret: -72
-}, nSumA = 138, nSumB = 242,sub = -10,ret: -104
-}, nSumA = 85, nSumB = 201,sub = -10,ret: -116
-}, nSumA = 156, nSumB = 240,sub = -10,ret: -84
-}, nSumA = 170, nSumB = 299,sub = -10,ret: -129
-}, nSumA = 117, nSumB = 258,sub = -10,ret: -141
-}, nSumA = 188, nSumB = 297,sub = -10,ret: -109
-}, nSumA = 312, nSumB = 261,sub = -10,ret: 51
-}, nSumA = 298, nSumB = 172,sub = -10,ret: 126
-}, nSumA = 236, nSumB = 142,sub = -10,ret: 94
-}, nSumA = 204, nSumB = 85,sub = -10,ret: 119
-}, nSumA = 133, nSumB = 46,sub = -10,ret: 87
-}, nSumA = 80, nSumB = 5,sub = -10,ret: 75
-}, nSumA = 151, nSumB = 44,sub = -10,ret: 107
-}, nSumA = 165, nSumB = 103,sub = -10,ret: 62
-}, nSumA = 112, nSumB = 62,sub = -10,ret: 50
-}, nSumA = 183, nSumB = 101,sub = -10,ret: 82
-}, nSumA = 266, nSumB = 115,sub = -10,ret: 151
-}, nSumA = 195, nSumB = 76,sub = -10,ret: 119
-}, nSumA = 142, nSumB = 35,sub = -10,ret: 107
-}, nSumA = 213, nSumB = 74,sub = -10,ret: 139
-}, nSumA = 227, nSumB = 133,sub = -10,ret: 94
-}, nSumA = 174, nSumB = 92,sub = -10,ret: 82
-}, nSumA = 245, nSumB = 131,sub = -10,ret: 114
-}, nSumA = 250, nSumB = 231,sub = -10,ret: 19
-}, nSumA = 218, nSumB = 174,sub = -10,ret: 44
-}, nSumA = 147, nSumB = 135,sub = -10,ret: 12
-}, nSumA = 94, nSumB = 94,sub = -10,ret: 0
-}, nSumA = 165, nSumB = 133,sub = -10,ret: 32
-}, nSumA = 179, nSumB = 192,sub = -10,ret: -13
-}, nSumA = 126, nSumB = 151,sub = -10,ret: -25
-}, nSumA = 197, nSumB = 190,sub = -10,ret: 7
-}, nSumA = 280, nSumB = 204,sub = -10,ret: 76
-}, nSumA = 209, nSumB = 165,sub = -10,ret: 44
-}, nSumA = 156, nSumB = 124,sub = -10,ret: 32
-}, nSumA = 227, nSumB = 163,sub = -10,ret: 64
-}, nSumA = 241, nSumB = 222,sub = -10,ret: 19
-}, nSumA = 188, nSumB = 181,sub = -10,ret: 7
-}, nSumA = 259, nSumB = 220,sub = -10,ret: 39
-}, nSumA = 307, nSumB = 254,sub = -10,ret: 53
-}, nSumA = 245, nSumB = 224,sub = -10,ret: 21
-}, nSumA = 213, nSumB = 167,sub = -10,ret: 46
-}, nSumA = 142, nSumB = 128,sub = -10,ret: 14
-}, nSumA = 89, nSumB = 87,sub = -10,ret: 2
-}, nSumA = 160, nSumB = 126,sub = -10,ret: 34
-}, nSumA = 174, nSumB = 185,sub = -10,ret: -11
-}, nSumA = 121, nSumB = 144,sub = -10,ret: -23
-}, nSumA = 192, nSumB = 183,sub = -10,ret: 9
-}, nSumA = 275, nSumB = 197,sub = -10,ret: 78
-}, nSumA = 204, nSumB = 158,sub = -10,ret: 46
-}, nSumA = 151, nSumB = 117,sub = -10,ret: 34
-}, nSumA = 222, nSumB = 156,sub = -10,ret: 66
-}, nSumA = 236, nSumB = 215,sub = -10,ret: 21
-}, nSumA = 183, nSumB = 174,sub = -10,ret: 9
-}, nSumA = 254, nSumB = 213,sub = -10,ret: 41
-}, nSumA = 259, nSumB = 313,sub = -10,ret: -54
-}, nSumA = 227, nSumB = 256,sub = -10,ret: -29
-}, nSumA = 156, nSumB = 217,sub = -10,ret: -61
-}, nSumA = 103, nSumB = 176,sub = -10,ret: -73
-}, nSumA = 174, nSumB = 215,sub = -10,ret: -41
-}, nSumA = 188, nSumB = 274,sub = -10,ret: -86
-}, nSumA = 135, nSumB = 233,sub = -10,ret: -98
-}, nSumA = 206, nSumB = 272,sub = -10,ret: -66
-}, nSumA = 289, nSumB = 286,sub = -10,ret: 3
-}, nSumA = 218, nSumB = 247,sub = -10,ret: -29
-}, nSumA = 165, nSumB = 206,sub = -10,ret: -41
-}, nSumA = 236, nSumB = 245,sub = -10,ret: -9
-}, nSumA = 250, nSumB = 304,sub = -10,ret: -54
-}, nSumA = 197, nSumB = 263,sub = -10,ret: -66
-}, nSumA = 268, nSumB = 302,sub = -10,ret: -34
-}, nSumA = 326, nSumB = 361,sub = -10,ret: -35
-}, nSumA = 317, nSumB = 279,sub = -10,ret: 38
-}, nSumA = 303, nSumB = 190,sub = -10,ret: 113
-}, nSumA = 241, nSumB = 160,sub = -10,ret: 81
-}, nSumA = 209, nSumB = 103,sub = -10,ret: 106
-}, nSumA = 138, nSumB = 64,sub = -10,ret: 74
-}, nSumA = 85, nSumB = 23,sub = -10,ret: 62
-}, nSumA = 156, nSumB = 62,sub = -10,ret: 94
-}, nSumA = 170, nSumB = 121,sub = -10,ret: 49
-}, nSumA = 117, nSumB = 80,sub = -10,ret: 37
-}, nSumA = 188, nSumB = 119,sub = -10,ret: 69
-}, nSumA = 271, nSumB = 133,sub = -10,ret: 138
-}, nSumA = 200, nSumB = 94,sub = -10,ret: 106
-}, nSumA = 147, nSumB = 53,sub = -10,ret: 94
-}, nSumA = 218, nSumB = 92,sub = -10,ret: 126
-}, nSumA = 232, nSumB = 151,sub = -10,ret: 81
-}, nSumA = 179, nSumB = 110,sub = -10,ret: 69
-}, nSumA = 250, nSumB = 149,sub = -10,ret: 101
-}, nSumA = 255, nSumB = 249,sub = -10,ret: 6
-}, nSumA = 223, nSumB = 192,sub = -10,ret: 31
-}, nSumA = 152, nSumB = 153,sub = -10,ret: -1
-}, nSumA = 99, nSumB = 112,sub = -10,ret: -13
-}, nSumA = 170, nSumB = 151,sub = -10,ret: 19
-}, nSumA = 184, nSumB = 210,sub = -10,ret: -26
-}, nSumA = 131, nSumB = 169,sub = -10,ret: -38
-}, nSumA = 202, nSumB = 208,sub = -10,ret: -6
-}, nSumA = 285, nSumB = 222,sub = -10,ret: 63
-}, nSumA = 214, nSumB = 183,sub = -10,ret: 31
-}, nSumA = 161, nSumB = 142,sub = -10,ret: 19
-}, nSumA = 232, nSumB = 181,sub = -10,ret: 51
-}, nSumA = 246, nSumB = 240,sub = -10,ret: 6
-}, nSumA = 193, nSumB = 199,sub = -10,ret: -6
-}, nSumA = 264, nSumB = 238,sub = -10,ret: 26
-}, nSumA = 312, nSumB = 272,sub = -10,ret: 40
-}, nSumA = 250, nSumB = 242,sub = -10,ret: 8
-}, nSumA = 218, nSumB = 185,sub = -10,ret: 33
-}, nSumA = 147, nSumB = 146,sub = -10,ret: 1
-}, nSumA = 94, nSumB = 105,sub = -10,ret: -11
-}, nSumA = 165, nSumB = 144,sub = -10,ret: 21
-}, nSumA = 179, nSumB = 203,sub = -10,ret: -24
-}, nSumA = 126, nSumB = 162,sub = -10,ret: -36
-}, nSumA = 197, nSumB = 201,sub = -10,ret: -4
-}, nSumA = 280, nSumB = 215,sub = -10,ret: 65
-}, nSumA = 209, nSumB = 176,sub = -10,ret: 33
-}, nSumA = 156, nSumB = 135,sub = -10,ret: 21
-}, nSumA = 227, nSumB = 174,sub = -10,ret: 53
-}, nSumA = 241, nSumB = 233,sub = -10,ret: 8
-}, nSumA = 188, nSumB = 192,sub = -10,ret: -4
-}, nSumA = 259, nSumB = 231,sub = -10,ret: 28
-}, nSumA = 264, nSumB = 331,sub = -10,ret: -67
-}, nSumA = 232, nSumB = 274,sub = -10,ret: -42
-}, nSumA = 161, nSumB = 235,sub = -10,ret: -74
-}, nSumA = 108, nSumB = 194,sub = -10,ret: -86
-}, nSumA = 179, nSumB = 233,sub = -10,ret: -54
-}, nSumA = 193, nSumB = 292,sub = -10,ret: -99
-}, nSumA = 140, nSumB = 251,sub = -10,ret: -111
-}, nSumA = 211, nSumB = 290,sub = -10,ret: -79
-}, nSumA = 294, nSumB = 304,sub = -10,ret: -10
-}, nSumA = 321, nSumB = 300,sub = -10,ret: 21
-}, nSumA = 241, nSumB = 219,sub = -10,ret: 22
-}, nSumA = 232, nSumB = 206,sub = -10,ret: 26
-}, nSumA = 218, nSumB = 186,sub = -10,ret: 32
-}, nSumA = 156, nSumB = 155,sub = -10,ret: 1
-}, nSumA = 124, nSumB = 92,sub = -10,ret: 32
-}, nSumA = 53, nSumB = 47,sub = -10,ret: 6
-}, nSumA = 71, nSumB = 45,sub = -10,ret: 26
-}, nSumA = 85, nSumB = 110,sub = -10,ret: -25
-}, nSumA = 32, nSumB = 63,sub = -10,ret: -31
-}, nSumA = 103, nSumB = 108,sub = -10,ret: -5
-}, nSumA = 186, nSumB = 123,sub = -10,ret: 63
-}, nSumA = 115, nSumB = 78,sub = -10,ret: 37
-}, nSumA = 62, nSumB = 31,sub = -10,ret: 31
-}, nSumA = 133, nSumB = 76,sub = -10,ret: 57
-}, nSumA = 147, nSumB = 141,sub = -10,ret: 6
-}, nSumA = 94, nSumB = 94,sub = -10,ret: 0
-}, nSumA = 165, nSumB = 139,sub = -10,ret: 26
-}, nSumA = 170, nSumB = 175,sub = -10,ret: -5
-}, nSumA = 138, nSumB = 112,sub = -10,ret: 26
-}, nSumA = 67, nSumB = 67,sub = -10,ret: 0
-}, nSumA = 14, nSumB = 20,sub = -10,ret: -6
-}, nSumA = 85, nSumB = 65,sub = -10,ret: 20
-}, nSumA = 99, nSumB = 130,sub = -10,ret: -31
-}, nSumA = 46, nSumB = 83,sub = -10,ret: -37
-}, nSumA = 117, nSumB = 128,sub = -10,ret: -11
-}, nSumA = 200, nSumB = 143,sub = -10,ret: 57
-}, nSumA = 129, nSumB = 98,sub = -10,ret: 31
-}, nSumA = 76, nSumB = 51,sub = -10,ret: 25
-}, nSumA = 147, nSumB = 96,sub = -10,ret: 51
-}, nSumA = 161, nSumB = 161,sub = -10,ret: 0
-}, nSumA = 108, nSumB = 114,sub = -10,ret: -6
-}, nSumA = 179, nSumB = 159,sub = -10,ret: 20
-}, nSumA = 227, nSumB = 199,sub = -10,ret: 28
-}, nSumA = 165, nSumB = 168,sub = -10,ret: -3
-}, nSumA = 133, nSumB = 105,sub = -10,ret: 28
-}, nSumA = 62, nSumB = 60,sub = -10,ret: 2
-}, nSumA = 9, nSumB = 13,sub = -10,ret: -4
-}, nSumA = 80, nSumB = 58,sub = -10,ret: 22
-}, nSumA = 94, nSumB = 123,sub = -10,ret: -29
-}, nSumA = 41, nSumB = 76,sub = -10,ret: -35
-}, nSumA = 112, nSumB = 121,sub = -10,ret: -9
-}, nSumA = 195, nSumB = 136,sub = -10,ret: 59
-}, nSumA = 124, nSumB = 91,sub = -10,ret: 33
-}, nSumA = 71, nSumB = 44,sub = -10,ret: 27
-}, nSumA = 142, nSumB = 89,sub = -10,ret: 53
-}, nSumA = 156, nSumB = 154,sub = -10,ret: 2
-}, nSumA = 103, nSumB = 107,sub = -10,ret: -4
-}, nSumA = 174, nSumB = 152,sub = -10,ret: 22
-}, nSumA = 179, nSumB = 188,sub = -10,ret: -9
-}, nSumA = 147, nSumB = 125,sub = -10,ret: 22
-}, nSumA = 76, nSumB = 80,sub = -10,ret: -4
-}, nSumA = 23, nSumB = 33,sub = -10,ret: -10
-}, nSumA = 321, nSumB = 382,sub = -10,ret: -61
-}, nSumA = 241, nSumB = 370,sub = -10,ret: -129
-}, nSumA = 232, nSumB = 276,sub = -10,ret: -44
-}, nSumA = 218, nSumB = 180,sub = -10,ret: 38
-}, nSumA = 156, nSumB = 143,sub = -10,ret: 13
-}, nSumA = 124, nSumB = 74,sub = -10,ret: 50
-}, nSumA = 53, nSumB = 28,sub = -10,ret: 25
-}, nSumA = 71, nSumB = 46,sub = -10,ret: 25
-}, nSumA = 85, nSumB = 97,sub = -10,ret: -12
-}, nSumA = 32, nSumB = 69,sub = -10,ret: -37
-}, nSumA = 103, nSumB = 115,sub = -10,ret: -12
-}, nSumA = 186, nSumB = 111,sub = -10,ret: 75
-}, nSumA = 115, nSumB = 65,sub = -10,ret: 50
-}, nSumA = 62, nSumB = 37,sub = -10,ret: 25
-}, nSumA = 133, nSumB = 83,sub = -10,ret: 50
-}, nSumA = 147, nSumB = 134,sub = -10,ret: 13
-}, nSumA = 94, nSumB = 106,sub = -10,ret: -12
-}, nSumA = 165, nSumB = 152,sub = -10,ret: 13
-}, nSumA = 170, nSumB = 239,sub = -10,ret: -69
-}, nSumA = 138, nSumB = 170,sub = -10,ret: -32
-}, nSumA = 67, nSumB = 124,sub = -10,ret: -57
-}, nSumA = 14, nSumB = 96,sub = -10,ret: -82
-}, nSumA = 85, nSumB = 142,sub = -10,ret: -57
-}, nSumA = 99, nSumB = 193,sub = -10,ret: -94
-}, nSumA = 46, nSumB = 165,sub = -10,ret: -119
-}, nSumA = 117, nSumB = 211,sub = -10,ret: -94
-}, nSumA = 200, nSumB = 207,sub = -10,ret: -7
-}, nSumA = 129, nSumB = 161,sub = -10,ret: -32
-}, nSumA = 76, nSumB = 133,sub = -10,ret: -57
-}, nSumA = 147, nSumB = 179,sub = -10,ret: -32
-}, nSumA = 161, nSumB = 230,sub = -10,ret: -69
-}, nSumA = 108, nSumB = 202,sub = -10,ret: -94
-}, nSumA = 179, nSumB = 248,sub = -10,ret: -69
-}, nSumA = 227, nSumB = 274,sub = -10,ret: -47
-}, nSumA = 165, nSumB = 237,sub = -10,ret: -72
-}, nSumA = 133, nSumB = 168,sub = -10,ret: -35
-}, nSumA = 62, nSumB = 122,sub = -10,ret: -60
-}, nSumA = 9, nSumB = 94,sub = -10,ret: -85
-}, nSumA = 80, nSumB = 140,sub = -10,ret: -60
-}, nSumA = 94, nSumB = 191,sub = -10,ret: -97
-}, nSumA = 41, nSumB = 163,sub = -10,ret: -122
-}, nSumA = 112, nSumB = 209,sub = -10,ret: -97
-}, nSumA = 195, nSumB = 205,sub = -10,ret: -10
-}, nSumA = 321, nSumB = 374,sub = -10,ret: -53
-}, nSumA = 241, nSumB = 356,sub = -10,ret: -115
-}, nSumA = 232, nSumB = 256,sub = -10,ret: -24
-}, nSumA = 218, nSumB = 179,sub = -10,ret: 39
-}, nSumA = 156, nSumB = 136,sub = -10,ret: 20
-}, nSumA = 124, nSumB = 61,sub = -10,ret: 63
-}, nSumA = 53, nSumB = 34,sub = -10,ret: 19
-}, nSumA = 71, nSumB = 27,sub = -10,ret: 44
-}, nSumA = 85, nSumB = 109,sub = -10,ret: -24
-}, nSumA = 32, nSumB = 75,sub = -10,ret: -43
-}, nSumA = 103, nSumB = 102,sub = -10,ret: 1
-}, nSumA = 186, nSumB = 104,sub = -10,ret: 82
-}, nSumA = 115, nSumB = 77,sub = -10,ret: 38
-}, nSumA = 62, nSumB = 43,sub = -10,ret: 19
-}, nSumA = 133, nSumB = 70,sub = -10,ret: 63
-}, nSumA = 147, nSumB = 152,sub = -10,ret: -5
-}, nSumA = 94, nSumB = 118,sub = -10,ret: -24
-}, nSumA = 165, nSumB = 145,sub = -10,ret: 20
-}, nSumA = 170, nSumB = 213,sub = -10,ret: -43
-}, nSumA = 138, nSumB = 138,sub = -10,ret: 0
-}, nSumA = 67, nSumB = 111,sub = -10,ret: -44
-}, nSumA = 14, nSumB = 77,sub = -10,ret: -63
-}, nSumA = 85, nSumB = 104,sub = -10,ret: -19
-}, nSumA = 99, nSumB = 186,sub = -10,ret: -87
-}, nSumA = 46, nSumB = 152,sub = -10,ret: -106
-}, nSumA = 117, nSumB = 179,sub = -10,ret: -62
-}, nSumA = 200, nSumB = 181,sub = -10,ret: 19
-}, nSumA = 129, nSumB = 154,sub = -10,ret: -25
-}, nSumA = 76, nSumB = 120,sub = -10,ret: -44
-}, nSumA = 147, nSumB = 147,sub = -10,ret: 0
-}, nSumA = 161, nSumB = 229,sub = -10,ret: -68
-}, nSumA = 108, nSumB = 195,sub = -10,ret: -87
-}, nSumA = 179, nSumB = 222,sub = -10,ret: -43
-}, nSumA = 227, nSumB = 279,sub = -10,ret: -52
-}, nSumA = 165, nSumB = 236,sub = -10,ret: -71
-}, nSumA = 133, nSumB = 161,sub = -10,ret: -28
-}, nSumA = 62, nSumB = 134,sub = -10,ret: -72
-}, nSumA = 9, nSumB = 100,sub = -10,ret: -91
-}, nSumA = 80, nSumB = 127,sub = -10,ret: -47
-}, nSumA = 94, nSumB = 209,sub = -10,ret: -115
-}, nSumA = 41, nSumB = 175,sub = -10,ret: -134
-}, nSumA = 112, nSumB = 202,sub = -10,ret: -90
-}, nSumA = 195, nSumB = 204,sub = -10,ret: -9
-}, nSumA = 124, nSumB = 177,sub = -10,ret: -53
-}, nSumA = 71, nSumB = 143,sub = -10,ret: -72
-}, nSumA = 142, nSumB = 170,sub = -10,ret: -28
-}, nSumA = 156, nSumB = 252,sub = -10,ret: -96
-}, nSumA = 103, nSumB = 218,sub = -10,ret: -115
-}, nSumA = 174, nSumB = 245,sub = -10,ret: -71
-}, nSumA = 179, nSumB = 313,sub = -10,ret: -134
-}, nSumA = 147, nSumB = 238,sub = -10,ret: -91
-}, nSumA = 76, nSumB = 211,sub = -10,ret: -135
-}, nSumA = 23, nSumB = 177,sub = -10,ret: -154
-}, nSumA = 94, nSumB = 204,sub = -10,ret: -110
-}, nSumA = 108, nSumB = 286,sub = -10,ret: -178
-}, nSumA = 55, nSumB = 252,sub = -10,ret: -197
-}, nSumA = 126, nSumB = 279,sub = -10,ret: -153
-}, nSumA = 209, nSumB = 281,sub = -10,ret: -72
-}, nSumA = 138, nSumB = 254,sub = -10,ret: -116
-}, nSumA = 85, nSumB = 220,sub = -10,ret: -135
-}, nSumA = 156, nSumB = 247,sub = -10,ret: -91
-}, nSumA = 170, nSumB = 329,sub = -10,ret: -159
-}, nSumA = 117, nSumB = 295,sub = -10,ret: -178
-}, nSumA = 188, nSumB = 322,sub = -10,ret: -134
-}, nSumA = 312, nSumB = 274,sub = -10,ret: 38
-}, nSumA = 298, nSumB = 197,sub = -10,ret: 101
-}, nSumA = 236, nSumB = 154,sub = -10,ret: 82
-}, nSumA = 204, nSumB = 79,sub = -10,ret: 125
-}, nSumA = 133, nSumB = 52,sub = -10,ret: 81
-}, nSumA = 80, nSumB = 18,sub = -10,ret: 62
-}, nSumA = 151, nSumB = 45,sub = -10,ret: 106
-}, nSumA = 165, nSumB = 127,sub = -10,ret: 38
-}, nSumA = 112, nSumB = 93,sub = -10,ret: 19
-}, nSumA = 183, nSumB = 120,sub = -10,ret: 63
-}, nSumA = 266, nSumB = 122,sub = -10,ret: 144
-}, nSumA = 195, nSumB = 95,sub = -10,ret: 100
-}, nSumA = 142, nSumB = 61,sub = -10,ret: 81
-}, nSumA = 213, nSumB = 88,sub = -10,ret: 125
-}, nSumA = 227, nSumB = 170,sub = -10,ret: 57
-}, nSumA = 174, nSumB = 136,sub = -10,ret: 38
-}, nSumA = 245, nSumB = 163,sub = -10,ret: 82
-}, nSumA = 250, nSumB = 231,sub = -10,ret: 19
-}, nSumA = 218, nSumB = 156,sub = -10,ret: 62
-}, nSumA = 147, nSumB = 129,sub = -10,ret: 18
-}, nSumA = 94, nSumB = 95,sub = -10,ret: -1
-}, nSumA = 165, nSumB = 122,sub = -10,ret: 43
-}, nSumA = 179, nSumB = 204,sub = -10,ret: -25
-}, nSumA = 126, nSumB = 170,sub = -10,ret: -44
-}, nSumA = 197, nSumB = 197,sub = -10,ret: 0
-}, nSumA = 280, nSumB = 199,sub = -10,ret: 81
-}, nSumA = 209, nSumB = 172,sub = -10,ret: 37
-}, nSumA = 156, nSumB = 138,sub = -10,ret: 18
-}, nSumA = 227, nSumB = 165,sub = -10,ret: 62
-}, nSumA = 241, nSumB = 247,sub = -10,ret: -6
-}, nSumA = 188, nSumB = 213,sub = -10,ret: -25
-}, nSumA = 259, nSumB = 240,sub = -10,ret: 19
-}, nSumA = 307, nSumB = 297,sub = -10,ret: 10
-}, nSumA = 245, nSumB = 254,sub = -10,ret: -9
-}, nSumA = 213, nSumB = 179,sub = -10,ret: 34
-}, nSumA = 142, nSumB = 152,sub = -10,ret: -10
-}, nSumA = 321, nSumB = 349,sub = -10,ret: -28
-}, nSumA = 241, nSumB = 256,sub = -10,ret: -15
-}, nSumA = 232, nSumB = 231,sub = -10,ret: 1
-}, nSumA = 218, nSumB = 229,sub = -10,ret: -11
-}, nSumA = 156, nSumB = 161,sub = -10,ret: -5
-}, nSumA = 124, nSumB = 111,sub = -10,ret: 13
-}, nSumA = 53, nSumB = 59,sub = -10,ret: -6
-}, nSumA = 71, nSumB = 52,sub = -10,ret: 19
-}, nSumA = 85, nSumB = 109,sub = -10,ret: -24
-}, nSumA = 32, nSumB = 50,sub = -10,ret: -18
-}, nSumA = 103, nSumB = 102,sub = -10,ret: 1
-}, nSumA = 186, nSumB = 179,sub = -10,ret: 7
-}, nSumA = 115, nSumB = 127,sub = -10,ret: -12
-}, nSumA = 62, nSumB = 68,sub = -10,ret: -6
-}, nSumA = 133, nSumB = 120,sub = -10,ret: 13
-}, nSumA = 147, nSumB = 177,sub = -10,ret: -30
-}, nSumA = 94, nSumB = 118,sub = -10,ret: -24
-}, nSumA = 165, nSumB = 170,sub = -10,ret: -5
-}, nSumA = 170, nSumB = 163,sub = -10,ret: 7
-}, nSumA = 138, nSumB = 113,sub = -10,ret: 25
-}, nSumA = 67, nSumB = 61,sub = -10,ret: 6
-}, nSumA = 14, nSumB = 2,sub = -10,ret: 12
-}, nSumA = 85, nSumB = 54,sub = -10,ret: 31
-}, nSumA = 99, nSumB = 111,sub = -10,ret: -12
-}, nSumA = 46, nSumB = 52,sub = -10,ret: -6
-}, nSumA = 117, nSumB = 104,sub = -10,ret: 13
-}, nSumA = 200, nSumB = 181,sub = -10,ret: 19
-}, nSumA = 129, nSumB = 129,sub = -10,ret: 0
-}, nSumA = 76, nSumB = 70,sub = -10,ret: 6
-}, nSumA = 147, nSumB = 122,sub = -10,ret: 25
-}, nSumA = 161, nSumB = 179,sub = -10,ret: -18
-}, nSumA = 108, nSumB = 120,sub = -10,ret: -12
-}, nSumA = 179, nSumB = 172,sub = -10,ret: 7
-}, nSumA = 227, nSumB = 254,sub = -10,ret: -27
-}, nSumA = 165, nSumB = 186,sub = -10,ret: -21
-}, nSumA = 133, nSumB = 136,sub = -10,ret: -3
-}, nSumA = 62, nSumB = 84,sub = -10,ret: -22
-}, nSumA = 9, nSumB = 25,sub = -10,ret: -16
-}, nSumA = 80, nSumB = 77,sub = -10,ret: 3
-}, nSumA = 94, nSumB = 134,sub = -10,ret: -40
-}, nSumA = 41, nSumB = 75,sub = -10,ret: -34
-}, nSumA = 112, nSumB = 127,sub = -10,ret: -15
-}, nSumA = 195, nSumB = 204,sub = -10,ret: -9
-}, nSumA = 124, nSumB = 152,sub = -10,ret: -28
-}, nSumA = 71, nSumB = 93,sub = -10,ret: -22
-}, nSumA = 142, nSumB = 145,sub = -10,ret: -3
-}, nSumA = 156, nSumB = 202,sub = -10,ret: -46
-}, nSumA = 103, nSumB = 143,sub = -10,ret: -40
-}, nSumA = 174, nSumB = 195,sub = -10,ret: -21
-}, nSumA = 179, nSumB = 188,sub = -10,ret: -9
-}, nSumA = 147, nSumB = 138,sub = -10,ret: 9
-}, nSumA = 76, nSumB = 86,sub = -10,ret: -10
+, nSumA = 294, nSumB = 304,sub = -10
+, nSumA = 119, nSumB = 129,sub = -10
 I Find it at last!!!
-FindResult: 1, nRrcNum: 19, size: 3
-	92	99	1	8	15	67	74	26	58	65
-	85	80	25	2	16	73	62	32	71	59
+FindResult: 1, nRrcNum: 19, size: 4
+	92	87	25	2	15	67	62	50	52	53
+	98	80	7	14	16	73	55	32	64	66
 	4	6	88	95	22	54	56	38	70	72
-	98	87	7	21	3	60	55	44	64	66
-	86	93	9	14	[31m19[0m	[31m61[0m	68	50	52	53
+	85	99	9	8	3	60	74	44	58	65
+	86	93	1	21	[31m19[0m	[31m61[0m	68	26	71	59
 	17	24	76	83	[31m90[0m	[31m42[0m	49	51	33	40
 	23	5	82	89	91	48	30	57	39	41
 	79	81	13	20	97	29	31	63	45	47
@@ -1035,3 +74,256 @@ x, y, dstX, dstY = 3,2,4,4
 vecElem.size: 8
 SubElem size:255
 nSrcIndex, nDstIndex: 2, 4
+	92	98	4	85	86	17	23	79	10	11
+	87	80	6	99	93	24	5	81	12	18
+	25	7	88	9	1	76	82	13	94	100
+	2	14	95	8	21	83	89	20	96	77
+	15	16	22	3	19	90	91	97	78	84
+	67	73	54	60	61	42	48	29	35	36
+	62	55	56	74	68	49	30	31	37	43
+	50	32	38	44	26	51	57	63	69	75
+	52	64	70	58	71	33	39	45	46	27
+	53	66	72	65	59	40	41	47	28	34
+, nSumA = 214, nSumB = 224,sub = -10
+, nSumA = 208, nSumB = 218,sub = -10
+I Find it at last!!!
+FindResult: 1, nRrcNum: 19, size: 4
+	15	87	92	2	25	67	62	50	52	53
+	7	80	98	14	16	73	55	32	64	66
+	22	6	88	95	4	54	56	38	70	72
+	85	99	9	8	3	60	74	44	58	65
+	86	93	1	21	[31m19[0m	[31m61[0m	68	26	71	59
+	17	24	76	83	[31m90[0m	[31m42[0m	49	51	33	40
+	82	5	23	89	91	48	30	57	39	41
+	97	81	13	20	79	29	31	63	45	47
+	10	12	94	96	78	35	37	69	46	28
+	84	18	11	77	100	36	43	75	27	34
+After check is: 1, nTag = 1
+c2 start........................
+swap:(2, 2)-->(4, 5)
+after swap: 
+	15	87	92	2	25	67	62	50	52	53
+	7	80	98	14	16	73	55	32	64	66
+	22	6	61	95	4	54	56	38	70	72
+	85	99	9	8	3	60	74	44	58	65
+	86	93	1	21	[31m19[0m	[31m88[0m	68	26	71	59
+	17	24	76	83	[31m90[0m	[31m42[0m	49	51	33	40
+	82	5	23	89	91	48	30	57	39	41
+	97	81	13	20	79	29	31	63	45	47
+	10	12	94	96	78	35	37	69	46	28
+	84	18	11	77	100	36	43	75	27	34
+nDstNum, nSrcNum, nTag: 61, 88, 0
+x, y, dstX, dstY = 2,2,4,5
+vecElem.size: 8
+SubElem size:255
+nSrcIndex, nDstIndex: 2, 4
+	15	87	92	2	25	67	62	50	52	53
+	7	80	98	14	16	73	55	32	64	66
+	22	6	61	95	4	54	56	38	70	72
+	85	99	9	8	3	60	74	44	58	65
+	86	93	1	21	19	88	68	26	71	59
+	17	24	76	83	90	42	49	51	33	40
+	82	5	23	89	91	48	30	57	39	41
+	97	81	13	20	79	29	31	63	45	47
+	10	12	94	96	78	35	37	69	46	28
+	84	18	11	77	100	36	43	75	27	34
+, nSumA = 67, nSumB = 94,sub = -27
+I Find it at last!!!
+FindResult: 1, nRrcNum: 88, size: 2
+	15	87	92	2	25	67	62	50	52	53
+	7	80	98	14	16	73	55	32	64	66
+	22	93	1	95	4	54	56	38	70	72
+	85	99	9	8	3	60	74	44	58	65
+	86	6	61	21	[31m19[0m	[31m88[0m	68	26	71	59
+	17	24	76	83	[31m90[0m	[31m42[0m	49	51	33	40
+	82	5	23	89	91	48	30	57	39	41
+	97	81	13	20	79	29	31	63	45	47
+	10	12	94	96	78	35	37	69	46	28
+	84	18	11	77	100	36	43	75	27	34
+After check is: 0, nTag = 0
+nDstNum, nSrcNum, nTag: 61, 88, 1
+x, y, dstX, dstY = 2,2,4,5
+vecElem.size: 8
+SubElem size:255
+nSrcIndex, nDstIndex: 2, 5
+	15	7	22	85	86	17	82	97	10	84
+	87	80	93	99	6	24	5	81	12	18
+	92	98	1	9	61	76	23	13	94	11
+	2	14	95	8	21	83	89	20	96	77
+	25	16	4	3	19	90	91	79	78	100
+	67	73	54	60	88	42	48	29	35	36
+	62	55	56	74	68	49	30	31	37	43
+	50	32	38	44	26	51	57	63	69	75
+	52	64	70	58	71	33	39	45	46	27
+	53	66	72	65	59	40	41	47	28	34
+, nSumA = 226, nSumB = 253,sub = -27
+, nSumA = 152, nSumB = 179,sub = -27
+I Find it at last!!!
+FindResult: 1, nRrcNum: 88, size: 4
+	15	92	87	2	25	67	62	50	52	53
+	7	98	80	14	16	73	55	32	64	66
+	22	93	1	95	4	54	56	38	70	72
+	85	60	9	8	3	99	74	44	58	65
+	86	6	61	21	[31m19[0m	[31m88[0m	68	26	71	59
+	17	24	76	83	[31m90[0m	[31m42[0m	49	51	33	40
+	82	48	5	89	91	23	30	57	39	41
+	97	13	81	20	79	29	31	63	45	47
+	10	35	94	96	78	12	37	69	46	28
+	84	36	11	77	100	18	43	75	27	34
+After check is: 1, nTag = 1
+c3 start........................
+swap:(9, 2)-->(5, 4)
+after swap: 
+	15	92	87	2	25	67	62	50	52	53
+	7	98	80	14	16	73	55	32	64	66
+	22	93	1	95	4	54	56	38	70	72
+	85	60	9	8	3	99	74	44	58	65
+	86	6	61	21	[31m19[0m	[31m88[0m	68	26	71	59
+	17	24	76	83	[31m11[0m	[31m42[0m	49	51	33	40
+	82	48	5	89	91	23	30	57	39	41
+	97	13	81	20	79	29	31	63	45	47
+	10	35	94	96	78	12	37	69	46	28
+	84	36	90	77	100	18	43	75	27	34
+nDstNum, nSrcNum, nTag: 90, 11, 0
+x, y, dstX, dstY = 9,2,5,4
+vecElem.size: 8
+SubElem size:255
+nSrcIndex, nDstIndex: 9, 5
+	15	92	87	2	25	67	62	50	52	53
+	7	98	80	14	16	73	55	32	64	66
+	22	93	1	95	4	54	56	38	70	72
+	85	60	9	8	3	99	74	44	58	65
+	86	6	61	21	19	88	68	26	71	59
+	17	24	76	83	11	42	49	51	33	40
+	82	48	5	89	91	23	30	57	39	41
+	97	13	81	20	79	29	31	63	45	47
+	10	35	94	96	78	12	37	69	46	28
+	84	36	90	77	100	18	43	75	27	34
+, nSumA = 220, nSumB = 141,sub = 79
+I Find it at last!!!
+FindResult: 1, nRrcNum: 11, size: 4
+	15	92	87	2	25	67	62	50	52	53
+	7	98	80	14	16	73	55	32	64	66
+	22	93	1	95	4	54	56	38	70	72
+	85	60	9	8	3	99	74	44	58	65
+	86	6	61	21	[31m19[0m	[31m88[0m	68	26	71	59
+	84	24	76	83	[31m11[0m	[31m42[0m	49	75	27	34
+	82	48	5	89	91	23	30	57	39	41
+	97	13	81	20	79	29	31	63	45	47
+	10	35	94	96	78	12	37	69	46	28
+	17	36	90	77	100	18	43	51	33	40
+After check is: 0, nTag = 0
+nDstNum, nSrcNum, nTag: 90, 11, 1
+x, y, dstX, dstY = 9,2,5,4
+vecElem.size: 8
+SubElem size:255
+nSrcIndex, nDstIndex: 2, 4
+	15	7	22	85	86	84	82	97	10	17
+	92	98	93	60	6	24	48	13	35	36
+	87	80	1	9	61	76	5	81	94	90
+	2	14	95	8	21	83	89	20	96	77
+	25	16	4	3	19	11	91	79	78	100
+	67	73	54	99	88	42	23	29	12	18
+	62	55	56	74	68	49	30	31	37	43
+	50	32	38	44	26	75	57	63	69	51
+	52	64	70	58	71	27	39	45	46	33
+	53	66	72	65	59	34	41	47	28	40
+, nSumA = 186, nSumB = 107,sub = 79
+, nSumA = 286, nSumB = 207,sub = 79
+I Find it at last!!!
+FindResult: 1, nRrcNum: 11, size: 4
+	25	92	15	2	87	67	62	50	52	53
+	7	98	80	14	16	73	55	32	64	66
+	22	93	1	95	4	54	56	38	70	72
+	3	60	9	8	85	99	74	44	58	65
+	86	6	61	21	[31m19[0m	[31m88[0m	68	26	71	59
+	84	24	76	83	[31m11[0m	[31m42[0m	49	75	27	34
+	5	48	82	89	91	23	30	57	39	41
+	79	13	81	20	97	29	31	63	45	47
+	94	35	10	96	78	12	37	69	46	28
+	100	36	90	77	17	18	43	51	33	40
+After check is: 1, nTag = 1
+c4 start........................
+swap:(8, 9)-->(5, 5)
+after swap: 
+	25	92	15	2	87	67	62	50	52	53
+	7	98	80	14	16	73	55	32	64	66
+	22	93	1	95	4	54	56	38	70	72
+	3	60	9	8	85	99	74	44	58	65
+	86	6	61	21	[31m19[0m	[31m88[0m	68	26	71	59
+	84	24	76	83	[31m11[0m	[31m28[0m	49	75	27	34
+	5	48	82	89	91	23	30	57	39	41
+	79	13	81	20	97	29	31	63	45	47
+	94	35	10	96	78	12	37	69	46	42
+	100	36	90	77	17	18	43	51	33	40
+nDstNum, nSrcNum, nTag: 42, 28, 0
+x, y, dstX, dstY = 8,9,5,5
+vecElem.size: 8
+SubElem size:255
+nSrcIndex, nDstIndex: 8, 5
+	25	92	15	2	87	67	62	50	52	53
+	7	98	80	14	16	73	55	32	64	66
+	22	93	1	95	4	54	56	38	70	72
+	3	60	9	8	85	99	74	44	58	65
+	86	6	61	21	19	88	68	26	71	59
+	84	24	76	83	11	28	49	75	27	34
+	5	48	82	89	91	23	30	57	39	41
+	79	13	81	20	97	29	31	63	45	47
+	94	35	10	96	78	12	37	69	46	42
+	100	36	90	77	17	18	43	51	33	40
+, nSumA = 79, nSumB = 65,sub = 14
+, nSumA = 288, nSumB = 274,sub = 14
+, nSumA = 97, nSumB = 83,sub = 14
+I Find it at last!!!
+FindResult: 1, nRrcNum: 28, size: 2
+	25	92	15	2	87	67	62	50	52	53
+	7	35	80	96	16	73	49	69	46	34
+	22	93	1	95	4	54	56	38	70	72
+	3	60	9	8	85	99	74	44	58	65
+	86	6	61	21	[31m19[0m	[31m88[0m	68	26	71	59
+	84	24	76	83	[31m11[0m	[31m28[0m	55	75	27	42
+	5	48	82	89	91	23	30	57	39	41
+	79	13	81	20	97	29	31	63	45	47
+	94	98	10	14	78	12	37	32	64	66
+	100	36	90	77	17	18	43	51	33	40
+After check is: 0, nTag = 0
+nDstNum, nSrcNum, nTag: 42, 28, 1
+x, y, dstX, dstY = 8,9,5,5
+vecElem.size: 8
+SubElem size:255
+nSrcIndex, nDstIndex: 9, 5
+	25	7	22	3	86	84	5	79	94	100
+	92	35	93	60	6	24	48	13	98	36
+	15	80	1	9	61	76	82	81	10	90
+	2	96	95	8	21	83	89	20	14	77
+	87	16	4	85	19	11	91	97	78	17
+	67	73	54	99	88	28	23	29	12	18
+	62	49	56	74	68	55	30	31	37	43
+	50	69	38	44	26	75	57	63	32	51
+	52	46	70	58	71	27	39	45	64	33
+	53	34	72	65	59	42	41	47	66	40
+, nSumA = 299, nSumB = 285,sub = 14
+, nSumA = 200, nSumB = 186,sub = 14
+, nSumA = 324, nSumB = 310,sub = 14
+, nSumA = 190, nSumB = 176,sub = 14
+, nSumA = 255, nSumB = 241,sub = 14
+I Find it at last!!!
+FindResult: 1, nRrcNum: 28, size: 5
+	25	92	15	2	67	53	62	50	52	87
+	7	35	80	96	73	16	49	69	46	34
+	22	93	1	95	54	72	56	38	70	4
+	3	60	9	8	65	99	74	44	58	85
+	86	6	61	21	[31m19[0m	[31m88[0m	68	26	71	59
+	84	24	76	83	[31m11[0m	[31m28[0m	55	75	27	42
+	5	48	82	89	91	23	30	57	39	41
+	79	13	81	20	29	97	31	63	45	47
+	94	98	10	14	78	12	37	32	64	66
+	100	36	90	77	18	17	43	51	33	40
+After check is: 1, nTag = 1
+sum1, sum2, sum = 313, 712, 505
+After all check is: 0
+Additon start......... 
+start process positive diagnol ... 
+start process negative diagnol ... 
+sum1, sum2, sum = 313, 712, 505
+After all check is: 0
