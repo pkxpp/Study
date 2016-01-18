@@ -1,0 +1,8 @@
+0000000000000000000000000000000000000000 4fc79e9662a34364d4ced48fa8dae816f9a4b89b pk <pkxpp@126.com> 1449157786 -0800	initial pull
+4fc79e9662a34364d4ced48fa8dae816f9a4b89b 8b98f309cd7195be5db9f3433d73932fb710abe9 pk <pkxpp@126.com> 1449370215 -0800	pull https://github.com/pkxpp/Study.git master: Fast-forward
+8b98f309cd7195be5db9f3433d73932fb710abe9 43045b8572d69d9ac6bdf68c89b179053fdf88e1 pk <pkxpp@126.com> 1449417393 -0800	commit: * read code again, and delete some lines whic explains
+43045b8572d69d9ac6bdf68c89b179053fdf88e1 6ca40c47b26b815669af882f73fe7b48cda292d6 pk <pkxpp@126.com> 1450625581 -0800	pull -u github master: Merge made by recursive.
+6ca40c47b26b815669af882f73fe7b48cda292d6 e167bb08b04118fb89710db560075d26caabdec6 pk <pkxpp@126.com> 1450625696 -0800	commit: linux code
+e167bb08b04118fb89710db560075d26caabdec6 5d3289959c0c10634dc5c826612f74748525e4ea pk <pkxpp@126.com> 1450626173 -0800	pull https://github.com/pkxpp/Study.git master: Merge made by recursive.
+5d3289959c0c10634dc5c826612f74748525e4ea 4d31237f753d3e0b827d4573707ec2d8ee232715 pk <pkxpp@126.com> 1450973669 -0800	commit (merge): Merge branch 'master' of https://github.com/pkxpp/Study
+4d31237f753d3e0b827d4573707ec2d8ee232715 cfd4ed949802698965721cb447ef4bbc490ea6d1 pk <pkxpp@126.com> 1451233341 -0800	commit: modify magic2.cpp at home
