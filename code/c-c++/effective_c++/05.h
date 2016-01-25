@@ -50,7 +50,9 @@ NamedObject2<T>::NamedObject2(const char* name, const T& value)
 
 // NamedObject2 complete
 template<typename T>
-NamedObject2<T>::NamedObject2(std::string& name, const T& value){
+NamedObject2<T>::NamedObject2(std::string& name, const T& value)
+:nameValue(name), objectValue(value)
+{
 	nameValue = name; //05.h:51: error: uninitialized member ‘NamedObject2<int>::objectValue’ with ‘const’ type ‘const int’
 	//objectValue = value;
 	std::cout << "string_nameValue2: " << nameValue << std::endl;
