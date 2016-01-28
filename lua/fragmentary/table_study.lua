@@ -448,6 +448,13 @@ local tbDataWithNil = {
 	[2] = nil,
 	[3] = 3,
 }
-for k,v in pairs(tbDataWithNil) do
-	print(k, v);
-end
+-- for k,v in pairs(tbDataWithNil) do
+	-- print(k, v);
+-- end
+
+-- 2016/01/06
+-- ÅÐ¶Ï±íÊÇ·ñÎª¿Õ
+local t = {
+	["xxx"] = 2,
+}
+print(111, next(t));

@@ -4,34 +4,34 @@
 --
 
 local _a1 = {20, 1, key1 = "hello", key2 = "world", lang = "lua"}
-print ("the table _a1")
-for _, v in pairs(_a1) do
-	print (v)
-end
+-- print ("the table _a1")
+-- for _, v in pairs(_a1) do
+	-- print (v)
+-- end
 
 local _a2 = {
 	key1 = "hello new",
 	key2 = "world new",
 }
 
-print ("\nthe old table _a2:")
-for _, v in pairs(_a2) do
-	print (v)
-end
+-- print ("\nthe old table _a2:")
+-- for _, v in pairs(_a2) do
+	-- print (v)
+-- end
 
-print("\na2的metable:", getmetatable(_a2))
-print("language:", _a2["lang"])
+-- print("\na2的metable:", getmetatable(_a2))
+-- print("language:", _a2["lang"])
 
 --__index
 setmetatable(_a2, {__index = _a1})
 
-print("\nthe new table _a2:")
-for _, v in pairs(_a2) do
-	print (v)
-end
+-- print("\nthe new table _a2:")
+-- for _, v in pairs(_a2) do
+	-- print (v)
+-- end
 
-print("\na2的metable:", getmetatable(_a2))
-print ("language:", _a2["lang"])
+-- print("\na2的metable:", getmetatable(_a2))
+-- print ("language:", _a2["lang"])
 
 
 --20131107
@@ -109,23 +109,23 @@ function TestInherit(base, tbInitInfo)
 end
 
 local tbTest = gf_Inherit(tbSrc, tbSrc2)
-print("..........")
-for i, v in pairs(tbSrc) do
-	print(i, v)
-end
-print("..........")
-for i, v in pairs(tbSrc2) do
-	print(i, v)
-end
-print("..........")
-for i, v in pairs(tbTest) do
-	print(i, v)
-end
-print(tbTest[1], tbTest[2], tbTest.src1, tbTest.src2)
+-- print("..........")
+-- for i, v in pairs(tbSrc) do
+	-- print(i, v)
+-- end
+-- print("..........")
+-- for i, v in pairs(tbSrc2) do
+	-- print(i, v)
+-- end
+-- print("..........")
+-- for i, v in pairs(tbTest) do
+	-- print(i, v)
+-- end
+-- print(tbTest[1], tbTest[2], tbTest.src1, tbTest.src2)
 
 --------------------------------------------------------
 --(1.1)__index
-print(1.1)
+-- print(1.1)
 Window = {}
 Window.prototype = {x = 0, y = 0, width = 100, height = 100, }
 Window.mt = {}
@@ -139,7 +139,7 @@ Window.mt.__index = function ( table, key)
 end
 
 w = Window.new{x=10, y = 20}
-print(w.width)
+-- print(w.width)
 
 --(1.2) __newindex
 --[[
@@ -163,14 +163,14 @@ function setDefault(t, d)
 end
 
 tab = {x = 10, y = 20}
-print(tab.x, tab.z)
+-- print(tab.x, tab.z)
 
 setDefault(tab, 0)
-print(tab.x, tab.z)
+-- print(tab.x, tab.z)
 
 tab1 = {x = 15, y = 25}
 setDefault(tab1, 1)
-print(tab.x, tab.z, tab1.x, tab1.z)
+-- print(tab.x, tab.z, tab1.x, tab1.z)
 --[[
 注：这里直接用table当做key，可以理解为key的table实质上就是一个地址
 (eg:0x0000ABCD)
@@ -204,13 +204,13 @@ setmetatable(t, mt)]]
 local index = {} --用table做key，同1.2中的【注】
 local mt = {
 	__index = function(t, k)
-	print("*access to element " .. tostring(k))
+	-- print("*access to element " .. tostring(k))
 	return t[index][k]
 	end,
 	
 	__newindex = function(t, k, v)
-	print("*update of element " .. tostring(k) ..
-		" to " .. tostring(v))
+	-- print("*update of element " .. tostring(k) ..
+		-- " to " .. tostring(v))
 	t[index][k] = v
 	end
 }	
@@ -257,13 +257,13 @@ days = readOnly{"Sunday", "Monday", "Tuesday", "Wednesday",
 	"Thursday", "Friday", "Saturday"
 }
 
-for k, v in pairs(days) do
-	print("metatable", k, v);
-end
+-- for k, v in pairs(days) do
+	-- print("metatable", k, v);
+-- end
 
-print(days[1])
+-- print(days[1])
 -- days[2] = "Noday"
-print(days[2])
+-- print(days[2])
 
 --sum:
 --(1)元表的内容pairs读取不到
@@ -273,7 +273,7 @@ print(days[2])
 ----------------------------------
 --2015、07、07 弱引用
 --问题：道具多处被使用，如果背包中道具被删除需要删除该处道具对象
-print("Test 弱引用 ...................................")
+-- print("Test 弱引用 ...................................")
 local tbItem1 = {1, 3};
 local tbItem2 = {2, 2};
 local tbItem3 = {3, 5};
@@ -287,15 +287,29 @@ local tbWeak = {
 }
 
 setmetatable(tbWeak, {__mode = "v"});
-print("before:");
-for k, v in pairs(tbWeak) do
-	print(k, v)
-end
+-- print("before:");
+-- for k, v in pairs(tbWeak) do
+	-- print(k, v)
+-- end
 tbItem1 = nil;
 tbItems[1] = nil;
 collectgarbage();
-print("after:");
-for k, v in pairs(tbWeak) do
-	print(k, v)
-end
-print("...........................end..............................")
+-- print("after:");
+-- for k, v in pairs(tbWeak) do
+	-- print(k, v)
+-- end
+-- print("...........................end..............................")
+
+-- 2015、12、30
+-- __index和metatable
+local a = {}
+local b = {
+	[1] = 3,
+	[5] = 5,
+}
+local c,d = 5, 6;
+local e,f = "str1", "str2"
+setmetatable(a, b)
+print(a[1])
+print("getmetatable：", getmetatable(a), b)
+print(getmetatable(c), getmetatable(d), getmetatable(e), getmetatable(f))
