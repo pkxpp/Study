@@ -394,4 +394,28 @@ function addMessageTipsEx(...)
 	print(massage);
 end
 
-addMessageTipsEx("test", 6);
+-- addMessageTipsEx("test", 6);
+
+-- 2015/12/23 比较时间
+function compare()
+	local nMax = 1000000;
+	local t1 = os.clock();
+	for i = 1, nMax do
+		if "asdggasddg4" == "aakjpllsgc" then
+		end
+	end
+	local t2 = os.clock()
+	print(111, t2-t1);
+	
+	local n1 = math.random(100000);
+	local n2 = math.random(100000);
+	local t3 = os.clock();
+	for i = 1, nMax do
+		if n1 == n2 then
+		end
+	end
+	local t4 = os.clock()
+	print(222, t4-t3);
+end
+
+compare();
