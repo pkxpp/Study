@@ -76,7 +76,7 @@ void quick_sort2(int a[], int start, int end)
 	}
 }
 
-/* main */
+/* main */ 
 int main()
 {
 	int a[] = {5, 4, 7, 3, 2, 9, 1, 8};
