@@ -3,36 +3,45 @@
 --2013/06/27
 --
 
-local _a1 = {20, 1, key1 = "hello", key2 = "world", lang = "lua"}
--- print ("the table _a1")
--- for _, v in pairs(_a1) do
-	-- print (v)
--- end
-
-local _a2 = {
+-- 两种写法都可以^_^
+local t1 = {20, 1, key1 = "hello", key2 = "world", lang = "lua"}
+local t2 = {
 	key1 = "hello new",
 	key2 = "world new",
 }
+print("Before setmetatable: ")
+print("a2 metable = ", getmetatable(t2))
+print("language =", t2["lang"])
 
--- print ("\nthe old table _a2:")
--- for _, v in pairs(_a2) do
-	-- print (v)
--- end
+-- 使用用setmetatable设置元表
+setmetatable(t2, {__index = t1})
+print("\nAfter setmetatable:")
+print("a2 metable =", getmetatable(t2))
+print ("language =", t2["lang"])
 
--- print("\na2的metable:", getmetatable(_a2))
--- print("language:", _a2["lang"])
 
---__index
-setmetatable(_a2, {__index = _a1})
-
--- print("\nthe new table _a2:")
--- for _, v in pairs(_a2) do
-	-- print (v)
--- end
-
--- print("\na2的metable:", getmetatable(_a2))
--- print ("language:", _a2["lang"])
-
+--@function: 复制一个table
+--@tbOrg: 源table
+function copy(tbOrg)
+	-- 注意：放置互引用情况下的死循环
+    local tbSaveExitTable = {}
+    local function _copy(object)
+        if type(object) ~= "table" then
+            return object;
+        elseif tbSaveExitTable[object] then	--检查是否有循环嵌套的table
+            return tbSaveExitTable[object];
+        end
+        local tbNewTable = {};
+        tbSaveExitTable[object] = tbNewTable;
+        for index, value in pairs(object) do
+            tbNewTable[_copy(index)] = _copy(value);	
+        end
+		
+		-- 使用：保持元表一致
+        return setmetatable(tbNewTable, getmetatable(object));
+    end
+    return _copy(tbOrg);
+end
 
 --20131107
 --gf_Inherit函数会不会覆盖
@@ -204,13 +213,13 @@ setmetatable(t, mt)]]
 local index = {} --用table做key，同1.2中的【注】
 local mt = {
 	__index = function(t, k)
-	-- print("*access to element " .. tostring(k))
+	print("*access to element " .. tostring(k))
 	return t[index][k]
 	end,
 	
 	__newindex = function(t, k, v)
-	-- print("*update of element " .. tostring(k) ..
-		-- " to " .. tostring(v))
+	print("*update of element " .. tostring(k) ..
+		" to " .. tostring(v))
 	t[index][k] = v
 	end
 }	
@@ -221,13 +230,14 @@ function track(t)
 	return proxy
 end
 
+print("1.3 .................................... start.")
 t = track(t)
---t[2] = 'hello'
---print(t[2])
---print(t[1])
+t[2] = 'hello'
+print(t[2])
+print(t[1])
 
-t1 = track(t)
-print(t1[3])
+-- t1 = track(t)
+-- print(t1[3])
 --[[
 ^_^
 这里打印了两次
@@ -237,7 +247,7 @@ print(t1[3])
 ^_^
 ]]
 --print(t[2])
-
+print("1.3 ................................ end.")
 ------------
 --(1.4)只读表
 function readOnly(t)

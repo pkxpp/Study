@@ -74,12 +74,13 @@ local getOrderByPos = function(nPos, tbTargets)
 			if nTargetPos > MAX_NUM then
 				nNewPos = (i+2)*MAX_MAGIC + row;
 			end
-			print("New Pos: ", nNewPos);
+			-- print("New Pos: ", nNewPos);
 			table.insert(tbOrder, nNewPos);
 		end
 	end
 	return tbOrder;
 end
+--[[
 local targets = {}
 --for i=1, 9 do
 	local tbElem = {}
@@ -101,3 +102,17 @@ local targets = {}
 	end
 	print("All true");
 --end
+]]
+--@function: 计算某日是星期几 
+--@return:
+function CalcWeekday( year, month, day)
+	if type(year) ~= "number" or 
+		type(month) ~= "number" or
+		type(day) ~= "number" then
+		return;
+	end
+	local nWeekday = (day + 2 * month + 3 * (month + 1)/5 + year + year/4 - year/100 + year/400) % 7
+	return nWeekday;
+end
+
+print("nWeekday = ", CalcWeekday(2016, 5, 25))

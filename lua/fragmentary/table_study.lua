@@ -457,4 +457,172 @@ local tbDataWithNil = {
 local t = {
 	["xxx"] = 2,
 }
-print(111, next(t));
+-- print(111, next(t));
+
+
+-- 2016/02/18
+-- 实现pairs和ipairs
+function selfIpairs(t)
+	local i = 0;
+	return function()
+		i = i + 1;
+		return t[i];
+	end
+end
+
+function selfPairs(t)
+	local index = nil;
+	return function()
+		local v = next(t, index);
+		index = v;
+		return v;
+	end
+end
+
+-- test
+local tbIpairs = {1, 3, 5, 2, 4, 6, 8, 9, 10}
+local tbPairs = {1, a = 2, b = 3}
+for k, v in selfIpairs(tbIpairs) do
+	-- print(k, v)
+end
+
+-- print(next(tbPairs, nil))
+for k, v in selfPairs(tbPairs) do
+	-- print(k, v)
+end
+
+-- 参考实现
+--* http://www.jellythink.com/archives/506 *
+local function iter(a, i)
+	-- print("control val: ", i)
+	local i = i + 1;
+	local v = a[i];
+	if v then
+		return i, v;
+	end
+end
+
+local function iter1(a, i)
+	local k, v = next(a, i);
+	-- if v then
+		-- i = k;
+		return k, v;
+	-- end
+end
+
+function ipairs1(t)
+	return iter, t, 0;
+end
+
+function pairs1(t)
+	return iter1, t, nil;
+end
+
+function pairs2(t)
+	local index = nil
+	return function ()
+		index = next(t, index)
+		return index, t[index]
+	end
+end
+
+for k, v in ipairs1(tbIpairs) do
+	-- print(k, v);
+end
+
+for k, v in pairs1(tbPairs) do
+	-- print( k, v);
+end
+
+------------------------------------------------------------
+-- 2016/04/18 __index只有在key为nil的时候才调用（by 1-）
+local s = {
+	[1] = 1,
+	a = 'b',
+}
+s.__index = function (t, i)
+	print("call __index ...")
+	return t[i]
+end
+
+function testIndex()
+	for k,v in pairs(s) do
+		print(k,v)
+	end
+
+	print("call nil key: ", s[2])
+end
+-- testIndex( )
+--[[
+sum:
+]]
+
+local tNormal = {
+	[1] = 1,
+	a = 'a',
+	__index = function ()
+		print("__index 1.")
+	end
+}
+
+local tMetatable = {
+	[2] = 2,
+	b = 'b',
+	__index = function ()
+		print("__index 2.")
+	end
+}
+
+local tMetatable2 = {
+	[3] = 3,
+	c = 'c',
+}
+
+local tTest = {
+	__index = function ()
+		print("__index 3.")
+	end
+}
+
+local tTest2 = {
+	__index = function ()
+		print("__index 4.")
+	end
+}
+
+setmetatable(tTest, tMetatable)
+setmetatable(tTest, tMetatable)
+print(tNormal[3])
+print(tTest[3])
+print(tTest2[3])
+
+--[[
+sum:
+1. __index被执行的条件：Note that the metamethod is tried only when key is not present in table.[参考5.2 Reference Manual]
+2. 一个table的__index单独拿出来是没有意义的，只有这个table作为元表的时候才有意义，也就是才有执行的可能性。
+eg: 例如tNormal这个表在执行tNormal[3]的时候不会访问自己的__index方法
+3. metatable必须有__index方法，不然也是没有意义的。
+eg: tMetatable2没有__index方法，结果tTest2在访问tTest2[3]的时候还是nil
+4. 可以看源码
+/********************************************
+  function gettable_event (table, key)
+       local h
+       if type(table) == "table" then
+         local v = rawget(table, key)
+         -- if key is present, return raw value
+         if v ~= nil then return v end
+         h = metatable(table).__index
+         if h == nil then return nil end
+       else
+         h = metatable(table).__index
+         if h == nil then
+           error(···)
+         end
+       end
+       if type(h) == "function" then
+         return (h(table, key))     -- call the handler
+       else return h[key]           -- or repeat operation on it
+       end
+     end
+*********************************************/
+]]
