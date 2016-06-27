@@ -3,7 +3,9 @@
 // description	: some base knowledge about c++
 // 
 #include <iostream>
+#include <sstream>
 #include <math.h>
+#include <stdio.h>
 
 using namespace std;
 //////////////////////////////////////////////////////////////
@@ -162,6 +164,40 @@ void testEqualSymbol()
 	//cout << "a && b = " << a and b << endl;
 }
 ///////////////////////////////////////////////////////////
+// 6. _snprintf in linux
+template<class T>
+std::string make_color(T tvalue)
+{
+	char szPre[32] = {0};
+	std::stringstream stream;
+	stream << tvalue;
+	std::string str = stream.str();
+	snprintf(szPre, sizeof(szPre)-1, "<font color = \'%s\'", "#ff0000");
+	str = szPre + str + "</font>";
+	return str;
+}
+///////////////////////////////////////////////////////////
+// 7. sizeof
+void TestSizeof()
+{
+	char szTest[2][13];
+	cout << "sizeof(szTest): " << sizeof(szTest) << endl;
+	cout << "sizeof(szTest): " << sizeof(szTest)/sizeof(char) << endl;
+}
+///////////////////////////////////////////////////////////
+// 8. snprintf
+void TestSnprintf()
+{
+	const int CLEN = 8;
+	char sa[CLEN] = {0};
+	for (int i = 0; i < CLEN; ++i)
+		sa[i] = i + '0';
+	printf("sa = %s\n", sa);
+	printf("sizeof(sa) = %d\n", sizeof(sa));
+	int nLen = snprintf(sa, sizeof(sa)-1, "%s", "abcdefgh");
+	printf("sa = %s, len = %d\n", sa, nLen);
+}
+///////////////////////////////////////////////////////////
 int main()
 {
 	//CB *b = new CB(1, 3);
@@ -189,6 +225,16 @@ int main()
 	//testSquareBracket();
 
 	// 5.
-	testEqualSymbol();
+	//testEqualSymbol();
+	
+	// 6.
+	//std::string str = make_color(5);
+	//cout << str << endl;
+
+	// 7. sizeof
+	//TestSizeof();
+
+	// 8. snprintf
+	TestSnprintf();
 	return 0;
 }
