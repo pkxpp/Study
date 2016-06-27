@@ -1,33 +1,33 @@
 --------------------------------------------------------
---1. #table ²Ù×÷·¨ÎÊÌâ page@2013/12/23/15:03
+--1. #table æ“ä½œæ³•é—®é¢˜ page@2013/12/23/15:03
 --------------------------------------------------------
 --eg
---[[
-tbT1 = {
-	[2] = 2;
-}
-print("#tbT1", #tbT1)
 
-print(6%1)
+-- tbT1 = {
+-- 	[2] = 2;
+-- }
+-- print("#tbT1", #tbT1)
 
-tbIPairsTest = {
-	["x"] = 1, 1200, 2100,["y"]=2, 1300,[2] = 2200,[5]=100,
-}
+-- print(6%1)
 
-local nIdx = 0;
-for k, v in ipairs(tbIPairsTest) do
-	print(k, v)
-end
+-- tbIPairsTest = {
+-- 	["x"] = 1, 1200, 2100,["y"]=2, 1300,[2] = 2200,[5]=100,
+-- }
 
-for k, v in pairs(tbIPairsTest) do
-	print(k, v)
-end
-]]
+-- local nIdx = 0;
+-- for k, v in ipairs(tbIPairsTest) do
+-- 	print(k, v)
+-- end
+
+-- for k, v in pairs(tbIPairsTest) do
+-- 	print(k, v)
+-- end
+
 --[[
 summary:
-(1)iparisÊÇ°´ÕÕË÷ÒıÀ´±éÀúµÄ£¬Èç¹ûindexÖĞ¶ÏÁË£¬ÄÇÃ´±éÀú½áÊø
-(2)Ã»ÓĞË÷ÒıµÄÄ¬ÈÏÊÇ°´Êı×éË÷ÒıÀ´µÄ£¬ÈçÉÏÃæµÄ1200,2100,×Ö·û´®Ò²ÊÇÒ»ÑùµÄ
-(3)ºóÃæÖ¸¶¨Ë÷ÒıµÄÖµ»á±»¸²¸Çµô£¬ÈçÉÏÃæµÄ[2]=2200¾ÍÃ»ÓĞÁË
+(1)iparisæ˜¯æŒ‰ç…§ç´¢å¼•æ¥éå†çš„ï¼Œå¦‚æœindexä¸­æ–­äº†ï¼Œé‚£ä¹ˆéå†ç»“æŸ
+(2)æ²¡æœ‰ç´¢å¼•çš„é»˜è®¤æ˜¯æŒ‰æ•°ç»„ç´¢å¼•æ¥çš„ï¼Œå¦‚ä¸Šé¢çš„1200,2100,å­—ç¬¦ä¸²ä¹Ÿæ˜¯ä¸€æ ·çš„
+(3)åé¢æŒ‡å®šç´¢å¼•çš„å€¼ä¼šè¢«è¦†ç›–æ‰ï¼Œå¦‚ä¸Šé¢çš„[2]=2200å°±æ²¡æœ‰äº†
 ]]
 --[[
 tbIPairs = {
@@ -48,35 +48,36 @@ end
 ------------------------------
 --19.1 size of array
 
-local tbTest = {10, 2, nil; n=3}
+-- local tbTest = {10, 2, nil; n=3}
 -- for k, v in pairs(tbTest) do
-	-- print(k,v)
+-- 	print(k,v)
 -- end
 -- print(tbTest.n)
 -- print(table.getn({10,2,4}))
 -- print(table.getn({10,2,nil}))
--- print(table.getn({10,2,nil; n=3}))		--> 2²»ÊÇÊéÉÏ½²µÄ3
+-- print(table.getn({10,2,nil, n=3}))		--> 2ä¸æ˜¯ä¹¦ä¸Šè®²çš„3
 -- print(table.getn({n=1000}))
 
 --page@2015/04/21
 local t = {1,888,x= 999,b=2,5,nil,6,7,[10]=1,8,{z = 1,y = 1},nil,nil}
+local t = {111, x = 222, nil, 333, [10] = 555, {}, nil, nil}
 
--- print(table.getn(t))
--- print(#t)
--- print(table.maxn(t))
+print(table.getn(t))
+print(#t)
+print(table.maxn(t))
 -- print("list:")
 -- for k, v in ipairs(t) do
-	-- print (k, v)
+-- 	print (k, v)
 -- end
 -- print("list2:")
 -- for i=1, #t do
-	-- print (t[i])
+-- 	print (t[i])
 -- end
 
 
 
 -----------------------------
---insert ÊÇ²»ÊÇ¿ÉÖØÈëµÄ
+--insert æ˜¯ä¸æ˜¯å¯é‡å…¥çš„
 --[[
 local tbData = {}
 local n = 0;
@@ -126,7 +127,7 @@ for i=1,5 do
 end
 ]]
 
---²»¶¨³¤²ÎÊı
+--ä¸å®šé•¿å‚æ•°
 function test_arg(...)
 	print(unpack(arg))
 end
@@ -222,11 +223,11 @@ end
 --print(#tbTemp)
 -- print("Test Remove ... ")
 local tbRemove = {1, 2, 3}
---´íÎó£ºÑ­»·ÖĞÉ¾³ıÔªËØ
+--é”™è¯¯ï¼šå¾ªç¯ä¸­åˆ é™¤å…ƒç´ 
 -- for k, v in pairs(tbRemove) do
 	-- table.remove(tbRemove, k)
 -- end
---·½·¨1£º
+--æ–¹æ³•1ï¼š
 -- for i=#tbRemove, 1, -1 do
 	-- print("i = ", i)
 	-- if i == 2 then
@@ -239,12 +240,12 @@ local tbRemove = {1, 2, 3}
 -- end
 --[[
 sum:
-1. tableµÄremoveº¯ÊıÖ»ÄÜÒÔË÷ÒıÎª²ÎÊıremove£¬¶øÇÒÕâ¸öË÷ÒıÊÇÔÚÊı×éÖĞµÄË÷Òı£¬²»ÊÇÔÚhash±íÖĞµÄÊı×Ö£¬¼´ipairsÄÜ¹»±éÀúÕÒµ½µÄË÷Òı
-2. ¶ÔÓÚhash±íµÄremove£¬Ö±½Ótable[key] = nil¾Í¿ÉÒÔÁË
-3. ¡¾ÖØÒª¡¿table.removeµÄÖ®ºó£¬tableÖĞÊ£ÏÂµÄÔªËØ»á×Ô¶¯ÖØĞÂÅÅĞò£¬µ«ÊÇÈç¹ûÕâ¸öÊ±ºòÊ¹ÓÃipairs²Ù×÷Õâ¸ötableµÄÊ±ºò£¬»áÂ©µô±»É¾³ıÔªËØµÄÏÂÒ»¸öÔªËØ£¬ÒòÎªËûµÄË÷Òı»á×Ô¶¯Ìîµ½Ç°ÃæÒ»¸öÉ¾µôÔªËØµÄ¿Ó
+1. tableçš„removeå‡½æ•°åªèƒ½ä»¥ç´¢å¼•ä¸ºå‚æ•°removeï¼Œè€Œä¸”è¿™ä¸ªç´¢å¼•æ˜¯åœ¨æ•°ç»„ä¸­çš„ç´¢å¼•ï¼Œä¸æ˜¯åœ¨hashè¡¨ä¸­çš„æ•°å­—ï¼Œå³ipairsèƒ½å¤Ÿéå†æ‰¾åˆ°çš„ç´¢å¼•
+2. å¯¹äºhashè¡¨çš„removeï¼Œç›´æ¥table[key] = nilå°±å¯ä»¥äº†
+3. ã€é‡è¦ã€‘table.removeçš„ä¹‹åï¼Œtableä¸­å‰©ä¸‹çš„å…ƒç´ ä¼šè‡ªåŠ¨é‡æ–°æ’åºï¼Œä½†æ˜¯å¦‚æœè¿™ä¸ªæ—¶å€™ä½¿ç”¨ipairsæ“ä½œè¿™ä¸ªtableçš„æ—¶å€™ï¼Œä¼šæ¼æ‰è¢«åˆ é™¤å…ƒç´ çš„ä¸‹ä¸€ä¸ªå…ƒç´ ï¼Œå› ä¸ºä»–çš„ç´¢å¼•ä¼šè‡ªåŠ¨å¡«åˆ°å‰é¢ä¸€ä¸ªåˆ æ‰å…ƒç´ çš„å‘
 ]]
 -------------------------------------------------
---table.sort ±È½Ïº¯Êı
+--table.sort æ¯”è¾ƒå‡½æ•°
 local tbTest = {
 }
 local tbTest1 = {}
@@ -273,7 +274,7 @@ end
 
 function tbTest1:testFunc(fFunc, a, b)
 	print("a, b", a, b)
-	fFunc(self, a, b)		--Ä¬ÈÏ¾ÍÊÇ tbTest1.comps1(self, a, b)
+	fFunc(self, a, b)		--é»˜è®¤å°±æ˜¯ tbTest1.comps1(self, a, b)
 end
 
 --tbTest1:testFunc(tbTest1.comps1, tbTest1[1], tbTest1[2])
@@ -303,17 +304,17 @@ end
 	-- print(i, tbSort[i])
 -- end
 
---È«¾Öº¯Êı
+--å…¨å±€å‡½æ•°
 local fComp = function (a, b) 
 	return a < b 
 end
 
---ÃæÏò¶ÔÏó
+--é¢å‘å¯¹è±¡
 function tbSort.fComp(a, b)
 	return a < b;
 end
 
---ÃæÏò¶ÔÏóÒş²Øself
+--é¢å‘å¯¹è±¡éšè—self
 function tbSort:fCompWrap(a, b)
 	print("fCompWrap(self, a, b)", self, a, b)
 	return a < b;
@@ -328,15 +329,15 @@ for k, v in ipairs(tbSort) do
 	-- print(k, v)
 end
 --[[
-×Ü½á£º
-(1)table.sortµÄ±È½Ïº¯ÊıÔÚÃæÏò¶ÔÏó±à³ÌÊ±ºòÒª×¢ÒâÁË
-(2)luaÃæÏò¶ÔÏóÖĞµÄself, table:func(param) <==>table.func(self, param)
-(3)table:func×÷Îª²ÎÊı´«µİ
-	*×÷Îª²ÎÊı´«µİ¾ÍÊÇÄ¬ÈÏtable:func(param)µÄĞÎÊ½, ¼´table.func(self, param)µÄĞÎÊ½µ÷ÓÃ£¬ÄÇÃ´ÔõÃ´ÑùÊÇtable.func(param)µÄĞÎÊ½ÄØ£¿
-	*lua_callµ÷ÓÃtableµÄ·½·¨¾ÍÊÇtable:func(param)µÄĞÎÊ½
-	*Ó¦¸ÃÀí½âÎª¶¨Òåfunction table:func(param)µÄÊ±ºò¾ÍÊÇ¶¨Òåfunction table.func(self, param)¡£Ò²¾Í±íÊ¾º¯ÊıÊÇÈı¸ö²ÎÊıÁË
-(4)ÎªÊ²Ã´´òÓ¡ÊÇfCompWrap	15	25	nil?
-¿´Ô´Âë£¬¿ìËÙÅÅĞò£¬½»»»µÚÒ»¸öºÍ×îºóÒ»¸ö£¬µÚÒ»¸ö²ÎÊıÊÇºóÃæË÷ÒıµÄ£¬µÚ¶ş¸öÊÇÇ°ÃæÒ»¸öµÄË÷Òı
+æ€»ç»“ï¼š
+(1)table.sortçš„æ¯”è¾ƒå‡½æ•°åœ¨é¢å‘å¯¹è±¡ç¼–ç¨‹æ—¶å€™è¦æ³¨æ„äº†
+(2)luaé¢å‘å¯¹è±¡ä¸­çš„self, table:func(param) <==>table.func(self, param)
+(3)table:funcä½œä¸ºå‚æ•°ä¼ é€’
+	*ä½œä¸ºå‚æ•°ä¼ é€’å°±æ˜¯é»˜è®¤table:func(param)çš„å½¢å¼, å³table.func(self, param)çš„å½¢å¼è°ƒç”¨ï¼Œé‚£ä¹ˆæ€ä¹ˆæ ·æ˜¯table.func(param)çš„å½¢å¼å‘¢ï¼Ÿ
+	*lua_callè°ƒç”¨tableçš„æ–¹æ³•å°±æ˜¯table:func(param)çš„å½¢å¼
+	*åº”è¯¥ç†è§£ä¸ºå®šä¹‰function table:func(param)çš„æ—¶å€™å°±æ˜¯å®šä¹‰function table.func(self, param)ã€‚ä¹Ÿå°±è¡¨ç¤ºå‡½æ•°æ˜¯ä¸‰ä¸ªå‚æ•°äº†
+(4)ä¸ºä»€ä¹ˆæ‰“å°æ˜¯fCompWrap	15	25	nil?
+çœ‹æºç ï¼Œå¿«é€Ÿæ’åºï¼Œäº¤æ¢ç¬¬ä¸€ä¸ªå’Œæœ€åä¸€ä¸ªï¼Œç¬¬ä¸€ä¸ªå‚æ•°æ˜¯åé¢ç´¢å¼•çš„ï¼Œç¬¬äºŒä¸ªæ˜¯å‰é¢ä¸€ä¸ªçš„ç´¢å¼•
 ]]
 ----------------------------------------------
 --[[
@@ -363,7 +364,7 @@ for i=1, 3 do
 end
 
 --]]
---nSortË³Ğò£¬µ¹Ğğ
+--nSorté¡ºåºï¼Œå€’å™
 function number2table(nNum, nSort)
 	nSort = nSort or 0
 	local tbRet = {}
@@ -391,7 +392,7 @@ for _, v in pairs(tbRet) do
 end
 ]]
 
---ÒÉÎÊ£ºÍ¨¹ıº¯Êı»ñÈ¡µÄÒ»¸ötable£¬ÄÜĞŞ¸ÄÆäÖĞµÄÖµ£¬µ«ÊÇ¸³ÖµÃ»ÓĞĞ§¹û?
+--ç–‘é—®ï¼šé€šè¿‡å‡½æ•°è·å–çš„ä¸€ä¸ªtableï¼Œèƒ½ä¿®æ”¹å…¶ä¸­çš„å€¼ï¼Œä½†æ˜¯èµ‹å€¼æ²¡æœ‰æ•ˆæœ?
 local tbConfig = {
 	tbData = {1, 2, 3},
 	n = 100,
@@ -415,13 +416,13 @@ tbData = {};
 -- print(112, tostring(tbData))
 -- printConfig();
 --[[sum:
-(1) tableÍ¨¹ıº¯ÊıµÃµ½µÄÒıÓÃÊÇÖ¸Õâ¸ötableµÄµØÖ·£¬¿ÉÒÔ²Ù×÷Õâ¸öµØÖ·Ôö¼ÓÄÚÈİ»òÕßÉ¾³ıÄÚÈİ
-(2) µ«ÊÇ²»ÄÜ¸Ä±äÕâ¸öµØÖ·±¾Éí£¬ĞèÒª´æ·ÅÕâ¸öµØÖ·µÄ±äÁ¿²Å¿ÉÒÔ£¬ÔÚcÓïÑÔÀïÃæÒ»¸öÖ¸ÕëÖ¸ÏòÒ»¸öµØÖ·£¬¿ÉÒÔ»ñÈ¡»òÕßĞŞ¸ÄÀïÃæµÄÄÚÈİ£¬*p¼´¿É¡£µ«ÊÇÈç¹ûÏ£ÍûÕâ¸öÖ¸ÕëÖ¸ÏòÁíÍâÒ»¸öµØ·½¾ÍĞèÒªĞŞ¸ÄÖ¸ÏòµÄÄÚÈİp = another
-(3) ·´¹ıÀ´Ò²ÊÇ£¬Èç¹ûÒ»¸öÖ¸Õë±äÁ¿pÖ¸ÏòÒ»¸öµØ·½(±ÈÈçÎÒÃÇÕâÀïµÄtable), Èç¹ûpÖ±½Ó¸³Öµp = anotherÊÇÖ¸ÏòÁíÍâÒ»¸öÖ¸Õë£¬Èç¹ûĞèÒª¸Ä±äÕâ¸öÖ¸ÕëÖ¸ÏòµÄµØ·½µÄÄÚÈİ£¬ĞèÒªÊ¹ÓÃ*
+(1) tableé€šè¿‡å‡½æ•°å¾—åˆ°çš„å¼•ç”¨æ˜¯æŒ‡è¿™ä¸ªtableçš„åœ°å€ï¼Œå¯ä»¥æ“ä½œè¿™ä¸ªåœ°å€å¢åŠ å†…å®¹æˆ–è€…åˆ é™¤å†…å®¹
+(2) ä½†æ˜¯ä¸èƒ½æ”¹å˜è¿™ä¸ªåœ°å€æœ¬èº«ï¼Œéœ€è¦å­˜æ”¾è¿™ä¸ªåœ°å€çš„å˜é‡æ‰å¯ä»¥ï¼Œåœ¨cè¯­è¨€é‡Œé¢ä¸€ä¸ªæŒ‡é’ˆæŒ‡å‘ä¸€ä¸ªåœ°å€ï¼Œå¯ä»¥è·å–æˆ–è€…ä¿®æ”¹é‡Œé¢çš„å†…å®¹ï¼Œ*på³å¯ã€‚ä½†æ˜¯å¦‚æœå¸Œæœ›è¿™ä¸ªæŒ‡é’ˆæŒ‡å‘å¦å¤–ä¸€ä¸ªåœ°æ–¹å°±éœ€è¦ä¿®æ”¹æŒ‡å‘çš„å†…å®¹p = another
+(3) åè¿‡æ¥ä¹Ÿæ˜¯ï¼Œå¦‚æœä¸€ä¸ªæŒ‡é’ˆå˜é‡pæŒ‡å‘ä¸€ä¸ªåœ°æ–¹(æ¯”å¦‚æˆ‘ä»¬è¿™é‡Œçš„table), å¦‚æœpç›´æ¥èµ‹å€¼p = anotheræ˜¯æŒ‡å‘å¦å¤–ä¸€ä¸ªæŒ‡é’ˆï¼Œå¦‚æœéœ€è¦æ”¹å˜è¿™ä¸ªæŒ‡é’ˆæŒ‡å‘çš„åœ°æ–¹çš„å†…å®¹ï¼Œéœ€è¦ä½¿ç”¨*
 ]]
 
--- 2015¡¢09¡¢22
--- Êı×ÖºÍ×Ö·û´®Êı×Ö×÷Ë÷Òı
+-- 2015ã€09ã€22
+-- æ•°å­—å’Œå­—ç¬¦ä¸²æ•°å­—ä½œç´¢å¼•
 local heroqualityconsume = {
 		["1"] = {15001,10},
 		["2"] = {15002,10},
@@ -442,7 +443,7 @@ local heroqualityconsume = {
 	-- print(type(k));
 -- end
 
--- 2015/11/25 table±éÀú ÓĞnilÏî
+-- 2015/11/25 tableéå† æœ‰nilé¡¹
 local tbDataWithNil = {
 	[1] = 1,
 	[2] = nil,
@@ -453,8 +454,212 @@ local tbDataWithNil = {
 -- end
 
 -- 2016/01/06
--- ÅĞ¶Ï±íÊÇ·ñÎª¿Õ
+-- åˆ¤æ–­è¡¨æ˜¯å¦ä¸ºç©º
 local t = {
 	["xxx"] = 2,
 }
-print(111, next(t));
+-- print(111, next(t));
+
+
+-- 2016/02/18
+-- å®ç°pairså’Œipairs
+function selfIpairs(t)
+	local i = 0;
+	return function()
+		i = i + 1;
+		return t[i];
+	end
+end
+
+function selfPairs(t)
+	local index = nil;
+	return function()
+		local v = next(t, index);
+		index = v;
+		return v;
+	end
+end
+
+-- test
+local tbIpairs = {1, 3, 5, 2, 4, 6, 8, 9, 10}
+local tbPairs = {1, a = 2, b = 3}
+for k, v in selfIpairs(tbIpairs) do
+	-- print(k, v)
+end
+
+-- print(next(tbPairs, nil))
+for k, v in selfPairs(tbPairs) do
+	-- print(k, v)
+end
+
+-- å‚è€ƒå®ç°
+--* http://www.jellythink.com/archives/506 *
+local function iter(a, i)
+	-- print("control val: ", i)
+	local i = i + 1;
+	local v = a[i];
+	if v then
+		return i, v;
+	end
+end
+
+local function iter1(a, i)
+	local k, v = next(a, i);
+	-- if v then
+		-- i = k;
+		return k, v;
+	-- end
+end
+
+function ipairs1(t)
+	return iter, t, 0;
+end
+
+function pairs1(t)
+	return iter1, t, nil;
+end
+
+function pairs2(t)
+	local index = nil
+	return function ()
+		index = next(t, index)
+		return index, t[index]
+	end
+end
+
+for k, v in ipairs1(tbIpairs) do
+	-- print(k, v);
+end
+
+for k, v in pairs1(tbPairs) do
+	-- print( k, v);
+end
+
+------------------------------------------------------------
+-- 2016/04/18 __indexåªæœ‰åœ¨keyä¸ºnilçš„æ—¶å€™æ‰è°ƒç”¨ï¼ˆby 1-ï¼‰
+local s = {
+	[1] = 1,
+	a = 'b',
+}
+s.__index = function (t, i)
+	print("call __index ...")
+	return t[i]
+end
+
+function testIndex()
+	for k,v in pairs(s) do
+		print(k,v)
+	end
+
+	print("call nil key: ", s[2])
+end
+-- testIndex( )
+--[[
+sum:
+]]
+
+local tNormal = {
+	[1] = 1,
+	a = 'a',
+	__index = function ()
+		print("__index 1.")
+	end
+}
+
+local tMetatable = {
+	[2] = 2,
+	b = 'b',
+	__index = function ()
+		print("__index 2.")
+	end
+}
+
+local tMetatable2 = {
+	[3] = 3,
+	c = 'c',
+}
+
+local tTest = {
+	__index = function ()
+		print("__index 3.")
+	end
+}
+
+local tTest2 = {
+	__index = function ()
+		print("__index 4.")
+	end
+}
+
+setmetatable(tTest, tMetatable)
+setmetatable(tTest, tMetatable)
+print(tNormal[3])
+print(tTest[3])
+print(tTest2[3])
+
+--[[
+sum:
+1. __indexè¢«æ‰§è¡Œçš„æ¡ä»¶ï¼šNote that the metamethod is tried only when key is not present in table.[å‚è€ƒ5.2 Reference Manual]
+2. ä¸€ä¸ªtableçš„__indexå•ç‹¬æ‹¿å‡ºæ¥æ˜¯æ²¡æœ‰æ„ä¹‰çš„ï¼Œåªæœ‰è¿™ä¸ªtableä½œä¸ºå…ƒè¡¨çš„æ—¶å€™æ‰æœ‰æ„ä¹‰ï¼Œä¹Ÿå°±æ˜¯æ‰æœ‰æ‰§è¡Œçš„å¯èƒ½æ€§ã€‚
+eg: ä¾‹å¦‚tNormalè¿™ä¸ªè¡¨åœ¨æ‰§è¡ŒtNormal[3]çš„æ—¶å€™ä¸ä¼šè®¿é—®è‡ªå·±çš„__indexæ–¹æ³•
+3. metatableå¿…é¡»æœ‰__indexæ–¹æ³•ï¼Œä¸ç„¶ä¹Ÿæ˜¯æ²¡æœ‰æ„ä¹‰çš„ã€‚
+eg: tMetatable2æ²¡æœ‰__indexæ–¹æ³•ï¼Œç»“æœtTest2åœ¨è®¿é—®tTest2[3]çš„æ—¶å€™è¿˜æ˜¯nil
+4. å¯ä»¥çœ‹æºç 
+/********************************************
+  function gettable_event (table, key)
+       local h
+       if type(table) == "table" then
+         local v = rawget(table, key)
+         -- if key is present, return raw value
+         if v ~= nil then return v end
+         h = metatable(table).__index
+         if h == nil then return nil end
+       else
+         h = metatable(table).__index
+         if h == nil then
+           error(Â·Â·Â·)
+         end
+       end
+       if type(h) == "function" then
+         return (h(table, key))     -- call the handler
+       else return h[key]           -- or repeat operation on it
+       end
+     end
+*********************************************/
+]]
+
+-- 2016/06/01 å…­ä¸€å„¿ç«¥èŠ‚
+-- table contact
+function fnUnPack( ... )
+	local p = {...};
+	return unpack(p);
+end
+
+function fnUnPack1( ... )
+	-- local p = table.pack(...);
+	-- return table.unpack(p, 1, p.n);
+end
+
+function fnUnPack2( ... )
+	local p = {...}
+	local n = select('#', ...)
+	return unpack(p, 1, n);
+end
+
+local tbTestLength = {1, 2, 3, nil ,4};
+local tbTestLength1 = {1, 2, 3, nil ,4, nil};
+local tbTestLength2 = {1, 2, 3, nil ,nil, 4};
+local tbTestLength3 = {nil, 2, 3, nil, 4};
+local tbTestLength4 = {nil, 2, 3, nil, nil, nil, 4, nil};
+
+print(fnUnPack(1, 2, 3));
+print(fnUnPack(1, 2, 3, nil ,4));
+print(fnUnPack(1, 2, 3, nil ,4, nil));
+print("Length = ", #tbTestLength, #tbTestLength1, #tbTestLength2, #tbTestLength3, #tbTestLength4)
+
+print(fnUnPack2(1, 2, 3));
+print(fnUnPack2(1, 2, 3, nil ,4));
+print(fnUnPack2(1, 2, 3, nil ,4, nil));
+
+print("select: ", select(3, 5, 6, 7, 8))
+print("select: ", select('#', 5, 6, 7, 8))

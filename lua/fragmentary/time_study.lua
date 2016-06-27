@@ -61,4 +61,15 @@ function tf_FormatWithTime(nHour, nMin, nSec)
 	
 	return tf_FormatSecond(nDiff);
 end
-print(tf_FormatWithTime(11,50, 0));
+-- print(tf_FormatWithTime(11,50, 0));
+
+-- os.timeºÍos.clock
+print(111, os.time(), os.clock())
+local tStart = os.time()
+local cStart = os.clock()
+for i=1, 10000 do
+	local j = i;
+end
+local tEnd = os.time()
+local cEnd = os.clock()
+print(111, tEnd - tStart, cEnd - cStart)

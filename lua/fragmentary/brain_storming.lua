@@ -404,4 +404,7 @@ end
 -- print = printSave;
 
 -- 2016/01/18 nil¡¨Ω”±®¥Ì
-print("111" .. 2 .. nil);
+-- print("111" .. 2 .. nil);
+
+-- 2016/05/06
+print(1%0)
