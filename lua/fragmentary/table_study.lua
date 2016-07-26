@@ -62,9 +62,9 @@ end
 local t = {1,888,x= 999,b=2,5,nil,6,7,[10]=1,8,{z = 1,y = 1},nil,nil}
 local t = {111, x = 222, nil, 333, [10] = 555, {}, nil, nil}
 
-print(table.getn(t))
-print(#t)
-print(table.maxn(t))
+-- print(table.getn(t))
+-- print(#t)
+-- print(table.maxn(t))
 -- print("list:")
 -- for k, v in ipairs(t) do
 -- 	print (k, v)
@@ -104,28 +104,6 @@ for k, v in pairs(tbInsert) do
 	print(k, v)
 end
 ]] 
-local tbTest = {}
-tbTest[1] = {1, 3}
---tbTest[2] = {3, 5}
---tbTest[3] = {5, 4}
---tbTest[4] = {2, 3}
---[[
-function cmp(a, b)
-	return a[2] > b[2]
-end
-
-for k,v in ipairs(tbTest) do
-	print(k,v[2])
-end
-table.sort(tbTest, cmp)
-for k,v in ipairs(tbTest) do
-	print(k,v[2])
-end
-
-for i=1,5 do
-	print(i)
-end
-]]
 
 --不定长参数
 function test_arg(...)
@@ -246,14 +224,28 @@ sum:
 ]]
 -------------------------------------------------
 --table.sort 比较函数
-local tbTest = {
-}
-local tbTest1 = {}
+local tbTest = {}
+tbTest[1] = {1, 3}
+tbTest[2] = {3, 5}
+tbTest[3] = {5, 4}
+tbTest[4] = {2, 3}
+
+function cmp(a, b)
+	return a[2] > b[2]
+end
+
+-- for k,v in ipairs(tbTest) do
+-- 	print(k,v[2])
+-- end
+table.sort(tbTest, cmp)
+-- for k,v in ipairs(tbTest) do
+-- 	print(k,v[2])
+-- end
+
+local tbTest = {}
 table.insert(tbTest, {nWin = 1, szName="1"})
 table.insert(tbTest, {nWin = 2, szName="2"})
-table.insert(tbTest1, {1, 18});
-table.insert(tbTest1, {2, 56});
-table.insert(tbTest1, {3, 37});
+
 --print("Before Sort...")
 for k, v in ipairs(tbTest) do
 	--print(k, v.nWin, v.szName)
@@ -267,24 +259,29 @@ local comps1 = function (a, b)
 	return a[2] > b[2] 
 end
 
-function tbTest1:comps1(a, b)
-	print("test1...", a[2], b[2])
+local tbTestClass = {
+	{1, 18},
+	{2, 56},
+	{3, 37},
+}
+
+function tbTestClass.Comp(a, b)
 	return a[2] > b[2] 
 end
 
-function tbTest1:testFunc(fFunc, a, b)
+function tbTestClass:testFunc(fFunc, a, b)
 	print("a, b", a, b)
-	fFunc(self, a, b)		--默认就是 tbTest1.comps1(self, a, b)
+	fFunc(self, a, b)		--默认就是 tbTestClass.comps1(self, a, b)
 end
 
---tbTest1:testFunc(tbTest1.comps1, tbTest1[1], tbTest1[2])
+--tbTestClass:testFunc(tbTestClass.comps1, tbTestClass[1], tbTestClass[2])
 
 --table.sort(tbTest, comps)
---table.sort(tbTest1, tbTest1.comps1)
---print("After Sort...")
-for k, v in ipairs(tbTest1) do
-	--print(k, v[1], v[2])
-end
+table.sort(tbTestClass, tbTestClass.Comp)
+-- print("After Sort...")
+-- for k, v in ipairs(tbTestClass) do
+-- 	print(k, v[1], v[2])
+-- end
 
 --[[
 	tbSort = {
@@ -292,17 +289,16 @@ end
 	}
 ]]
 
-local tbSort = {}
-
+local tbSort = {25, 18, 15}
 local nNum = 3;
 for i=1, nNum do
 	local nRand = math.random(nNum*10)
-	table.insert(tbSort, nRand);
+	-- table.insert(tbSort, nRand);
 end
--- print("Before Sort:")
--- for i=1, nNum do
-	-- print(i, tbSort[i])
--- end
+print("Before Sort:")
+for i=1, nNum do
+	print(i, tbSort[i])
+end
 
 --全局函数
 local fComp = function (a, b) 
@@ -320,13 +316,13 @@ function tbSort:fCompWrap(a, b)
 	return a < b;
 end
 
---table.sort(tbSort, fComp)
---table.sort(tbSort, tbSort.fComp)
--- table.sort(tbSort, tbSort.fCompWrap)
+-- table.sort(tbSort, fComp)
+-- table.sort(tbSort, tbSort.fComp)
+table.sort(tbSort, tbSort.fCompWrap)
 
--- print("After Sort...")
+print("After Sort...")
 for k, v in ipairs(tbSort) do
-	-- print(k, v)
+	print(k, v)
 end
 --[[
 总结：
@@ -335,7 +331,7 @@ end
 (3)table:func作为参数传递
 	*作为参数传递就是默认table:func(param)的形式, 即table.func(self, param)的形式调用，那么怎么样是table.func(param)的形式呢？
 	*lua_call调用table的方法就是table:func(param)的形式
-	*应该理解为定义function table:func(param)的时候就是定义function table.func(self, param)。也就表示函数是三个参数了
+	*应该理解为定义function table:func(param)的时候就是定义function table.func(self, param)。也就表示函数是三个参数了，那么在调用的时候也就传入self作为第一个参数了
 (4)为什么打印是fCompWrap	15	25	nil?
 看源码，快速排序，交换第一个和最后一个，第一个参数是后面索引的，第二个是前面一个的索引
 ]]
@@ -636,8 +632,8 @@ function fnUnPack( ... )
 end
 
 function fnUnPack1( ... )
-	-- local p = table.pack(...);
-	-- return table.unpack(p, 1, p.n);
+	local p = table.pack(...);
+	return table.unpack(p, 1, p.n);
 end
 
 function fnUnPack2( ... )
@@ -663,3 +659,7 @@ print(fnUnPack2(1, 2, 3, nil ,4, nil));
 
 print("select: ", select(3, 5, 6, 7, 8))
 print("select: ", select('#', 5, 6, 7, 8))
+
+------------------------------------------------------------
+-- table.concat
+print(table.concat({2, 0, 3, 0, 0, 4}, ","))

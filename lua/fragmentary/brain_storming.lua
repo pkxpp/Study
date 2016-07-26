@@ -407,4 +407,7 @@ end
 -- print("111" .. 2 .. nil);
 
 -- 2016/05/06
-print(1%0)
+-- print(1%0)
+
+
+print(string.format("%s-%s", 1, 2))
