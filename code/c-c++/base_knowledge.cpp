@@ -197,6 +197,8 @@ void TestSnprintf()
 	int nLen = snprintf(sa, sizeof(sa)-1, "%s", "abcdefgh");
 	printf("sa = %s, len = %d\n", sa, nLen);
 }
+
+void TestCompareString();
 ///////////////////////////////////////////////////////////
 int main()
 {
@@ -235,6 +237,38 @@ int main()
 	//TestSizeof();
 
 	// 8. snprintf
-	TestSnprintf();
+	//TestSnprintf();
+
+	// 9.c++ string compare 
+	TestCompareString();
 	return 0;
+}
+
+
+///////////////////////////////////////////////////////////
+// 9.c++ string compare 
+void TestCompareString()
+{
+	char szStr[32] = {0};
+	char * szStr1 = "123";
+	char * szStr2 = "";
+	std::string str = "123";
+	if (szStr1 != "") 
+		printf("szStr1 != \"\" true!\n");
+	else
+		printf("szStr1 != \"\" false!\n");
+	if (szStr2 != "") 
+		printf("szStr2 != \"\" true!\n");
+	else
+		printf("szStr2 != \"\" false!\n");
+
+	printf("szStr1 == \"123\", %s\n", (szStr1 == "123") ? "true" : "false");
+	strcpy(szStr, "123");
+	printf("szStr == \"123\", %s\n", (szStr == "123") ? "true" : "false");
+	printf("str == \"123\", %s\n", (str == "123") ? "true" : "false");
+
+	printf("&szStr1 = %u\n", szStr1);
+	printf("&szStr2 = %u\n", szStr2);
+	printf("&szStr = %u\n", szStr);
+	printf("&(\"123\")= %u\n", "123");
 }
