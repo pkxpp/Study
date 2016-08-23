@@ -53,7 +53,7 @@ print(string.format("%2d", 1))
 ]]
 ---------------------------
 --table直接赋值，其实是引用
---[[
+
 tbRaw = {
 	[1] = 2,
 	[2] = 3,
@@ -74,22 +74,22 @@ local nRaw1 = tbRaw[1]
 print(nRaw1, tbRaw[1], tbRaw[3][2], tbRaw[4][2], tbRaw1[1], tbRaw1[3][2], tbRaw1[4][2])
 nRaw1 = 5
 print(nRaw1, tbRaw[1], tbRaw1[1])
-]]
+
 ---------------------------------------
---[[
+
 local tbRemoveTest = {
 	[1] = "x",
 	[5] = "y",
 	[1000] = "z",
 }
 for k, v in pairs(tbRemoveTest) do
-	print(k, v)
+	-- print(k, v)
 end
 table.remove(tbRemoveTest, 5)
 for k, v in pairs(tbRemoveTest) do
-	print(k, v)
+	-- print(k, v)
 end
---]]
+
 --注：remove只删除数组部分，像上面直接remove哈希表部分是不成功的
 --[[
 table.remove()函数删除并返回table数组部分位于pos位置的元素. 其后的元素会被前移. pos参数可选, 默认为table长度, 即从最后一个元素删起.
@@ -135,7 +135,7 @@ print(5%10, -2%10, math.mod(5.5, 10), 5.5%10)
 【参考：http://www.cnitblog.com/Richmond/archive/2011/03/09/73040.html】
 ]]
 
---[[
+------------------------------------------------------------
 --2015/01/23
 --local的用法和范围
 --如何像下面_G一样遍历当前文件下面的所有local变量
@@ -145,7 +145,7 @@ end
 local tbEnv = getfenv()
 -- print("..................", tbEnv, _G)
 for k, v in pairs(tbEnv) do
-	--print(k, v)
+	-- print(k, v)
 end
 -- print("a", a)
 local a = 5
@@ -166,11 +166,11 @@ tbClass = {
 	f2 = false,
 }
 for k, v in pairs(tbClass) do
-	print(k, v)
+	-- print(k, v)
 end
 setmetatable(tbClass, {__newindex = 
 	function(t, k, v)
-		
+		-- print("t, k, v", t, k, v)
 	end
 })
 
@@ -181,9 +181,14 @@ end
 function tbClass:f2()
 	print("f2")
 end
+
 -- print("result:", tbClass.f1, tbClass.f2)
 -- tbClass:f1()
 -- tbClass:f2()
+--[[sum:
+* 1. 函数定义也默认调用了newindex
+* 2. 因为之前没有'f1'字段，所以tbClass:f1就要调用newindex元方法，结果什么也没操作，所以这个时候f1还是nil
+]]
 
 --2015/01/27
 fCo = function (id)
@@ -208,11 +213,10 @@ end
 -- for k, v in pairs(_G) do
 	-- print(k, v)
 -- end
-]]
 
---[[
+------------------------------------------------------------
 --2015/03/13
--- local n = math.random()
+local n = math.random()
 -- print(n, math.random(1))
 
 --2015/03/14
@@ -227,9 +231,8 @@ for i=0, 3 do
 	tbIndex[i] = i;
 end
 for k,v in ipairs(tbIndex) do
-	print (k, v)
+	-- print (k, v)
 end
-]]
 
 --------------------------------------------
 --保留n位小数问题
@@ -410,4 +413,4 @@ end
 -- print(1%0)
 
 
-print(string.format("%s-%s", 1, 2))
+-- print(string.format("%s-%s", 1, 2))

@@ -1,8 +1,11 @@
+-- 一个函数
 function test()
-    print("Test")
+    print("Test setfenv.")
 end
-
-testvar = 15555
+-- 一个变量
+testvar = 666
+-- print是_G的函数，在新环境中不存在
+-- print("test ... ")
 
 -- print("222222")
 -- local _G = _G

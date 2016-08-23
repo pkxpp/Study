@@ -29,7 +29,7 @@ if (not f) then
 	print("Open File Failed!")
 else
 	print("Open File Successed!")
-	f:write("§ñ§ç§ñ§ç§ñ§ç")
+	f:write("ÖÐÎÄµÎ")
 	f:write("xxx")
 	f:write(2, 5)
 	f:write(123, tostring(unpack({12, 34, 7})))

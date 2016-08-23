@@ -295,10 +295,10 @@ for i=1, nNum do
 	local nRand = math.random(nNum*10)
 	-- table.insert(tbSort, nRand);
 end
-print("Before Sort:")
-for i=1, nNum do
-	print(i, tbSort[i])
-end
+-- print("Before Sort:")
+-- for i=1, nNum do
+-- 	print(i, tbSort[i])
+-- end
 
 --全局函数
 local fComp = function (a, b) 
@@ -318,12 +318,12 @@ end
 
 -- table.sort(tbSort, fComp)
 -- table.sort(tbSort, tbSort.fComp)
-table.sort(tbSort, tbSort.fCompWrap)
+-- table.sort(tbSort, tbSort.fCompWrap)
 
-print("After Sort...")
-for k, v in ipairs(tbSort) do
-	print(k, v)
-end
+-- print("After Sort...")
+-- for k, v in ipairs(tbSort) do
+-- 	print(k, v)
+-- end
 --[[
 总结：
 (1)table.sort的比较函数在面向对象编程时候要注意了
@@ -589,9 +589,9 @@ local tTest2 = {
 
 setmetatable(tTest, tMetatable)
 setmetatable(tTest, tMetatable)
-print(tNormal[3])
-print(tTest[3])
-print(tTest2[3])
+-- print(tNormal[3])
+-- print(tTest[3])
+-- print(tTest2[3])
 
 --[[
 sum:
@@ -648,18 +648,18 @@ local tbTestLength2 = {1, 2, 3, nil ,nil, 4};
 local tbTestLength3 = {nil, 2, 3, nil, 4};
 local tbTestLength4 = {nil, 2, 3, nil, nil, nil, 4, nil};
 
-print(fnUnPack(1, 2, 3));
-print(fnUnPack(1, 2, 3, nil ,4));
-print(fnUnPack(1, 2, 3, nil ,4, nil));
-print("Length = ", #tbTestLength, #tbTestLength1, #tbTestLength2, #tbTestLength3, #tbTestLength4)
+-- print(fnUnPack(1, 2, 3));
+-- print(fnUnPack(1, 2, 3, nil ,4));
+-- print(fnUnPack(1, 2, 3, nil ,4, nil));
+-- print("Length = ", #tbTestLength, #tbTestLength1, #tbTestLength2, #tbTestLength3, #tbTestLength4)
 
-print(fnUnPack2(1, 2, 3));
-print(fnUnPack2(1, 2, 3, nil ,4));
-print(fnUnPack2(1, 2, 3, nil ,4, nil));
+-- print(fnUnPack2(1, 2, 3));
+-- print(fnUnPack2(1, 2, 3, nil ,4));
+-- print(fnUnPack2(1, 2, 3, nil ,4, nil));
 
-print("select: ", select(3, 5, 6, 7, 8))
-print("select: ", select('#', 5, 6, 7, 8))
+-- print("select: ", select(3, 5, 6, 7, 8))
+-- print("select: ", select('#', 5, 6, 7, 8))
 
 ------------------------------------------------------------
 -- table.concat
-print(table.concat({2, 0, 3, 0, 0, 4}, ","))
+-- print(table.concat({2, 0, 3, 0, 0, 4}, ","))
