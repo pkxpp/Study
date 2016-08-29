@@ -1,4 +1,4 @@
-print("环境：(1, 0)", getfenv(1), getfenv(0), getfenv(3))
+-- print("环境：(1, 0)", getfenv(1), getfenv(0), getfenv(3))
 --math.random
 --(1)no pragram
 function random_0()

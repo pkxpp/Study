@@ -3,7 +3,7 @@
 --for n in pairs(_G) do print(n) end
 --_G._G = _G在打印里面可以看到_G这个成员
 --14.1 _G
---[[
+
 function getfield(f)
 	local v = _G
 	for w in string.gfind(f, "[%w_]+") do
@@ -25,9 +25,8 @@ function setfield(f, v)
 end
 
 setfield("t.x.y", 10)
-print(t.x.y, t.x)
-print(getfield("t.x.y"), getfield("t.x"))
-]]
+-- print(t.x.y, t.x)
+-- print(getfield("t.x.y"), getfield("t.x"))
 
 --------------------------------------
 --14.2
@@ -44,11 +43,10 @@ setmetatable(_G, {
 		error("attempt to read undeclared variable " ..n, 2)
 	end
 })
---a=1
-decalre "a"
-a = 1
-]]
-
+-- a=1
+-- decalre "a"
+-- a = 1
+--]]
 -------------------------------------------
 --14.3
 --[[
@@ -66,7 +64,7 @@ a = 2
 setfenv(1, tEnv)
 -- print(a, _G)
 for k, v in pairs(tEnv) do
-	print(k, v)
+	-- print(k, v)
 end
 
 ------------------------------------------------------------
@@ -75,27 +73,23 @@ local env1 = {
 	-- print = print,
 }
 function testSetfenv( )
-	-- block
-	if true then
-		setfenv(1, env1)
-		-- print("111111111")
-	end
-	-- print("22222")
+	setfenv(1, env1)
+	-- print("testSetfenv")	-- Error: testSetFenv函数所在的环境设置为env1，但是env1是没有print函数的
 end
 testSetfenv()
 
-local FuncEnv={}
--- setmetatable(FuncEnv, {__index = _G})
+local MyModel={}
+-- setmetatable(MyModel, {__index = _G})
 local func = loadfile("testSetfenv.lua")
-print(111, func)
-func()
---等价于setenv(func,FuncEnv);func();
-local f1 = setfenv(func,FuncEnv)
-f1()
-print(222, f1, FuncEnv.test)
---FuncEnv就是新的模块啦，可以attempt to call field 'test' (a nil value)用其中的函数啦,其实，lua内部的model命令或者函数也是用的这个原理
--- FuncEnv.test()
-print(FuncEnv.testvar)
+-- print(111, func)
+-- func()
+--等价于setenv(func,MyModel);func();
+local fenv = setfenv(func, MyModel)
+fenv() -- 新环境中没有print函数
+print("test = ", MyModel.test)
+--MyModel就是新的模块啦，可以attempt to call field 'test' (a nil value)用其中的函数啦,其实，lua内部的model命令或者函数也是用的这个原理
+print("var = ", MyModel.testvar)
+-- MyModel.test()
 
 --[[
 sum:

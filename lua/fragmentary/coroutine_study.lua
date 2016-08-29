@@ -280,7 +280,7 @@ function Test()
 	print("run here ")
 end
 
--- Test();
+Test();
 --
 
 function LoadSpine()
@@ -307,4 +307,4 @@ function LoadSpine()
 	end
 end
 
-LoadSpine();
+-- LoadSpine();

@@ -26,4 +26,4 @@ function CalcFastReading( nWords, nTimes, nSeconds )
 	local nRate = (nWords * nTimes)/nSeconds * 60;
 	print("阅读速率为：", nRate)
 end
-CalcFastReading(824, 2, 115.606);
+CalcFastReading(981, 2, 131.881);

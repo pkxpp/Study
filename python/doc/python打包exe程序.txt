@@ -1,0 +1,16 @@
+1. 步骤
+(1)安装py2exe
+(2)创建setup.py安装文件，格式如下:
+#setup
+from distutils.core import setup
+import py2exe
+
+setup(console=["xls2lua.py"])
+(3)运行命令：python setup.py py2exe
+(4)结果：
+生成一个build和dist文件夹，其中dist就是我们要的内容
+
+2. 总结
+
+3. 参考
+[1]http://bbs.pediy.com/showthread.php?t=144315
