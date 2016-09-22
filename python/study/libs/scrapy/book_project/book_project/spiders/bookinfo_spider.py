@@ -5,7 +5,7 @@ from book_project.items import BookItem
 
 class BookInfoSpider(scrapy.Spider):
     name = "bookinfo"
-    allowed_domains = ["allitebooks.cn", "amazon.cn"]
+    allowed_domains = ["allitebooks.com", "amazon.cn"]
     # allowed_domains = ["allitebooks.com"]	
     start_urls = [
         "http://www.allitebooks.com/security/",
@@ -37,11 +37,15 @@ class BookInfoSpider(scrapy.Spider):
         amazon_search_url = 'https://www.amazon.cn/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=' + isbn
         print(666, amazon_search_url)
         # amazon_search_url = "http://www.baidu.com"
-        yield scrapy.Request(amazon_search_url, callback=self.parse_price)
-        # yield scrapy.Request(amazon_search_url, callback=self.parse_price, meta={ 'item': item })
+        # yield scrapy.Request(amazon_search_url, callback=self.parse_price)
+        yield scrapy.Request(amazon_search_url, callback=self.parse_price, meta={ 'item': item })
 
     def parse_price(self, response):
         print("77777777777777777")
         item = response.meta['item']
-        item['price'] = response.xpath('//span/text()').re(r'\$[0-9]+\.[0-9]{2}?')[0]
+        # print(771, response.xpath('//span/text()'))	
+        # print(773, response.xpath('//span/text()').re(u'\￥[0-9]+\.[0-9]{2}?'))	
+        # item['price'] = response.xpath('//span/text()').re(r'\$[0-9]+\.[0-9]{2}?')[0]
+        item['price'] = response.xpath('//span/text()').re(u'\￥[0-9]+\.[0-9]{2}?')[0]
+        print(772, item['title'], item['isbn'], item['price'])		
         yield item
