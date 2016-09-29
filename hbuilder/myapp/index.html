@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<style>
+	
+		.mui-btn {
+			padding: 10px;
+		}
+		.ui-calendar {margin:50px 0;border-radius: 10px 10px 10px 10px;box-shadow: 2px 2px 20px 0; background-color:#FFF; position:relative;}
+        .ui-calendar caption,.ui-calendar th,.ui-calendar-cell-current a {background: url(images/sprite-calendar.png) repeat-x;}
+        .ui-calendar caption { height:26px; padding-top: 6px; text-align:left; font-family:Simsun; background-position: 0 -30px; border: 1px solid #861e1b;}
+        .ui-calendar caption a{ display:inline-block; margin:0 3px; padding: 0 2px; background-repeat: no-repeat; color: #FFF;}
+        .ui-calendar-selected-date,.ui-calendar-select {background-color:rgba(34,34,34,0.3);border-radius: 10px 10px 10px 10px;}
+        .ui-calendar-selected-date {  display:inline-block; padding:2px 10px; color:#FFF; position:relative; z-index:2;}
+        .ui-calendar-select {position: absolute; width: 104px; left: 51px; background-color:rgba(0,0,0,0.8); z-index:1;top:7px;display:none; padding:25px 0 10px 0;}
+        .ui-calendar-select li a{ height:25px; line-height:25px;text-align:center; display:block;color:#FFF; margin:0;}
+        .ui-calendar-select li a:hover{background-color:#222;}
+        .ui-calendar a {text-decoration:none;color:#4d4d4d;}
+        .ui-calendar th {color:#707687; height: 26px; background-position: 0 0;}
+        .ui-calendar th,.ui-calendar td {text-align:center;}
+        .ui-calendar th,.ui-calendar td {width:30px; height:30px; line-height:30px;}
+        .ui-calendar td a {display:block;}
+        .ui-calendar-cell-disabled {color:#c0c0c0;}
+        .ui-calendar-cell-current a{border-radius: 8px 8px 8px 8px; font-weight: bold;margin: 0 auto;background-position:20px -104px;background-repeat: no-repeat;width:28px; height:28px; color:#EA5454;}
+    	.mui-badge { 
+    		width: 14px;
+    		height: 14px;
+            margin-right: -20px;
+        } 
+	</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <span class="mui-icon mui-icon-bars mui-pull-left btnMenu"></span>
+	    <span class="mui-icon mui-icon-plus mui-pull-right btnAdd"></span>
+	    <h1 class="mui-title">喵秋的账簿</h1>
+	</header>
+	
+	<div class="mui-content">
+	    <div class="wrapper" id="wrapper">
+			<div class="date_row date_week">
+		        <div class="date_item">周日</div>
+		        <div class="date_item">周一</div>
+		        <div class="date_item">周二</div>
+		        <div class="date_item">周三</div>
+		        <div class="date_item">周四</div>
+		        <div class="date_item">周五</div>
+		        <div class="date_item">周六</div>
+		   </div>
+		   
+		   <div class="slide_wrap">
+		    	<div class="date_slide"> 
+		            <div class="date_list" id="date_list_0">
+		            </div><!--date_list-->
+		            
+		            <div class="date_list" id="date_list_1">
+		            </div><!--date_list-->
+		        </div>
+		    </div>
+		</div>
+		
+	</div>
+	
+	<!-- mui -->
+	<script type="text/javascript" src="js/mui.min.js"></script>
+	<!-- app -->
+	<script type="text/javascript" src="js/app/index.js"></script>
+</body>
+</html>

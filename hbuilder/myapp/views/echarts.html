@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>打卡统计</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome.css"/>
+		<style>
+			.chart {
+				height: 200px;
+				margin: 0px;
+				padding: 0px;
+			}
+			h5 {
+				margin-top: 30px;
+				font-weight: bold;
+			}
+			h5:first-child {
+				margin-top: 15px;
+			}
+		</style>
+		<script type="text/javascript" src="../js/html2canvas.js" ></script>
+		<script type="text/javascript">
+		// H5 plus事件处理
+		var shares=null;
+		var Intent=null,File=null,Uri=null,main=null;
+		var ws=null;
+		// H5 plus事件处理
+			
+		function plusReady(){
+				updateSerivces();
+				if(plus.os.name=="Android"){
+					main = plus.android.runtimeMainActivity();
+					Intent = plus.android.importClass("android.content.Intent");
+					File = plus.android.importClass("java.io.File");
+					Uri = plus.android.importClass("android.net.Uri");
+				}
+				ws=plus.webview.currentWebview();
+			}
+			if(window.plus){
+				plusReady();
+			}else{
+				document.addEventListener("plusready",plusReady,false);
+			}
+			/**
+			 * 更新分享服务
+			 */
+			function updateSerivces(){
+				plus.share.getServices( function(s){
+					shares={};
+					for(var i in s){
+						var t=s[i];
+						shares[t.id]=t;
+					}
+				}, function(e){
+					//outSet( "获取分享服务列表失败："+e.message );
+				} );
+			}
+			/**
+			   * 分享操作
+			   * @param {JSON} sb 分享操作对象s.s为分享通道对象(plus.share.ShareService)
+			   * @param {Boolean} bh 是否分享链接
+			   */
+			function shareAction(sb,bh) {
+				//outSet( "分享操作：" );
+				if(!sb||!sb.s){
+					console.log("无效的分享服务！");
+					//outLine( "无效的分享服务！" );
+					return;
+				}
+				var msg={content:sharecontent.value,extra:{scene:sb.x}};
+				if(bh){
+					console.log(sharehref.value)
+					msg.href=sharehref.value;
+					if(sharehrefTitle&&sharehrefTitle.value!=""){
+						msg.title=sharehrefTitle.value;
+					}
+					if(sharehrefDes&&sharehrefDes.value!=""){
+						msg.content=sharehrefDes.value;
+					}
+					
+					msg.thumbs=["_www/images/80x80.png"];
+					msg.pictures=["_doc/shareto.png"];
+				}else{
+					if(pic&&pic.realUrl){
+						msg.pictures=[pic.realUrl];
+					}
+				}
+				// 发送分享
+				if ( sb.s.authenticated ) {
+					//outLine( "---已授权---" );
+					shareMessage(msg,sb.s);
+				} else {
+					//outLine( "---未授权---" );
+					sb.s.authorize( function(){
+							shareMessage(msg,sb.s);
+						},function(e){
+						//outLine( "认证授权失败："+e.code+" - "+e.message );
+					});
+				}
+			}
+			/**
+			   * 发送分享消息
+			   * @param {JSON} msg
+			   * @param {plus.share.ShareService} s
+			   */
+			function shareMessage(msg,s){
+				//outLine(JSON.stringify(msg));
+				s.send( msg, function(){
+					//outLine( "分享到\""+s.description+"\"成功！ " );
+					mui.toast("分享到\""+s.description+"\"成功！ ");
+					//clearImgFile("shareto");
+				}, function(e){
+					//outLine( "分享到\""+s.description+"\"失败: "+JSON.stringify(e) );
+					mui.toast("分享到\""+s.description+"\"失败: "+JSON.stringify(e));
+					//clearImgFile("shareto");
+				} );
+			}
+			// 打开分享
+			function shareShow(){
+				// 保存图片
+				//saveImgFile("shareto");
+				var shareBts=[];
+				// 更新分享列表
+				var ss=shares['weixin'];
+				if(navigator.userAgent.indexOf('StreamApp')<0&&navigator.userAgent.indexOf('qihoo')<0){  //在360流应用中微信不支持分享图片
+					ss&&ss.nativeClient&&(shareBts.push({title:'微信朋友圈',s:ss,x:'WXSceneTimeline'}),
+					shareBts.push({title:'微信好友',s:ss,x:'WXSceneSession'}));
+				}
+				ss=shares['sinaweibo'];
+				ss&&shareBts.push({title:'新浪微博',s:ss});
+				ss=shares['qq'];
+				ss&&ss.nativeClient&&shareBts.push({title:'QQ',s:ss});
+				// 弹出分享列表
+				shareBts.length>0?plus.nativeUI.actionSheet({title:'分享',cancel:'取消',buttons:shareBts},function(e){
+					(e.index>0)&&shareAction(shareBts[e.index-1],true);
+				}):plus.nativeUI.alert('当前环境无法支持分享操作!');
+			}
+			// 分析链接
+			function shareHref(){
+				var shareBts=[];
+				// 更新分享列表
+				var ss=shares['weixin'];
+				ss&&ss.nativeClient&&(shareBts.push({title:'微信朋友圈',s:ss,x:'WXSceneTimeline'}),
+				shareBts.push({title:'微信好友',s:ss,x:'WXSceneSession'}));
+				ss=shares['qq'];
+				ss&&ss.nativeClient&&shareBts.push({title:'QQ',s:ss});
+				// 弹出分享列表
+				shareBts.length>0?plus.nativeUI.actionSheet({title:'分享链接',cancel:'取消',buttons:shareBts},function(e){
+					(e.index>0)&&shareAction(shareBts[e.index-1],true);
+				}):plus.nativeUI.alert('当前环境无法支持分享链接操作!');
+			}
+			
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">打卡统计</h1>
+			<a class="mui-icon mui-pull-right fa fa-share-alt" onclick="shareShow();"></a>
+		</header>
+		<div class="mui-content" id="to_share_div">
+			<div class="mui-content-padded">
+				<p style="text-indent: 22px;">
+					你的打卡统计数据如下，目前默认统计一周的打卡记录
+				</p>
+			</div>
+			<div class="mui-content-padded">
+				<h5>一周打卡数</h5>
+				<div class="chart" id="lineChart"></div>
+				<h5>一周打卡频率</h5>
+				<div class="chart" id="pieChart"></div>
+			</div>
+		</div>
+		
+		<div style="display: none;">
+			<input id="sharehref" class="sharehref" type="hidden" value="http://0312birdzhang.oschina.io/huihuisignin"/>
+			<input id="sharehrefTitle" class="sharehref" type="hidden" value="我在用卉卉打卡签到，你也来试试吧" />
+			<input id="sharehrefDes" class="sharehref" type="hidden" value="本周我总共打卡记录了0次，你能超过我吗？" />
+			<img id="pic" src="../images/80x80.png"/>
+			<input id="sharecontent" type="hidden" value="我在用卉卉打卡签到，你也来试试吧"  />
+			<div id="output">
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../libs/echarts-all.js"></script>
+		<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			
+			
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			var lineChart,pieChart;
+			//lineChart.getImage()
+			//打卡记录数
+			var callback = {
+				sumWeek: function(x_array,y_array){
+					var option = {
+						//legend: {
+						//	data: ['打卡量']
+						//},
+						grid: {
+							x: 35,
+							x2: 10,
+							y: 30,
+							y2: 25
+						},
+						toolbox: {
+							show: false,
+							feature: {
+								mark: {
+									show: true
+								},
+								dataView: {
+									show: true,
+									readOnly: false
+								},
+								magicType: {
+									show: true,
+									type: ['line', 'bar']
+								},
+								restore: {
+									show: true
+								},
+								saveAsImage: {
+									show: true
+								}
+							}
+						},
+						calculable: false,
+						xAxis: [{
+							type: 'category',
+							data: x_array
+						}],
+						yAxis: [{
+							type: 'value',
+							splitArea: {
+								show: true
+							},
+							
+						}],
+						series: [{
+							name: '打卡数',
+							type: 'line',
+							data: y_array
+						}],
+					};
+					lineChart = echarts.init(byId('lineChart'));
+					lineChart.setOption(option);
+				},
+				sumFrequence:function(x_arr){
+					
+					var option = {
+						calculable: false,
+						series: [{
+							name: '打卡频率',
+							type: 'pie',
+							radius: '65%',
+							center: ['50%', '50%'],
+							data: x_arr
+						}]
+					};
+					pieChart = echarts.init(byId('pieChart'));
+					pieChart.setOption(option);
+				},
+				
+				share_counts:function(x){
+					document.getElementById("sharehrefDes").value = "本周我总共打卡记录了"+x+"次，你能超过我吗？";
+				}
+				
+			}
+			var byId = function(id) {
+				return document.getElementById(id);
+			};
+
+			mui.plusReady(function() {
+				sumWeek(callback);
+				sumFrequence(callback)
+			})
+			
+			//保存图片
+			function saveImgFile(uid){
+				html2canvas(document.getElementById("to_share_div"), {
+	                        allowTaint: true,
+	                        taintTest: false,
+	                        onrendered: function(canvas) {
+	                            canvas.id = "mycanvas";
+	                            //document.body.appendChild(canvas);
+	                            //生成base64图片数据
+	                           var dataUrl = canvas.toDataURL();
+								var bitmap = new plus.nativeObj.Bitmap();
+								// 从本地加载Bitmap图片
+								bitmap.loadBase64Data(dataUrl,function(){
+									//	console.log('加载图片成功');
+									bitmap.save( "_doc/"+uid+".png",{overwrite:true},function(i){
+										console.log('保存图片成功：'+JSON.stringify(i));
+										},function(e){
+										console.log('保存图片失败：'+JSON.stringify(e));
+									});
+									},function(e){
+									console.log('加载图片失败：'+JSON.stringify(e));
+								});
+	                           
+	                        }
+	                    });
+	                   
+	                  /* //官方方式
+	                   var bitmap = new plus.nativeObj.Bitmap();
+	                   ws.draw(bitmap,function(){
+						console.log('截屏绘制图片成功');
+						bitmap.save( "_doc/"+uid+".png",{overwrite:true},function(i){
+										console.log('保存图片成功：'+JSON.stringify(i));
+										},function(e){
+										console.log('保存图片失败：'+JSON.stringify(e));
+									});
+					},function(e){
+						console.log('截屏绘制图片失败：'+JSON.stringify(e));
+					});*/
+				
+			}
+			
+			function clearImgFile(uid){
+				var bitmap = new plus.nativeObj.Bitmap(uid);
+				bitmap.clear();
+			}
+		</script>
+	</body>
+
+</html>
