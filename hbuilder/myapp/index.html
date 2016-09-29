@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title></title>
-    <script src="js/mui.min.js"></script>
+    <!--<script src="js/mui.min.js"></script>-->
     <link href="css/mui.min.css" rel="stylesheet"/>
-	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<!--<link href="css/style.css" rel="stylesheet" type="text/css">-->
 	<style>
 	
-		.mui-btn {
+		/*.mui-btn {
 			padding: 10px;
 		}
 		.ui-calendar {margin:50px 0;border-radius: 10px 10px 10px 10px;box-shadow: 2px 2px 20px 0; background-color:#FFF; position:relative;}
@@ -32,7 +32,14 @@
     		width: 14px;
     		height: 14px;
             margin-right: -20px;
-        } 
+        } */
+        
+        #middlePopover {
+			margin-top: 26%;
+			width: 98%;
+		}
+		#middlePopover .mui-popover {
+		}
 	</style>
 </head>
 <body>
@@ -44,7 +51,7 @@
 	
 	<div class="mui-content">
 	    <div class="wrapper" id="wrapper">
-			<div class="date_row date_week">
+			<!--<div class="date_row date_week">
 		        <div class="date_item">周日</div>
 		        <div class="date_item">周一</div>
 		        <div class="date_item">周二</div>
@@ -52,7 +59,7 @@
 		        <div class="date_item">周四</div>
 		        <div class="date_item">周五</div>
 		        <div class="date_item">周六</div>
-		   </div>
+		   </div>-->
 		   
 		   <div class="slide_wrap">
 		    	<div class="date_slide"> 
@@ -64,12 +71,37 @@
 		        </div>
 		    </div>
 		</div>
-		
+
+	    <div class="mui-content-padded">
+	    	<!--<button type="button" class="mui-btn mui-btn-royal" href="#middlePopover">
+    			记一笔
+			</button>-->
+			<p>
+				<a href="#middlePopover" class="mui-btn mui-btn-primary mui-btn-block mui-btn-outlined" style="padding: 5px 20px;">记一笔</a>
+			</p>
+	    </div>
+	      
+		<div id="middlePopover" class="mui-popover">
+			<div class="mui-content">
+				<div class="mui-content-padded" style="margin: 5px;">
+					<div class="mui-input-row" style="margin: 10px 5px;">
+							<textarea id="textarea" rows="5" placeholder="输入打卡内容"></textarea>
+					</div>
+				    <p></p>
+					<div class="mui-button-row">
+						<button type="button" class="mui-btn mui-btn-primary" onclick="newaddEvent();">保存</button>&nbsp;&nbsp;
+						<!--<button type="button" class="mui-btn mui-btn-danger" onclick="hiddenPop()">取消</button>-->
+					</div>
+					<p></p>
+				</div>
+			</div>
+		</div>
 	</div>
 	
 	<!-- mui -->
 	<script type="text/javascript" src="js/mui.min.js"></script>
 	<!-- app -->
 	<script type="text/javascript" src="js/app/index.js"></script>
+	
 </body>
 </html>

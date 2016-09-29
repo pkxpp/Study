@@ -34,11 +34,8 @@ mui.plusReady(function(){
 //			qiao.h.exit();
 //		}
 	};
+	
 });
-
-function test(){
-	console.log('11111111111');
-}
 
 // menu
 function opMenu(){
@@ -85,3 +82,20 @@ function closeMenu(){
 //function setColor(color){
 //	if(mui.os.ios && color) plus.navigator.setStatusBarBackground(color);
 //}
+
+mui('body').on('shown', '.mui-popover', function(e) {
+	console.log('shown', e.detail.id);//detail为当前popover元素
+});
+mui('body').on('hidden', '.mui-popover', function(e) {
+	console.log('hidden', e.detail.id);//detail为当前popover元素
+});
+	
+function newaddEvent(){
+	console.log('1111111111111111')
+	var text = document.getElementById("textarea");
+	if(!text.value||text.value==""){
+				mui.toast("不允许为空");
+				return false;
+	}
+	console.log(text);	
+}
