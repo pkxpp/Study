@@ -212,8 +212,19 @@
 					"js/mui.min.js"
 				],
 				"refer": [
-					"views/about.html"
+					"views/about.html",
+					"views/echarts.html"
 				],
+				"priority": 0
+			},
+			"views/echarts.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"libs/echarts-all.js"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},
