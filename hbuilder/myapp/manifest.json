@@ -222,7 +222,8 @@
 					"js/mui.min.js",
 					"fonts/mui.ttf",
 					"css/mui.min.css",
-					"libs/echarts-all.js"
+					"libs/echarts-all.js",
+					"js/app/index.js"
 				],
 				"refer": [],
 				"priority": 0

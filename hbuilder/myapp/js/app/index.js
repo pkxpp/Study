@@ -102,21 +102,56 @@ function newaddEvent(){
 }
 
 function getDatabase() {
-     return openDatabase("testdb", "1.0", "page", 123456);
+	//@参数1：数据库名称
+	//@参数2：版本号
+	//@参数3：对数据库的描述
+	//@参数4：设置数据的大小
+	//@参数5：回调函数
+     return openDatabase("testdb", "1.0", "page", 1024*1024);
 }
 
 function initialize(){
     var db = getDatabase()
     db.transaction(function(tx){
-    	tx.executeSql("CREATE TABLE IF NOT EXISTS testTable (name TEXT, value TEXT, primary key (name))");
+    	tx.executeSql("CREATE TABLE IF NOT EXISTS testTable (name TEXT, value INT, primary key (name))");
     });
     
     console.log("initialize ... ");
     
-    var ret = addValue("c10", "10");
-    console.log(ret);
+//  var ret = addValue("c10", 10);
+//  console.log(ret);
+	// make data
+	var arrData = [
+		{
+			value: 335,
+			name: '直接访问'
+		}, 
+		{
+			value: 310,
+			name: '邮件营销'
+		}, 
+		{
+			value: 234,
+			name: '联盟广告'
+		}, 
+		{
+			value: 135,
+			name: '视频广告'
+		}, 
+		{
+			value: 1548,
+			name: '搜索引擎'
+		}
+	]
+//	console.log("22222222222222222222222222");
+	for (var i = 0; i < arrData.length; i++)
+	{
+//		console.log("name:" + arrData[i].name + ", value:" + arrData[i].value);
+		addValue(arrData[i].name, arrData[i].value)
+	}
+//	console.log("--------------------------------------------");
     
-    loadValue();
+//  loadValue();
 }
 
 function addValue(cname, cvalue){
@@ -125,10 +160,10 @@ function addValue(cname, cvalue){
     db.transaction(function(tx){
         tx.executeSql('INSERT INTO testTable VALUES (?,?);',[cname, cvalue],
 	        function(tx,results){
-				console.log(cname);
+//				console.log(cname);
 	        },function (tx, error){
 	            res = false;
-	            console.log("addValue error.");
+//	            console.log("addValue error.");
 	        }
         );
     })
@@ -145,8 +180,7 @@ function loadValue(){
     		var htmlList = new Array();
 		    var len = results.rows.length;
 		    for (i = 0; i < len; i++){
-//		    	htmlList[i] = results.rows.item(i).ctitle;
-				console.log(results.rows.item(i).name);
+				console.log(results.rows.item(i).name + ", " + results.rows.item(i).value);
 		    }
 		},
     	function (tx,error){
@@ -155,3 +189,4 @@ function loadValue(){
 		
 	})
 }
+
