@@ -51,7 +51,9 @@
 		<script src="../libs/echarts-all.js"></script>
 		<script src="../js/app/index.js"></script>
 		<script>
-			console.log("1111111111111111111111111111111");
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
 			var getOption = function(chartType) {
 				var chartOption = chartType == 'pie' ? {
 					calculable: false,

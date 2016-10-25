@@ -5,7 +5,13 @@
 			"css/mui.min.css",
 			"fonts/mui.ttf",
 			"js/app/index.js",
-			"css/style.css"
+			"css/style.css",
+			"js/mui.poppicker.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"js/mui.picker.js",
+			"js/city.data.js",
+			"js/city.data-3.js"
 		],
 		"refer": [
 			"views/menu.html"

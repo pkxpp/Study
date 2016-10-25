@@ -4,6 +4,7 @@ mui.init();
 var main = null;
 var showMenu = false;
 var menu = null;
+var selectType = "";
 
 // 所有方法都放到这里
 mui.plusReady(function(){
@@ -25,9 +26,10 @@ mui.plusReady(function(){
 	mui('.mui-bar').on('tap', '.btnMenu', opMenu);
 	main.addEventListener('maskClick', opMenu);
 	mui.menu = opMenu;
-
+	
+	tstPicker();
 	// 退出
-	mui.back = function(){
+//	mui.back = function(){
 //		if($('.adda').is(':hidden')){
 //			hideAdd();	
 //		}else if(showMenu){
@@ -35,7 +37,7 @@ mui.plusReady(function(){
 //		}else{
 //			qiao.h.exit();
 //		}
-	};
+//	};
 	
 });
 
@@ -91,14 +93,31 @@ mui('body').on('shown', '.mui-popover', function(e) {
 mui('body').on('hidden', '.mui-popover', function(e) {
 	console.log('hidden', e.detail.id);//detail为当前popover元素
 });
+
+var selectPicker = document.getElementById('typeID');
+selectPicker.addEventListener('tap', function(event) {
+	console.log("2222222222222222222");
+}, false);
 	
 function newaddEvent(){
-	var text = document.getElementById("textarea");
-	if(!text.value||text.value==""){
-				mui.toast("不允许为空");
-				return false;
+	console.log("newaddEvent");
+//	var text = document.getElementById("textarea");
+//	if(!text.value||text.value==""){
+//				mui.toast("不允许为空");
+//				return false;
+//	}
+	if (selectType == "")
+	{
+		mui.toast("不允许为空");
+		return false;
 	}
-	console.log(text);	
+	console.log(selectType);	
+	
+	// 存数据库
+//	addValue(selectType, 1);
+//	var oldValue = getValue(selectType);
+	add(selectType, 10);
+//	console.log(oldValue);
 }
 
 function getDatabase() {
@@ -143,15 +162,10 @@ function initialize(){
 			name: '搜索引擎'
 		}
 	]
-//	console.log("22222222222222222222222222");
 	for (var i = 0; i < arrData.length; i++)
 	{
-//		console.log("name:" + arrData[i].name + ", value:" + arrData[i].value);
 		addValue(arrData[i].name, arrData[i].value)
 	}
-//	console.log("--------------------------------------------");
-    
-//  loadValue();
 }
 
 function addValue(cname, cvalue){
@@ -169,6 +183,64 @@ function addValue(cname, cvalue){
     })
 
     return res;
+}
+
+function updateValue(cname, cvalue){
+    var db = getDatabase();
+    var res = true;
+    db.transaction(function(tx){
+        tx.executeSql('UPDATE testTable SET value = ? WHERE name = ?;',[cvalue, cname],
+	        function(tx,results){
+				console.log("update successed.");
+	        },function (tx, error){
+	            res = false;
+	        }
+        );
+    })
+
+    return res;
+}
+
+function getValue(cname){
+    var db = getDatabase();
+//  var res = true;
+	var value = 0;
+    db.transaction(function(tx){
+        tx.executeSql('SELECT value from testTable WHERE name = ?;',[cname],
+	        function(tx,results){
+	        	var len = results.rows.length;
+				value = results.rows.item(0).value;
+				console.log("len=" + len + ", value = " + value);
+	        },function (tx, error){
+//				console.log("error ..................");
+	        }
+        );
+    })
+	console.log("value = " + value);
+    return value;
+}
+
+function add(cname, addValue){
+    var db = getDatabase();
+//  var res = true;
+	var value = 0;
+    db.transaction(function(tx){
+        tx.executeSql('SELECT value from testTable WHERE name = ?;',[cname],
+	        function(tx,results){
+	        	var len = results.rows.length;
+				value = results.rows.item(0).value;
+				console.log("len=" + len + "," + value);
+				// 上面得到的value是string类型
+				console.log(typeof(value));
+				value = Number(value) + Number(addValue);
+				updateValue(cname, value);
+	        },function (tx, error){
+//				console.log("error ..................");
+	        }
+        );
+    })
+	console.log("value = " + value);
+    return value;
 }
 
 function loadValue(){
@@ -190,3 +262,47 @@ function loadValue(){
 	})
 }
 
+function tstPicker(){
+	//普通示例
+	var userPicker = new mui.PopPicker();
+	userPicker.setData([
+		{
+		value: 'c10',
+		text: 'c10'
+		}, 
+		{
+		value: '直接访问',
+		text: '直接访问'
+		}, 
+		{
+			value: '邮件营销',
+			text: '邮件营销'
+		}, 
+		{
+			value: '联盟广告',
+			text: '联盟广告'
+		}, 
+		{
+			value: '视频广告',
+			text: '视频广告'
+		}, 
+		{
+			value: '搜索引擎',
+			text: '搜索引擎'
+		}, 
+	]);
+	console.log("mmmmmmmmmmmmmmmmmmmmm");
+	var pick = document.getElementById('showPicker');
+	pick.addEventListener('tap', function(event) {
+		userPicker.show(function(items) {
+//			userResult.innerText = JSON.stringify(items[0]);
+			//返回 false 可以阻止选择框的关闭
+			//return false;
+			console.log("333333333333333333333333333333333");
+			console.log(JSON.stringify(items[0]));
+			console.log(items[0].value);
+			selectType = items[0].text;
+			getValue(selectType);
+		});
+	}, false);
+}

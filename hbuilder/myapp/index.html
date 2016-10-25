@@ -7,6 +7,8 @@
     <!--<script src="js/mui.min.js"></script>-->
     <link href="css/mui.min.css" rel="stylesheet"/>
 	<!--<link href="css/style.css" rel="stylesheet" type="text/css">-->
+	<link href="css/mui.picker.css" rel="stylesheet" />
+	<link href="css/mui.poppicker.css" rel="stylesheet" />
 	<style>
 	
 		/*.mui-btn {
@@ -39,6 +41,24 @@
 			width: 98%;
 		}
 		#middlePopover .mui-popover {
+		}
+		
+		.mui-btn {
+			font-size: 16px;
+			padding: 8px;
+			margin: 3px;
+		}
+		h5.mui-content-padded {
+			margin-left: 3px;
+			margin-top: 20px !important;
+		}
+		h5.mui-content-padded:first-child {
+			margin-top: 12px !important;
+		}
+		.ui-alert {
+			text-align: center;
+			padding: 20px 10px;
+			font-size: 16px;
 		}
 	</style>
 </head>
@@ -84,9 +104,18 @@
 		<div id="middlePopover" class="mui-popover">
 			<div class="mui-content">
 				<div class="mui-content-padded" style="margin: 5px;">
-					<div class="mui-input-row" style="margin: 10px 5px;">
+					<!--<div class="mui-input-row" style="margin: 10px 5px;">
 							<textarea id="textarea" rows="5" placeholder="输入打卡内容"></textarea>
-					</div>
+					</div>-->
+					<select id="typeID" class="mui-btn mui-btn-block">
+						<option value="item-1">c10</option>
+						<option value="item-2">直接访问</option>
+						<option value="item-3">邮件营销</option>
+						<option value="item-4">联盟广告</option>
+						<option value="item-5">视频广告</option>
+						<option value="item-6">搜索引擎</option>
+					</select>
+					<button id='showPicker' class="mui-btn mui-btn-block" type='button'>选择类别</button>
 				    <p></p>
 					<div class="mui-button-row">
 						<button type="button" class="mui-btn mui-btn-primary" onclick="newaddEvent();">保存</button>&nbsp;&nbsp;
@@ -100,6 +129,11 @@
 	
 	<!-- mui -->
 	<script type="text/javascript" src="js/mui.min.js"></script>
+	<script src="js/mui.picker.js"></script>
+	<script src="js/mui.poppicker.js"></script>
+	<script src="js/city.data.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+	
 	<!-- app -->
 	<script type="text/javascript" src="js/app/index.js"></script>
 	
