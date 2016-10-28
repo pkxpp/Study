@@ -23,6 +23,8 @@ mui.plusReady(function(){
 	};
 	menu = mui.preload(menuoptions);
 //	$(document).off('tap', '.btnMenu').on('tap', '.btnAdd', opMenu);
+//	document.on('tap', '.btnAdd', tstAddData);
+	mui('.mui-plus').on('tap', '.btnAdd', tstAddData);
 	mui('.mui-bar').on('tap', '.btnMenu', opMenu);
 	main.addEventListener('maskClick', opMenu);
 	mui.menu = opMenu;
@@ -93,19 +95,9 @@ mui('body').on('shown', '.mui-popover', function(e) {
 mui('body').on('hidden', '.mui-popover', function(e) {
 	console.log('hidden', e.detail.id);//detail为当前popover元素
 });
-
-var selectPicker = document.getElementById('typeID');
-selectPicker.addEventListener('tap', function(event) {
-	console.log("2222222222222222222");
-}, false);
 	
 function newaddEvent(){
 	console.log("newaddEvent");
-//	var text = document.getElementById("textarea");
-//	if(!text.value||text.value==""){
-//				mui.toast("不允许为空");
-//				return false;
-//	}
 	if (selectType == "")
 	{
 		mui.toast("不允许为空");
@@ -114,10 +106,7 @@ function newaddEvent(){
 	console.log(selectType);	
 	
 	// 存数据库
-//	addValue(selectType, 1);
-//	var oldValue = getValue(selectType);
 	add(selectType, 10);
-//	console.log(oldValue);
 }
 
 function getDatabase() {
@@ -136,48 +125,16 @@ function initialize(){
     });
     
     console.log("initialize ... ");
-    
-//  var ret = addValue("c10", 10);
-//  console.log(ret);
-	// make data
-	var arrData = [
-		{
-			value: 335,
-			name: '直接访问'
-		}, 
-		{
-			value: 310,
-			name: '邮件营销'
-		}, 
-		{
-			value: 234,
-			name: '联盟广告'
-		}, 
-		{
-			value: 135,
-			name: '视频广告'
-		}, 
-		{
-			value: 1548,
-			name: '搜索引擎'
-		}
-	]
-	for (var i = 0; i < arrData.length; i++)
-	{
-		addValue(arrData[i].name, arrData[i].value)
-	}
 }
 
-function addValue(cname, cvalue){
+function insert(cname, cvalue){
     var db = getDatabase();
     var res = true;
     db.transaction(function(tx){
         tx.executeSql('INSERT INTO testTable VALUES (?,?);',[cname, cvalue],
 	        function(tx,results){
-//				console.log(cname);
 	        },function (tx, error){
 	            res = false;
-//	            console.log("addValue error.");
 	        }
         );
     })
@@ -185,7 +142,7 @@ function addValue(cname, cvalue){
     return res;
 }
 
-function updateValue(cname, cvalue){
+function update(cname, cvalue){
     var db = getDatabase();
     var res = true;
     db.transaction(function(tx){
@@ -201,18 +158,18 @@ function updateValue(cname, cvalue){
     return res;
 }
 
-function getValue(cname){
+function select(cname){
     var db = getDatabase();
-//  var res = true;
 	var value = 0;
     db.transaction(function(tx){
         tx.executeSql('SELECT value from testTable WHERE name = ?;',[cname],
 	        function(tx,results){
 	        	var len = results.rows.length;
-				value = results.rows.item(0).value;
-				console.log("len=" + len + ", value = " + value);
+	        	if (len > 0){
+					value = results.rows.item(0).value;
+//					console.log("len=" + len + ", value = " + value);
+				}
 	        },function (tx, error){
-//				console.log("error ..................");
 	        }
         );
     })
@@ -220,20 +177,27 @@ function getValue(cname){
     return value;
 }
 
-function add(cname, addValue){
+function add(cname, cvalue){
     var db = getDatabase();
-//  var res = true;
 	var value = 0;
     db.transaction(function(tx){
         tx.executeSql('SELECT value from testTable WHERE name = ?;',[cname],
 	        function(tx,results){
 	        	var len = results.rows.length;
-				value = results.rows.item(0).value;
-				console.log("len=" + len + "," + value);
-				// 上面得到的value是string类型
-				console.log(typeof(value));
-				value = Number(value) + Number(addValue);
-				updateValue(cname, value);
+	        	console.log("len = " + len);
+	        	if (len > 0){	// update database
+	        		console.log("add --> update database");
+					value = results.rows.item(0).value;
+					console.log("len=" + len + "," + value);
+					// 上面得到的value是string类型
+					console.log(typeof(value));
+					value = Number(value) + Number(cvalue);
+					update(cname, value);
+				}
+	        	else{			// insert database
+	        		console.log("add --> insert database.");
+	        		insert(cname, Number(cvalue));
+	        	}
 	        },function (tx, error){
 //				console.log("error ..................");
 	        }
@@ -267,10 +231,6 @@ function tstPicker(){
 	var userPicker = new mui.PopPicker();
 	userPicker.setData([
 		{
-		value: 'c10',
-		text: 'c10'
-		}, 
-		{
 		value: '直接访问',
 		text: '直接访问'
 		}, 
@@ -291,18 +251,70 @@ function tstPicker(){
 			text: '搜索引擎'
 		}, 
 	]);
-	console.log("mmmmmmmmmmmmmmmmmmmmm");
+
 	var pick = document.getElementById('showPicker');
 	pick.addEventListener('tap', function(event) {
 		userPicker.show(function(items) {
 //			userResult.innerText = JSON.stringify(items[0]);
 			//返回 false 可以阻止选择框的关闭
-			//return false;
-			console.log("333333333333333333333333333333333");
-			console.log(JSON.stringify(items[0]));
-			console.log(items[0].value);
+//			console.log(JSON.stringify(items[0]));
+//			console.log(items[0].value);
 			selectType = items[0].text;
-			getValue(selectType);
+			
+			// test
+			select(selectType);
 		});
 	}, false);
+}
+
+function clearTable()
+{
+	var db = getDatabase();
+    db.transaction(function(tx){
+    	tx.executeSql('DELETE FROM testTable', [], 
+    	function (tx, results) {
+    		var htmlList = new Array();
+		    var len = results.rows.length;
+		    for (i = 0; i < len; i++){
+				console.log(results.rows.item(i).name + ", " + results.rows.item(i).value);
+		    }
+		},
+    	function (tx,error){
+    	  	console.log("loadValue error.");
+    	});
+		
+	})
+}
+
+
+function tstAddData()
+{
+	console.log("tstAddData .....................");
+	
+	var arrData = [
+		{
+			value: 335,
+			name: '直接访问'
+		}, 
+		{
+			value: 310,
+			name: '邮件营销'
+		}, 
+		{
+			value: 234,
+			name: '联盟广告'
+		}, 
+		{
+			value: 135,
+			name: '视频广告'
+		}, 
+		{
+			value: 1548,
+			name: '搜索引擎'
+		}
+	]
+	for (var i = 0; i < arrData.length; i++)
+	{
+		insert(arrData[i].name, arrData[i].value);
+	}
 }
