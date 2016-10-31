@@ -418,4 +418,78 @@ function compare()
 	print(222, t4-t3);
 end
 
-compare();
+-- compare();
+
+------------------------------------------------------------
+-- 2016/10/10 判断有没有前16个字符相同的魔法属性串
+local tbMagicString = {
+	"common_probability",											-- 统一成功几率
+	"back_attack_damage_add_percent",								-- 背击伤害比例加成
+	"skilling_attack_damage_add_percent",							-- 破技伤害比例加成
+	"back_attack_injury_add_percent",								-- 背击气绝值比例加成
+	"skilling_attack_injury_add_percent",							-- 破技气绝值比例加成
+	"damage_destroy_zhen",											-- 破阵
+	"damage_direct_death",											-- 直接致死
+	"damage_direct_death_by_npc_type",								-- 根据Npc类型直接致死
+	"damage_pn_attack_add",											-- 两仪状态攻击加成	
+	"damage_attack_enemy_def_add",									-- 敌人防御比例对攻击力加成(专门针对高防的敌人)
+	"damage_ignore_rebound_per",									-- 伤害反弹削减比例
+	"damage_cancle_knockdown",										-- 取消倒地（几率）
+	"damage_beat_partner_value",									-- 打击值
+	"damage_knockdown",												-- 击倒（几率+后退坐标数）
+	"damage_knockback",												-- 击退（只有几率）	
+	"damage_beat_move",												-- 被击位移表现
+	"damage_beat_ctrl",												-- 被击控制位移表现
+	"damage_add_defense_percent",									-- 对防御状态NPC增加伤害百分比
+	"damage_add_breakdefense_percent",								-- 对破防状态NPC增加伤害百分比
+	"damage_add_defense_point",										-- 对防御状态NPC增加伤害点数
+	"damage_add_breakdefense_point",								-- 对破防状态NPC增加伤害点数
+	"critical_add_defense_per10k",									-- 攻击防御目标增加暴击概率，万分比
+	"critical_add_breakdefense_per10k",								-- 攻击破防目标增加暴击概率，万分比
+	"critical_add_damage_defense",									-- 攻击防御目标增加暴击伤害，百分比
+	"critical_add_damage_breakdefense",								-- 攻击破防目标增加暴击伤害，百分比
+	"critical_damage_odds_add_percent",								-- 攻击目标暴击伤害概率百分比增加
+	"damage_add_by_missle_fly_time",								-- 根据子弹飞行时间增加伤害
+	"damage_yin_life",												-- 伤害减阴属性单位生命
+	"damage_life",													-- 伤害减生命
+	"damage_mana",													-- 伤害减内力
+	"damage_stamina",												-- 伤害减体力
+	"damage_life2",													-- 
+	"damage_absorb_life",											-- 吸取生命
+	"damage_absorb_mana",											-- 吸取内力
+	"damage_absorb_stamina",										-- 吸取体力
+	"damage_weapon_perdure",										-- 伤害武器持久度
+	"damage_armor_perdure",											-- 伤害防具持久度
+	"damage_cause_i_wound_level",									-- 致内伤等级
+	"damage_cause_o_wound_level",									-- 致外伤等级
+	"damage_thieve_money",											-- 偷取金钱数量
+	"damage_thieve_skill",											-- 偷取状态
+	"damage_thieve_item",											-- 偷取物品
+	"damage_dispell_type",											-- 状态清除类型
+	"damage_dispell_num",											-- 状态清除数目
+	"damage_self_perdure_p",										-- 武器持久度损耗
+	"damage_reserved",												-- 保留使用属性(其意义根据不同技能而定)
+	"damage_add_enmity_p",											-- 仇恨度增加比例
+	"damage_draw_near",												-- 把目标拉到身前
+	"damage_interrupt_rate_add",									-- 提高攻击打断敌人武功概率
+	"damage_retrusive_rate_add",									-- 提高攻击使敌人后仰概率
+	"damage_retrusive_time",										-- 技能造成后仰时间 ，以帧为单位
+	"damage_retrusive_time_limit",									-- 后仰时间下限，以帧为单位
+	"damage_life_monster",											-- 针对Npc的生命伤害
+	"damage_change_position",										-- 和目标换位置
+	"damage_zhen",													-- 设置阵法状态
+}
+
+function fnFindPre16( tbStrings )
+	local tbStrings = tbStrings or {};
+	local tbHashPre16 = {};
+	for _, str in paris(tbStrings) do
+		-- 截取字符串前16个字符
+		local strTmp = string.sub(str, 1, 16);
+	end
+end
+
+--[[sum:
+* 用的是字符串指针，16个字符串指针，而并不是说字符串长度为16。
+* 代码：char* ppString[nStringCount] = {0};
+]]

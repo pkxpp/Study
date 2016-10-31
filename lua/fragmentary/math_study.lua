@@ -129,3 +129,37 @@ local tbWeight = {19, 38, 59};
 local n = 3;
 local w = 100;
 bag(n, w, tbValue, tbWeight);
+
+
+------------------------------------------------------------
+-- 同生日的问题
+-- 1. 50个人
+function fact( n )
+	if n <= 1 then
+		return 1;
+	else
+		return n * fact(n-1);
+	end
+end
+local n1 = (fact(365) / ( fact(50) * fact(365-50))) / (365 ^ 50);
+print(n1)
+
+-- 大正数计算
+function calcLargeNum( n )
+	local YEAR = 365;
+	local nRet = 1;
+	for i = 0, n - 1 do
+		print( "i = ", i)
+		nRet = nRet * (YEAR - i) / YEAR;
+	end
+
+	print("nRet = ", 1 - nRet);
+	return 1 - nRet;
+end
+
+calcLargeNum(50)
+
+-- 大正数
+BigInt = {
+	
+}
