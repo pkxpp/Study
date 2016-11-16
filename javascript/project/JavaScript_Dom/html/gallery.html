@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="end">
+	<head>
+		<meta charset="UTF-8">
+		<title>Image Gallery</title>
+		
+		<link rel="stylesheet" href="../css/layout.css" media="screen" />
+	</head>
+	<body>
+		<h1>Snapshots</h1>
+		<ul>
+			<li>
+				<a href="../image/yun.jpg" title="yun" onclick="showPic(this);return false;">zhang yun</a>
+			</li>
+			<li>
+				<a href="../image/tang.jpg" title="tang" onclick=" return showPic(this)">tang chao</a>
+			</li>
+			<li>
+				<a href="../image/jun.jpg" title="jun" onclick="return showPic(this)">feng jun</a>
+			</li>
+			<li>
+				<a href="../image/wei.jpg" title="wei" onclick="return showPic(this)">chen mei wei</a>
+			</li>
+		</ul>
+		<img id="placeholder" src="../image/IMG_0004 (7).jpg" alt="My gallery" />
+		<p id="description">Choose an image.</p>
+		<script type="text/javascript" src="../scripts/showPic.js"></script>
+	</body>
+</html>
