@@ -1,3 +1,4 @@
+[friends of ED网站](http://friendsofed.com)
 
 # 第2章 JavaScript语法
 
@@ -284,3 +285,100 @@ CSS指令构成了一个表示层，负责提供关于”表示“的信息；Ja
 ### 6.3.1 添加事件处理函数
 
 ## 6.4 不要太多的假设
+
+## 6.7 把JavaScript与CSS结合起来
+
+## 6.8 DOM Core和HTML-DOM
+方法和属性的互换
+
+## 6.9 小结
+
+# 第7章 动态创建标记
+
+## 7.1. 一些传统方法
+
+### 7.1.1 document.write
+
+### 7.1.2 innerHTML属性
+
+## 7.2 DOM方法
+
+### 7.2.1 createElement方法
+创建元素节点
+### 7.2.2 appendChild方法
+把新创建的节点插入某个文档。
+
+### 7.2.3 createTextNode方法
+创建文本节点
+
+### 7.2.4 一个更复杂的组合
+
+## 7.3 重回图片库
+### 7.3.1 在已有元素前插入一个新元素
+* insertBefore方法
+
+* parentNode属性
+
+### 7.3.2 在现有方法后插入一个新元素
+实例：
+
+```
+parent.insertBefore(newElement, targetElement.nextSibling);
+```
+
+* nextSibling属性
+把目标插入到目标元素的下一个兄弟元素之前
+
+### 7.3.3 图片库二次改进版
+
+## 7.4 Ajax
+怎么才能真正得到原来并不存在于初始页面中的内容呢？
+
+Ajax：用于概括异步加载页面内容的技术。
+
+### 7.4.1 XMLHttpRequest对象
+Ajax技术的核心就是XMLHttpRequest对象
+
+readyState属性的值：
+* 0表示未初始化
+* 1表示正在加载
+* 2表示加载完毕
+* 3表示正在交互
+* 4表示完成
+
+### 7.4.2 渐进增强与Ajax
+让Ajax功能扮演一个位于常规站点之上的层
+
+### 7.4.3 Hijax
+
+# 第8章 充实文档的内容
+
+
+## 8.1 不应该做什么
+两项原则牢记在心
+* 渐进增强
+* 平稳退化
+
+## 8.2 把“不可见”变成“可见”
+
+## 8.3 内容
+<abbr>
+
+### 8.3.1 选用HTML、XHMTL还是HTML5
+XHMTL： 使用一个DOCTYPE让浏览器采用更严格的呈现方案。
+
+### 8.3.2 CSS
+
+### 8.3.3 JavaScript
+
+## 8.4 显示“缩略语列表”
+### 8.4.1 编写displayAbbreviations
+### 8.4.2 创建标记
+
+### 8.4.3 一个浏览器“地雷”
+
+## 8.5 显示“文献来源链接表”
+
+
+
+

@@ -1,0 +1,10 @@
+body{
+	font: helvetica, arial, sans-serif;
+	font-size: 10pt;
+}
+
+abbr{
+	text-decoration: none;
+	border: 0;
+	font-style: normal;
+}
