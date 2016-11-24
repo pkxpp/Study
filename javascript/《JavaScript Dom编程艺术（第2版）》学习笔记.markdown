@@ -379,6 +379,43 @@ XHMTL： 使用一个DOCTYPE让浏览器采用更严格的呈现方案。
 
 ## 8.5 显示“文献来源链接表”
 
+看blockquote的最后一个节点
+
+	<blockquote cite="http://www.w3.org/DOM/">
+		<p>
+			A platform- and language-neutral interface that will allow programs
+			and scripts to dynamically access and update the
+			content, structur and style of documents.
+		</p>
+	</blockquote>
+
+> 注意：blockquote的lastChild并不是p元素节点，而是文本节点。因为'<'/p>'和'<'/blockqote>标签之间还存在着一个换行符。
+
+这样做有一个很直接的原因：
+文本节点没有applendChild方法，这个方法是元素节点的方法，所以必须找到最后一个元素节点，而不是最后一个任意类型的节点。
+
+* 获取所有元素节点
+
+getElementsByTagName("*");
+
+## 8.6 显示“快捷键清单”
+
+
+* accesskey属性
+
+* 快捷键约定俗成的设置方法
+[快捷键约定俗成的设置方法](http://www.clagnut.com/blog/193/)
+
+ - accesskey="1"对应着一个“返回到本网站主页”的链接；
+ - accesskey="2"对应着一个“后退到前一页面”的链接；
+ - accesskey="4"对应着一个“打开本网站的搜索表单/页面”的链接；
+ - accesskey="9"对应着一个“本网站联系办法”的链接；
+ - accesskey="0"对应着一个“查看本网站的快捷键清单”的链接。
+
+## 8.7 检索和添加信息
+
+# 第9章 CSS-DOM
+
 
 
 
