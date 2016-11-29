@@ -417,5 +417,81 @@ getElementsByTagName("*");
 # 第9章 CSS-DOM
 
 
+## 9.1 三位一体的页面
+
+### 9.1.1 结构层
+
+### 9.1.2 表示层
+
+### 9.1.3 行为层
 
 
+### 9.1.4 分离
+
+## 9.2 style属性
+
+代码示例：
+
+	var para = document.getElementById("example");
+	alert(typeof para.nodeName);
+	alert(typeof para.style);
+
+**不仅文档里的每个元素都是一个对象，每个元素都有一个style属性，它们也是一个对象。**
+
+### 9.2.1 获取样式
+
+
+*当你需要引用一个中间带减号的CSS属性时，DOM要求你用驼峰命名法。*CSS属性的font-family变为DOM属性fontFamily：
+
+	element.style.fontFamily;
+
+
+问题：
+
+* 12px和1em，单位之间的关系。
+
+*只有把CSS style属性插入到标记里，才可以用DOM style属性去查询那些信息*也就是说把内嵌样式放到css文件使用link的方式就不能使用了。例如，书中来自外部文件style.css的样式已经不能再使用DOM style属性检索出来了。*放到'<'style>标签里也是同样的结果*
+
+使用DOM设置的样式，就可以用DOM再把它们检索出来。
+
+### 9.2.2 设置样式
+
+
+
+## 9.3 何时该用DOM脚本设置样式
+
+### 9.3.1 根据元素在节点树里的位置来设置样式
+
+**主要的三种方法：**
+
+* 第一种：为标签元素(eg:p)统一声明
+
+eg:
+
+	p{
+		font-size: 1em;
+	}
+
+* 第二种：为特定class属性的所有元素统一声明
+
+eg:
+
+	.fineprint {
+		font-size: 1.2em;
+	}
+
+* 第三种：为有独一无二的id属性的元素单独声明
+
+eg:
+
+	#intro {
+		font-size: 1.2em;
+	}
+
+### 9.3.2 根据某种条件反复设置某种样式
+表格型数据'<'table>
+
+### 9.3.3 响应事件
+如果想改变某个元素的呈现效果，使用CSS；如果想改变某个元素的行为，使用DOM；
+
+### 9.4 className属性
