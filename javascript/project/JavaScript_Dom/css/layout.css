@@ -1,4 +1,4 @@
-body{
+/*body{
 	font-family: "Helvetica", "Arial", serif;
 	color: #333;
 	background-color: #ccc;
@@ -42,4 +42,15 @@ img{
 
 #imagegallery li a img{
 	border: 0;
+}*/
+
+#slideshow{
+	width: 100px;
+	height: 100px;
+	position: relative;
+	overflow: hidden;
+}
+
+#preview{
+	position: absolute;
 }

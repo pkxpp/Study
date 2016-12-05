@@ -88,7 +88,6 @@ function insertAfter(newElement, targetElement){
 	}else{
 		parent.insertBefore(newElement, targetElement.nextSibling);
 	}
-	
 }
 
 addLoadEvent(preparePlaceholder);

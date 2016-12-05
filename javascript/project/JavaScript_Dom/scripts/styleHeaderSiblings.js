@@ -5,8 +5,10 @@ function styleHeaderSiblings(){
 	for (var i = 0; i < headers.length; ++i) {
 		elem = getNextElement(headers[i].nextSibling);
 		
-		elem.style.fontWeight = "bold";
-		elem.style.fontSize = "1.2em";
+//		elem.style.fontWeight = "bold";
+//		elem.style.fontSize = "1.2em";
+//		elem.className = "intro";
+		addClass(elem, "intro");
 	}
 }
 
@@ -19,6 +21,16 @@ function getNextElement(node){
 		return getNextElement(node.nextSibling);
 	}
 	return null;
+}
+
+function addClass(element, value){
+	if (!element.classname){
+		element.classname = value;
+	}else{
+		newClassName = element.classname;
+		newClassName += " ";
+		element.classname = newClassName;
+	}
 }
 
 addLoadEvent(styleHeaderSiblings);
