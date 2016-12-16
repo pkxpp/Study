@@ -1,0 +1,7 @@
+{
+  "name": "helloworld",
+  "main": "index.html",
+  "window": {
+    "toolbar": true
+  }
+}
