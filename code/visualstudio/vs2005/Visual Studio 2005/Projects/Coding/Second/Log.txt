@@ -1,0 +1,37 @@
+C:\Users\Administrator\Documents\Qt\Projects\JauMoon\str_operate.cpp:1163: 危列:cannot convert 'char*' to 'const WCHAR*' for argument '1' to 'BOOL SetFileAttributesW(const WCHAR*, DWORD)'
+
+C:\Users\Administrator\Documents\Qt\Projects\JauMoon\str_operate.cpp:591: 少御:deprecated conversion from string constant to 'char*'
+
+
+2012-10-30 error
+C:\Users\Administrator\Documents\Qt\Projects\JauMoon\str_operate.cpp:548: 少御:deprecated conversion from string constant to 'char*'
+
+C:\Users\Administrator\Documents\Qt\Projects\JauMoon\str_operate.cpp:552: 少御:deprecated conversion from string constant to 'char*'
+
+C:\Users\Administrator\Documents\Qt\Projects\JauMoon\str_operate.cpp:557: 少御:deprecated conversion from string constant to 'char*'
+
+C:\Users\Administrator\Documents\Qt\Projects\JauMoon\str_operate.cpp:568: 少御:deprecated conversion from string constant to 'char*'
+
+C:\Users\Administrator\Documents\Qt\Projects\JauMoon\str_operate.cpp:578: 少御:deprecated conversion from string constant to 'char*'
+
+C:\Users\Administrator\Documents\Qt\Projects\JauMoon\str_operate.cpp:591: 少御:deprecated conversion from string constant to 'char*'
+
+C:\Users\Administrator\Documents\Qt\Projects\JauMoon\str_operate.cpp:-1: At global scope:
+
+C:\Users\Administrator\Documents\Qt\Projects\JauMoon\str_operate.cpp:734: 少御:unused parameter 'nStrLen'
+
+C:\Users\Administrator\Documents\Qt\Projects\JauMoon\str_operate.cpp:-1: In function 'int filter_lua_buffer(char*, int)':
+
+C:\Users\Administrator\Documents\Qt\Projects\JauMoon\str_operate.cpp:853: 少御:unused variable 'nBiasNum'
+
+C:\Users\Administrator\Documents\Qt\Projects\JauMoon\str_operate.cpp:854: 少御:unused variable 'cOld'
+
+C:\Users\Administrator\Documents\Qt\Projects\JauMoon\str_operate.cpp:-1: In function 'int visit_path_recursively(const char*, int (*)(const char*), int (*)(const char*), int (*)(const char*))':
+
+C:\Users\Administrator\Documents\Qt\Projects\JauMoon\str_operate.cpp:1125: 危列:cannot convert 'const char*' to 'const WCHAR*' for argument '1' to 'BOOL SetCurrentDirectoryW(const WCHAR*)'
+
+C:\Users\Administrator\Documents\Qt\Projects\JauMoon\str_operate.cpp:1127: 少御:deprecated conversion from string constant to 'char*'
+
+C:\Users\Administrator\Documents\Qt\Projects\JauMoon\str_operate.cpp:1163: 危列:cannot convert 'char*' to 'const WCHAR*' for argument '1' to 'BOOL SetFileAttributesW(const WCHAR*, DWORD)'
+
+C:\Users\Administrator\Documents\Qt\Projects\JauMoon\str_operate.cpp:1175: 少御:deprecated conversion from string constant to 'char*'

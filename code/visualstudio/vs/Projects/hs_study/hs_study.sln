@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hs_study", "hs_study\hs_study.vcxproj", "{3105FF5B-A915-4E4D-AA7C-1013270C4DAA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "命令行下单工具", "命令行下单工具\命令行下单工具.vcxproj", "{162B9B8F-DB48-4778-99CB-B1465DCCFD13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3105FF5B-A915-4E4D-AA7C-1013270C4DAA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3105FF5B-A915-4E4D-AA7C-1013270C4DAA}.Debug|Win32.Build.0 = Debug|Win32
+		{3105FF5B-A915-4E4D-AA7C-1013270C4DAA}.Release|Win32.ActiveCfg = Release|Win32
+		{3105FF5B-A915-4E4D-AA7C-1013270C4DAA}.Release|Win32.Build.0 = Release|Win32
+		{162B9B8F-DB48-4778-99CB-B1465DCCFD13}.Debug|Win32.ActiveCfg = Debug|Win32
+		{162B9B8F-DB48-4778-99CB-B1465DCCFD13}.Debug|Win32.Build.0 = Debug|Win32
+		{162B9B8F-DB48-4778-99CB-B1465DCCFD13}.Release|Win32.ActiveCfg = Release|Win32
+		{162B9B8F-DB48-4778-99CB-B1465DCCFD13}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

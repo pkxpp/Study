@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Spr2Png", "Spr2Png\Spr2Png.vdproj", "{617DB0D5-5D62-4245-BFCB-A73C2A1D21F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{617DB0D5-5D62-4245-BFCB-A73C2A1D21F4}.Debug|Default.ActiveCfg = Debug
+		{617DB0D5-5D62-4245-BFCB-A73C2A1D21F4}.Debug|Default.Build.0 = Debug
+		{617DB0D5-5D62-4245-BFCB-A73C2A1D21F4}.Release|Default.ActiveCfg = Release
+		{617DB0D5-5D62-4245-BFCB-A73C2A1D21F4}.Release|Default.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

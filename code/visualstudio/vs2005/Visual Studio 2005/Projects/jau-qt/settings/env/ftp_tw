@@ -1,0 +1,11 @@
+open 192.168.23.23
+update
+kingsoft
+put server/settings_s.pak twupdate/server/gamesvr/data/settings_s.pak
+put server/settings_s.pak.txt twupdate/server/gamesvr/data/settings_s.pak.txt
+put server/script.tar.gz twupdate/server/gamesvr/script.tar.gz
+
+put client/clientpkg.pak twupdate/client/clientpkg.pak
+put client/clientpkg.pak.txt twupdate/client/clientpkg.pak.txt
+
+bye

@@ -1,0 +1,56 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: G2 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Debug/G2.res" /d "_DEBUG" "C:\Documents and Settings\Temper\桌面\me\G2\G2.rc"" 
+Creating temporary file "C:\DOCUME~1\Temper\LOCALS~1\Temp\RSP19.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Debug/" /Fp"Debug/G2.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Temper\桌面\me\G2\G2.cpp"
+"C:\Documents and Settings\Temper\桌面\me\G2\Input.cpp"
+"C:\Documents and Settings\Temper\桌面\me\G2\Sprite.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Temper\LOCALS~1\Temp\RSP19.tmp" 
+Creating temporary file "C:\DOCUME~1\Temper\LOCALS~1\Temp\RSP1A.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Debug/" /Fp"Debug/G2.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Temper\桌面\me\G2\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Temper\LOCALS~1\Temp\RSP1A.tmp" 
+Creating temporary file "C:\DOCUME~1\Temper\LOCALS~1\Temp\RSP1B.tmp" with contents
+[
+Msimg32.lib Winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/G2.pdb" /debug /machine:I386 /out:"Debug/G2.exe" /pdbtype:sept 
+".\Debug\G2.obj"
+".\Debug\Input.obj"
+".\Debug\Sprite.obj"
+".\Debug\StdAfx.obj"
+".\Debug\G2.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\Temper\LOCALS~1\Temp\RSP1B.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+G2.cpp
+C:\Documents and Settings\Temper\桌面\me\G2\G2.cpp(418) : warning C4101: 'surface' : unreferenced local variable
+Input.cpp
+Sprite.cpp
+C:\Documents and Settings\Temper\桌面\me\G2\Sprite.cpp(195) : warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+Generating Code...
+Linking...
+Creating command line "bscmake.exe /nologo /o"Debug/G2.bsc"  ".\Debug\StdAfx.sbr" ".\Debug\G2.sbr" ".\Debug\Input.sbr" ".\Debug\Sprite.sbr""
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+G2.exe - 0 error(s), 2 warning(s)
+</pre>
+</body>
+</html>
