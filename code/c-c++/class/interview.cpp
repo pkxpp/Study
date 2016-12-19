@@ -44,10 +44,17 @@ int main(){
 	printf("%d, %d\n", sizeof(B) - sizeof(A), sizeof(D) - sizeof(A));
 	///////////////////////////////////////
 	// address
+	printf("&A::fun: %x\n", &A::fun);
+	void (A::*ptrA_fun)();
+	//ptrA_fun = (p1->fun);
+	//printf("&p1::fun: %x\n", (void*)p1->fun);
 	void (B::*ptrB_fun)();
 	ptrB_fun = &B::fun;
 	printf("%x\n", ptrB_fun);
 	(p2->*ptrB_fun)();printf("\n");
+	// &E1::funE1: 9. offset(9)=funE1;offset(0)=fun;offset(5)=funD;
+	printf("&E1::funE1: %x\n", &E1::funE1);
+	printf("&E1::funD: %x\n", &E1::funD);
 	printf("address......................\n");
 	printf("p1-A*-B; p2-B*-C; p3-B*-D; p4-B*-D; p5-D*-E; p6-E1*-E\n");
 	// new B test
@@ -60,25 +67,25 @@ int main(){
 	printf("p5: %x\n", p5);
 	printf("p6: %x\n", p6);
 	printf("\n");
-	printf("vritual address......................\n");
-	printf("virtual p1: %x\n", *((int*)p1));
-	printf("virtual b: %x\n", *((int*)&b));
-	printf("virtual p2: %x\n", *((int*)p2));
-	printf("virtual p3: %x\n", *((int*)p3));
-	printf("virtual p4: %x\n", *((int*)p4));
-	printf("virtual p5: %x\n", *((int*)p5));
-	printf("virtual p6: %x\n", *((int*)p6));
+	printf("===========vritual address=========\n");
+	printf("vtable p1: %x\n", *((int*)p1));
+	printf("vtable b: %x\n", *((int*)&b));
+	printf("vtable p2: %x\n", *((int*)p2));
+	printf("vtable p3: %x\n", *((int*)p3));
+	printf("vtable p4: %x\n", *((int*)p4));
+	printf("vtable p5: %x\n", *((int*)p5));
+	printf("vtable p6: %x\n", *((int*)p6));
 	printf("p1 virtual fun: %x\n", *(int*)*((int*)p1));
 	printf("b virtual fun: %x\n", *(int*)*((int*)&b));
 	printf("p2 virtual fun: %x\n", *(int*)*((int*)p2));
 	printf("p3 virtual fun: %x\n", *(int*)*((int*)p3));
 	printf("p4 virtual fun: %x\n", *(int*)*((int*)p4));
-	printf("p5 virtual fun: %x\n", *(int*)*((int*)p5));
-	printf("p5 virtual fun1 %x\n", *((int*)*((int*)p5)+1));
-	printf("p5 virtual fun2 %x\n", *((int*)*((int*)p5)+2));
-	printf("p6 virtual fun: %x\n", *(int*)*((int*)p6));
-	printf("p6 virtual fun1: %x\n", *((int*)*((int*)p6)+1));
-	printf("p6 virtual fun2: %x\n", *((int*)*((int*)p6)+2));
+	printf("p5 virtual fun 1: %x, offset: %x\n", *(int*)*((int*)p5), &E::fun);
+	printf("p5 virtual fun 2: %x, offset: %x\n", *((int*)*((int*)p5)+1), &E::funD);
+	printf("p5 virtual fun 3: %x, offset: %x\n", *((int*)*((int*)p5)+2), &E::funE);
+	printf("p6 virtual fun 1: %x, offset: %x\n", *(int*)*((int*)p6), &E1::fun);
+	printf("p6 virtual fun 2: %x, offset: %x\n", *((int*)*((int*)p6)+1), &E1::funD);
+	printf("p6 virtual fun 3: %x, offset: %x\n", *((int*)*((int*)p6)+2), &E1::funE1);
 	typedef void (*Fun)();
 	Fun pA = (Fun)*((int*)*((int*)p1));
 	printf("p1->fun(): ");pA();printf("\n");
