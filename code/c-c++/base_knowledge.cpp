@@ -9,6 +9,21 @@
 
 using namespace std;
 //////////////////////////////////////////////////////////////
+/* content
+
+1. Construct Function about class
+2. random
+3. strtoul
+4.square bracket 
+5.equal symbol
+6. _snprintf in linux
+7. sizeof
+8. snprintf
+9.c++ string compare 
+10.array as params
+
+*/
+//////////////////////////////////////////////////////////////
 // 1. Construct Function about class
 class CA{
 public:
@@ -197,6 +212,19 @@ void TestSnprintf()
 	int nLen = snprintf(sa, sizeof(sa)-1, "%s", "abcdefgh");
 	printf("sa = %s, len = %d\n", sa, nLen);
 }
+///////////////////////////////////////////////////////////
+//10. forget array as paramers can modify
+void TestModifyArrayAsParam(int a[], int num)
+{
+    for (int i = 0; i < num; ++i)
+        ++a[i];
+} 
+
+void print(int a[], int num)
+{
+    for (int i = 0; i < num; ++i)
+        cout << "a[" << i << "] = " << a[i] << endl;
+}
 
 void TestCompareString();
 ///////////////////////////////////////////////////////////
@@ -240,7 +268,20 @@ int main()
 	//TestSnprintf();
 
 	// 9.c++ string compare 
-	TestCompareString();
+	//TestCompareString();
+	//return 0;
+	
+	// 10.array as params
+	const int NUM = 3;
+    	int a[NUM] = {0, 1, 2};
+    	print(a, NUM);
+
+    	fun1(a, NUM);
+
+    	print(a, NUM);
+		
+
+	//////////////////////////
 	return 0;
 }
 
