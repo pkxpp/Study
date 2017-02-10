@@ -17,6 +17,10 @@ func main(){
 	// Drop its first two values
 	s = s[2:]
 	printSlice(s)
+
+	// panic: runtime error: slice bounds out of range
+	// s = s[2:6]
+	// printSlice(s)
 }
 
 func printSlice(s []int){
