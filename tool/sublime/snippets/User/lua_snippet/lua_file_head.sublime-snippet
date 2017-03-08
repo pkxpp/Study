@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+-----------------------------------------------------------------------------
+--脚本功能：${1:功能}
+--功能设计：${2:洋爷}
+--功能开发：page(pk)
+--开发时间：${3:2013/10/24 14:35:03}
+--修改记录：
+--
+-----------------------------------------------------------------------------
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>/head</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+-------------------------------------
+-- test
+${1:if DEBUG_VERSION == 1 then
+end}
+-- test end
+-------------------------------------
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>test</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.lua</scope>
+</snippet>

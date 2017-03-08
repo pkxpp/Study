@@ -1,0 +1,5 @@
+{
+	"cmd": ["C:\\Users\\Administrator\\AppData\\Local\\liebao\\liebao.exe", "$file"],
+
+    "selector": "source.lua"
+}

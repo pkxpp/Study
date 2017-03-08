@@ -1,0 +1,16 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"ConvertToUTF8",
+		"Evernote",
+		"IMESupport",
+		"Markdown Preview",
+		"MarkdownTOC",
+		"Package Control",
+		"SublimeREPL"
+	]
+}

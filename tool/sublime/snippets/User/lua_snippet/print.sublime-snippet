@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+_print = print;
+function print(...)
+	_print(...);
+end
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>/print</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.lua</scope>
+</snippet>
