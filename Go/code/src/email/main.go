@@ -15,6 +15,8 @@ func main() {
 	e.Subject = "Test Subject"
 	e.Text = []byte("Text Body is, of course, supported!")
 	e.HTML = []byte("<h1>Fancy HTML is supported, too!</h1>")
-	e.Send("smtp.126.com:994", smtp.PlainAuth("", "minpage_kindle@126.com", "Page+2404", "smtp.126.com"))
+	// 注意这里的Password填的是授权码才是成功，登陆密码反而是错误的
+	err := e.Send("smtp.126.com:25", smtp.PlainAuth("", "minpage_kindle@126.com", "Password", "smtp.126.com"))
+	fmt.Println(err)
 	fmt.Println("Hello World!")
 }
