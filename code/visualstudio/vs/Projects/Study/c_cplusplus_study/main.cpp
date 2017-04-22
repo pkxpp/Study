@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <iostream>
 #include "ClassLayout.h"
 using namespace std;
@@ -7,8 +8,8 @@ using namespace std;
 // 2. Class Layout
 
 void TestDecimal(){
-    cout << "INT_MIN: " << INT_MIN << endl;
-    cout << "INT_MAX: " << INT_MAX << endl;
+    //cout << "INT_MIN: " << INT_MIN << endl;
+    //cout << "INT_MAX: " << INT_MAX << endl;
     int nNum = 2147483648;
     if (nNum >= 2147483648 && nNum <= 2147483647){
         cout << "11111111" << endl;
