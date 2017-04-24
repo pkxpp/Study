@@ -1,15 +1,16 @@
-#include <stdio.h>
 #include <iostream>
 #include "ClassLayout.h"
+#include "ClassFragments.h"
+
 using namespace std;
 //////////////////////////////////////////////////////////////////////////
 // content
 // 1.
 // 2. Class Layout
-
+// 3.Class Fragments
 void TestDecimal(){
-    //cout << "INT_MIN: " << INT_MIN << endl;
-    //cout << "INT_MAX: " << INT_MAX << endl;
+    cout << "INT_MIN: " << INT_MIN << endl;
+    cout << "INT_MAX: " << INT_MAX << endl;
     int nNum = 2147483648;
     if (nNum >= 2147483648 && nNum <= 2147483647){
         cout << "11111111" << endl;
@@ -86,15 +87,75 @@ void Test1(){
 		( (Fun)*((int*)*((int*)(&d1) + nOffSet) + i ) )();
 	}
 	cout << "*(&d + 1) = " << *((int*)(&d1) + 1) << endl;
-	cout << "*(&d + 2) = "<< hex << *((int*)(&d1) + 2) << endl;
+	//cout << "*(&d + 2) = "<< hex << *((int*)(&d1) + 2) << endl;
 }
 
+void TestClassLayout2()
+{
+	int** pVtab = NULL;
+	Fun pFun = NULL;
+
+	SelfVirtual::B1 bb1;
+
+	pVtab = (int**)&bb1;
+	cout << "[0] B1::_vptr->" << endl;
+	pFun = (Fun)pVtab[0][0];
+	cout << "     [0] ";
+	pFun(); //B1::f1();
+	cout << "     [1] ";
+	pFun = (Fun)pVtab[0][1];
+	pFun(); //B1::bf1();
+	cout << "     [2] ";
+	cout << pVtab[0][2] << endl;
+
+	cout << "[1] = 0x";
+	cout << (int*)*((int*)(&bb1)+1) <<endl; //B1::ib1
+	cout << "[2] B1::ib1 = ";
+	cout << (int)*((int*)(&bb1)+2) <<endl; //B1::ib1
+	cout << "[3] B1::cb1 = ";
+	cout << (char)*((int*)(&bb1)+3) << endl; //B1::cb1
+
+	cout << "[4] = 0x";
+	cout << (int*)*((int*)(&bb1)+4) << endl; //NULL
+
+	cout << "[5] B::_vptr->" << endl;
+	pFun = (Fun)pVtab[5][0];
+	cout << "     [0] ";
+	pFun(); //B1::f();
+	pFun = (Fun)pVtab[5][1];
+	cout << "     [1] ";
+	pFun(); //B::Bf();
+	cout << "     [2] ";
+	cout << "0x" << (Fun)pVtab[5][2] << endl;
+
+	cout << "[6] B::ib = ";
+	cout << (int)*((int*)(&bb1)+6) <<endl; //B::ib
+	cout << "[7] B::cb = ";
+}
+//////////////////////////////////////////////////////////////////////////
+// 3.Class Fragments
+void TestClassFragments(){
+	printf("&Point3d::x = %p\n", &ClassFragments::Point3d::x);
+	printf("&Point3d::y = %p\n", &ClassFragments::Point3d::y);
+	printf("&Point3d::z = %p\n", &ClassFragments::Point3d::z);
+
+	// 
+	/*printf("&Base1::val1 = %p\n", &Base1::val1);
+	printf("&Base2::val2 = %p\n", &Base1::val2);
+	printf("&Derived::val1 = %p\n", &Derived::val1);
+	printf("&Derived::val2 = %p\n", &Derived::val2);*/
+}
 //////////////////////////////////////////////////////////////////////////
 int main(){
 	//TestDecimal();
 
 	//2. Class Layout
-	Test1();
+	//Test1();
+	//TestClassLayout2();
+
+	// 3. Class Fagments
+	TestClassFragments();
+
 
 	getchar();
 	return 0;
