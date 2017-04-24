@@ -140,11 +140,11 @@ void TestClassFragments(){
 	printf("&Point3d::y = %p\n", &ClassFragments::Point3d::y);
 	printf("&Point3d::z = %p\n", &ClassFragments::Point3d::z);
 
-	// 
-	/*printf("&Base1::val1 = %p\n", &Base1::val1);
-	printf("&Base2::val2 = %p\n", &Base1::val2);
-	printf("&Derived::val1 = %p\n", &Derived::val1);
-	printf("&Derived::val2 = %p\n", &Derived::val2);*/
+	// multi 
+	printf("&Base1::val1 = %p\n", &ClassFragments::Base1::val1);
+	printf("&Base2::val2 = %p\n", &ClassFragments::Base2::val2);
+	printf("&Derived::val1 = %p\n", &ClassFragments::Derived::val1);
+	printf("&Derived::val2 = %p\n", &ClassFragments::Derived::val2);
 }
 //////////////////////////////////////////////////////////////////////////
 int main(){

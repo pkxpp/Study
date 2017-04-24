@@ -74,6 +74,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ClassFragments.cpp" />
     <ClCompile Include="ClassLayout.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
