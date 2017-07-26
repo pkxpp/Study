@@ -15,6 +15,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "alignment", "alignment\alig
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c_cplusplus_study", "c_cplusplus_study\c_cplusplus_study.vcxproj", "{8B93047D-05D9-4A8C-8D27-FC30B0B4166B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stackoverflow", "stackoverflow\stackoverflow.vcxproj", "{EB96FF00-BFED-40E5-A9AC-4738AA316183}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "debug_skill", "debug_skill\debug_skill.vcxproj", "{67979135-091C-4412-86E0-95CD1B1E3029}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -49,6 +53,14 @@ Global
 		{8B93047D-05D9-4A8C-8D27-FC30B0B4166B}.Debug|Win32.Build.0 = Debug|Win32
 		{8B93047D-05D9-4A8C-8D27-FC30B0B4166B}.Release|Win32.ActiveCfg = Release|Win32
 		{8B93047D-05D9-4A8C-8D27-FC30B0B4166B}.Release|Win32.Build.0 = Release|Win32
+		{EB96FF00-BFED-40E5-A9AC-4738AA316183}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EB96FF00-BFED-40E5-A9AC-4738AA316183}.Debug|Win32.Build.0 = Debug|Win32
+		{EB96FF00-BFED-40E5-A9AC-4738AA316183}.Release|Win32.ActiveCfg = Release|Win32
+		{EB96FF00-BFED-40E5-A9AC-4738AA316183}.Release|Win32.Build.0 = Release|Win32
+		{67979135-091C-4412-86E0-95CD1B1E3029}.Debug|Win32.ActiveCfg = Debug|Win32
+		{67979135-091C-4412-86E0-95CD1B1E3029}.Debug|Win32.Build.0 = Debug|Win32
+		{67979135-091C-4412-86E0-95CD1B1E3029}.Release|Win32.ActiveCfg = Release|Win32
+		{67979135-091C-4412-86E0-95CD1B1E3029}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

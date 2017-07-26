@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stdio.h>
 #include "ClassLayout.h"
 #include "ClassFragments.h"
 
@@ -9,9 +8,10 @@ using namespace std;
 // 1.
 // 2. Class Layout
 // 3.Class Fragments
+
 void TestDecimal(){
-    //cout << "INT_MIN: " << INT_MIN << endl;
-    //cout << "INT_MAX: " << INT_MAX << endl;
+	/*cout << "INT_MIN: " << INT_MIN << endl;
+	cout << "INT_MAX: " << INT_MAX << endl;*/
     int nNum = 2147483648;
     if (nNum >= 2147483648 && nNum <= 2147483647){
         cout << "11111111" << endl;
@@ -146,6 +146,7 @@ void TestClassFragments(){
 	printf("&Derived::val1 = %p\n", &ClassFragments::Derived::val1);
 	printf("&Derived::val2 = %p\n", &ClassFragments::Derived::val2);
 }
+
 //////////////////////////////////////////////////////////////////////////
 int main(){
 	//TestDecimal();
@@ -155,7 +156,10 @@ int main(){
 	//TestClassLayout2();
 
 	// 3. Class Fagments
-	TestClassFragments();
+	// TestClassFragments();
+
+	// 4. Binary Tree
+	//TestBinaryTree();
 
 
 	getchar();

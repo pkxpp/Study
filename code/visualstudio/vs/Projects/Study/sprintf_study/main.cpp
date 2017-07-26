@@ -7,9 +7,9 @@ int main()
 
 	memset(buf, 0, sizeof(buf));
 
-	_snprintf(buf, sizeof(buf)-1, "%s", pstr);
+	int nLen = _snprintf(buf, sizeof(buf)-1, "%s", pstr);
 
-	printf("buf = %s, strlen(buf) = %d\n", buf, strlen(buf));
+	printf("buf = %s, strlen(buf) = %d, nLen = %d\n", buf, strlen(buf), nLen);
 
 	getchar();
 	return 0;

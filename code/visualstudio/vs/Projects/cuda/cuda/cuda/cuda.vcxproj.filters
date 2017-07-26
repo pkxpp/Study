@@ -18,22 +18,5 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ClassLayout.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ClassFragments.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="ClassLayout.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ClassFragments.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="StructFragments.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
