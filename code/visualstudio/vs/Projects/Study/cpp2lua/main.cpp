@@ -62,23 +62,24 @@ int main() {
   LuaClear();
 
   // test 1
-  bool b = true;
-  int i = 1;
-  double d = 1.1f;
-  f( b);        // 调用(b)模版 模版参数T = bool
-  f( i, 42, d ); // 调用(c)模版 T = int
-  f( &i);       // 调用(d)模版 T = int
-  f( i);        // 调用(e)模版
-  f( d);        // 调用(f)函数
+  //bool b = true;
+  //int i = 1;
+  //double d = 1.1f;
+  //f( b);        // 调用(b)模版 模版参数T = bool
+  //f( i, 42, d ); // 调用(c)模版 T = int
+  //f( &i);       // 调用(d)模版 T = int
+  //f( i);        // 调用(e)模版
+  //f( d);        // 调用(f)函数
 
-  // test 2
-  int n = 2;
-  int *p = &n;
-  func( p);           // 调用(c2)
+  //// test 2
+  //int n = 2;
+  //int *p = &n;
+  //func( p);           // 调用(c2)
 
-  // test3
-  f3(p);
+  //// test3
+  //f3(p);
 
+  cout<< "Input Enter key to exit." << endl;
   getchar();
   return 0;
 }

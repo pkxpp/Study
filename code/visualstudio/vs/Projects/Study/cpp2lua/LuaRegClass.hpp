@@ -94,7 +94,7 @@ struct MethodData##N : public GenericMethod { \
   int Call(lua_State* L) { \
     T* obj = ReadToCpp<T*>(L, 1); \
     R result =(obj->*m_func)(ARG_LIST_##N); \
-    PushToLua<R>(L, result); \
+    PushToLua(L, result); \
     return 1; \
   } \
 };
