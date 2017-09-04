@@ -16,12 +16,23 @@
 
 -- print(test:GetStr())
 
-print("000", test:FuncTest(1, "test"))
+-- print("000", test:FuncTest(1, "test"))
 -- print("FuncTest2")
 -- print("222", test:FuncTest2())
-print("xxxxxxxxx")
+-- print("xxxxxxxxx")
 -- local a = test:FuncTest1("test1")
 -- print("33333333333333")
 -- print(111, a)
 
-print(333, test:FuncTest3(3))
+-- print(333, test:FuncTest3(3))
+
+------------------------------------------------------------
+-- test vector
+-- problem: vector iterators incompatible
+
+print("IsExist: ", test:IsExist(5))
+test:PushData(10);
+print("IsExist: ", test:IsExist(10))
+
+print("GetName() = ", test:GetName())
+------------------------------------------------------------

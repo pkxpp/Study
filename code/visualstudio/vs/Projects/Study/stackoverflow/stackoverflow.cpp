@@ -13,12 +13,15 @@
 #include "sort.h"
 #include <stdlib.h>
 #include <sstream>
+#include <math.h>
 
 using namespace std;
 
 //////////////////////////////////////////////////////////////////////////
 // 1. seg fault
 // 2. Binary Tree
+// 3. Binary Tree
+// 4. Array Random https://stackoverflow.com/questions/46029259/how-to-generate-combinations-from-arrays
 //////////////////////////////////////////////////////////////////////////
 // seg fault
 
@@ -47,94 +50,122 @@ void test1(){
 };
 
 //////////////////////////////////////////////////////////////////////////
-// 4.Binary Tree
-void TestBinaryTree()
-{
-	int randNum;
-	vector<int> randData;
-	vector<int>::iterator iter;
-	size_t size = randData.size();
-	srand(time(0));
-	BinaryTree tree;
-	cout << "number: ";
-	for (int i = 0; i < 5; i++)
-	{
-		randNum = rand() % 1000 + 1;
-		tree.insertNode(randNum);
-		
-		cout << randNum << " ";
-	}
-	cout << endl << "display : \n";
-	tree.displayInOrder();
-	cout << endl;
-	for(int i=1; i<=5;i++)
-	{ 
-		cout<< "number: " << i << " level = "<< tree.getLevel(i) << endl;
-	}
-}
+// 3.Binary Tree
+//void TestBinaryTree()
+//{
+//	int randNum;
+//	vector<int> randData;
+//	vector<int>::iterator iter;
+//	size_t size = randData.size();
+//	srand(time(0));
+//	BinaryTree tree;
+//	cout << "number: ";
+//	for (int i = 0; i < 5; i++)
+//	{
+//		randNum = rand() % 1000 + 1;
+//		tree.insertNode(randNum);
+//		
+//		cout << randNum << " ";
+//	}
+//	cout << endl << "display : \n";
+//	tree.displayInOrder();
+//	cout << endl;
+//	for(int i=1; i<=5;i++)
+//	{ 
+//		cout<< "number: " << i << " level = "<< tree.getLevel(i) << endl;
+//	}
+//}
 //////////////////////////////////////////////////////////////////////////
-void TestQuickSort()
-{
+//void TestQuickSort()
+//{
+//
+//	// The user inputs a string of numbers (e.g. "6 4 -2 88 ..etc") and those integers are then put into a vector named 'vec'.
+//	std::vector<int> vec;
+//
+//	// Converts string from input into integer values, and then pushes said values into vector.
+//	std::string line;
+//	if ( getline(std::cin, line) )
+//	{
+//		std::istringstream str(line);
+//
+//		int value;
+//		str >> value;
+//		vec.push_back( value );
+//		while ( str >> value ) 
+//		{
+//			vec.push_back( value );
+//		}
+//	}
+//	// Creating QuickSort object.
+//	QuickSort qSort;
+//	QuickSort *ptrQSort = &qSort;
+//	// Creating new vector that has been 'Quick Sorted'.
+//	int vecSize = vec.size();
+//	std::vector<int> qSortedVec;
+//	qSortedVec = ptrQSort->sortFunc( vec, 0, vecSize-1 );
+//
+//	// Middle, start, and end positions on the vector.
+//	int mid = ( 0 + (vec.size()-1) )  / 2;
+//	int start = 0, end = vec.size() - 1;
+//
+//	// Creating RecursiveBinarySearch object.
+//	RecursiveBinarySearch bSearch;
+//	RecursiveBinarySearch *ptrBSearch = &bSearch;
+//	//bool bS = ptrBSearch->binarySearch( qSortedVec, mid, start, end );
+//	bool bS = ptrBSearch->binarySearch( bSortedVec, mid, start, end );
+//
+//
+//	/*--------------------------------------OUTPUT-----------------------------------------------------------------------*/
+//
+//	// Print out inputted integers and the binary search result.
+//
+//	// Depending on the binary search, print either 'true' or 'false'.
+//	if ( bS == 1 )
+//	{
+//		std::cout << "true ";
+//	}
+//	if ( bS == 0 )
+//	{
+//		std::cout << "false ";
+//	}
+//
+//	// Prints the result of the 'quick sorted' array.
+//	int sortedSize = qSortedVec.size();
+//	for ( int i = 0; i < sortedSize; i++ )
+//	{
+//		std::cout << qSortedVec[i] << " ";
+//	}
+//	std::cout << "\n";
+//}
 
-	// The user inputs a string of numbers (e.g. "6 4 -2 88 ..etc") and those integers are then put into a vector named 'vec'.
-	std::vector<int> vec;
+//////////////////////////////////////////////////////////////////////////
+// 4. Array Random
+void TestCreateArrange(){
+	const int COL = 3;
+	char arr [][COL] = {
+		{'a', 'b', 'c'},
+		{'d', 'e', 'f'},
+		{'g', 'h', 'i'},
+	};
+	int ROW = sizeof(arr)/sizeof(arr[0]);
 
-	// Converts string from input into integer values, and then pushes said values into vector.
-	std::string line;
-	if ( getline(std::cin, line) )
+	// print all
+	int nTotal = pow(float(COL), (float)ROW);
+	for (int i = 0; i < nTotal; ++i)
 	{
-		std::istringstream str(line);
+		if (i % COL == 0)
+			cout << endl;
+		int nCol = i % COL;
+		int nRow = i / COL;
+		cout << arr[nRow][nCol] << ",";
 
-		int value;
-		str >> value;
-		vec.push_back( value );
-		while ( str >> value ) 
+		for (int j = 0; j < COL; ++j)
 		{
-			vec.push_back( value );
+			int nRow = i/pow(float(COL), (float)(ROW-1));
 		}
+		cout << endl;
 	}
-	// Creating QuickSort object.
-	QuickSort qSort;
-	QuickSort *ptrQSort = &qSort;
-	// Creating new vector that has been 'Quick Sorted'.
-	int vecSize = vec.size();
-	std::vector<int> qSortedVec;
-	qSortedVec = ptrQSort->sortFunc( vec, 0, vecSize-1 );
-
-	// Middle, start, and end positions on the vector.
-	int mid = ( 0 + (vec.size()-1) )  / 2;
-	int start = 0, end = vec.size() - 1;
-
-	// Creating RecursiveBinarySearch object.
-	RecursiveBinarySearch bSearch;
-	RecursiveBinarySearch *ptrBSearch = &bSearch;
-	//bool bS = ptrBSearch->binarySearch( qSortedVec, mid, start, end );
-	bool bS = ptrBSearch->binarySearch( bSortedVec, mid, start, end );
-
-
-	/*--------------------------------------OUTPUT-----------------------------------------------------------------------*/
-
-	// Print out inputted integers and the binary search result.
-
-	// Depending on the binary search, print either 'true' or 'false'.
-	if ( bS == 1 )
-	{
-		std::cout << "true ";
-	}
-	if ( bS == 0 )
-	{
-		std::cout << "false ";
-	}
-
-	// Prints the result of the 'quick sorted' array.
-	int sortedSize = qSortedVec.size();
-	for ( int i = 0; i < sortedSize; i++ )
-	{
-		std::cout << qSortedVec[i] << " ";
-	}
-	std::cout << "\n";
 }
-
 //////////////////////////////////////////////////////////////////////////
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -142,7 +173,10 @@ int _tmain(int argc, _TCHAR* argv[])
 	//test1();
 
 	// 2. Binary Tree
-	TestBinaryTree();
+	//TestBinaryTree();
+
+	// 4. Array Random
+	TestCreateArrange();
 
 	getchar();
 	return 0;

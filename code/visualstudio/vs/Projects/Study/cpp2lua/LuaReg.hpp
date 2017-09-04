@@ -35,6 +35,11 @@ public:
     RegisterObjectToLua<T>(L, name, object);
   }
 
+  template<typename T>
+  void PushObject(T* object) {
+	  PushObjectToLua<T>(L, object);
+  }
+
 private:
   lua_State* L;
 };

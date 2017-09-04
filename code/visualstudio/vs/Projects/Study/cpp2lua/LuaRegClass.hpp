@@ -215,6 +215,17 @@ void RegisterObjectToLua(lua_State* L, const char* name, T* object) {
   lua_setglobal(L, name);
 }
 
+/* get class object */
+
+template<typename T>
+void PushObjectToLua(lua_State* L, T* object) {
+	typedef UserData<T*> UserData_t;
+	void* memory = lua_newuserdata(L, sizeof(UserData_t));
+	new(memory) UserData_t(object);
+	luaL_getmetatable(L, ClassInfo<T>::Name());
+	lua_setmetatable(L, -2);
+}
+
 DECL_NAMESPACE_LUAREG_END
 
 /* macros for register a class */
