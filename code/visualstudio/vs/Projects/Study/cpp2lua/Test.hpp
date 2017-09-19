@@ -10,6 +10,24 @@ public:
 	int Foo(){
 		return 1;
 	}
+	virtual const char* VirtualFunc() {return "VirtualFunc Base.";}
+
+public:
+	DEF_LUA_CLASS_BEGIN(Base)
+		DEF_METHOD(VirtualFunc)
+	DEF_END
+};
+
+class SubTest {
+public:
+	int GetSubTestData() {return m_nSubData;}
+private:
+	int m_nSubData;
+public:
+	DEF_LUA_CLASS_BEGIN(SubTest)
+		DEF_METHOD(GetSubTestData)
+		DEF_MEMBER(m_nSubData)
+	DEF_END
 };
 
 class Test : public Base {
@@ -36,6 +54,10 @@ public:
   {
 	  return 0;
   }
+  // return point of subclass object 
+  SubTest* GetSubClassPoint() {return &m_SubTest;}
+  // virtual function
+ const char* VirtualFunc() {return "VirtualFunc Derived.";}
 
 public:
   int m_data;
@@ -43,12 +65,13 @@ public:
   char* m_pData;
   char m_szData[32];
   std::vector<int> m_vecData;
+  SubTest m_SubTest;
 
 public:
   DEF_LUA_CLASS_BEGIN(Test)
- //   DEF_METHOD(SetData)
- //   DEF_METHOD(GetData)
-	//DEF_METHOD(GetStr)
+    DEF_METHOD(SetData)
+    DEF_METHOD(GetData)
+	DEF_METHOD(GetStr)
 	DEF_METHOD(FuncTest)
 	DEF_METHOD(FuncTest1)
 	DEF_METHOD(FuncTest2)
@@ -56,10 +79,13 @@ public:
 	DEF_METHOD(IsExist)
 	DEF_METHOD(PushData)
 	DEF_METHOD(GetName)
+	DEF_METHOD(GetSubClassPoint)
+	DEF_METHOD(VirtualFunc)
 	//DEF_METHOD(Foo)  //Error!!!!!!!!!!!!!!!!!!!!!!!!
 	//DEF_METHOD(RelaySender)
     DEF_MEMBER(m_data)
     DEF_MEMBER(m_data2)
+	//DEF_MEMBER(m_SubTest)
 	//DEF_MEMBER(m_szData) // Error!!!!!!!!!!!!!!!!!error C2075: “member”: 数组初始化需要大括号
   DEF_END
 };
@@ -111,4 +137,23 @@ void Test::PushData(int nData)
 {
 	m_vecData.push_back(nData);
 }
+
+extern Test g_objTest;
+//////////////////////////////////////////////////////////////////////////
+// register c++ function to lua
+
+int LuaFuncTest1(lua_State *L)
+{
+	int nIndex = lua_tonumber(L, 1);
+	g_luaReg->PushObject(&g_objTest);
+
+	return 1;
+}
+
+luaL_Reg GameScriptFuns[] = 
+{
+	{"FuncTest1",			LuaFuncTest1},
+	{NULL,					NULL},
+};
+
 #endif // _TEST_HPP_

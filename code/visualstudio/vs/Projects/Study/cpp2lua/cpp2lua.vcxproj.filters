@@ -32,5 +32,8 @@
     <ClInclude Include="Test.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="LuaRegDef.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -74,6 +74,7 @@ void SetMetatable(lua_State* L, const char* className) {
 template<typename T>
 void RegisterClassToLua(lua_State* L, const char* className) {
   ClassInfo<T>::Name(className);
+  ClassInfo<T*>::Name(className);
   lua_newtable(L);
   SetMetatable<T>(L, className);
   lua_setglobal(L, className);

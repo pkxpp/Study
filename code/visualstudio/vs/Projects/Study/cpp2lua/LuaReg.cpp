@@ -16,7 +16,7 @@ void LuaReg::Clear() {
 }
 
 void LuaReg::DoScript(const char* file) {
- luaL_dofile(L, "Test.lua");
+ luaL_dofile(L, file);
 }
 
 DECL_NAMESPACE_LUAREG_END

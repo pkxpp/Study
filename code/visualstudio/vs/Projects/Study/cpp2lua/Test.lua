@@ -6,6 +6,13 @@
 -- print("hi")
 -- print(test)
 -- print(test.m_data)
+-- test.m_data = 5;
+-- print(type(test.m_data))
+-- print(222, getmetatable(test))
+-- for k,v in pairs(test) do
+-- 	print(k,v)
+-- end;
+
 -- print(test.m_data2)
 -- test:SetData(1003)
 -- test.m_data2 = 1004
@@ -26,13 +33,35 @@
 
 -- print(333, test:FuncTest3(3))
 
+-- class object
+-- print(test.m_SubTest)
+-- print(test.m_SubTest.GetSubTestData)
+-- print(test.m_SubTest:GetSubTestData())
 ------------------------------------------------------------
 -- test vector
 -- problem: vector iterators incompatible
 
-print("IsExist: ", test:IsExist(5))
-test:PushData(10);
-print("IsExist: ", test:IsExist(10))
+-- print("IsExist: ", test:IsExist(5))
+-- test:PushData(10);
+-- print("IsExist: ", test:IsExist(10))
 
-print("GetName() = ", test:GetName())
+-- print("GetName() = ", test:GetName())
 ------------------------------------------------------------
+--- *register c++ function to lua*
+-- local g_objTest = FuncTest1();
+-- print(g_objTest);
+-- print(g_objTest:GetStr())
+
+-- local subTest = g_objTest:GetSubClassPoint()
+-- for k, v in pairs(getmetatable(subTest)) do
+-- 	print("\t", k, v)
+-- end
+
+-- print(222)
+-- print(subTest:GetSubTestData())
+------------------------------------------------------------
+-- *virtual function
+print(111, test.VirtualFunc)
+print(test:VirtualFunc())
+print(222, base)
+print(base:VirtualFunc())

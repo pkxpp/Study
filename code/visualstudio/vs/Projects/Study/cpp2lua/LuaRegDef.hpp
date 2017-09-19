@@ -107,6 +107,10 @@ struct CppToLua {
   inline static void ConvertUserdata(lua_State* L, T object){
     void* memory = lua_newuserdata(L, sizeof(T));
     new(memory) UserData<T>(object);
+	
+	typedef UserData<T> UserData_t;
+	UserData_t* userData = static_cast<UserData_t*>(memory);
+
     luaL_getmetatable(L, ClassInfo<T>::Name());
     lua_setmetatable(L, -2);
   }

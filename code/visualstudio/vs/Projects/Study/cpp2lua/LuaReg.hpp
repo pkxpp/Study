@@ -14,6 +14,8 @@ public:
 
   void DoScript(const char* file);
 
+  lua_State* GetLuaState(){return L;}
+
 public:
   template<typename T>
   void RegisterClass(const char* className) {
