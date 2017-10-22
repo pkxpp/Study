@@ -62,4 +62,24 @@ end
 
 -- table.sort(tbSort, fComp)
 -- table.sort(tbSort, tbSort.fComp)
-table.sort(tbSort, tbSort.fCompWrap)
+-- table.sort(tbSort, tbSort.fCompWrap)
+
+------------------------------------------------------------
+-- 3. table直接赋值，其实是引用
+function tableAssign(  )
+	local tbRaw = {
+		[1] = 666,
+		[2] = {"string1", "string2"},
+	}
+
+	local tbNew = {}
+	tbNew[1] = tbRaw[1]
+	tbNew[2] = tbRaw[2]
+	-- modify
+	tbNew[1] = 6
+	tbNew[2][2] = "string3"
+
+	print("tbRaw: ", tbRaw[1], tbRaw[2][2])
+	print("tbNew: ", tbNew[1], tbNew[2][2])
+end
+tableAssign();
