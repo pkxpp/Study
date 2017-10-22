@@ -186,8 +186,8 @@ table.remove(tbTemp[1], 1)
 -- for k, v in pairs(tbGroup) do
 	-- print(k, v)
 -- end
-table.remove(tbGroup, 3)
-tbGroup[3] = nil;
+-- table.remove(tbGroup, 3)
+-- tbGroup[3] = nil;
 -- print("After...")
 -- print("tbGroup:")
 -- for k, v in pairs(tbGroup) do
@@ -663,3 +663,37 @@ local tbTestLength4 = {nil, 2, 3, nil, nil, nil, 4, nil};
 ------------------------------------------------------------
 -- table.concat
 -- print(table.concat({2, 0, 3, 0, 0, 4}, ","))
+
+---
+-- stackoverflow 2017/10/23
+-- https://stackoverflow.com/questions/46874013/update-elements-in-table-without-changing-table-order-lua
+local tbl = {
+	messageId = 0,
+	timestamp = currentTime,
+	responseStatus = {
+		status = "FAILED",
+		errorCode = "599",
+		errorMessage = "problem"
+	}
+}
+
+function fnCompare (e1, e2)
+	-- you should promise e1 and e2 is tbl struct
+	-- you can check e1 and e2 first by yourself
+	return e1.messageId < e2.messageId;
+end
+
+-- test
+local tbAll = {}
+tbl.messageId = 3;
+table.insert(tbAll, tbl);
+-- add a another
+table.insert(tbAll, {messageId = 1});
+table.sort(tbAll, fnCompare);
+for k, v in ipairs(tbAll) do
+	print(v.messageId);
+end
+
+-- reslut
+1
+3
