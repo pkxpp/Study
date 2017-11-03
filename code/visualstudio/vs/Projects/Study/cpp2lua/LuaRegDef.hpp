@@ -13,10 +13,12 @@ DECL_NAMESPACE_LUAREG_BEGIN
 
 template<typename T>
 struct UserData {
-  UserData(T object) : m_object(object) {}
-  ~UserData() { }
+	UserData(T object) : m_object(object) { m_bNeedDelete = false;  }
+	UserData(T object, bool bNeedDelete) : m_object(object) { m_bNeedDelete = bNeedDelete; }
+	~UserData() { }
 
-  T m_object;
+	T m_object;
+	bool m_bNeedDelete;
 };
 
 /* read a value from lua to cpp */

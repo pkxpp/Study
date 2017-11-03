@@ -67,32 +67,36 @@ void LuaCheckGC()
 }
 
 void LuaTest() {
-	REGISTER_LUA_CALSS(Base);
-	REGISTER_LUA_CALSS(Test);
-	REGISTER_LUA_CALSS(SubTest);
-  
-	Test* test = new Test();
-  
-	test->m_data = 1001;
-	test->m_data2 = 1002;
-	g_luaReg->RegisterObject("test", test);
+	//REGISTER_LUA_CALSS(Base2);
+	//REGISTER_LUA_CALSS(Base);
+	//REGISTER_LUA_CALSS(Test);
+	//REGISTER_LUA_CALSS(SubTest);
+ // 
+	//Test* test = new Test();
+ // 
+	//test->m_data = 1001;
+	//test->m_data2 = 1002;
+	//g_luaReg->RegisterObject("test", test);
 
-	Base* base = (Base*)test;
-	g_luaReg->RegisterObject("base", base);
-  
+	//Base* base = (Base*)test;
+	//g_luaReg->RegisterObject("base", base);
+ // 
+	//// base2 constructor is private
+	//Base2* base2 = Base2::GetInstance();
+	//g_luaReg->RegisterObject("base2", base2);
 
-	lua_State* L = g_luaReg->GetLuaState();
+	//lua_State* L = g_luaReg->GetLuaState();
   
 	//struct lua_State* pL = (struct lua_State*)L;
 	//cout << pL->stacksize << endl;
 
 	// register c++ function to lua
-	int nSize = sizeof(GameScriptFuns)  / sizeof(GameScriptFuns[0]) - 1;
-	for (size_t i = 0; i < nSize; ++i)
-	{
-		lua_pushcfunction(L, GameScriptFuns[i].func);
-		lua_setglobal(L, GameScriptFuns[i].name);
-	}
+	//int nSize = sizeof(GameScriptFuns)  / sizeof(GameScriptFuns[0]) - 1;
+	//for (size_t i = 0; i < nSize; ++i)
+	//{
+	//	lua_pushcfunction(L, GameScriptFuns[i].func);
+	//	lua_setglobal(L, GameScriptFuns[i].name);
+	//}
 
 	g_luaReg->DoScript("Test.lua");
 

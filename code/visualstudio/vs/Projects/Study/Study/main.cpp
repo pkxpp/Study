@@ -1,8 +1,16 @@
 #include <iostream>
-
+#include <tchar.h>
+#include <stdio.h>
+#include <strsafe.h>
+#include <Windows.h>
 using namespace std;
 
-
+//////////////////////////////////////////////////////////////////////////
+// 目录
+// 1.精度丢失问题
+// 2.文件读取自动转义问题
+//////////////////////////////////////////////////////////////////////////
+// 1.精度丢失问题
 void test64bit_int2float(){
 	int i = 145031173;
 	float f = i;
@@ -39,9 +47,32 @@ void test64bit_int2float(){
 
 }
 
+//////////////////////////////////////////////////////////////////////////
+// 2.文件读取自动转义问题
+void ReadFile(char *str){
+	HANDLE pFile;
+	pFile = CreateFileW(TEXT(str), GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL | FILE_FLAG_DELETE_ON_CLOSE, NULL);
+	if (pFile == INVALID_HANDLE_VALUE)
+	{
+		int e = GetLastError();
+		return;
+	}
+	DWORD nSize = GetFileSize(pFile, NULL);
+	char* pBuff = new char[nSize + 1];
+	DWORD nReadSize;
+	ReadFile(pFile, pBuff, nSize, &nReadSize, NULL);
+
+	delete [] pBuff;
+}
+
+//////////////////////////////////////////////////////////////////////////
 int main()
 {
-	test64bit_int2float();
+	// 1.
+	//test64bit_int2float();
+
+	// 2.
+	ReadFile("testio.txt");
 
 	getchar();
 	return 0;

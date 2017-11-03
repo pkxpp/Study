@@ -5,6 +5,30 @@
 #include <vector>
 #include "LuaReg.hpp"
 
+class Base2 {
+public:
+	int GetData(){return m_nBaseData;}
+	static Base2* GetInstance(){
+		if (!m_sInstance)
+		{
+			m_sInstance = new Base2();
+		}
+		return m_sInstance;
+	}
+private:
+	Base2() :
+	   m_nBaseData(2)
+	   {
+	   }
+	   int m_nBaseData;
+	   static Base2* m_sInstance;
+public:
+	DEF_LUA_CLASS_BEGIN(Base2)
+		DEF_METHOD(GetData)
+	DEF_END
+};
+Base2* Base2::m_sInstance = NULL;
+
 class Base {
 public:
 	int Foo(){
