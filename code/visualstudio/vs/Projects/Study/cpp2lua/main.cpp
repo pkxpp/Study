@@ -128,6 +128,21 @@ void LuaTest() {
 int main() {
 	LuaInit();
 	LuaTest();
+	//game
+	int nCount = 0;
+	while(true){
+		int bEven = nCount %2 == 0;
+		if(!bEven)
+		{
+			Sleep(1000);
+			++nCount;
+			continue;
+		}
+		++nCount;
+		// do something
+		printf("11111111111111111111\n");
+	}
+	// game end
 	LuaClear();
 
 	// test 1

@@ -74,9 +74,15 @@
 
 ------------------------------------------------------------
 -- gc study
-local a = 5;
-a = nil
-print(collectgarbage("collect"))
+
+-- local a = 13
+local a = {}
+-- function test()
+-- 	a = 5
+-- 	print("222")
+-- end
+-- test();
+-- print(collectgarbage("collect"))
 -- mytable = {"apple", "orange", "banana"}
 
 -- print(collectgarbage("count"))
