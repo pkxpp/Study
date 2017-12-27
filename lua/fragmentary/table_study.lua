@@ -665,6 +665,21 @@ local tbTestLength4 = {nil, 2, 3, nil, nil, nil, 4, nil};
 -- print(table.concat({2, 0, 3, 0, 0, 4}, ","))
 
 
+-- yunfeng：实现一个map
+
+local function _convert(f, n, v, ...)
+if n > 0 then
+return f(v), _convert(f, n-1, ...)
+end
+end
+
+function map(f, ...)
+return _convert(f, select("#", ...), ...)
+end
+
+print(map(function(v) return v * 2 end, 1,2,3))
+
+
 ------------------------------------------------------------
 -- stack overflow
 function makeTable()
@@ -680,8 +695,8 @@ table.insert(t, {4, 5, 6})
 --     {4,5,6}
 -- }
 
-print(t[1])
-print(unpack(t[1]))
+-- print(t[1])
+-- print(unpack(t[1]))
 
 -- stackoverflow 2017/10/23
 -- https://stackoverflow.com/questions/46874013/update-elements-in-table-without-changing-table-order-lua
@@ -709,9 +724,5 @@ table.insert(tbAll, tbl);
 table.insert(tbAll, {messageId = 1});
 table.sort(tbAll, fnCompare);
 for k, v in ipairs(tbAll) do
-	print(v.messageId);
+	-- print(v.messageId); -- result: 1 3
 end
-
--- reslut
-1
-3

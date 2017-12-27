@@ -388,6 +388,12 @@ end
 -- print(os.date("%p", os.time()))
 -- print(os.date("%H:%M", os.time()))
 
+-- add a postfix 2017/12/23
+local szTest = "PaperSprite'/Game/UI/Icon/Skill/GS/Frames/gs_icon0000.gs_icon0000'";
+local szPath, szEnd = string.match(szTest, "PaperSprite'(.+)%.(.+)'");
+print("szPath = ", szPath, szEnd)
+print("new = ", string.format("PaperSprite'%s_D.%s_D'", szPath, szEnd))
+
 -- 2015/08/26 不定长参数
 function addMessageTipsEx(...)
 	local massage = string.format("%s:%d", ...)
