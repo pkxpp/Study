@@ -1,0 +1,34 @@
+OBJECTS = str_operate.o db_operate.o main.o
+CC = g++
+CFLAGS = -Wall -D_USE_MYSQL_
+LIB = mysqlclient
+LIB_PATH = ./lib/mysql
+
+TARGET = jau_sql
+
+COMPILE.cpp = $(CC) $(CFLAGS) -g -c
+LINK.cpp = $(CC) -g $(CFLAGS) -L$(LIB_PATH) -o
+
+vpath %.cpp ../
+
+all: clean $(TARGET) install
+
+$(TARGET): $(OBJECTS)
+	$(LINK.cpp) $@ $(OBJECTS) -l$(LIB) -lpthread -lcrypt -lnsl -lm -lz 
+
+%.o: %.cpp
+	$(COMPILE.cpp) $^
+
+.PHONY: clean
+clean:
+	-rm -f $(TARGET) $(OBJECTS)
+
+.PHONY: install
+install:
+	--mkdir -p ../work_sql
+	-cp ../build_linux/$(TARGET) ../work_sql/
+	-cp ../settings/db_mysql.conf ../work_sql/
+	-cp ../settings/ignore_dir.conf ../work_sql/
+	-cp ../settings/ignore_file.conf ../work_sql/
+	-cp ../settings/sign_table.conf ../work_sql/
+	-rm -f $(TARGET) *.o

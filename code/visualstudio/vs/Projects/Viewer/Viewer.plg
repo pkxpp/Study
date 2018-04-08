@@ -1,0 +1,63 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Viewer - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Release/Viewer.res" /d "NDEBUG" /d "_AFXDLL" "F:\data\VCSource\Viewer\Viewer.rc"" 
+Creating temporary file "C:\DOCUME~1\nvr\LOCALS~1\Temp\RSP1D.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Release/" /Fp"Release/Viewer.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"F:\data\VCSource\Viewer\dib256.cpp"
+"F:\data\VCSource\Viewer\dibpal.cpp"
+"F:\data\VCSource\Viewer\MainFrm.cpp"
+"F:\data\VCSource\Viewer\Viewer.cpp"
+"F:\data\VCSource\Viewer\ViewerDoc.cpp"
+"F:\data\VCSource\Viewer\ViewerView.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\nvr\LOCALS~1\Temp\RSP1D.tmp" 
+Creating temporary file "C:\DOCUME~1\nvr\LOCALS~1\Temp\RSP1E.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Release/" /Fp"Release/Viewer.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"F:\data\VCSource\Viewer\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\nvr\LOCALS~1\Temp\RSP1E.tmp" 
+Creating temporary file "C:\DOCUME~1\nvr\LOCALS~1\Temp\RSP1F.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"Release/Viewer.pdb" /machine:I386 /out:"../exe/Viewer.exe" 
+.\Release\dib256.obj
+.\Release\dibpal.obj
+.\Release\MainFrm.obj
+.\Release\StdAfx.obj
+.\Release\Viewer.obj
+.\Release\ViewerDoc.obj
+.\Release\ViewerView.obj
+.\Release\Viewer.res
+]
+Creating command line "link.exe @C:\DOCUME~1\nvr\LOCALS~1\Temp\RSP1F.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+dib256.cpp
+dibpal.cpp
+MainFrm.cpp
+Viewer.cpp
+ViewerDoc.cpp
+ViewerView.cpp
+Generating Code...
+Linking...
+Creating command line "bscmake.exe /nologo /o"Release/Viewer.bsc"  .\Release\StdAfx.sbr .\Release\dib256.sbr .\Release\dibpal.sbr .\Release\MainFrm.sbr .\Release\Viewer.sbr .\Release\ViewerDoc.sbr .\Release\ViewerView.sbr"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+Viewer.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

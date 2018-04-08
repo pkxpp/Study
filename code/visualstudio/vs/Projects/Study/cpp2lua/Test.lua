@@ -74,12 +74,13 @@
 
 ------------------------------------------------------------
 -- gc study
-
+-- collectgarbage("setpause", 100)
+-- collectgarbage("setstepmul", 200)
 -- local a = 13
 local a = {}
 -- function test()
--- 	a = 5
--- 	print("222")
+-- 	local b = {};
+-- 	return b;
 -- end
 -- test();
 -- print(collectgarbage("collect"))

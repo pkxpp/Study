@@ -1,0 +1,1 @@
+"C:\Program Files\Beyond Compare 2\BC2.exe" %outdir%\src %outdir%\out

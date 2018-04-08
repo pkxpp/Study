@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<diags major="2" minor="0">
+
+<diag id="1">
+	<type>233</type>
+	<message>
+		<timestamp>2338475905</timestamp>
+		<thread>
+			<thrname></thrname>
+			<threadid>10016</threadid>
+			<stackstamp>2338505093</stackstamp>
+			<stacktrace>
+			<loc>
+			<mod>C:\Windows\SysWOW64\ntdll.dll</mod>
+			<rva>0x399a0</rva>
+			</loc>
+			</stacktrace>
+		</thread>
+	</message>
+</diag>
+
+<diag id="2">
+	<type>1100</type>
+	<message>
+		<timestamp>90205352646</timestamp>
+		<thread>
+			<thrname></thrname>
+			<threadid>10016</threadid>
+			<stackstamp>24839977866</stackstamp>
+			<stacktrace>
+			<loc>
+			<mod>++unknown++</mod>
+			</loc>
+			</stacktrace>
+		</thread>
+	</message>
+</diag>
+
+<diag id="3">
+	<type>1101</type>
+	<message>
+		<timestamp>90205644863</timestamp>
+		<thread>
+			<thrname></thrname>
+			<threadid>10016</threadid>
+			<stackstamp>90205659414</stackstamp>
+			<stacktrace>
+			<loc>
+			<mod>++unknown++</mod>
+			</loc>
+			</stacktrace>
+		</thread>
+	</message>
+</diag>

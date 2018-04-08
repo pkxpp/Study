@@ -1,0 +1,12 @@
+
+=== Start: [2017/04/17 20:34:11] === 
+Analysis started...
+Result file: E:\data\weiyun\我的学习\visualstudio\vs\Projects\tools\inspectorxe\My Inspector XE Results - inspectorxe\r001mi1\r001mi1.inspxe 
+Stopped at target entry
+ - waiting for debugger to connect... 
+Debugger connection port: 6566 (pid = 13992) 
+Analysis started for E:\data\weiyun\�ҵ�ѧϰ\visualstudio\vs\Projects\tools\Debug\inspectorxe.exe (pid = 13992) 
+Application exit code: 1 
+Result file: E:\data\weiyun\我的学习\visualstudio\vs\Projects\tools\inspectorxe\My Inspector XE Results - inspectorxe\r001mi1\r001mi1.inspxe 
+Analysis canceled by user
+=== End: [2017/04/17 20:39:52] === 

@@ -1,0 +1,47 @@
+
+=== Start: [2017/04/18 09:27:02] === 
+Analysis started...
+Result file: E:\data\weiyun\鎴戠殑瀛︿範\visualstudio\vs\Projects\tools\inspectorxe\My Inspector XE Results - inspectorxe\r017mi2\r017mi2.inspxe 
+Analysis started for E:\data\weiyun\我的学习\visualstudio\vs\Projects\tools\Debug\inspectorxe.exe (pid = 5392) 
+Loaded module: E:\data\weiyun\鎴戠殑瀛︿範\visualstudio\vs\Projects\tools\Debug\inspectorxe.exe, address range [0x01200000-0x0121AFFF] 
+Loaded module: D:\Program Files (x86)\Intel\Inspector XE 2015\bin32\ccrt12.dll, address range [0x56000000-0x5616BFFF], minimal analysis 
+Loaded module: C:\Windows\syswow64\CRYPTBASE.dll, address range [0x74B50000-0x74B5BFFF] 
+Loaded module: C:\Windows\syswow64\SspiCli.dll, address range [0x74B60000-0x74BBFFFF] 
+Loaded module: C:\Windows\syswow64\GDI32.dll, address range [0x74BC0000-0x74C4FFFF] 
+Loaded module: C:\Windows\syswow64\kernel32.dll, address range [0x74DB0000-0x74EBFFFF] 
+Loaded module: C:\Windows\syswow64\RPCRT4.dll, address range [0x74EC0000-0x74FAFFFF] 
+Loaded module: C:\Windows\syswow64\USER32.dll, address range [0x752E0000-0x753DFFFF] 
+Loaded module: C:\Windows\syswow64\KERNELBASE.dll, address range [0x753E0000-0x75426FFF] 
+Loaded module: C:\Windows\syswow64\ADVAPI32.dll, address range [0x75440000-0x754DFFFF] 
+Loaded module: C:\Windows\SysWOW64\sechost.dll, address range [0x761C0000-0x761D8FFF] 
+Loaded module: C:\Windows\syswow64\MSCTF.dll, address range [0x765A0000-0x7666BFFF] 
+Loaded module: C:\Windows\syswow64\USP10.dll, address range [0x76670000-0x7670CFFF] 
+Loaded module: C:\Windows\system32\IMM32.DLL, address range [0x76830000-0x7688FFFF] 
+Loaded module: C:\Windows\syswow64\msvcrt.dll, address range [0x76890000-0x7693BFFF] 
+Loaded module: C:\Windows\syswow64\LPK.dll, address range [0x76AD0000-0x76AD9FFF] 
+Loaded module: C:\Windows\SysWOW64\ntdll.dll, address range [0x77140000-0x772BFFFF] 
+Loaded module: C:\Windows\system32\MSVCR100D.dll, address range [0x10190000-0x10302FFF] 
+Process E:\data\weiyun\我的学习\visualstudio\vs\Projects\tools\Debug\inspectorxe.exe exited with code 0. Leak analysis starting. Please wait... 
+Unloaded module: E:\data\weiyun\鎴戠殑瀛︿範\visualstudio\vs\Projects\tools\Debug\inspectorxe.exe 
+Unloaded module: D:\Program Files (x86)\Intel\Inspector XE 2015\bin32\ccrt12.dll 
+Unloaded module: C:\Windows\syswow64\CRYPTBASE.dll 
+Unloaded module: C:\Windows\syswow64\SspiCli.dll 
+Unloaded module: C:\Windows\syswow64\GDI32.dll 
+Unloaded module: C:\Windows\syswow64\kernel32.dll 
+Unloaded module: C:\Windows\syswow64\RPCRT4.dll 
+Unloaded module: C:\Windows\syswow64\USER32.dll 
+Unloaded module: C:\Windows\syswow64\KERNELBASE.dll 
+Unloaded module: C:\Windows\syswow64\ADVAPI32.dll 
+Unloaded module: C:\Windows\SysWOW64\sechost.dll 
+Unloaded module: C:\Windows\syswow64\MSCTF.dll 
+Unloaded module: C:\Windows\syswow64\USP10.dll 
+Unloaded module: C:\Windows\system32\IMM32.DLL 
+Unloaded module: C:\Windows\syswow64\msvcrt.dll 
+Unloaded module: C:\Windows\syswow64\LPK.dll 
+Unloaded module: C:\Windows\SysWOW64\ntdll.dll 
+Unloaded module: C:\Windows\system32\MSVCR100D.dll 
+Completed analysis for E:\data\weiyun\我的学习\visualstudio\vs\Projects\tools\Debug\inspectorxe.exe 
+Application exit code: 1 
+Result file: E:\data\weiyun\鎴戠殑瀛︿範\visualstudio\vs\Projects\tools\inspectorxe\My Inspector XE Results - inspectorxe\r017mi2\r017mi2.inspxe 
+Analysis completed
+=== End: [2017/04/18 09:37:07] === 

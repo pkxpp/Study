@@ -127,7 +127,7 @@ void LuaTest() {
 
 int main() {
 	LuaInit();
-	LuaTest();
+	//LuaTest();
 	//game
 	int nCount = 0;
 	while(true){
@@ -140,6 +140,7 @@ int main() {
 		}
 		++nCount;
 		// do something
+		LuaTest();
 		printf("11111111111111111111\n");
 	}
 	// game end

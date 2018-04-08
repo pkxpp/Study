@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HRManagement", "HRManagement\HRManagement.vcproj", "{D6B2BEAD-94B5-4C41-B771-439D8EE62D69}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DemoDraw", "DemoDraw\DemoDraw.vcproj", "{85DFE4F8-4C09-4C3C-BA3F-FF032D9891B5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SprReader", "SprReader\SprReader.vcproj", "{B2CBDF8C-3737-4B57-91DF-C0861ECF5D82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6B2BEAD-94B5-4C41-B771-439D8EE62D69}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D6B2BEAD-94B5-4C41-B771-439D8EE62D69}.Debug|Win32.Build.0 = Debug|Win32
+		{D6B2BEAD-94B5-4C41-B771-439D8EE62D69}.Release|Win32.ActiveCfg = Release|Win32
+		{D6B2BEAD-94B5-4C41-B771-439D8EE62D69}.Release|Win32.Build.0 = Release|Win32
+		{85DFE4F8-4C09-4C3C-BA3F-FF032D9891B5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{85DFE4F8-4C09-4C3C-BA3F-FF032D9891B5}.Debug|Win32.Build.0 = Debug|Win32
+		{85DFE4F8-4C09-4C3C-BA3F-FF032D9891B5}.Release|Win32.ActiveCfg = Release|Win32
+		{85DFE4F8-4C09-4C3C-BA3F-FF032D9891B5}.Release|Win32.Build.0 = Release|Win32
+		{B2CBDF8C-3737-4B57-91DF-C0861ECF5D82}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B2CBDF8C-3737-4B57-91DF-C0861ECF5D82}.Debug|Win32.Build.0 = Debug|Win32
+		{B2CBDF8C-3737-4B57-91DF-C0861ECF5D82}.Release|Win32.ActiveCfg = Release|Win32
+		{B2CBDF8C-3737-4B57-91DF-C0861ECF5D82}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

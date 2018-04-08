@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<diags major="2" minor="0">
+
+<diag id="1">
+	<type>233</type>
+	<message>
+		<timestamp>455315127</timestamp>
+		<thread>
+			<thrname></thrname>
+			<threadid>15632</threadid>
+			<stackstamp>455344662</stackstamp>
+			<stacktrace>
+			<loc>
+			<mod>C:\Windows\SysWOW64\ntdll.dll</mod>
+			<rva>0x399a0</rva>
+			</loc>
+			</stacktrace>
+		</thread>
+	</message>
+</diag>
+
+<diag id="2">
+	<type>1100</type>
+	<message>
+		<timestamp>68805211046</timestamp>
+		<thread>
+			<thrname></thrname>
+			<threadid>15632</threadid>
+			<stackstamp>36777692747</stackstamp>
+			<stacktrace>
+			<loc>
+			<mod>++unknown++</mod>
+			</loc>
+			</stacktrace>
+		</thread>
+	</message>
+</diag>
+
+<diag id="3">
+	<type>1102</type>
+	<message>
+		<timestamp>68805642193</timestamp>
+		<mess_blocks>2</mess_blocks>
+		<defined>
+			<thrname></thrname>
+			<size>32</size>
+			<threadid>15632</threadid>
+			<stackstamp>64764853947</stackstamp>
+			<stacktrace>
+			<loc>
+			<mod>E:\data\weiyun\我的学习\visualstudio\vs\Projects\tools\Debug\inspectorxe.exe</mod>
+			<rva>0x113f6</rva>
+			</loc>
+			<loc>
+			<mod>E:\data\weiyun\我的学习\visualstudio\vs\Projects\tools\Debug\inspectorxe.exe</mod>
+			<rva>0x11a0a</rva>
+			</loc>
+			<loc>
+			<mod>E:\data\weiyun\我的学习\visualstudio\vs\Projects\tools\Debug\inspectorxe.exe</mod>
+			<rva>0x1183a</rva>
+			</loc>
+			<loc>
+			<mod>C:\Windows\syswow64\kernel32.dll</mod>
+			<rva>0x133a8</rva>
+			</loc>
+			<loc>
+			<mod>C:\Windows\SysWOW64\ntdll.dll</mod>
+			<rva>0x39f70</rva>
+			</loc>
+			<loc>
+			<mod>C:\Windows\SysWOW64\ntdll.dll</mod>
+			<rva>0x39f40</rva>
+			</loc>
+			</stacktrace>
+		</defined>
+	</message>
+</diag>
+
+<diag id="4">
+	<type>1101</type>
+	<message>
+		<timestamp>68806702113</timestamp>
+		<thread>
+			<thrname></thrname>
+			<threadid>15632</threadid>
+			<stackstamp>68806716996</stackstamp>
+			<stacktrace>
+			<loc>
+			<mod>++unknown++</mod>
+			</loc>
+			</stacktrace>
+		</thread>
+	</message>
+</diag>
+
+<diag id="5">
+	<type>1100</type>
+	<message>
+		<timestamp>199894415514</timestamp>
+		<thread>
+			<thrname></thrname>
+			<threadid>15632</threadid>
+			<stackstamp>165499763375</stackstamp>
+			<stacktrace>
+			<loc>
+			<mod>++unknown++</mod>
+			</loc>
+			</stacktrace>
+		</thread>
+	</message>
+</diag>
+
+<diag id="6">
+	<type>1102</type>
+	<message>
+		<timestamp>199894677973</timestamp>
+		<mess_blocks>1</mess_blocks>
+		<defined>
+			<thrname></thrname>
+			<size>16</size>
+			<threadid>15632</threadid>
+			<stackstamp>184855960788</stackstamp>
+			<stacktrace>
+			<loc>
+			<mod>E:\data\weiyun\我的学习\visualstudio\vs\Projects\tools\Debug\inspectorxe.exe</mod>
+			<rva>0x113f6</rva>
+			</loc>
+			<loc>
+			<mod>E:\data\weiyun\我的学习\visualstudio\vs\Projects\tools\Debug\inspectorxe.exe</mod>
+			<rva>0x11a0a</rva>
+			</loc>
+			<loc>
+			<mod>E:\data\weiyun\我的学习\visualstudio\vs\Projects\tools\Debug\inspectorxe.exe</mod>
+			<rva>0x1183a</rva>
+			</loc>
+			<loc>
+			<mod>C:\Windows\syswow64\kernel32.dll</mod>
+			<rva>0x133a8</rva>
+			</loc>
+			<loc>
+			<mod>C:\Windows\SysWOW64\ntdll.dll</mod>
+			<rva>0x39f70</rva>
+			</loc>
+			<loc>
+			<mod>C:\Windows\SysWOW64\ntdll.dll</mod>
+			<rva>0x39f40</rva>
+			</loc>
+			</stacktrace>
+		</defined>
+	</message>
+</diag>
+
+<diag id="7">
+	<type>1101</type>
+	<message>
+		<timestamp>199895700776</timestamp>
+		<thread>
+			<thrname></thrname>
+			<threadid>15632</threadid>
+			<stackstamp>199895715431</stackstamp>
+			<stacktrace>
+			<loc>
+			<mod>++unknown++</mod>
+			</loc>
+			</stacktrace>
+		</thread>
+	</message>
+</diag>
