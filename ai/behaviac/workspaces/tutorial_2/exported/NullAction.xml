@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<!--Source File: NullAction.xml-->
+<behavior name="NullAction" agenttype="FirstAgent" version="5">
+  <node class="Noop" id="0" />
+</behavior>
