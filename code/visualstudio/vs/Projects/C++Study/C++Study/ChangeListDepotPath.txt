@@ -1,0 +1,12 @@
+Change 53438 by wenpeixian@wpx_wenpeixian_xieyunliu_codes on 2018/04/28 14:51:24
+
+	moc文件不应该传到库里
+
+Affected files ...
+
+... //sword3-code_S/trunk/Sword3/Source/KG3DEngineDX11/DevEnv/KG3DEditor/KEPublicModule/QxTimeCtrl/GeneratedFiles/Debug/moc_QxGrid.cpp#2 delete
+... //sword3-code_S/trunk/Sword3/Source/KG3DEngineDX11/DevEnv/KG3DEditor/KEPublicModule/QxTimeCtrl/GeneratedFiles/Debug/moc_QxGridPainterX.cpp#2 delete
+... //sword3-code_S/trunk/Sword3/Source/KG3DEngineDX11/DevEnv/KG3DEditor/KEPublicModule/QxTimeCtrl/GeneratedFiles/Debug/moc_QxRulerX.cpp#2 delete
+... //sword3-code_S/trunk/Sword3/Source/KG3DEngineDX11/DevEnv/KG3DEditor/KEPublicModule/QxTimeCtrl/GeneratedFiles/Debug/moc_QxTimeCtrl.mrn#2 delete
+... //sword3-code_S/trunk/Sword3/Source/KG3DEngineDX11/DevEnv/KG3DEditor/KEPublicModule/QxTimeCtrl/GeneratedFiles/Debug/moc_QxTimeCtrlScene.cpp#2 delete
+... //sword3-code_S/trunk/Sword3/Source/KG3DEngineDX11/DevEnv/KG3DEditor/KEPublicModule/QxTimeCtrl/GeneratedFiles/Debug/moc_QxTimeCtrlScene.mrn#2 delete

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\Common\Common.cxx">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KParser.cpp" />
+    <ClCompile Include="src\main.cxx" />
+    <ClCompile Include="src\stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Common\Common.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DisplayMaterial.h" />
+    <ClInclude Include="src\KParser.h" />
+    <ClInclude Include="src\stdafx.h" />
+    <ClInclude Include="src\targetver.h" />
+    <ClInclude Include="src\TangentSpaceCalculation.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{3717741a-6b45-4668-8358-c1861d6cab91}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

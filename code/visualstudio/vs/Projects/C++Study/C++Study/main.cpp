@@ -7,6 +7,7 @@
 //////////////////////////////////////////////////////////////////////////
 #include <cstdio>
 #include <iostream>
+#include "StringStudy.h"
 
 using namespace std;
 
@@ -118,10 +119,14 @@ int main()
 	else
 		cout << "little endian " << endl;
 	// 3.2
-	judge_endian();
+	//judge_endian();
 
 	//4. system bit
-	check_system_bit();
+	//check_system_bit();
+
+	//5. string study
+	StringStudy();
+
 	getchar();
 	return 0;
 }
