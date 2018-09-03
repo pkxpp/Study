@@ -108,31 +108,31 @@ int main(int argc, char** argv)
 		
         // Display the scene.
 		
-  //      DisplayMetaData(lScene);
+        //DisplayMetaData(lScene);
 
-  //      _FBXSDK_printf("\n\n---------------------\nGlobal Light Settings\n---------------------\n\n");
+        //_FBXSDK_printf("\n\n---------------------\nGlobal Light Settings\n---------------------\n\n");
 
-  //      if( gVerbose ) DisplayGlobalLightSettings(&lScene->GetGlobalSettings());
+        //if( gVerbose ) DisplayGlobalLightSettings(&lScene->GetGlobalSettings());
 
-  //      _FBXSDK_printf("\n\n----------------------\nGlobal Camera Settings\n----------------------\n\n");
+        //_FBXSDK_printf("\n\n----------------------\nGlobal Camera Settings\n----------------------\n\n");
 
-  //      if( gVerbose ) DisplayGlobalCameraSettings(&lScene->GetGlobalSettings());
+        //if( gVerbose ) DisplayGlobalCameraSettings(&lScene->GetGlobalSettings());
 
-  //      _FBXSDK_printf("\n\n--------------------\nGlobal Time Settings\n--------------------\n\n");
+		//_FBXSDK_printf("\n\n--------------------\nGlobal Time Settings\n--------------------\n\n");
 
-  //      if( gVerbose ) DisplayGlobalTimeSettings(&lScene->GetGlobalSettings());
+		//if( gVerbose ) DisplayGlobalTimeSettings(&lScene->GetGlobalSettings());
 
-  //      _FBXSDK_printf("\n\n---------\nHierarchy\n---------\n\n");
+        _FBXSDK_printf("\n\n---------\nHierarchy\n---------\n\n");
 
-  //      if( gVerbose ) DisplayHierarchy(lScene);
+        if( gVerbose ) DisplayHierarchy(lScene);
 
-  //      _FBXSDK_printf("\n\n------------\nNode Content\n------------\n\n");
+		//_FBXSDK_printf("\n\n------------\nNode Content\n------------\n\n");
 
-  //      if( gVerbose ) DisplayContent(lScene);
+		//if( gVerbose ) DisplayContent(lScene);
 
-  //      _FBXSDK_printf("\n\n----\nPose\n----\n\n");
+        //_FBXSDK_printf("\n\n----\nPose\n----\n\n");
 
-  //      if( gVerbose ) DisplayPose(lScene);
+        //if( gVerbose ) DisplayPose(lScene);
 
   //      _FBXSDK_printf("\n\n---------\nAnimation\n---------\n\n");
 		//
@@ -140,8 +140,8 @@ int main(int argc, char** argv)
 
   //      //now display generic information
 
-  //      _FBXSDK_printf("\n\n---------\nGeneric Information\n---------\n\n");
-  //      if( gVerbose ) DisplayGenericInfo(lScene);
+        //_FBXSDK_printf("\n\n---------\nGeneric Information\n---------\n\n");
+        //if( gVerbose ) DisplayGenericInfo(lScene);
 		
     }
 
@@ -151,7 +151,7 @@ int main(int argc, char** argv)
     return 0;
 }
 
-/*
+
 void DisplayContent(FbxScene* pScene)
 {
     int i;
@@ -330,7 +330,6 @@ void DisplayGeometricTransform(FbxNode* pNode)
     _FBXSDK_printf("        Scaling:     %f %f %f\n", lTmpVector[0], lTmpVector[1], lTmpVector[2]);
 }
 
-
 void DisplayMetaData(FbxScene* pScene)
 {
     FbxDocumentInfo* sceneInfo = pScene->GetSceneInfo();
@@ -376,4 +375,3 @@ void DisplayMetaData(FbxScene* pScene)
     }
 }
 
-*/

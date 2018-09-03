@@ -13,6 +13,7 @@
 #include <cstddef>
 #include <regex>
 #include <iostream>
+#include <fbxsdk.h>
 //#include "pub.h"
 #include "display/DisplayCommon.h"
 //#include "KMaterail.h"
@@ -916,13 +917,13 @@ void KParser::Clear()
 //
 KParser::KParser()
 {
-	m_nAnimationFrames = 0;	
+	/*m_nAnimationFrames = 0;	
 	m_nSampleFrameInterval = 5;
 	m_pSdkManager = NULL;
 	m_pScene = NULL;
 	m_bParseBlendShape = FALSE;
 
-	/*KIniFile IniFile;
+	KIniFile IniFile;
 	if(IniFile.OpenIniFile("cfg/ks_fbx_export.ini"))
 	{
 		char key[64];
@@ -1043,7 +1044,7 @@ KParser::KParser()
 		}
 
 		IniFile.CloseIniFile();
-	}*/	
+	}	*/
 }
 
 
@@ -1053,8 +1054,8 @@ KParser::~KParser()
 	Clear();
 	for(vector<KSkeletonFileConfig *>::iterator it = m_vecSkeletonFile.begin(); it != m_vecSkeletonFile.end(); ++it)
 	{
-		//KSkeletonFileConfig *pFileConfig = *it;
-		//delete(pFileConfig);
+		KSkeletonFileConfig *pFileConfig = *it;
+		delete(pFileConfig);
 	}
 }
 //
@@ -1975,7 +1976,7 @@ void KParser::Parse(FbxScene* pScene, const char *szName, const char *szParentPa
 	//if (ExportOption()->bModelFileExport && !ExportOption()->bGroupExport)
 	//	ConstructModel(m_szName, 0);
 	////先解析有权重值的骨骼
-	//ParseMeshAndBoneWeights(pRootNode);
+	ParseMeshAndBoneWeights(pRootNode);
 	//if(!m_mapRootBone.empty())
 	//{	
 	//	//解析骨架
@@ -2690,21 +2691,21 @@ void KParser::Parse(FbxScene* pScene, const char *szName, const char *szParentPa
 //		ParseMesh(pNode->GetChild(i), pRootNode);
 //	}
 //}
-//
-//void KParser::ParseMeshAndBoneWeights(FbxNode* pRootNode)
-//{
-//	if(pRootNode)
-//	{
-//        int nChildCount = pRootNode->GetChildCount();
-//		for(int i = 0; i < nChildCount; i++)
-//		{
-//			ParseMesh(pRootNode->GetChild(i), pRootNode);
-//		}
-//	}
-//}
-//
-//
-//
+
+void KParser::ParseMeshAndBoneWeights(FbxNode* pRootNode)
+{
+	if(pRootNode)
+	{
+		int nChildCount = pRootNode->GetChildCount();
+		for(int i = 0; i < nChildCount; i++)
+		{
+			TestProcessMesh(pRootNode->GetChild(i));
+		}
+	}
+}
+
+
+
 //void KParser::ParseSkeleton(FbxNode* pRootNode)
 //{		
 //	//找到有效的节点，和每个节点的正真父节点
@@ -4140,3 +4141,320 @@ void KParser::Parse(FbxScene* pScene, const char *szName, const char *szParentPa
 //	m_vecInspackPath.clear();
 //	m_strCollisionPath = "";
 //}
+
+//////////////////////////////////////////////////////////////////////////
+// 参考：https://blog.csdn.net/bugrunner/article/details/7210511
+void KParser::TestProcessMesh(FbxNode* pNode)
+{
+	FbxMesh* pMesh = pNode->GetMesh();
+	if(pMesh == NULL)
+	{
+		return;
+	}
+
+	KVec3 vertex[3];
+	KVec4 color[3];
+	KVec3 normal[3];
+	KVec3 tangent[3];
+	KVec2 uv[3][2];
+
+	int triangleCount = pMesh->GetPolygonCount();
+	int vertexCounter = 0;
+
+	for(int i = 0 ; i < triangleCount ; ++i)
+	{
+		for(int j = 0 ; j < 3 ; j++)
+		{
+			int ctrlPointIndex = pMesh->GetPolygonVertex(i , j);
+
+			// Read the vertex
+			TestReadVertex(pMesh , ctrlPointIndex , &vertex[j]);
+
+			// Read the color of each vertex
+			TestReadColor(pMesh , ctrlPointIndex , vertexCounter , &color[j]);
+
+			// Read the UV of each vertex
+			for(int k = 0 ; k < 2 ; ++k)
+			{
+				TestReadUV(pMesh , ctrlPointIndex , pMesh->GetTextureUVIndex(i, j) , k , &(uv[j][k]));
+			}
+
+			// Read the normal of each vertex
+			TestReadNormal(pMesh , ctrlPointIndex , vertexCounter , &normal[j]);
+
+			// Read the tangent of each vertex
+			TestReadTangent(pMesh , ctrlPointIndex , vertexCounter , &tangent[j]);
+
+			vertexCounter++;
+		}
+
+		// 根据读入的信息组装三角形，并以某种方式使用即可，比如存入到列表中、保存到文件等...
+	}
+}
+
+void KParser::TestReadVertex(FbxMesh* pMesh , int ctrlPointIndex , KVec3* pVertex)
+{
+	FbxVector4* pCtrlPoint = pMesh->GetControlPoints();
+
+	pVertex->x = pCtrlPoint[ctrlPointIndex].mData[0];
+	pVertex->y = pCtrlPoint[ctrlPointIndex].mData[1];
+	pVertex->z = pCtrlPoint[ctrlPointIndex].mData[2];
+}
+
+void KParser::TestReadColor(FbxMesh* pMesh , int ctrlPointIndex , int vertexCounter , KVec4* pColor)
+{
+	if(pMesh->GetElementVertexColorCount() < 1)
+	{
+		return;
+	}
+
+	FbxGeometryElementVertexColor* pVertexColor = pMesh->GetElementVertexColor(0);
+	switch(pVertexColor->GetMappingMode())
+	{
+	case FbxGeometryElement::eByControlPoint:
+		{
+			switch(pVertexColor->GetReferenceMode())
+			{
+			case FbxGeometryElement::eDirect:
+				{
+					pColor->x = pVertexColor->GetDirectArray().GetAt(ctrlPointIndex).mRed;
+					pColor->y = pVertexColor->GetDirectArray().GetAt(ctrlPointIndex).mGreen;
+					pColor->z = pVertexColor->GetDirectArray().GetAt(ctrlPointIndex).mBlue;
+					pColor->w = pVertexColor->GetDirectArray().GetAt(ctrlPointIndex).mAlpha;
+				}
+				break;
+
+			case FbxGeometryElement::eIndexToDirect:
+				{
+					int id = pVertexColor->GetIndexArray().GetAt(ctrlPointIndex);
+					pColor->x = pVertexColor->GetDirectArray().GetAt(id).mRed;
+					pColor->y = pVertexColor->GetDirectArray().GetAt(id).mGreen;
+					pColor->z = pVertexColor->GetDirectArray().GetAt(id).mBlue;
+					pColor->w = pVertexColor->GetDirectArray().GetAt(id).mAlpha;
+				}
+				break;
+
+			default:
+				break;
+			}
+		}
+		break;
+
+	case FbxGeometryElement::eByPolygonVertex:
+		{
+			switch (pVertexColor->GetReferenceMode())
+			{
+			case FbxGeometryElement::eDirect:
+				{
+					pColor->x = pVertexColor->GetDirectArray().GetAt(vertexCounter).mRed;
+					pColor->y = pVertexColor->GetDirectArray().GetAt(vertexCounter).mGreen;
+					pColor->z = pVertexColor->GetDirectArray().GetAt(vertexCounter).mBlue;
+					pColor->w = pVertexColor->GetDirectArray().GetAt(vertexCounter).mAlpha;
+				}
+				break;
+			case FbxGeometryElement::eIndexToDirect:
+				{
+					int id = pVertexColor->GetIndexArray().GetAt(vertexCounter);
+					pColor->x = pVertexColor->GetDirectArray().GetAt(id).mRed;
+					pColor->y = pVertexColor->GetDirectArray().GetAt(id).mGreen;
+					pColor->z = pVertexColor->GetDirectArray().GetAt(id).mBlue;
+					pColor->w = pVertexColor->GetDirectArray().GetAt(id).mAlpha;
+				}
+				break;
+			default:
+				break;
+			}
+		}
+		break;
+	}
+}
+
+
+void KParser::TestReadUV(FbxMesh* pMesh , int ctrlPointIndex , int textureUVIndex , int uvLayer , KVec2* pUV)
+{
+	if(uvLayer >= 2 || pMesh->GetElementUVCount() <= uvLayer)
+	{
+		return;
+	}
+
+	FbxGeometryElementUV* pVertexUV = pMesh->GetElementUV(uvLayer);
+
+	switch(pVertexUV->GetMappingMode())
+	{
+	case FbxGeometryElement::eByControlPoint:
+		{
+			switch(pVertexUV->GetReferenceMode())
+			{
+			case FbxGeometryElement::eDirect:
+				{
+					pUV->x = pVertexUV->GetDirectArray().GetAt(ctrlPointIndex).mData[0];
+					pUV->y = pVertexUV->GetDirectArray().GetAt(ctrlPointIndex).mData[1];
+				}
+				break;
+
+			case FbxGeometryElement::eIndexToDirect:
+				{
+					int id = pVertexUV->GetIndexArray().GetAt(ctrlPointIndex);
+					pUV->x = pVertexUV->GetDirectArray().GetAt(id).mData[0];
+					pUV->y = pVertexUV->GetDirectArray().GetAt(id).mData[1];
+				}
+				break;
+
+			default:
+				break;
+			}
+		}
+		break;
+
+	case FbxGeometryElement::eByPolygonVertex:
+		{
+			switch (pVertexUV->GetReferenceMode())
+			{
+			case FbxGeometryElement::eDirect:
+			case FbxGeometryElement::eIndexToDirect:
+				{
+					pUV->x = pVertexUV->GetDirectArray().GetAt(textureUVIndex).mData[0];
+					pUV->y = pVertexUV->GetDirectArray().GetAt(textureUVIndex).mData[1];
+				}
+				break;
+
+			default:
+				break;
+			}
+		}
+		break;
+	}
+}
+
+void KParser::TestReadNormal(FbxMesh* pMesh , int ctrlPointIndex , int vertexCounter , KVec3* pNormal)
+{
+	if(pMesh->GetElementNormalCount() < 1)
+	{
+		return;
+	}
+
+	FbxGeometryElementNormal* leNormal = pMesh->GetElementNormal(0);
+	switch(leNormal->GetMappingMode())
+	{
+	case FbxGeometryElement::eByControlPoint:
+		{
+			switch(leNormal->GetReferenceMode())
+			{
+			case FbxGeometryElement::eDirect:
+				{
+					pNormal->x = leNormal->GetDirectArray().GetAt(ctrlPointIndex).mData[0];
+					pNormal->y = leNormal->GetDirectArray().GetAt(ctrlPointIndex).mData[1];
+					pNormal->z = leNormal->GetDirectArray().GetAt(ctrlPointIndex).mData[2];
+				}
+				break;
+
+			case FbxGeometryElement::eIndexToDirect:
+				{
+					int id = leNormal->GetIndexArray().GetAt(ctrlPointIndex);
+					pNormal->x = leNormal->GetDirectArray().GetAt(id).mData[0];
+					pNormal->y = leNormal->GetDirectArray().GetAt(id).mData[1];
+					pNormal->z = leNormal->GetDirectArray().GetAt(id).mData[2];
+				}
+				break;
+
+			default:
+				break;
+			}
+		}
+		break;
+
+	case FbxGeometryElement::eByPolygonVertex:
+		{
+			switch(leNormal->GetReferenceMode())
+			{
+			case FbxGeometryElement::eDirect:
+				{
+					pNormal->x = leNormal->GetDirectArray().GetAt(vertexCounter).mData[0];
+					pNormal->y = leNormal->GetDirectArray().GetAt(vertexCounter).mData[1];
+					pNormal->z = leNormal->GetDirectArray().GetAt(vertexCounter).mData[2];
+				}
+				break;
+
+			case FbxGeometryElement::eIndexToDirect:
+				{
+					int id = leNormal->GetIndexArray().GetAt(vertexCounter);
+					pNormal->x = leNormal->GetDirectArray().GetAt(id).mData[0];
+					pNormal->y = leNormal->GetDirectArray().GetAt(id).mData[1];
+					pNormal->z = leNormal->GetDirectArray().GetAt(id).mData[2];
+				}
+				break;
+
+			default:
+				break;
+			}
+		}
+		break;
+	}
+}
+
+void KParser::TestReadTangent(FbxMesh* pMesh , int ctrlPointIndex , int vertecCounter , KVec3* pTangent)
+{
+	if(pMesh->GetElementTangentCount() < 1)
+	{
+		return;
+	}
+
+	FbxGeometryElementTangent* leTangent = pMesh->GetElementTangent(0);
+
+	switch(leTangent->GetMappingMode())
+	{
+	case FbxGeometryElement::eByControlPoint:
+		{
+			switch(leTangent->GetReferenceMode())
+			{
+			case FbxGeometryElement::eDirect:
+				{
+					pTangent->x = leTangent->GetDirectArray().GetAt(ctrlPointIndex).mData[0];
+					pTangent->y = leTangent->GetDirectArray().GetAt(ctrlPointIndex).mData[1];
+					pTangent->z = leTangent->GetDirectArray().GetAt(ctrlPointIndex).mData[2];
+				}
+				break;
+
+			case FbxGeometryElement::eIndexToDirect:
+				{
+					int id = leTangent->GetIndexArray().GetAt(ctrlPointIndex);
+					pTangent->x = leTangent->GetDirectArray().GetAt(id).mData[0];
+					pTangent->y = leTangent->GetDirectArray().GetAt(id).mData[1];
+					pTangent->z = leTangent->GetDirectArray().GetAt(id).mData[2];
+				}
+				break;
+
+			default:
+				break;
+			}
+		}
+		break;
+
+	case FbxGeometryElement::eByPolygonVertex:
+		{
+			switch(leTangent->GetReferenceMode())
+			{
+			case FbxGeometryElement::eDirect:
+				{
+					pTangent->x = leTangent->GetDirectArray().GetAt(vertecCounter).mData[0];
+					pTangent->y = leTangent->GetDirectArray().GetAt(vertecCounter).mData[1];
+					pTangent->z = leTangent->GetDirectArray().GetAt(vertecCounter).mData[2];
+				}
+				break;
+
+			case FbxGeometryElement::eIndexToDirect:
+				{
+					int id = leTangent->GetIndexArray().GetAt(vertecCounter);
+					pTangent->x = leTangent->GetDirectArray().GetAt(id).mData[0];
+					pTangent->y = leTangent->GetDirectArray().GetAt(id).mData[1];
+					pTangent->z = leTangent->GetDirectArray().GetAt(id).mData[2];
+				}
+				break;
+
+			default:
+				break;
+			}
+		}
+		break;
+	}
+}

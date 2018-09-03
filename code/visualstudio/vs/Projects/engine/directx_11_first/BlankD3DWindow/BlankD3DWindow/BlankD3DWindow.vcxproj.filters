@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\TriangleDemo">
+      <UniqueIdentifier>{4c3feda0-6c77-40c8-bbfc-f6ccc0382a85}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -24,6 +27,9 @@
     <ClCompile Include="BlankDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TriangleDemo\TriangleDemo.cpp">
+      <Filter>Source Files\TriangleDemo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dx11DemoBase.h">
@@ -31,6 +37,9 @@
     </ClInclude>
     <ClInclude Include="BlankDemo.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TriangleDemo\TriangleDemo.h">
+      <Filter>Source Files\TriangleDemo</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

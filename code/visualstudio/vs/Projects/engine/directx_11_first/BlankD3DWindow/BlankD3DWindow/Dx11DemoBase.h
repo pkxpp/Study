@@ -15,6 +15,8 @@ public:
 	virtual bool LoadContent( );virtual void UnloadContent( );
 	virtual void Update( float dt ) = 0;
 	virtual void Render( ) = 0;
+
+	bool CompileD3DShader( char* filePath, char* entry, char* shaderModel, ID3DBlob** buffer );
 protected:
 	HINSTANCE hInstance_;
 	HWND hwnd_;

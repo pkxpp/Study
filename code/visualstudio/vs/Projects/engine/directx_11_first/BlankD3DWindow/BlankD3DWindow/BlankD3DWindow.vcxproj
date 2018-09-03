@@ -68,10 +68,12 @@
     <ClCompile Include="BlankDemo.cpp" />
     <ClCompile Include="Dx11DemoBase.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TriangleDemo\TriangleDemo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BlankDemo.h" />
     <ClInclude Include="Dx11DemoBase.h" />
+    <ClInclude Include="TriangleDemo\TriangleDemo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -7,6 +7,69 @@
     <ClCompile Include="src\KParser.cpp" />
     <ClCompile Include="src\main.cxx" />
     <ClCompile Include="src\stdafx.cpp" />
+    <ClCompile Include="src\display\DisplayAnimation.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplayCache.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplayCamera.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplayCommon.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplayGenericInfo.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplayGlobalSettings.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplayHierarchy.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplayLight.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplayLink.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplayLodGroup.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplayMarker.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplayMaterial.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplayMesh.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplayNurb.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplayPatch.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplayPivotsAndLimits.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplayPose.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplayShape.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplaySkeleton.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplayTexture.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="src\display\DisplayUserProperties.cxx">
+      <Filter>display</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Common\Common.h">
@@ -17,10 +80,76 @@
     <ClInclude Include="src\stdafx.h" />
     <ClInclude Include="src\targetver.h" />
     <ClInclude Include="src\TangentSpaceCalculation.h" />
+    <ClInclude Include="src\display\DisplayAnimation.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplayCache.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplayCamera.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplayCommon.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplayGenericInfo.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplayGlobalSettings.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplayHierarchy.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplayLight.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplayLink.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplayLodGroup.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplayMarker.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplayMaterial.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplayMesh.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplayNurb.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplayPatch.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplayPivotsAndLimits.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplayPose.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplayShape.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplaySkeleton.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplayTexture.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="src\display\DisplayUserProperties.h">
+      <Filter>display</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">
       <UniqueIdentifier>{3717741a-6b45-4668-8358-c1861d6cab91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="display">
+      <UniqueIdentifier>{95d4635c-6f7f-47e3-9fd2-65ce7121e72a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

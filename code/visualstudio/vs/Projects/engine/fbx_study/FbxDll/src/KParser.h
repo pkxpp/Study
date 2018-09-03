@@ -647,6 +647,14 @@ public:
 	bool GetModelInspackPath(string strName, vector<string>& vecPath);
 	string GetModelCollisionPath(string strName);
 
+	//////////////////////////////////////////////////////////////////////////
+	// test
+	void TestProcessMesh(FbxNode* pNode);
+	void TestReadVertex(FbxMesh* pMesh , int ctrlPointIndex , KVec3* pVertex);
+	void TestReadColor(FbxMesh* pMesh , int ctrlPointIndex , int vertexCounter , KVec4* pColor);
+	void TestReadUV(FbxMesh* pMesh , int ctrlPointIndex , int textureUVIndex , int uvLayer , KVec2* pUV);
+	void TestReadNormal(FbxMesh* pMesh , int ctrlPointIndex , int vertexCounter , KVec3* pNormal);
+	void TestReadTangent(FbxMesh* pMesh , int ctrlPointIndex , int vertecCounter , KVec3* pTangent);
 };
 
 
