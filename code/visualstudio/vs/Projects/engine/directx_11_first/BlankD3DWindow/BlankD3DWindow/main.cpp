@@ -4,6 +4,8 @@
 #include<memory>
 #include "BlankDemo.h"
 #include "TriangleDemo/TriangleDemo.h"
+#include "TextureDemo/TextureDemo.h"
+#include "GameSpriteDemo/GameSpriteDemo.h"
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam);
 
@@ -42,7 +44,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmd, in
 	ShowWindow(hwnd, nShow);
 
 	//std::auto_ptr<Dx11DemoBase> demo(new BlankDemo());
-	std::auto_ptr<Dx11DemoBase> demo(new TriangleDemo());
+	//std::auto_ptr<Dx11DemoBase> demo(new TriangleDemo());	
+	//std::auto_ptr<Dx11DemoBase> demo(new TextureDemo());
+	std::auto_ptr<Dx11DemoBase> demo(new GameSpriteDemo());
 
 	//Demo Initialize
 	bool result = demo->Initialize( hInstance, hwnd );

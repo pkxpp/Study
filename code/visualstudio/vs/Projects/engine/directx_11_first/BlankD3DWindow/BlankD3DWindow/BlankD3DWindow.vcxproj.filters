@@ -16,6 +16,12 @@
     <Filter Include="Source Files\TriangleDemo">
       <UniqueIdentifier>{4c3feda0-6c77-40c8-bbfc-f6ccc0382a85}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\TextureDemo">
+      <UniqueIdentifier>{fa36aead-16ea-473e-9014-371d3e3ca89d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameSpriteDemo">
+      <UniqueIdentifier>{bce57fec-c6e8-4933-b9fc-fad8f0cf7c8e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -30,6 +36,15 @@
     <ClCompile Include="TriangleDemo\TriangleDemo.cpp">
       <Filter>Source Files\TriangleDemo</Filter>
     </ClCompile>
+    <ClCompile Include="TextureDemo\TextureDemo.cpp">
+      <Filter>Source Files\TextureDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSpriteDemo\GameSprite.cpp">
+      <Filter>Source Files\GameSpriteDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSpriteDemo\GameSpriteDemo.cpp">
+      <Filter>Source Files\GameSpriteDemo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dx11DemoBase.h">
@@ -40,6 +55,15 @@
     </ClInclude>
     <ClInclude Include="TriangleDemo\TriangleDemo.h">
       <Filter>Source Files\TriangleDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureDemo\TextureDemo.h">
+      <Filter>Source Files\TextureDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSpriteDemo\GameSprite.h">
+      <Filter>Source Files\GameSpriteDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSpriteDemo\GameSpriteDemo.h">
+      <Filter>Source Files\GameSpriteDemo</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
