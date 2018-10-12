@@ -26,6 +26,9 @@ protected:
 	ID3D11DeviceContext* d3dContext_;
 	IDXGISwapChain* swapChain_;
 	ID3D11RenderTargetView* backBufferTarget_;
+
+	ID3D11Texture2D* depthTexture_;
+	ID3D11DepthStencilView* depthStencilView_;
 };
 
 #endif _DEMO_BASE_H_

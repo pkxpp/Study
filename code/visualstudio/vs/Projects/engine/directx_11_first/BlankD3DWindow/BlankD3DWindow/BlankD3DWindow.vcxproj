@@ -66,6 +66,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BlankDemo.cpp" />
+    <ClCompile Include="CubeDemo\CubeDemo.cpp" />
+    <ClCompile Include="D3DTextDemo\D3DTextDemo.cpp" />
     <ClCompile Include="Dx11DemoBase.cpp" />
     <ClCompile Include="GameSpriteDemo\GameSprite.cpp" />
     <ClCompile Include="GameSpriteDemo\GameSpriteDemo.cpp" />
@@ -75,6 +77,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BlankDemo.h" />
+    <ClInclude Include="CubeDemo\CubeDemo.h" />
+    <ClInclude Include="D3DTextDemo\D3DTextDemo.h" />
     <ClInclude Include="Dx11DemoBase.h" />
     <ClInclude Include="GameSpriteDemo\GameSprite.h" />
     <ClInclude Include="GameSpriteDemo\GameSpriteDemo.h" />

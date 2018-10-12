@@ -30,10 +30,14 @@ void Dx11DemoBase::UnloadContent( )
 void Dx11DemoBase::Shutdown( )
 {
 	UnloadContent( );
+	if( depthTexture_ ) depthTexture_->Release( );
+	if( depthStencilView_ ) depthStencilView_->Release( );
 	if( backBufferTarget_ ) backBufferTarget_->Release( );
 	if( swapChain_ ) swapChain_->Release( );
 	if( d3dContext_ ) d3dContext_->Release( );
 	if( d3dDevice_ ) d3dDevice_->Release( );
+	depthTexture_ = 0;
+	depthStencilView_ = 0;
 	backBufferTarget_ = 0;
 	swapChain_ = 0;
 	d3dContext_ = 0;
@@ -64,7 +68,8 @@ bool Dx11DemoBase::Initialize( HINSTANCE hInstance, HWND hwnd )
 	DXGI_SWAP_CHAIN_DESC swapChainDesc;
 	ZeroMemory( &swapChainDesc, sizeof( swapChainDesc ) );
 	swapChainDesc.BufferCount = 1;
-	swapChainDesc.BufferDesc.Width = width;swapChainDesc.BufferDesc.Height = height;
+	swapChainDesc.BufferDesc.Width = width;
+	swapChainDesc.BufferDesc.Height = height;
 	swapChainDesc.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
 	swapChainDesc.BufferDesc.RefreshRate.Numerator = 60;
 	swapChainDesc.BufferDesc.RefreshRate.Denominator = 1;
@@ -111,15 +116,48 @@ bool Dx11DemoBase::Initialize( HINSTANCE hInstance, HWND hwnd )
 		DXTRACE_MSG( "Failed to create the render target view!" );
 		return false;
 	}
-	d3dContext_->OMSetRenderTargets( 1, &backBufferTarget_, 0 );
+
+	D3D11_TEXTURE2D_DESC depthTexDesc;
+	ZeroMemory( &depthTexDesc, sizeof( depthTexDesc ) );
+	depthTexDesc.Width = width;
+	depthTexDesc.Height = height;
+	depthTexDesc.MipLevels = 1;
+	depthTexDesc.ArraySize = 1;
+	depthTexDesc.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
+	depthTexDesc.SampleDesc.Count = 1;
+	depthTexDesc.SampleDesc.Quality = 0;
+	depthTexDesc.Usage = D3D11_USAGE_DEFAULT;
+	depthTexDesc.BindFlags = D3D11_BIND_DEPTH_STENCIL;
+	depthTexDesc.CPUAccessFlags = 0;
+	depthTexDesc.MiscFlags = 0;
+	result = d3dDevice_->CreateTexture2D( &depthTexDesc, NULL, &depthTexture_ );
+	if( FAILED( result ) )
+	{
+		DXTRACE_MSG( "Failed to create the depth texture!" );
+		return false;
+	}
+	// Create the depth stencil view
+	D3D11_DEPTH_STENCIL_VIEW_DESC descDSV;
+	ZeroMemory( &descDSV, sizeof( descDSV ) );
+	descDSV.Format = depthTexDesc.Format;
+	descDSV.ViewDimension = D3D11_DSV_DIMENSION_TEXTURE2D;
+	descDSV.Texture2D.MipSlice = 0;
+	result = d3dDevice_->CreateDepthStencilView( depthTexture_, &descDSV, &depthStencilView_ );
+	if( FAILED( result ) )
+	{
+		DXTRACE_MSG( "Failed to create the depth stencil target view!" );
+		return false;
+	}
+	d3dContext_->OMSetRenderTargets( 1, &backBufferTarget_, depthStencilView_ );
 	D3D11_VIEWPORT viewport;
-	viewport.Width = static_cast<float>(width);
-	viewport.Height = static_cast<float>(height);
+	viewport.Width = static_cast<float>( width );
+	viewport.Height = static_cast<float>( height );
 	viewport.MinDepth = 0.0f;
 	viewport.MaxDepth = 1.0f;
 	viewport.TopLeftX = 0.0f;
 	viewport.TopLeftY = 0.0f;
 	d3dContext_->RSSetViewports( 1, &viewport );
+
 	return LoadContent( );
 }
 

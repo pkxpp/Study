@@ -22,6 +22,12 @@
     <Filter Include="Source Files\GameSpriteDemo">
       <UniqueIdentifier>{bce57fec-c6e8-4933-b9fc-fad8f0cf7c8e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\D3DTextDemo">
+      <UniqueIdentifier>{8bd32a28-b07c-46db-85b0-2cba4dbd5502}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CubeDemo">
+      <UniqueIdentifier>{f5a04e52-5ada-4cd2-9f8a-535d94904e72}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -45,6 +51,12 @@
     <ClCompile Include="GameSpriteDemo\GameSpriteDemo.cpp">
       <Filter>Source Files\GameSpriteDemo</Filter>
     </ClCompile>
+    <ClCompile Include="D3DTextDemo\D3DTextDemo.cpp">
+      <Filter>Source Files\D3DTextDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="CubeDemo\CubeDemo.cpp">
+      <Filter>Source Files\CubeDemo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dx11DemoBase.h">
@@ -64,6 +76,12 @@
     </ClInclude>
     <ClInclude Include="GameSpriteDemo\GameSpriteDemo.h">
       <Filter>Source Files\GameSpriteDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="D3DTextDemo\D3DTextDemo.h">
+      <Filter>Source Files\D3DTextDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="CubeDemo\CubeDemo.h">
+      <Filter>Source Files\CubeDemo</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
