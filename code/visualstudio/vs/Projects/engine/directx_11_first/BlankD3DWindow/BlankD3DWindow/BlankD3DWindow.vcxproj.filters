@@ -28,6 +28,12 @@
     <Filter Include="Source Files\CubeDemo">
       <UniqueIdentifier>{f5a04e52-5ada-4cd2-9f8a-535d94904e72}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ColorInversionDemo">
+      <UniqueIdentifier>{2b84b953-d99f-423d-b210-6cb60d21678b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ColorShiftDemo">
+      <UniqueIdentifier>{92293660-4591-4038-afac-52ea5242ca5d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -57,6 +63,12 @@
     <ClCompile Include="CubeDemo\CubeDemo.cpp">
       <Filter>Source Files\CubeDemo</Filter>
     </ClCompile>
+    <ClCompile Include="ColorInversion\ColorInversionDemo.cpp">
+      <Filter>Source Files\ColorInversionDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorShiftDemo\ColorShiftDemo.cpp">
+      <Filter>Source Files\ColorShiftDemo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dx11DemoBase.h">
@@ -82,6 +94,12 @@
     </ClInclude>
     <ClInclude Include="CubeDemo\CubeDemo.h">
       <Filter>Source Files\CubeDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorInversion\ColorInversionDemo.h">
+      <Filter>Source Files\ColorInversionDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorShiftDemo\ColorShiftDemo.h">
+      <Filter>Source Files\ColorShiftDemo</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

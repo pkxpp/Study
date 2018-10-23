@@ -43,12 +43,12 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(DXSDK_DIR)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)Include;D:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Samples\C++\Effects11\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(DXSDK_DIR)Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>d3d11.lib;d3dx11.lib;dxerr.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(DXSDK_DIR)Lib\x86;D:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Samples\C++\Effects11\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Effects11.lib;d3d11.lib;d3dx11.lib;dxerr.lib;d3dcompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -66,6 +66,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BlankDemo.cpp" />
+    <ClCompile Include="ColorInversion\ColorInversionDemo.cpp" />
+    <ClCompile Include="ColorShiftDemo\ColorShiftDemo.cpp" />
     <ClCompile Include="CubeDemo\CubeDemo.cpp" />
     <ClCompile Include="D3DTextDemo\D3DTextDemo.cpp" />
     <ClCompile Include="Dx11DemoBase.cpp" />
@@ -77,6 +79,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BlankDemo.h" />
+    <ClInclude Include="ColorInversion\ColorInversionDemo.h" />
+    <ClInclude Include="ColorShiftDemo\ColorShiftDemo.h" />
     <ClInclude Include="CubeDemo\CubeDemo.h" />
     <ClInclude Include="D3DTextDemo\D3DTextDemo.h" />
     <ClInclude Include="Dx11DemoBase.h" />
