@@ -10,6 +10,7 @@
 #include "CubeDemo/CubeDemo.h"
 #include "ColorInversion/ColorInversionDemo.h"
 #include "ColorShiftDemo/ColorShiftDemo.h"
+#include "MultiTextureDemo/MultiTextureDemo.h"
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam);
 
@@ -54,7 +55,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmd, in
 	//std::auto_ptr<Dx11DemoBase> demo(new D3DTextDemo());
 	//std::auto_ptr<Dx11DemoBase> demo(new CubeDemo());
 	//std::auto_ptr<Dx11DemoBase> demo(new ColorInversionDemo());
-	std::auto_ptr<Dx11DemoBase> demo(new ColorShiftDemo());
+	//std::auto_ptr<Dx11DemoBase> demo(new ColorShiftDemo());
+	std::auto_ptr<Dx11DemoBase> demo(new MultiTextureDemo());
 
 	//Demo Initialize
 	bool result = demo->Initialize( hInstance, hwnd );

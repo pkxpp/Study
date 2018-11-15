@@ -34,6 +34,9 @@
     <Filter Include="Source Files\ColorShiftDemo">
       <UniqueIdentifier>{92293660-4591-4038-afac-52ea5242ca5d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\MultiTextureDemo">
+      <UniqueIdentifier>{304d39ef-ec93-4563-9270-276528d2b161}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -69,6 +72,9 @@
     <ClCompile Include="ColorShiftDemo\ColorShiftDemo.cpp">
       <Filter>Source Files\ColorShiftDemo</Filter>
     </ClCompile>
+    <ClCompile Include="MultiTextureDemo\MultiTextureDemo.cpp">
+      <Filter>Source Files\MultiTextureDemo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dx11DemoBase.h">
@@ -100,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="ColorShiftDemo\ColorShiftDemo.h">
       <Filter>Source Files\ColorShiftDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiTextureDemo\MultiTextureDemo.h">
+      <Filter>Source Files\MultiTextureDemo</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -8,7 +8,7 @@
 #include <cstdio>
 #include <iostream>
 #include "StringStudy.h"
-
+#include "lamada_study.h"
 using namespace std;
 
 /************************************************************************/
@@ -104,6 +104,21 @@ void check_system_bit()
 
 }
 
+/************************************************************************/
+/* 6. function overload match rule
+ * 2018/11/09
+ */
+/************************************************************************/
+void TestOverloadMatchRule();
+/************************************************************************/
+/* 7. c++11
+ * 2018/11/15
+ *
+ * 7.1 lambda
+ */
+/************************************************************************/
+//void TestLambda();
+
 /////////////////////////////////////////////////////////////////////
 int main()
 {
@@ -125,7 +140,18 @@ int main()
 	//check_system_bit();
 
 	//5. string study
-	StringStudy();
+	//StringStudy();
+
+	// 6. function overload match rule
+	//TestOverloadMatchRule();
+
+	// 7.c++11
+
+	// 7.1 lambda
+	/*TestLambda();*/
+	LambdaStudy lambda;
+	lambda.TestValueAndReferenceCapture();
+	lambda.TestValueAndReferenceCapture(5);
 
 	getchar();
 	return 0;

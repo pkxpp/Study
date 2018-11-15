@@ -63,6 +63,8 @@ bool ParseMrnFileFromChangeList(const char* pszFileName, char* szOutput)
 
 	strcpy(szOutput, strOutput.c_str());
 	fInput.close();
+
+	return true;
 }
 
 

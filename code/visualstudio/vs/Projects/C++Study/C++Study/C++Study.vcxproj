@@ -85,10 +85,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BigLittleEndian.cpp" />
+    <ClCompile Include="functionoverload.cpp" />
+    <ClCompile Include="lambda_study.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="StringStudy.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="lamada_study.h" />
     <ClInclude Include="StringStudy.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

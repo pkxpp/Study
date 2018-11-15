@@ -74,6 +74,7 @@
     <ClCompile Include="GameSpriteDemo\GameSprite.cpp" />
     <ClCompile Include="GameSpriteDemo\GameSpriteDemo.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MultiTextureDemo\MultiTextureDemo.cpp" />
     <ClCompile Include="TextureDemo\TextureDemo.cpp" />
     <ClCompile Include="TriangleDemo\TriangleDemo.cpp" />
   </ItemGroup>
@@ -86,6 +87,7 @@
     <ClInclude Include="Dx11DemoBase.h" />
     <ClInclude Include="GameSpriteDemo\GameSprite.h" />
     <ClInclude Include="GameSpriteDemo\GameSpriteDemo.h" />
+    <ClInclude Include="MultiTextureDemo\MultiTextureDemo.h" />
     <ClInclude Include="TextureDemo\TextureDemo.h" />
     <ClInclude Include="TriangleDemo\TriangleDemo.h" />
   </ItemGroup>

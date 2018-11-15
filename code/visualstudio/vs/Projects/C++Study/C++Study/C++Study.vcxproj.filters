@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="Source Files\c++11">
+      <UniqueIdentifier>{b90b4af3-9f72-4276-a02f-c1bb9dbfdbe6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BigLittleEndian.cpp">
@@ -24,10 +27,19 @@
     <ClCompile Include="StringStudy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="functionoverload.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lambda_study.cpp">
+      <Filter>Source Files\c++11</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="StringStudy.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lamada_study.h">
+      <Filter>Source Files\c++11</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
