@@ -1,0 +1,66 @@
+	.file	"compile2.cpp"
+	.text
+	.globl	_Z3tmpv
+	.type	_Z3tmpv, @function
+_Z3tmpv:
+.LFB1:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movl	$2, %esi
+	movl	$10, %edi
+	call	_Z3addIiET_S0_S0_
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE1:
+	.size	_Z3tmpv, .-_Z3tmpv
+	.globl	_Z3addii
+	.type	_Z3addii, @function
+_Z3addii:
+.LFB2:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movl	%edi, -4(%rbp)
+	movl	%esi, -8(%rbp)
+	movl	-8(%rbp), %eax
+	movl	-4(%rbp), %edx
+	addl	%edx, %eax
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE2:
+	.size	_Z3addii, .-_Z3addii
+	.section	.text._Z3addIiET_S0_S0_,"axG",@progbits,_Z3addIiET_S0_S0_,comdat
+	.weak	_Z3addIiET_S0_S0_
+	.type	_Z3addIiET_S0_S0_, @function
+_Z3addIiET_S0_S0_:
+.LFB3:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movl	%edi, -4(%rbp)
+	movl	%esi, -8(%rbp)
+	movl	-8(%rbp), %eax
+	movl	-4(%rbp), %edx
+	addl	%edx, %eax
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE3:
+	.size	_Z3addIiET_S0_S0_, .-_Z3addIiET_S0_S0_
+	.ident	"GCC: (GNU) 4.8.5 20150623 (Red Hat 4.8.5-36)"
+	.section	.note.GNU-stack,"",@progbits
