@@ -188,10 +188,14 @@ void D3DApp::OnResize()
 
 	// Set the viewport transform.
 
-	mScreenViewport.TopLeftX = 0;
-	mScreenViewport.TopLeftY = 0;
-	mScreenViewport.Width    = static_cast<float>(mClientWidth);
-	mScreenViewport.Height   = static_cast<float>(mClientHeight);
+	//mScreenViewport.TopLeftX = 0;
+	//mScreenViewport.TopLeftY = 0;
+	//mScreenViewport.Width    = static_cast<float>(mClientWidth);
+	//mScreenViewport.Height   = static_cast<float>(mClientHeight);
+	mScreenViewport.TopLeftX = 100;
+	mScreenViewport.TopLeftY = 100;
+	mScreenViewport.Width    = 200;
+	mScreenViewport.Height   = 200;
 	mScreenViewport.MinDepth = 0.0f;
 	mScreenViewport.MaxDepth = 1.0f;
 
@@ -455,6 +459,53 @@ bool D3DApp::InitDirect3D()
 
 	HR(dxgiFactory->CreateSwapChain(md3dDevice, &sd, &mSwapChain));
 	
+	// close alt+enter
+	//HR(dxgiFactory->MakeWindowAssociation(mhMainWnd, DXGI_MWA_NO_WINDOW_CHANGES));
+
+	// check adapters
+	UINT uAdapters = 0;
+	IDXGIAdapter* pAdapter = 0;
+	LARGE_INTEGER* pVersion = 0;
+	char szBuf[1024] = {0};
+	while(dxgiFactory->EnumAdapters(uAdapters, &pAdapter) != DXGI_ERROR_NOT_FOUND)
+	{
+		HRESULT r = pAdapter->CheckInterfaceSupport(__uuidof(ID3D10Device), pVersion);
+		HR(r);
+
+		UINT uOutput = 0;
+		IDXGIOutput* pOutput = 0;
+		UINT uNum = 0;
+		//DXGI_FORMAT format = DXGI_FORMAT_R32G32B32A32_FLOAT;		
+		DXGI_FORMAT format = DXGI_FORMAT_R8G8B8A8_UNORM;
+
+		UINT flags         = DXGI_ENUM_MODES_INTERLACED;
+
+		while (pAdapter->EnumOutputs(uOutput, &pOutput) != DXGI_ERROR_NOT_FOUND)
+		{
+			
+			pOutput->GetDisplayModeList( format, flags, &uNum, 0);
+
+			DXGI_MODE_DESC* pDescs = new DXGI_MODE_DESC[uNum];
+			pOutput->GetDisplayModeList(format, flags, &uNum, pDescs);
+
+			for (int i = 0; i < uNum; ++i)
+			{
+				sprintf(szBuf, "**Width = %d, Height = %d, Refresh = %d/%d**\n", pDescs[0].Width, pDescs[i].Height, pDescs[i].RefreshRate.Numerator, pDescs[i].RefreshRate.Denominator);
+				OutputDebugStringA(szBuf);
+			}
+
+			++uOutput;
+			ReleaseCOM(pOutput);
+		}
+		sprintf(szBuf, "uOutput = %d\n", uOutput + 1);
+		OutputDebugStringA(szBuf);
+
+		++uAdapters;
+		ReleaseCOM(pAdapter);
+	}
+	sprintf(szBuf, "Adapters count = %d\n", uAdapters + 1);
+	OutputDebugStringA(szBuf);
+
 	ReleaseCOM(dxgiDevice);
 	ReleaseCOM(dxgiAdapter);
 	ReleaseCOM(dxgiFactory);

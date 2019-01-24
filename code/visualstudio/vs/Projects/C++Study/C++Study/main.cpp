@@ -9,6 +9,8 @@
 #include <iostream>
 #include "StringStudy.h"
 #include "lamada_study.h"
+#include "stl_study.h"
+#include "std_is_same.h"
 using namespace std;
 
 /************************************************************************/
@@ -119,6 +121,20 @@ void TestOverloadMatchRule();
 /************************************************************************/
 //void TestLambda();
 
+/************************************************************************/
+/* 8. stl test
+* 2018/12/26
+*/
+/************************************************************************/
+// testSTLStudy
+
+/************************************************************************/
+/* 9. std is same compile error
+* 2019/01/24
+*/
+/************************************************************************/
+// StdIsSameTest
+
 /////////////////////////////////////////////////////////////////////
 int main()
 {
@@ -149,9 +165,15 @@ int main()
 
 	// 7.1 lambda
 	/*TestLambda();*/
-	LambdaStudy lambda;
-	lambda.TestValueAndReferenceCapture();
-	lambda.TestValueAndReferenceCapture(5);
+	//LambdaStudy lambda;
+	//lambda.TestValueAndReferenceCapture();
+	//lambda.TestValueAndReferenceCapture(5);
+
+	// 8. stl
+	//testSTLStudy();
+
+	// 9. std::is_same
+	//StdIsSameTest();
 
 	getchar();
 	return 0;
