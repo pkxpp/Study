@@ -12,6 +12,26 @@
 #include "d3dApp.h"
 #include "d3dx11Effect.h"
 #include "MathHelper.h"
+#include <iostream>
+
+//#include <DirectXMath.h>
+//#include <DirectXPackedVector.h>
+using namespace std;
+//using namespace DirectX;
+//using namespace DirectX::PackedVector;
+
+//ostream& XM_CALLCONV operator << (ostream& os, XMMATRIX m)
+//{
+//	for (int i = 0; i < 4; ++i)
+//	{
+//		os << XMVectorGetX(m.r[i]) << "\t";
+//		os << XMVectorGetY(m.r[i]) << "\t";
+//		os << XMVectorGetZ(m.r[i]) << "\t";
+//		os << XMVectorGetW(m.r[i]);
+//		os << endl;
+//	}
+//	return os;
+//}
 
 struct Vertex
 {
@@ -36,6 +56,7 @@ public:
 
 private:
 	void BuildGeometryBuffers();
+	void BuildPyramidGeometryBuffers();
 	void BuildFX();
 	void BuildVertexLayout();
 
@@ -106,7 +127,8 @@ bool BoxApp::Init()
 	if(!D3DApp::Init())
 		return false;
 
-	BuildGeometryBuffers();
+	//BuildGeometryBuffers();
+	BuildPyramidGeometryBuffers();
 	BuildFX();
 	BuildVertexLayout();
 
@@ -220,17 +242,17 @@ void BoxApp::OnMouseMove(WPARAM btnState, int x, int y)
 void BoxApp::BuildGeometryBuffers()
 {
 	// Create vertex buffer
-    Vertex vertices[] =
-    {
-		{ XMFLOAT3(-1.0f, -1.0f, -1.0f), (const float*)&Colors::White   },
-		{ XMFLOAT3(-1.0f, +1.0f, -1.0f), (const float*)&Colors::Black   },
-		{ XMFLOAT3(+1.0f, +1.0f, -1.0f), (const float*)&Colors::Red     },
-		{ XMFLOAT3(+1.0f, -1.0f, -1.0f), (const float*)&Colors::Green   },
-		{ XMFLOAT3(-1.0f, -1.0f, +1.0f), (const float*)&Colors::Blue    },
-		{ XMFLOAT3(-1.0f, +1.0f, +1.0f), (const float*)&Colors::Yellow  },
-		{ XMFLOAT3(+1.0f, +1.0f, +1.0f), (const float*)&Colors::Cyan    },
-		{ XMFLOAT3(+1.0f, -1.0f, +1.0f), (const float*)&Colors::Magenta }
-    };
+	Vertex vertices[] =
+	{
+	{ XMFLOAT3(-1.0f, -1.0f, -1.0f), (const float*)&Colors::White   },
+	{ XMFLOAT3(-1.0f, +1.0f, -1.0f), (const float*)&Colors::Black   },
+	{ XMFLOAT3(+1.0f, +1.0f, -1.0f), (const float*)&Colors::Red     },
+	{ XMFLOAT3(+1.0f, -1.0f, -1.0f), (const float*)&Colors::Green   },
+	{ XMFLOAT3(-1.0f, -1.0f, +1.0f), (const float*)&Colors::Blue    },
+	{ XMFLOAT3(-1.0f, +1.0f, +1.0f), (const float*)&Colors::Yellow  },
+	{ XMFLOAT3(+1.0f, +1.0f, +1.0f), (const float*)&Colors::Cyan    },
+	{ XMFLOAT3(+1.0f, -1.0f, +1.0f), (const float*)&Colors::Magenta }
+	};
 
     D3D11_BUFFER_DESC vbd;
     vbd.Usage = D3D11_USAGE_IMMUTABLE;
@@ -270,6 +292,78 @@ void BoxApp::BuildGeometryBuffers()
 		// bottom face
 		4, 0, 3, 
 		4, 3, 7
+	};
+
+	D3D11_BUFFER_DESC ibd;
+    ibd.Usage = D3D11_USAGE_IMMUTABLE;
+    ibd.ByteWidth = sizeof(UINT) * 36;
+    ibd.BindFlags = D3D11_BIND_INDEX_BUFFER;
+    ibd.CPUAccessFlags = 0;
+    ibd.MiscFlags = 0;
+	ibd.StructureByteStride = 0;
+    D3D11_SUBRESOURCE_DATA iinitData;
+    iinitData.pSysMem = indices;
+    HR(md3dDevice->CreateBuffer(&ibd, &iinitData, &mBoxIB));
+	
+	// test
+	char szBuf[1024] = {0};
+	XMVECTOR pos = XMVectorSet(-20, 35, -50, 1.0f);
+	XMVECTOR target = XMVectorSet(10, 0, 30, 1.0f);/*XMVectorZero();*/
+	XMVECTOR up = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
+	XMMATRIX V = XMMatrixLookAtLH(pos, target, up);
+	for (int i = 0; i < 4; ++i)
+	{
+		sprintf(szBuf, "%f\t%f\t%f\t%f\n", XMVectorGetX(V.r[i]), XMVectorGetY(V.r[i]), XMVectorGetZ(V.r[i]), XMVectorGetW(V.r[i]));
+		OutputDebugStringA(szBuf);
+	}
+
+	float fN = 1.0f;
+	float fF = 100.0f;
+	// 45бу
+	XMMATRIX P = XMMatrixPerspectiveFovLH(/*45бу = */0.25f * MathHelper::Pi,
+		/*AspectRatio()*/4.0/3.0, 1.0f, 1000.0f);
+	for (int i = 0; i < 4; ++i)
+	{
+		sprintf(szBuf, "%f\t%f\t%f\t%f\n", XMVectorGetX(P.r[i]), XMVectorGetY(P.r[i]), XMVectorGetZ(P.r[i]), XMVectorGetW(P.r[i]));
+		OutputDebugStringA(szBuf);
+	}
+}
+
+void BoxApp::BuildPyramidGeometryBuffers()
+{
+	// Create pyramid
+	Vertex vertices[] =
+	{
+		{ XMFLOAT3(+0.0f, +1.0f, +0.0f), (const float*)&Colors::Blue    },
+		{ XMFLOAT3(+1.0f, +0.0f, +1.0f), (const float*)&Colors::White   },
+		{ XMFLOAT3(+1.0f, +0.0f, -1.0f), (const float*)&Colors::Black   },
+		{ XMFLOAT3(-1.0f, +0.0f, -1.0f), (const float*)&Colors::Red     },
+		{ XMFLOAT3(-1.0f, +0.0f, +1.0f), (const float*)&Colors::Green   },
+	};
+
+    D3D11_BUFFER_DESC vbd;
+    vbd.Usage = D3D11_USAGE_IMMUTABLE;
+    vbd.ByteWidth = sizeof(Vertex) * 8;
+    vbd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
+    vbd.CPUAccessFlags = 0;
+    vbd.MiscFlags = 0;
+	vbd.StructureByteStride = 0;
+    D3D11_SUBRESOURCE_DATA vinitData;
+    vinitData.pSysMem = vertices;
+    HR(md3dDevice->CreateBuffer(&vbd, &vinitData, &mBoxVB));
+
+
+	// pyramid indices
+	UINT indices[] = {
+		0, 1, 2,
+		0, 2, 3,
+		0, 3, 4,
+		0, 4, 1,
+
+		// bottom
+		1, 4, 3,
+		1, 3, 2,
+
 	};
 
 	D3D11_BUFFER_DESC ibd;
