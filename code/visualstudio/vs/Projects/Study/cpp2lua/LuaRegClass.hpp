@@ -121,6 +121,17 @@ inline int ProxyMethodCall(lua_State *L) {
   return method->Call(L);
 }
 
+template<typename T>
+inline int ProxyConstructorCall(lua_State *L) {
+	T* obj = (T*)malloc(sizeof(T));
+	typedef UserData<T*> UserData_t;
+	void* memory = lua_newuserdata(L, sizeof(UserData_t));
+	new(memory) UserData_t(obj, true);
+	luaL_getmetatable(L, ClassInfo<T>::Name());
+	lua_setmetatable(L, -2);
+	return 1;
+}
+
 #define DEF_REGISTER_METHOD(N) \
 template<TYPENAME_LIST_##N> \
 inline void RegisterMethodToLua(lua_State* L, const char* funcName, \
@@ -133,6 +144,15 @@ inline void RegisterMethodToLua(lua_State* L, const char* funcName, \
   lua_pushcclosure(L, &ProxyMethodCall<T>, 1); \
   lua_rawset(L, -3); \
   lua_pop(L, 1); \
+}
+
+template<typename T>
+inline void RegisterConstructorToLua(lua_State* L, const char* funcName)
+{
+	luaL_getmetatable(L, ClassInfo<T>::Name());
+	lua_pushstring(L, "__call");
+	lua_pushcclosure(L, &ProxyConstructorCall<T>, 0);
+	lua_rawset(L, -3);
 }
 
 DEF_METHOD_DATA(0)
@@ -236,7 +256,8 @@ DECL_NAMESPACE_LUAREG_END
 #define DEF_LUA_CLASS_BEGIN(Class) \
 static void RegisterToLua(const char* className) { \
   typedef Class T; \
-  g_luaReg->RegisterClass<T>(className);
+  g_luaReg->RegisterClass<T>(className); \
+  g_luaReg->RegisterConstructor<T>(className);
 
 #define DEF_METHOD(Func) \
   g_luaReg->RegisterMethod(#Func, &T::Func);

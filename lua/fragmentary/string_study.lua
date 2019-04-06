@@ -388,6 +388,12 @@ end
 -- print(os.date("%p", os.time()))
 -- print(os.date("%H:%M", os.time()))
 
+-- add a postfix 2017/12/23
+local szTest = "PaperSprite'/Game/UI/Icon/Skill/GS/Frames/gs_icon0000.gs_icon0000'";
+local szPath, szEnd = string.match(szTest, "PaperSprite'(.+)%.(.+)'");
+print("szPath = ", szPath, szEnd)
+print("new = ", string.format("PaperSprite'%s_D.%s_D'", szPath, szEnd))
+
 -- 2015/08/26 不定长参数
 function addMessageTipsEx(...)
 	local massage = string.format("%s:%d", ...)
@@ -493,3 +499,31 @@ end
 * 用的是字符串指针，16个字符串指针，而并不是说字符串长度为16。
 * 代码：char* ppString[nStringCount] = {0};
 ]]
+
+------------------------------------------------------------
+-- 2017-09-02 13:44:51
+-- stackoverflow
+
+a = "stackoverflow.com/questions/ask"
+
+-- print(string.match(a,"(.*/)"))   -- stackoverflow.com/questions/
+-- print(string.match(a,"((.*/).*)")) -- stackoverflow.com/questions/
+
+
+------------------------------------------------------------
+ -- 2017-09-13 12:12:25
+ -- stackoverflow match
+ local function splitString(text)
+    pattern = "<(%a+)>%s*([^>]+)"
+    i,j = string.match(text, pattern)
+    return i,j
+end
+
+-- print(splitString("<c> block"))           -- c  block
+-- print(splitString("<category>material"))  -- category   material
+-- print(splitString("decorative"))          -- nil    nil
+
+------------------------------------------------------------
+-- string array
+local szString = "abcdefghijklmnopqrstuvwxyz";
+print(szString[2])

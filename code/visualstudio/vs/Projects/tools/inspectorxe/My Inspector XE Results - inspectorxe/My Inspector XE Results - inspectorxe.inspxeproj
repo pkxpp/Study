@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <connectionOption></connectionOption>
+ <rdmgr>
+  <timestamp type="u64_t">1492432270</timestamp>
+  <hostname>peikai.rdev.kingsoft.net</hostname>
+  <os>windows</os>
+  <product>Intel® Inspector XE 2015</product>
+  <buildNumber type="s32_t">366509</buildNumber>
+  <logicalCPUCount type="s32_t">8</logicalCPUCount>
+  <CPUFrequency type="s64_t">4000000000</CPUFrequency>
+ </rdmgr>
+ <contextValues type="bag"/>
+ <All_Configurations-All_Platforms>
+  <analysis_type_settings>
+   <selected_analysis_type_path>D:\Program Files (x86)\Intel\Inspector XE 2015\config\analysis_type\mi2.cfg</selected_analysis_type_path>
+  </analysis_type_settings>
+  <target_settings>
+   <result_pattern>
+    <localhost>r@@@{at}</localhost>
+   </result_pattern>
+   <workloads>
+    <localhost>
+     <launch type="pointer" type_id="dasID_cctrl2::ApplicationWorkload" ptr_type="dasID_cctrl2::IWorkload">
+      <workload>
+       <targetName>launch</targetName>
+       <enable_app_output_log type="bool">false</enable_app_output_log>
+       <project_id>{C40F7729-D977-4B08-95CE-8960FF889EF6}</project_id>
+       <launch_app.app_to_launch>E:\data\weiyun\我的学习\visualstudio\vs\Projects\tools\Debug\inspectorxe.exe</launch_app.app_to_launch>
+       <launch_app.working_folder>E:\data\weiyun\我的学习\visualstudio\vs\Projects\tools\inspectorxe</launch_app.working_folder>
+       <launch_app.environment_prepend>PATH=D:\Program Files (x86)\Intel\Composer XE 2015\redist\ia32\compiler;</launch_app.environment_prepend>
+       <use_app_dir_as_work_dir type="bool">false</use_app_dir_as_work_dir>
+       <result_directory.path>E:\data\weiyun\我的学习\visualstudio\vs\Projects\tools\inspectorxe\My Inspector XE Results - inspectorxe\r@@@{at}</result_directory.path>
+       <search_directories>
+        <item>
+         <value>sym=E:\data\weiyun\我的学习\visualstudio\vs\Projects\tools\Debug</value>
+        </item>
+        <item>
+         <value>sym=E:\data\weiyun\我的学习\visualstudio\vs\Projects\tools</value>
+        </item>
+        <item>
+         <value>sym=srv*e:\work\nw\svn\trunk\code\product\pdb</value>
+        </item>
+        <item>
+         <value>sym=E:/data\weiyun\我的学习\visualstudio\vs\Projects\tools\inspectorxe\srv*西山居</value>
+        </item>
+       </search_directories>
+       <exclude_modules type="bag"/>
+       <context>
+        <contextValue>
+         <id>appdebug</id>
+         <value>off</value>
+        </contextValue>
+        <contextValue>
+         <id>custom_debugger</id>
+         <value></value>
+        </contextValue>
+        <contextValue>
+         <id>debug_this_problem</id>
+         <value></value>
+        </contextValue>
+        <contextValue>
+         <id>debug_using</id>
+         <value>gdb</value>
+        </contextValue>
+        <contextValue>
+         <id>heartbeat</id>
+         <value type="bool">true</value>
+        </contextValue>
+        <contextValue>
+         <id>modules_switch</id>
+         <value>knob.modules_switch.include</value>
+        </contextValue>
+        <contextValue>
+         <id>mrte_mode</id>
+         <value>auto</value>
+        </contextValue>
+        <contextValue>
+         <id>process_for_analysis</id>
+         <value></value>
+        </contextValue>
+        <contextValue>
+         <id>suppressions</id>
+         <value>delete</value>
+        </contextValue>
+        <contextValue>
+         <id>targetType</id>
+         <value>launch</value>
+        </contextValue>
+       </context>
+      </workload>
+     </launch>
+    </localhost>
+   </workloads>
+  </target_settings>
+ </All_Configurations-All_Platforms>
+ <debugger_settings>
+  <debugger_mode>off</debugger_mode>
+  <at_cliname>mi2</at_cliname>
+ </debugger_settings>
+</root>

@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jau_sql", "jau_sql.vcproj", "{1C86D8ED-D010-4BB7-97E7-89A49D3D95A1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jau_db", "jau_db.vcproj", "{043002E2-3ED9-47E5-8652-8922372A8036}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jau-sql-test", "..\jau-sql-test\jau-sql-test.vcproj", "{08DAB690-56A4-471D-ADDF-60FA2B2D8986}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C86D8ED-D010-4BB7-97E7-89A49D3D95A1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1C86D8ED-D010-4BB7-97E7-89A49D3D95A1}.Debug|Win32.Build.0 = Debug|Win32
+		{1C86D8ED-D010-4BB7-97E7-89A49D3D95A1}.Release|Win32.ActiveCfg = Release|Win32
+		{1C86D8ED-D010-4BB7-97E7-89A49D3D95A1}.Release|Win32.Build.0 = Release|Win32
+		{043002E2-3ED9-47E5-8652-8922372A8036}.Debug|Win32.ActiveCfg = Debug|Win32
+		{043002E2-3ED9-47E5-8652-8922372A8036}.Release|Win32.ActiveCfg = Release|Win32
+		{08DAB690-56A4-471D-ADDF-60FA2B2D8986}.Debug|Win32.ActiveCfg = Debug|Win32
+		{08DAB690-56A4-471D-ADDF-60FA2B2D8986}.Debug|Win32.Build.0 = Debug|Win32
+		{08DAB690-56A4-471D-ADDF-60FA2B2D8986}.Release|Win32.ActiveCfg = Release|Win32
+		{08DAB690-56A4-471D-ADDF-60FA2B2D8986}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

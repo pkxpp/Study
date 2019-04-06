@@ -414,3 +414,29 @@ end
 
 
 -- print(string.format("%s-%s", 1, 2))
+
+------------------------------------------------------------
+-- stackoverflow 2017-09-09 09:36:23
+-- function changemenu(menu)
+--     currentmenu = menu
+-- end
+
+-- connectionmenu = {"Connection Menu Title"};
+-- mainmenu = {"Main Menu Title"}
+-- currentmenu = connectionmenu
+
+-- connectionmenu["Connection Menu"] = changemenu(mainmenu)
+-- mainmenu["Main Menu"] = "test value"
+
+-- -- use
+-- return currentmenu["Connection Menu"]();
+
+
+------------------------------------------------------------
+-- double to int 2017-09-19 14:55:00
+local temp = 10/3
+local f2int = math.floor(temp)
+print(f2int)
+local d = 1.0680473940293e+088
+print("d = ", d)
+print(math.floor(d))

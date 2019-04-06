@@ -1,0 +1,67 @@
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec
+Current task:
+--------------------------------------------------------
+Get all chinese string from directory:
+	'E:\我的文档\work\TransWork\chinese_setting'
+The string will be inserted into translate database!
+--------------------------------------------------------
+
+Info: File E:\我的文档\work\TransWork\chinese_setting\ReadMe.txt is ignored!
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprConvter\Text
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprConvter\TextCmp
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.aps
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.rc
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.vcproj
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.vcproj.ks13208-PC.Administrator.user
+Info: %d × %d update success!
+
+--------------------------------------------------------
+Total process file number: 29
+Total 15 records are inserted to database!
+Total 4 records are repeated when insert them to database!
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec
+Current task:
+--------------------------------------------------------
+traverse the data in database to do 'export'
+result will write to:
+chinese: ch.txt
+translate: trans.txt
+--------------------------------------------------------
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec
+Current task:
+--------------------------------------------------------
+Get all chinese string from directory:
+	'E:\我的文档\work\TransWork\chinese_setting'
+The string will be inserted into translate database!
+--------------------------------------------------------
+
+
+--------------------------------------------------------
+Total process file number: 6
+Total 15 records are inserted to database!
+Total 6 records are repeated when insert them to database!
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 47 sec
+jau_db: BDB3028 dictionary_tmp.db: unable to flush: No such file or directory!

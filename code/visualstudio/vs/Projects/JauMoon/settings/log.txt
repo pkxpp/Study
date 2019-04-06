@@ -1,0 +1,21 @@
+Error: Can't connect to the mysql server at 10.20.96.203 on port 3306 !
+Error: Can't init 'database operation' module!
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 1 sec
+Error: Unknown info localhost in db_mysql.conf!
+Error: Database configure file lack of enough info about database!
+Error: Can't init 'database operation' module!
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec
+Error: Can't create table dictionary_tmp!
+Error: Can't init 'database operation' module!
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec
+Error: Can't create table dictionary_tmp!
+Error: Can't init 'database operation' module!
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec

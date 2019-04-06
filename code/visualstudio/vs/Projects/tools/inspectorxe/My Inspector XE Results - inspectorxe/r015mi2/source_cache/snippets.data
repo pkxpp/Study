@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippets>
+  <file name="e:\data\weiyun\我的学习\visualstudio\vs\projects\tools\inspectorxe\main.cpp" md5="e346ec341b1ba9fe4b2a410666c2a82a">
+    <snippet line="30">
+      <line line="27"/>
+      <line line="28"/>
+      <line line="29">        str[i] = (char *) malloc (16*sizeof(char));</line>
+      <line line="30"/>
+      <line line="31"/>
+    </snippet>
+  </file>
+</snippets>

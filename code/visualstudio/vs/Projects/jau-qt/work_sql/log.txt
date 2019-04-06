@@ -1,0 +1,191 @@
+Error: Can't create table dictionary_tmp!
+Error: Can't init 'database operation' module!
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec
+Current task:
+--------------------------------------------------------
+Get all chinese string from directory:
+	'E:\我的文档\work\jau\work_sql\Dir'
+The string will be inserted into translate database!
+--------------------------------------------------------
+
+
+--------------------------------------------------------
+Total process file number: 3
+Total 1 records are inserted to database!
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 1 sec
+Current task:
+--------------------------------------------------------
+Get all chinese string from directory:
+	'E:\我的文档\work\TransWork\chinese_setting'
+The string will be inserted into translate database!
+--------------------------------------------------------
+
+
+--------------------------------------------------------
+Total process file number: 3
+Total 1 records are repeated when insert them to database!
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec
+Current task:
+--------------------------------------------------------
+Translate all chinese string from directory:
+	'E:\我的文档\work\TransWork\chinese_setting'
+The results will write into directory:
+	'E:\我的文档\work\TransWork\trans_setting'
+--------------------------------------------------------
+
+Error: the string of [请输入合理的参数！\n] havn't translated!
+
+--------------------------------------------------------
+Total process file number: 3
+Total 1 chinese strings aren't translated!
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec
+Current task:
+--------------------------------------------------------
+Translate all chinese string from directory:
+	'E:\我的文档\work\TransWork\chinese_setting'
+The results will write into directory:
+	'E:\我的文档\work\TransWork\trans_setting'
+--------------------------------------------------------
+
+Error: the string of [请输入合理的参数！\n] havn't translated!
+
+--------------------------------------------------------
+Total process file number: 3
+Total 1 chinese strings aren't translated!
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec
+Current task:
+--------------------------------------------------------
+Translate all chinese string from directory:
+	'E:\我的文档\work\TransWork\chinese_setting'
+The results will write into directory:
+	'E:\我的文档\work\TransWork\trans_setting'
+--------------------------------------------------------
+
+
+--------------------------------------------------------
+Total process file number: 3
+Total 1 chinese strings are translated!
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec
+Current task:
+--------------------------------------------------------
+Translate all chinese string from directory:
+	'E:\我的文档\work\TransWork\chinese_setting'
+The results will write into directory:
+	'E:\我的文档\work\TransWork\trans_setting'
+--------------------------------------------------------
+
+
+--------------------------------------------------------
+Total process file number: 3
+Total 1 chinese strings are translated!
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 1 sec
+Current task:
+--------------------------------------------------------
+Get all chinese string from directory:
+	'E:\我的文档\work\TransWork\chinese_setting'
+The string will be inserted into translate database!
+--------------------------------------------------------
+
+Info: File E:\我的文档\work\TransWork\chinese_setting\ReadMe.txt is ignored!
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.aps
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.rc
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.vcproj
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.vcproj.ks13208-PC.Administrator.user
+
+--------------------------------------------------------
+Total process file number: 26
+Total 14 records are inserted to database!
+Total 5 records are repeated when insert them to database!
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 2 sec
+Current task:
+--------------------------------------------------------
+Get all chinese string from directory:
+	'E:\我的文档\work\TransWork\chinese_setting'
+The string will be inserted into translate database!
+--------------------------------------------------------
+
+Info: File E:\我的文档\work\TransWork\chinese_setting\ReadMe.txt is ignored!
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.aps
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.rc
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.vcproj
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.vcproj.ks13208-PC.Administrator.user
+
+--------------------------------------------------------
+Total process file number: 29
+Total 20 records are repeated when insert them to database!
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec
+Current task:
+--------------------------------------------------------
+Get all chinese string from directory:
+	'E:\我的文档\work\TransWork\chinese_setting'
+The string will be inserted into translate database!
+--------------------------------------------------------
+
+Info: File E:\我的文档\work\TransWork\chinese_setting\ReadMe.txt is ignored!
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.aps
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.rc
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.vcproj
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.vcproj.ks13208-PC.Administrator.user
+
+--------------------------------------------------------
+Total process file number: 29
+Total 20 records are repeated when insert them to database!
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec
+Current task:
+--------------------------------------------------------
+Get all chinese string from directory:
+	'E:\我的文档\work\TransWork\chinese_setting'
+The string will be inserted into translate database!
+--------------------------------------------------------
+
+Info: File E:\我的文档\work\TransWork\chinese_setting\ReadMe.txt is ignored!
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.aps
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.rc
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.vcproj
+Error: Unknown file type at file E:\我的文档\work\TransWork\chinese_setting\SprReader.vcproj.ks13208-PC.Administrator.user
+
+--------------------------------------------------------
+Total process file number: 29
+Total 15 records are inserted to database!
+Total 4 records are repeated when insert them to database!
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec
+Current task:
+--------------------------------------------------------
+Chinese string file:
+	'str_chinese.txt'
+Translate string file:
+	'str_big5.txt'
+Update type: new
+--------------------------------------------------------
+
+
+Result: 
+Total 15 records are updated
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec
+
+--------------------------------------------------------
+Task end, total use time: 0 min, 0 sec

@@ -22,6 +22,7 @@ using namespace std;
 // 2. Binary Tree
 // 3. Binary Tree
 // 4. Array Random https://stackoverflow.com/questions/46029259/how-to-generate-combinations-from-arrays
+// 5. 
 //////////////////////////////////////////////////////////////////////////
 // seg fault
 
@@ -166,6 +167,56 @@ void TestCreateArrange(){
 		cout << endl;
 	}
 }
+
+//////////////////////////////////////////////////////////////////////////
+// 5.
+//struct Readonly
+//{
+//	typedef void read;
+//};
+//
+//struct ReadWrite
+//{
+//	typedef void read;
+//	typedef void write;
+//};
+//
+//template <typename AccessLevel>
+//class Wrapper
+//{
+//public:
+//	Wrapper(double value)
+//		: _value(value)
+//	{}
+//
+//	template <typename A = AccessLevel, typename = typename A::read>
+//	const double& operator*() const
+//	{
+//		return _value;
+//	}
+//
+//	template <typename A = AccessLevel, typename = typename A::write>
+//	double& operator*()
+//	{
+//		return _value;
+//	}
+//
+//	template <typename A = AccessLevel, typename = typename A::read>
+//	const double& get() const
+//	{
+//		return _value;
+//	}
+//
+//	template <typename A = AccessLevel, typename = typename A::write>
+//	double& get()
+//	{
+//		return _value;
+//	}
+//
+//protected:
+//	double _value;
+//};
+
 //////////////////////////////////////////////////////////////////////////
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -176,7 +227,18 @@ int _tmain(int argc, _TCHAR* argv[])
 	//TestBinaryTree();
 
 	// 4. Array Random
-	TestCreateArrange();
+	//TestCreateArrange();
+
+	// 5.
+	//Wrapper<ReadWrite> wr(88);
+	//Wrapper<Readonly> const_wr(99);
+
+	//// uncomment this to get error C1001
+	//std::cout << "*wr = " << *wr << std::endl;
+	//std::cout << "*const_wr = " << *const_wr << std::endl;
+
+	//std::cout << "wr.get() = " << wr.get() << std::endl;
+	//std::cout << "const_wr.get() = " << const_wr.get() << std::endl;
 
 	getchar();
 	return 0;

@@ -26,4 +26,14 @@ function CalcFastReading( nWords, nTimes, nSeconds )
 	local nRate = (nWords * nTimes)/nSeconds * 60;
 	print("阅读速率为：", nRate)
 end
-CalcFastReading(981, 2, 131.881);
+-- CalcFastReading(981, 2, 131.881);
+
+
+--@function: 一个整型分高低16位存放两个整型数值 
+--@return:
+function MergeTwo16Ints( nHight, nLow )
+	local nValue = nHight * 2 ^ 16 + nLow;
+	print("result: ", nValue);
+end
+MergeTwo16Ints(1026, 10);
+MergeTwo16Ints(1027, 10);

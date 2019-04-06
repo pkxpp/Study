@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CTP_Study", "CTP_Study\CTP_Study.vcxproj", "{40085E40-29BC-4EE2-BD33-008C21041AF5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CTP_Test", "CTP_Test\CTP_Test.vcxproj", "{3C3A80B0-4661-4EBE-9990-EB683367909C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Socket_Study", "Socket_Study\Socket_Study.vcxproj", "{44B04D3D-91F3-41AC-B096-41CD75DDA33B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SocketS", "SocketS\SocketS.vcxproj", "{793A77CD-58FA-43EA-8D84-D57036F5199E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SocketClient", "SocketClient\SocketClient.vcxproj", "{F1560354-018F-4644-9AD8-CB88DE5CE94E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40085E40-29BC-4EE2-BD33-008C21041AF5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{40085E40-29BC-4EE2-BD33-008C21041AF5}.Debug|Win32.Build.0 = Debug|Win32
+		{40085E40-29BC-4EE2-BD33-008C21041AF5}.Release|Win32.ActiveCfg = Release|Win32
+		{40085E40-29BC-4EE2-BD33-008C21041AF5}.Release|Win32.Build.0 = Release|Win32
+		{3C3A80B0-4661-4EBE-9990-EB683367909C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3C3A80B0-4661-4EBE-9990-EB683367909C}.Debug|Win32.Build.0 = Debug|Win32
+		{3C3A80B0-4661-4EBE-9990-EB683367909C}.Release|Win32.ActiveCfg = Release|Win32
+		{3C3A80B0-4661-4EBE-9990-EB683367909C}.Release|Win32.Build.0 = Release|Win32
+		{44B04D3D-91F3-41AC-B096-41CD75DDA33B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{44B04D3D-91F3-41AC-B096-41CD75DDA33B}.Debug|Win32.Build.0 = Debug|Win32
+		{44B04D3D-91F3-41AC-B096-41CD75DDA33B}.Release|Win32.ActiveCfg = Release|Win32
+		{44B04D3D-91F3-41AC-B096-41CD75DDA33B}.Release|Win32.Build.0 = Release|Win32
+		{793A77CD-58FA-43EA-8D84-D57036F5199E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{793A77CD-58FA-43EA-8D84-D57036F5199E}.Debug|Win32.Build.0 = Debug|Win32
+		{793A77CD-58FA-43EA-8D84-D57036F5199E}.Release|Win32.ActiveCfg = Release|Win32
+		{793A77CD-58FA-43EA-8D84-D57036F5199E}.Release|Win32.Build.0 = Release|Win32
+		{F1560354-018F-4644-9AD8-CB88DE5CE94E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F1560354-018F-4644-9AD8-CB88DE5CE94E}.Debug|Win32.Build.0 = Debug|Win32
+		{F1560354-018F-4644-9AD8-CB88DE5CE94E}.Release|Win32.ActiveCfg = Release|Win32
+		{F1560354-018F-4644-9AD8-CB88DE5CE94E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

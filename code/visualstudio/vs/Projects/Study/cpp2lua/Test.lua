@@ -61,7 +61,37 @@
 -- print(subTest:GetSubTestData())
 ------------------------------------------------------------
 -- *virtual function
-print(111, test.VirtualFunc)
-print(test:VirtualFunc())
-print(222, base)
-print(base:VirtualFunc())
+-- print(111, test.VirtualFunc)
+-- print(test:VirtualFunc())
+-- print(222, base)
+-- print(base:VirtualFunc())
+
+------------------------------------------------------------
+-- *new to malloc*
+-- print("000", base2)
+-- local nBase2Data = base2:GetData()
+-- print(111, nBase2Data)
+
+------------------------------------------------------------
+-- gc study
+-- collectgarbage("setpause", 100)
+-- collectgarbage("setstepmul", 200)
+-- local a = 13
+local a = {}
+-- function test()
+-- 	local b = {};
+-- 	return b;
+-- end
+-- test();
+-- print(collectgarbage("collect"))
+-- mytable = {"apple", "orange", "banana"}
+
+-- print(collectgarbage("count"))
+
+-- mytable = nil
+
+-- print(collectgarbage("count"))
+
+-- print(collectgarbage("collect"))
+
+-- print(collectgarbage("count"))

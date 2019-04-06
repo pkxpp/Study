@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\TriangleDemo">
+      <UniqueIdentifier>{4c3feda0-6c77-40c8-bbfc-f6ccc0382a85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TextureDemo">
+      <UniqueIdentifier>{fa36aead-16ea-473e-9014-371d3e3ca89d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameSpriteDemo">
+      <UniqueIdentifier>{bce57fec-c6e8-4933-b9fc-fad8f0cf7c8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\D3DTextDemo">
+      <UniqueIdentifier>{8bd32a28-b07c-46db-85b0-2cba4dbd5502}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CubeDemo">
+      <UniqueIdentifier>{f5a04e52-5ada-4cd2-9f8a-535d94904e72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ColorInversionDemo">
+      <UniqueIdentifier>{2b84b953-d99f-423d-b210-6cb60d21678b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ColorShiftDemo">
+      <UniqueIdentifier>{92293660-4591-4038-afac-52ea5242ca5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MultiTextureDemo">
+      <UniqueIdentifier>{304d39ef-ec93-4563-9270-276528d2b161}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dx11DemoBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BlankDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TriangleDemo\TriangleDemo.cpp">
+      <Filter>Source Files\TriangleDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureDemo\TextureDemo.cpp">
+      <Filter>Source Files\TextureDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSpriteDemo\GameSprite.cpp">
+      <Filter>Source Files\GameSpriteDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSpriteDemo\GameSpriteDemo.cpp">
+      <Filter>Source Files\GameSpriteDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="D3DTextDemo\D3DTextDemo.cpp">
+      <Filter>Source Files\D3DTextDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="CubeDemo\CubeDemo.cpp">
+      <Filter>Source Files\CubeDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorInversion\ColorInversionDemo.cpp">
+      <Filter>Source Files\ColorInversionDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorShiftDemo\ColorShiftDemo.cpp">
+      <Filter>Source Files\ColorShiftDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiTextureDemo\MultiTextureDemo.cpp">
+      <Filter>Source Files\MultiTextureDemo</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Dx11DemoBase.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BlankDemo.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TriangleDemo\TriangleDemo.h">
+      <Filter>Source Files\TriangleDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureDemo\TextureDemo.h">
+      <Filter>Source Files\TextureDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSpriteDemo\GameSprite.h">
+      <Filter>Source Files\GameSpriteDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSpriteDemo\GameSpriteDemo.h">
+      <Filter>Source Files\GameSpriteDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="D3DTextDemo\D3DTextDemo.h">
+      <Filter>Source Files\D3DTextDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="CubeDemo\CubeDemo.h">
+      <Filter>Source Files\CubeDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorInversion\ColorInversionDemo.h">
+      <Filter>Source Files\ColorInversionDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorShiftDemo\ColorShiftDemo.h">
+      <Filter>Source Files\ColorShiftDemo</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiTextureDemo\MultiTextureDemo.h">
+      <Filter>Source Files\MultiTextureDemo</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

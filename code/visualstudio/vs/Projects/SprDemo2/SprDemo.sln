@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SprReader", "SprReader\SprReader.vcproj", "{5A55A231-88FB-4B16-821E-B76BE46A7217}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SprReader-1", "SprReader-1\SprReader-1.vdproj", "{55965A4F-A878-4393-AB5E-E5AACD06067C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A55A231-88FB-4B16-821E-B76BE46A7217}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5A55A231-88FB-4B16-821E-B76BE46A7217}.Debug|Win32.Build.0 = Debug|Win32
+		{5A55A231-88FB-4B16-821E-B76BE46A7217}.Release|Win32.ActiveCfg = Release|Win32
+		{5A55A231-88FB-4B16-821E-B76BE46A7217}.Release|Win32.Build.0 = Release|Win32
+		{55965A4F-A878-4393-AB5E-E5AACD06067C}.Debug|Win32.ActiveCfg = Debug
+		{55965A4F-A878-4393-AB5E-E5AACD06067C}.Release|Win32.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

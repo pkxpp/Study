@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fbx_study", "fbx_study\fbx_study.vcxproj", "{F33A67CF-096F-4E3E-B8A3-71C77C412850}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FbxDLL", "FbxDll\KFbxDll.vcxproj", "{D2519C11-CDC6-47DC-BBAA-D36619357185}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F33A67CF-096F-4E3E-B8A3-71C77C412850}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F33A67CF-096F-4E3E-B8A3-71C77C412850}.Debug|Win32.Build.0 = Debug|Win32
+		{F33A67CF-096F-4E3E-B8A3-71C77C412850}.Debug|x64.ActiveCfg = Debug|Win32
+		{F33A67CF-096F-4E3E-B8A3-71C77C412850}.Release|Win32.ActiveCfg = Release|Win32
+		{F33A67CF-096F-4E3E-B8A3-71C77C412850}.Release|Win32.Build.0 = Release|Win32
+		{F33A67CF-096F-4E3E-B8A3-71C77C412850}.Release|x64.ActiveCfg = Release|Win32
+		{D2519C11-CDC6-47DC-BBAA-D36619357185}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D2519C11-CDC6-47DC-BBAA-D36619357185}.Debug|Win32.Build.0 = Debug|Win32
+		{D2519C11-CDC6-47DC-BBAA-D36619357185}.Debug|x64.ActiveCfg = Debug|x64
+		{D2519C11-CDC6-47DC-BBAA-D36619357185}.Debug|x64.Build.0 = Debug|x64
+		{D2519C11-CDC6-47DC-BBAA-D36619357185}.Release|Win32.ActiveCfg = Release|Win32
+		{D2519C11-CDC6-47DC-BBAA-D36619357185}.Release|Win32.Build.0 = Release|Win32
+		{D2519C11-CDC6-47DC-BBAA-D36619357185}.Release|x64.ActiveCfg = Release|x64
+		{D2519C11-CDC6-47DC-BBAA-D36619357185}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

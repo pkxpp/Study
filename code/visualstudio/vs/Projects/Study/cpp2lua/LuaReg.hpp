@@ -22,6 +22,11 @@ public:
     RegisterClassToLua<T>(L, className);
   }
 
+  template<typename T>
+  void RegisterConstructor(const char* funcName) {
+	  RegisterConstructorToLua<T>(L, funcName);
+  }
+
   template<typename F>
   void RegisterMethod(const char* funcName, F func) {
     RegisterMethodToLua(L, funcName, func);
