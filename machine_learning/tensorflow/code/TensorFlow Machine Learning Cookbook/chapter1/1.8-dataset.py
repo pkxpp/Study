@@ -10,8 +10,8 @@ sess = tf.Session()
 # print(len(iris.data))
 
 # print(len(iris.target))
-# print(iris.target[0])
-# print(set(iris.target))
+# print(iris.data[0]) #Sepal length, Sepal width, Petal length,Petal width
+# print(set(iris.target)) # I. setosa, I. virginica, I. versicolor
 
 
 # 2.
