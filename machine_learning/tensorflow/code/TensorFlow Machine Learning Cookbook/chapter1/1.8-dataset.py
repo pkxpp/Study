@@ -1,5 +1,6 @@
 import tensorflow as tf;
 import numpy as np;
+import requests
 
 # 创建一个计算图会话
 sess = tf.Session()
@@ -26,6 +27,24 @@ sess = tf.Session()
 # birth_data = [[float(x) for x in y.split(' ') if len(x)>=1] for y in birth_data[1:] if len(y)>=1]
 # print(len(birth_data))
 # print(len(birth_data[0]))
+def GetBirthData():
+	# 这个下载不了，网上找到下面这个
+	# birthdata_url = 'https://www.umass.edu/statdata/statdata/data/lowbwt.dat'
+	birthdata_url = 'https://github.com/nfmcclure/tensorflow_cookbook/raw/master/01_Introduction/07_Working_with_Data_Sources/birthweight_data/birthweight.dat'
+	birth_file = requests.get(birthdata_url)
+	# 源数据前面应该有5行是一些无用的，所以跳过去，但是换了这个链接是去掉的，所以不需要跳过
+	# birth_data = birth_file.text.split('\r\n')[5:]
+	birth_data = birth_file.text.split('\r\n')
+	print(birth_data[0])
+	# 源数据的每列之间是用空格分开的，但是这份新数据是\t分开的
+	birth_header = [x for x in birth_data[0].split('\t') if len(x)>=1]
+	#LOW     AGE     LWT     RACE    SMOKE(是否吸烟)   PTL     HT      UI      BWT(出生体重)
+	print(birth_header)
+	birth_data = [[float(x) for x in y.split('\t') if len(x)>=1] for y in birth_data[1:] if len(y)>= 1]
+	print(len(birth_data))
+	print(len(birth_data[0]))
+	print(np.array(birth_data).shape)
+GetBirthData()
 
 # 3.Housing Price Data
 # housing_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/housing/housing.data'
@@ -115,4 +134,4 @@ def GetShakespeareData():
 	shakespeare_text = shakespeare_text[7675:]
 	print(len(shakespeare_text))
 
-GetShakespeareData()
+# GetShakespeareData()
