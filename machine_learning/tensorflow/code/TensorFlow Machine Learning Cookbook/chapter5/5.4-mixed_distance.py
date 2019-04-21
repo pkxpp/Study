@@ -1,12 +1,8 @@
-# k-Nearest Neighbor
+# Mixed Distance Functions for  k-Nearest Neighbor
 #----------------------------------
 #
-# This function illustrates how to use
-# k-nearest neighbors in tensorflow
-#
-# We will use the 1970s Boston housing dataset
-# which is available through the UCI
-# ML data repository.
+# This function shows how to use different distance
+# metrics on different features for kNN.
 #
 # Data:
 #----------x-values-----------
@@ -25,6 +21,7 @@
 # LSTAT  : % lower status of pop
 #------------y-value-----------
 # MEDV   : Median Value of homes in $1,000's
+
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
@@ -60,6 +57,13 @@ x_vals = np.array([[x for i,x in enumerate(y) if housing_header[i] in cols_used]
 ## Min-Max Scaling
 x_vals = (x_vals - x_vals.min(0)) / x_vals.ptp(0)
 
+weight_diagonal = x_vals.std(0)
+# print(len(x_vals))
+print(weight_diagonal)
+# 生成对角矩阵，其他值用0填充
+weight_matrix = tf.cast(tf.diag(weight_diagonal), dtype=tf.float32)
+
+
 # Split the data into train and test sets
 train_indices = np.random.choice(len(x_vals), round(len(x_vals)*0.8), replace=False)
 test_indices = np.array(list(set(range(len(x_vals))) - set(train_indices)))
@@ -79,35 +83,14 @@ y_target_train = tf.placeholder(shape=[None, 1], dtype=tf.float32)
 y_target_test = tf.placeholder(shape=[None, 1], dtype=tf.float32)
 
 # Declare distance metric
-# L1
-# 1.这里的x_data_train 减去 扩维的x_data_test，是为了让x_data_train的每一分数据都能减去x_data_test的每一分数据。这样才能计算，任意一个x_data_test的数据到x_data_train任意一个数据的距离
-# 2.降维：把每一分数据相减后的和作为两份数据之前的距离，求的距离就是cols_used列的和
-# 3.所以，最后得到的distance是一个shape=[batch_size, batch_size]的数据，表示的是x_data_test的每一个数据到x_data_train每一个数据的距离
-distance = tf.reduce_sum(tf.abs(tf.subtract(x_data_train, tf.expand_dims(x_data_test,1))), reduction_indices=2)
-
-# L2
-#distance = tf.sqrt(tf.reduce_sum(tf.square(tf.sub(x_data_train, tf.expand_dims(x_data_test,1))), reduction_indices=1))
-# test----------------------
-def test_data():
-	test_data1 = x_vals_train[0: 3] # shape=[3, 10]
-	test_data2 = x_vals_test[0: 3] # shape=[3, 10]
-	print(test_data1)
-	print(test_data2)
-
-	# test0 = shape = (3, 3, 10)
-	test0 = tf.subtract(test_data1, tf.expand_dims(test_data2,1))
-	print(test0)
-	test00 = sess.run(test0)
-	print(test00)
-
-	test1 = sess.run(distance, feed_dict={x_data_train: test_data1, x_data_test: test_data2})
-	# print(test1)
-	# shape = (3, 3)
-	print(tf.constant(test1))
-
-# test_data()
-# test---------------------- end
-
+subtraction_term = tf.subtract(x_data_train, tf.expand_dims(x_data_test, 1))
+# 应该也是为了矩阵的乘法，后面部分等于把weight_matrix复制batch_size份，之前先扩维，才是把整个矩阵copy
+first_product = tf.matmul(subtraction_term, tf.tile(tf.expand_dims(weight_matrix, 0), [batch_size, 1, 1]))
+# subtraction_term.shape = (batch_size, batch_size, 10)
+# after tanspose with perm, shape = (batch_size, 10, batch_size)
+# 只是为了让你们的内容有x * A * transpose(x)，所有扩维的部分不需要转置，只是为了方便矩阵计算
+second_product = tf.matmul(first_product, tf.transpose(subtraction_term, perm=[0, 2, 1]))
+distance = tf.sqrt(tf.matrix_diag_part(second_product))
 
 top_k_xvals, top_k_indices = tf.nn.top_k(tf.negative(distance), k = k)
 # 对每一个测试数据求的他的k最邻近距离综合，因为求和之后降维了，在扩维回来 shape = (batch_size, 1)
@@ -115,54 +98,6 @@ x_sums = tf.expand_dims(tf.reduce_sum(top_k_xvals, 1), 1)
 # 复制一份数据只是为了下面除法用的，就是k个最邻近的距离 除以 k个最邻近距离之和(k个公用一个和)，所以每一行加起来的结果是1
 x_sums_repeated = tf.matmul(x_sums, tf.ones([1, k], tf.float32))
 x_val_weights = tf.expand_dims(tf.div(top_k_xvals, x_sums_repeated), 1)
-
-def test_study_data():
-	test_size = 5
-	test_data1 = x_vals_train[0: test_size] # shape=[test_size, 10]
-	test_data2 = x_vals_test[0: test_size] # shape=[test_size, 10]
-	print(test_data1)
-	print(test_data2)
-	# test_s1 = shape = (5, 5)
-	test_s1 = sess.run(distance, feed_dict={x_data_train: test_data1, x_data_test: test_data2})
-	# print(test_s1)
-	# test_k_xvals = shape = (5, k)
-	test_k_xvals, test_k_indices = tf.nn.top_k(tf.negative(distance), k = k)
-	# print(test_k_xvals)
-	print(sess.run(test_k_xvals, feed_dict={x_data_train: test_data1, x_data_test: test_data2}))
-	# print(test_k_indices)
-	# print(sess.run(test_k_indices, feed_dict={x_data_train: test_data1, x_data_test: test_data2}))
-	
-	test_sum = tf.reduce_sum(top_k_xvals, 1)
-	print(sess.run(test_sum, feed_dict={x_data_train: test_data1, x_data_test: test_data2}))
-	print(sess.run(x_sums, feed_dict={x_data_train: test_data1, x_data_test: test_data2}))
-	print(sess.run(x_val_weights, feed_dict={x_data_train: test_data1, x_data_test: test_data2}))
-	# 复制一份是要干嘛？
-	# [[-8.329587 ]
-	 # [-8.815878 ]
-	 # [-7.228663 ]
-	 # [-6.9582205]
-	 # [-8.605508 ]]
-	# [[-8.329587  -8.329587  -8.329587  -8.329587 ]
-	 # [-8.815878  -8.815878  -8.815878  -8.815878 ]
-	 # [-7.228663  -7.228663  -7.228663  -7.228663 ]
-	 # [-6.9582205 -6.9582205 -6.9582205 -6.9582205]
-	 # [-8.605508  -8.605508  -8.605508  -8.605508 ]]
-	print(sess.run(x_sums_repeated, feed_dict={x_data_train: test_data1, x_data_test: test_data2}))
-	 
-# Tensor("TopKV2_1:0", shape=(?, 4), dtype=float32)
-# [[-1.0120509 -1.3620812 -3.3650966 -3.6608112]
- # [-1.0597093 -1.4451206 -2.6025825 -2.8749502]
- # [-1.2977087 -1.368664  -2.331729  -2.5432925]
- # [-1.0782905 -1.2479448 -2.7325215 -2.7949667]
- # [-1.6063948 -1.6166384 -2.2844675 -2.3886318]]
-# Tensor("TopKV2_1:1", shape=(?, 4), dtype=int32)
-# [[0 3 2 4]
- # [0 3 2 4]
- # [0 3 2 4]
- # [3 0 2 4]
- # [3 0 2 1]]
- 
-test_study_data()
 
 # 把top_k的x_vals对应的y_vals取出来
 top_k_yvals = tf.gather(y_target_train, top_k_indices)
