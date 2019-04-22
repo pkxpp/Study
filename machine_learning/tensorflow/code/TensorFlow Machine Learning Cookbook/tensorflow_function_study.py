@@ -9,6 +9,66 @@ ops.reset_default_graph()
 # 创建一个计算图会话
 sess = tf.Session()
 
+def square_study():
+	a = tf.constant([[1, 2], [3, 4]])
+	b = tf.square(a)
+	print(a)
+	print(sess.run(a))
+	print(sess.run(b))
+
+# square_study()
+
+def shape_study():
+	# [3, 1, 1, 3]四维矩阵，第一维3个元数，第二维1个元数，第三维1个元数，第四维3个元数
+	M=np.array([[[[1,2,3]]],[[[4,5,6]]],[[[7,8,9]]]])
+	print(M)
+	# M重组成若干个3维的向量
+	M1 = tf.reshape(M, [-1, 3])
+	print(M1)
+	print(sess.run(M1))
+	# 想得到若干个[3,3]的矩阵
+	M2 = tf.reshape(M, [-1, 3, 3])
+	print(M2)
+	print(sess.run(M2))
+
+# shape_study()
+
+def np_meshgrid_study():
+	x = np.array([[0, 1, 2], [0, 1, 2]])
+	y = np.array([[0, 0, 0], [1, 1, 1]])
+
+
+	plt.plot(x, y,
+			 color='red',  # 全部点设置为红色
+			 marker='.',  # 点的形状为圆点
+			 linestyle='')  # 线型为空，也即点与点之间不用线连接
+	plt.grid(True)
+	plt.show()
+
+# np_meshgrid_study()
+
+def tf_expand_dims_study():
+	t = tf.placeholder(shape=[2], dtype=tf.float32)
+	print(t)
+	x = np.array([1, 2])
+	xtensor = tf.constant(x)
+	t_dims0 = tf.expand_dims(xtensor, 0)
+	print(t_dims0)
+	expand_dims0 = sess.run(t_dims0)
+	print(expand_dims0)
+	
+	t_dims1 = tf.expand_dims(xtensor, 1)
+	print(t_dims1)
+	expand_dims1 = sess.run(t_dims1)
+	print(expand_dims1)
+	
+	t_dims2 = tf.expand_dims(xtensor, -1)
+	print(t_dims2)
+	expand_dims2 = sess.run(t_dims2)
+	print(expand_dims2)
+
+# tf_expand_dims_study()
+
 def tf_subtract_study():
 	a = tf.constant([[1, 2, 3], [4, 5, 6]])# shape = (2, 3)
 	b = tf.constant([[0, 0, 2], [2, 0, 0]])
