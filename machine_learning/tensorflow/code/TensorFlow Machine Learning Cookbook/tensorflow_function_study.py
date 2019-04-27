@@ -155,4 +155,15 @@ def tf_SparseTensor_study():
 		(2, 2, 2))
 	print(truth)
 
-tf_SparseTensor_study()
+# tf_SparseTensor_study()
+
+def tf_random_normal_stduy():
+	data = tf.constant([1, 2, 3])
+	print(data)
+	weight_shape = tf.shape(data)
+	print(weight_shape)
+	print(sess.run(weight_shape))
+	weight = tf.random_normal(weight_shape, stddev=0.1)
+	print(weight)
+
+tf_random_normal_stduy()
