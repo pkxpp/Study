@@ -13,7 +13,7 @@ import tarfile
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
-# from six.moves import urllib
+from six.moves import urllib
 import tensorflow_datasets as tfds
 from datetime import datetime
 import time
@@ -126,6 +126,8 @@ def input_pipeline(batch_size, train_logical=True):
 def _get_images_labels(batch_size, split, distords=False):
 	"""Returns Dataset for given split."""
 	dataset = tfds.load(name='cifar10', split=split)
+	print("load successed.")
+	print(dataset)
 	scope = 'data_augmentation' if distords else 'input'
 	with tf.name_scope(scope):
 		dataset = dataset.map(DataPreprocessor(distords), num_parallel_calls=10)
