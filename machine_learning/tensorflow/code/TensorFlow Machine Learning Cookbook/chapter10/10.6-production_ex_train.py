@@ -23,7 +23,7 @@ from zipfile import ZipFile
 tf.app.flags.DEFINE_string("storage_folder", "../dataset", "Where to store model and data.")
 tf.app.flags.DEFINE_float("learning_rate", 0.0005, 'Initial learning rate.')
 tf.app.flags.DEFINE_float("dropout_prob", 0.5, 'Per to keep probability for dropout.')
-tf.app.flags.DEFINE_integer("epochs", 20, 'Number of epochs for training.')
+tf.app.flags.DEFINE_integer("epochs", 1000, 'Number of epochs for training.')
 tf.app.flags.DEFINE_integer("batch_size", 250, 'Batch Size for training.')
 tf.app.flags.DEFINE_integer("max_sequence_length", 20, 'Max sentence length in words.')
 tf.app.flags.DEFINE_integer("rnn_size", 15, 'RNN feature size.')
