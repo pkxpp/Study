@@ -14,7 +14,9 @@
 struct Vertex
 {
 	XMFLOAT3 Pos;
-	XMFLOAT4 Color;
+	//XMFLOAT4 Color;
+	// exersize 6.10
+	XMCOLOR Color;
 };
 
 // exercise 6.2
@@ -27,6 +29,16 @@ struct Vertex2
 {
 	XMFLOAT4 Color;
 };
+
+
+static D3DX11INLINE UINT ArgbToAbgr(UINT argb)
+{
+	BYTE A = (argb >> 24) & 0xff;
+	BYTE R = (argb >> 16) & 0xff;
+	BYTE G = (argb >> 8) & 0xff;
+	BYTE B = (argb >> 0) & 0xff;
+	return (A << 24) | (B << 16) | (G << 8) | (R << 0);
+}
 
 class BoxApp : public D3DApp
 {
@@ -51,6 +63,7 @@ private:
 	ID3DX11Effect* mFX;
 	ID3DX11EffectTechnique* mTech;
 	ID3DX11EffectMatrixVariable* mfxWorldViewProj;
+	ID3DX11EffectScalarVariable* mfxTime;
 	ID3D11InputLayout* mInputLayout;
 	XMFLOAT4X4 mWorld;
 	XMFLOAT4X4 mView;
@@ -59,6 +72,11 @@ private:
 	float mPhi;
 	float mRadius;
 	POINT mLastMousePos;
+
+	//GameTimer m_Timer;
+	DWORD64 m_dwTotalTime;
+
+	ID3D11RasterizerState* mWireframeRS;
 };
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
 				   PSTR cmdLine, int showCmd)
@@ -75,15 +93,17 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
 
 BoxApp::BoxApp(HINSTANCE hInstance)
 	: D3DApp(hInstance), mBoxVB(0), mBoxVB1(0), mBoxIB(0), mFX(0), mTech(0),
-	mfxWorldViewProj(0), mInputLayout(0),
+	mfxWorldViewProj(0), mInputLayout(0), mfxTime(0), m_dwTotalTime(0),
 	mTheta(1.5f*MathHelper::Pi), mPhi(0.25f*MathHelper::Pi), mRadius(5.0f)
-{mMainWndCaption = L"Box Demo";
-mLastMousePos.x = 0;
-mLastMousePos.y = 0;
-XMMATRIX I = XMMatrixIdentity();
-XMStoreFloat4x4(&mWorld, I);
-XMStoreFloat4x4(&mView, I);
-XMStoreFloat4x4(&mProj, I);
+	, mWireframeRS(0)
+{
+	mMainWndCaption = L"Box Demo";
+	mLastMousePos.x = 0;
+	mLastMousePos.y = 0;
+	XMMATRIX I = XMMatrixIdentity();
+	XMStoreFloat4x4(&mWorld, I);
+	XMStoreFloat4x4(&mView, I);
+	XMStoreFloat4x4(&mProj, I);
 }
 	
 BoxApp::~BoxApp()
@@ -93,6 +113,8 @@ BoxApp::~BoxApp()
 	ReleaseCOM(mBoxIB);
 	ReleaseCOM(mFX);
 	ReleaseCOM(mInputLayout);
+
+	ReleaseCOM(mWireframeRS);
 }
 
 bool BoxApp::Init()
@@ -102,6 +124,18 @@ bool BoxApp::Init()
 	BuildGeometryBuffers();
 	BuildFX();
 	BuildVertexLayout();
+
+	// Ïß¿òÄ£Ê½
+	D3D11_RASTERIZER_DESC wireframeDesc;
+	ZeroMemory(&wireframeDesc, sizeof(D3D11_RASTERIZER_DESC));
+	wireframeDesc.FillMode = D3D11_FILL_SOLID;
+	// ²Ã¼ô
+	wireframeDesc.CullMode = D3D11_CULL_BACK;
+	wireframeDesc.FrontCounterClockwise = false;
+	wireframeDesc.DepthClipEnable = true;
+
+	HR(md3dDevice->CreateRasterizerState(&wireframeDesc, &mWireframeRS));
+
 	return true;
 }
 
@@ -137,6 +171,9 @@ void BoxApp::DrawScene()
 	md3dImmediateContext->IASetInputLayout(mInputLayout);
 	md3dImmediateContext->IASetPrimitiveTopology(
 		D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+
+	md3dImmediateContext->RSSetState(mWireframeRS);
+
 	UINT stride = sizeof(Vertex);
 	UINT offset = 0;
 	UINT stride1 = sizeof(Vertex1);
@@ -144,9 +181,11 @@ void BoxApp::DrawScene()
 	UINT stride2 = sizeof(Vertex2);
 	UINT offset2 = 0;
 	md3dImmediateContext->IASetVertexBuffers(0, 1, &mBoxVB,
-		&stride1, &offset1);
-	md3dImmediateContext->IASetVertexBuffers(1, 1, &mBoxVB1,
-		&stride2, &offset2);
+		&stride, &offset);
+	/*md3dImmediateContext->IASetVertexBuffers(0, 1, &mBoxVB,
+		&stride1, &offset1);*/
+	//md3dImmediateContext->IASetVertexBuffers(1, 1, &mBoxVB1,
+	//	&stride2, &offset2);
 	md3dImmediateContext->IASetIndexBuffer(mBoxIB,
 		DXGI_FORMAT_R32_UINT, 0);
 	// Set constants
@@ -155,6 +194,8 @@ void BoxApp::DrawScene()
 	XMMATRIX proj = XMLoadFloat4x4(&mProj);
 	XMMATRIX worldViewProj = world*view*proj;
 	mfxWorldViewProj->SetMatrix(reinterpret_cast<float*>(&worldViewProj));
+	//mTimer.Tick();
+	mfxTime->SetFloat(mTimer.TotalTime());
 	D3DX11_TECHNIQUE_DESC techDesc;
 	mTech->GetDesc( &techDesc );
 	for(UINT p = 0; p < techDesc.Passes; ++p)
@@ -220,6 +261,19 @@ void BoxApp::BuildGeometryBuffers()
 		{ XMFLOAT3(-1.0f, +1.0f, +1.0f), (const float*)&Colors::Yellow },
 		{ XMFLOAT3(+1.0f, +1.0f, +1.0f), (const float*)&Colors::Cyan },
 		{ XMFLOAT3(+1.0f, -1.0f, +1.0f), (const float*)&Colors::Magenta }
+	};*/
+
+	// exercise 6.10
+	Vertex vertices[] =
+	{
+		{ XMFLOAT3(-1.0f, -1.0f, -1.0f), ArgbToAbgr(0xFFFFFFFF) },
+		{ XMFLOAT3(-1.0f, +1.0f, -1.0f), ArgbToAbgr(0xFF000000) },
+		{ XMFLOAT3(+1.0f, +1.0f, -1.0f), ArgbToAbgr(0xFFFF0000) },
+		{ XMFLOAT3(+1.0f, -1.0f, -1.0f), ArgbToAbgr(0xFFFF0000) },
+		{ XMFLOAT3(-1.0f, -1.0f, +1.0f), ArgbToAbgr(0xFF0000FF) },
+		{ XMFLOAT3(-1.0f, +1.0f, +1.0f), ArgbToAbgr(0xFFFFFF00) },
+		{ XMFLOAT3(+1.0f, +1.0f, +1.0f), ArgbToAbgr(0xFF00FFFF) },
+		{ XMFLOAT3(+1.0f, -1.0f, +1.0f), ArgbToAbgr(0xFFFF00FF) }
 	};
 	D3D11_BUFFER_DESC vbd;
 	vbd.Usage = D3D11_USAGE_IMMUTABLE;
@@ -230,20 +284,20 @@ void BoxApp::BuildGeometryBuffers()
 	vbd.StructureByteStride = 0;
 	D3D11_SUBRESOURCE_DATA vinitData;
 	vinitData.pSysMem = vertices;
-	HR(md3dDevice->CreateBuffer(&vbd, &vinitData, &mBoxVB));*/
+	HR(md3dDevice->CreateBuffer(&vbd, &vinitData, &mBoxVB));
 
 	//////////////////////////////////////////////////////////////////////////
 	// exercise 6.2
-	Vertex1 vertices1[] =
+	/*Vertex1 vertices1[] =
 	{
-		{ XMFLOAT3(-1.0f, -1.0f, -1.0f)},
-		{ XMFLOAT3(-1.0f, +1.0f, -1.0f)},
-		{ XMFLOAT3(+1.0f, +1.0f, -1.0f)},
-		{ XMFLOAT3(+1.0f, -1.0f, -1.0f)},
-		{ XMFLOAT3(-1.0f, -1.0f, +1.0f)},
-		{ XMFLOAT3(-1.0f, +1.0f, +1.0f)},
-		{ XMFLOAT3(+1.0f, +1.0f, +1.0f)},
-		{ XMFLOAT3(+1.0f, -1.0f, +1.0f)}
+	{ XMFLOAT3(-1.0f, -1.0f, -1.0f)},
+	{ XMFLOAT3(-1.0f, +1.0f, -1.0f)},
+	{ XMFLOAT3(+1.0f, +1.0f, -1.0f)},
+	{ XMFLOAT3(+1.0f, -1.0f, -1.0f)},
+	{ XMFLOAT3(-1.0f, -1.0f, +1.0f)},
+	{ XMFLOAT3(-1.0f, +1.0f, +1.0f)},
+	{ XMFLOAT3(+1.0f, +1.0f, +1.0f)},
+	{ XMFLOAT3(+1.0f, -1.0f, +1.0f)}
 	};
 	D3D11_BUFFER_DESC vbd;
 	vbd.Usage = D3D11_USAGE_IMMUTABLE;
@@ -258,14 +312,14 @@ void BoxApp::BuildGeometryBuffers()
 
 	Vertex2 vertices2[] =
 	{
-		{ (const float*)&Colors::White },
-		{ (const float*)&Colors::Black },
-		{ (const float*)&Colors::Red },
-		{ (const float*)&Colors::Green },
-		{ (const float*)&Colors::Blue },
-		{ (const float*)&Colors::Yellow },
-		{ (const float*)&Colors::Cyan },
-		{ (const float*)&Colors::Magenta }
+	{ (const float*)&Colors::White },
+	{ (const float*)&Colors::Black },
+	{ (const float*)&Colors::Red },
+	{ (const float*)&Colors::Green },
+	{ (const float*)&Colors::Blue },
+	{ (const float*)&Colors::Yellow },
+	{ (const float*)&Colors::Cyan },
+	{ (const float*)&Colors::Magenta }
 	};
 
 	D3D11_BUFFER_DESC vbd2;
@@ -277,7 +331,7 @@ void BoxApp::BuildGeometryBuffers()
 	vbd2.StructureByteStride = 0;
 	D3D11_SUBRESOURCE_DATA vinitData2;
 	vinitData2.pSysMem = vertices2;
-	HR(md3dDevice->CreateBuffer(&vbd2, &vinitData2, &mBoxVB1));
+	HR(md3dDevice->CreateBuffer(&vbd2, &vinitData2, &mBoxVB1));*/
 	//////////////////////////////////////////////////////////////////////////
 
 	// Create the index buffer
@@ -347,6 +401,8 @@ void BoxApp::BuildFX()
 	mTech = mFX->GetTechniqueByName("ColorTech");
 	mfxWorldViewProj = mFX->GetVariableByName(
 		"gWorldViewProj")->AsMatrix();
+	mfxTime = mFX->GetVariableByName(
+		"gTime")->AsScalar();
 } 
 
 void BoxApp::BuildVertexLayout(){
@@ -387,11 +443,20 @@ void BoxApp::BuildVertexLayout(){
 	};*/
 
 	// exercise 6.2
+	/*D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
+	{
+	{"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0,
+	D3D11_INPUT_PER_VERTEX_DATA, 0},
+	{"COLOR", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 1, 0,
+	D3D11_INPUT_PER_VERTEX_DATA, 0}
+	};*/
+
+	// exercise 6.10
 	D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 	{
 		{"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0,
 		D3D11_INPUT_PER_VERTEX_DATA, 0},
-		{"COLOR", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 1, 0,
+		{"COLOR", 0, DXGI_FORMAT_R8G8B8A8_UNORM, 0, 12,
 		D3D11_INPUT_PER_VERTEX_DATA, 0}
 	};
 

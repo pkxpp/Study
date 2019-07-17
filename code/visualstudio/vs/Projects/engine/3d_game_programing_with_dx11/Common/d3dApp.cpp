@@ -188,14 +188,14 @@ void D3DApp::OnResize()
 
 	// Set the viewport transform.
 
-	//mScreenViewport.TopLeftX = 0;
-	//mScreenViewport.TopLeftY = 0;
-	//mScreenViewport.Width    = static_cast<float>(mClientWidth);
-	//mScreenViewport.Height   = static_cast<float>(mClientHeight);
-	mScreenViewport.TopLeftX = 100;
-	mScreenViewport.TopLeftY = 100;
-	mScreenViewport.Width    = 200;
-	mScreenViewport.Height   = 200;
+	mScreenViewport.TopLeftX = 0;
+	mScreenViewport.TopLeftY = 0;
+	mScreenViewport.Width    = static_cast<float>(mClientWidth);
+	mScreenViewport.Height   = static_cast<float>(mClientHeight);
+	//mScreenViewport.TopLeftX = 100;
+	//mScreenViewport.TopLeftY = 100;
+	//mScreenViewport.Width    = 200;
+	//mScreenViewport.Height   = 200;
 	mScreenViewport.MinDepth = 0.0f;
 	mScreenViewport.MaxDepth = 1.0f;
 
@@ -490,20 +490,20 @@ bool D3DApp::InitDirect3D()
 
 			for (int i = 0; i < uNum; ++i)
 			{
-				sprintf(szBuf, "**Width = %d, Height = %d, Refresh = %d/%d**\n", pDescs[0].Width, pDescs[i].Height, pDescs[i].RefreshRate.Numerator, pDescs[i].RefreshRate.Denominator);
+				sprintf_s(szBuf, "**Width = %d, Height = %d, Refresh = %d/%d**\n", pDescs[0].Width, pDescs[i].Height, pDescs[i].RefreshRate.Numerator, pDescs[i].RefreshRate.Denominator);
 				OutputDebugStringA(szBuf);
 			}
 
 			++uOutput;
 			ReleaseCOM(pOutput);
 		}
-		sprintf(szBuf, "uOutput = %d\n", uOutput + 1);
+		sprintf_s(szBuf, "uOutput = %d\n", uOutput + 1);
 		OutputDebugStringA(szBuf);
 
 		++uAdapters;
 		ReleaseCOM(pAdapter);
 	}
-	sprintf(szBuf, "Adapters count = %d\n", uAdapters + 1);
+	sprintf_s(szBuf, "Adapters count = %d\n", uAdapters + 1);
 	OutputDebugStringA(szBuf);
 
 	ReleaseCOM(dxgiDevice);
