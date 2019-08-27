@@ -17,6 +17,8 @@
 #include "Effects.h"
 #include "Vertex.h"
 
+#define  MAX_TEXTURES 120
+
 class CrateApp : public D3DApp
 {
 public:
@@ -40,6 +42,11 @@ private:
 	ID3D11Buffer* mBoxIB;
 
 	ID3D11ShaderResourceView* mDiffuseMapSRV;
+	// exercise 8.3
+	ID3D11ShaderResourceView* mDiffuseMapSRVMulti;
+	// exercise 8.5
+
+	ID3D11ShaderResourceView* mDiffuseMapSRVSet[MAX_TEXTURES];
 
 	DirectionalLight mDirLights[3];
 	Material mBoxMat;
@@ -60,7 +67,18 @@ private:
 	float mPhi;
 	float mRadius;
 
+	// exercise 8.1
+	// 在类中添加关于Box纹理拉伸的成员变量
+	XMFLOAT4X4 mBoxTexScale;
+
 	POINT mLastMousePos;
+
+	// exercise 8.4
+	GameTimer mTimer;
+
+	// exercise 8.5
+	float mLastTime;
+	int mTextureIndex;
 };
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
@@ -82,7 +100,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
 
 CrateApp::CrateApp(HINSTANCE hInstance)
 : D3DApp(hInstance), mBoxVB(0), mBoxIB(0), mDiffuseMapSRV(0), mEyePosW(0.0f, 0.0f, 0.0f), 
-  mTheta(1.3f*MathHelper::Pi), mPhi(0.4f*MathHelper::Pi), mRadius(2.5f)
+  mTheta(1.3f*MathHelper::Pi), mPhi(0.4f*MathHelper::Pi), mRadius(2.5f), mDiffuseMapSRVMulti(0)
+  , mTextureIndex(0)
 {
 	mMainWndCaption = L"Crate Demo";
 	
@@ -94,6 +113,26 @@ CrateApp::CrateApp(HINSTANCE hInstance)
 	XMStoreFloat4x4(&mTexTransform, I);
 	XMStoreFloat4x4(&mView, I);
 	XMStoreFloat4x4(&mProj, I);
+
+	// exercise 8.1
+	// Init的时候赋值
+	XMMATRIX boxTexScale = XMMatrixScaling(4.0f,4.0f,0.0f);
+	XMStoreFloat4x4(&mBoxTexScale, boxTexScale);
+	// 图片8.10
+	//XMMATRIX scale = XMMatrixScaling(3.0f, 3.0f, 0.0f);
+	//XMMATRIX translation = XMMatrixTranslation(-0.5f, -0.5f, 0.0f);
+	//XMStoreFloat4x4(&mTexTransform, XMMatrixMultiply(scale, translation));
+
+	// exercise 8.4
+	mLastTime = 0.0f;
+	mTimer.Start();
+
+	// exercise 8.5
+	for (int i = 0; i < MAX_TEXTURES; ++i)
+	{
+		mDiffuseMapSRVSet[i] = NULL;
+	}
+
 
 	mDirLights[0].Ambient  = XMFLOAT4(0.3f, 0.3f, 0.3f, 1.0f);
 	mDirLights[0].Diffuse  = XMFLOAT4(0.8f, 0.8f, 0.8f, 1.0f);
@@ -115,6 +154,12 @@ CrateApp::~CrateApp()
 	ReleaseCOM(mBoxVB);
 	ReleaseCOM(mBoxIB);
 	ReleaseCOM(mDiffuseMapSRV);
+	ReleaseCOM(mDiffuseMapSRVMulti);
+
+	for (int i = 0; i < MAX_TEXTURES; ++i)
+	{
+		ReleaseCOM(mDiffuseMapSRVSet[i]);
+	}
 
 	Effects::DestroyAll();
 	InputLayouts::DestroyAll();
@@ -129,8 +174,26 @@ bool CrateApp::Init()
 	Effects::InitAll(md3dDevice);
 	InputLayouts::InitAll(md3dDevice);
 
+	/*HR(D3DX11CreateShaderResourceViewFromFile(md3dDevice, 
+		L"Textures/WoodCrate01.dds", 0, 0, &mDiffuseMapSRV, 0 ));*/
+
+	// exercise 8.2
+	//HR(D3DX11CreateShaderResourceViewFromFile(md3dDevice, 
+	//	L"Textures/mipmaps.dds", 0, 0, &mDiffuseMapSRV, 0 ));
+
+	// exercise 8.2
 	HR(D3DX11CreateShaderResourceViewFromFile(md3dDevice, 
-		L"Textures/WoodCrate01.dds", 0, 0, &mDiffuseMapSRV, 0 ));
+		L"Textures/flare.dds", 0, 0, &mDiffuseMapSRV, 0 ));
+	HR(D3DX11CreateShaderResourceViewFromFile(md3dDevice, 
+		L"Textures/flarealpha.dds", 0, 0, &mDiffuseMapSRVMulti, 0 ));
+
+	wchar_t szPath[MAX_PATH] = {0};
+	for (int i = 0; i < MAX_TEXTURES; ++i)
+	{
+		swprintf_s(szPath, L"../FireAnim/Fire%03d.bmp", i+1);
+		HR(D3DX11CreateShaderResourceViewFromFile(md3dDevice, 
+			LPCTSTR(szPath), 0, 0, &mDiffuseMapSRVSet[i], 0 ));
+	}
  
 	BuildGeometryBuffers();
 
@@ -142,6 +205,9 @@ void CrateApp::OnResize()
 	D3DApp::OnResize();
 
 	XMMATRIX P = XMMatrixPerspectiveFovLH(0.25f*MathHelper::Pi, AspectRatio(), 1.0f, 1000.0f);
+	// exercise 8.1
+	//XMMATRIX P = XMMatrixPerspectiveFovLH(0.02f*MathHelper::Pi, AspectRatio(), 1.0f, 1000.0f);
+	//XMMATRIX P = XMMatrixPerspectiveFovLH(0.15f*MathHelper::Pi, AspectRatio(), 1.0f, 1000.0f);
 	XMStoreFloat4x4(&mProj, P);
 }
 
@@ -161,6 +227,10 @@ void CrateApp::UpdateScene(float dt)
 
 	XMMATRIX V = XMMatrixLookAtLH(pos, target, up);
 	XMStoreFloat4x4(&mView, V);
+
+
+	// exercise 8.4
+	mTimer.Tick();
 }
 
 void CrateApp::DrawScene()
@@ -196,12 +266,31 @@ void CrateApp::DrawScene()
 		XMMATRIX worldInvTranspose = MathHelper::InverseTranspose(world);
 		XMMATRIX worldViewProj = world*view*proj;
 
+		//exercise 8.4
+		//XMVECTOR axis = XMVectorSet(0.0f, 0.0f, 1.0f, 0.0f);
+		//XMMATRIX rot = XMMatrixRotationAxis(axis, 360.0f * sinf(mTimer.TotalTime() / 1000));	// 旋转纹理
+		//XMMATRIX translation = XMMatrixTranslation(0.5f, 0.5f, 0.0f);							// 将旋转中心移动到0.5, 0.5位置
+		//XMStoreFloat4x4(&mTexTransform, rot * translation);
+
 		Effects::BasicFX->SetWorld(world);
 		Effects::BasicFX->SetWorldInvTranspose(worldInvTranspose);
 		Effects::BasicFX->SetWorldViewProj(worldViewProj);
 		Effects::BasicFX->SetTexTransform(XMLoadFloat4x4(&mTexTransform));
+		//Effects::BasicFX->SetTexTransform(XMLoadFloat4x4(&mBoxTexScale));
 		Effects::BasicFX->SetMaterial(mBoxMat);
-		Effects::BasicFX->SetDiffuseMap(mDiffuseMapSRV);
+		//Effects::BasicFX->SetDiffuseMap(mDiffuseMapSRV);
+		//exercise 8.3/8.4
+		//Effects::BasicFX->SetDiffuseMapMulti(mDiffuseMapSRVMulti);
+
+		// exercise 8.5
+		float fTotalTime = mTimer.TotalTime();
+		float fDeltaTime = fTotalTime - mLastTime;
+		if (fDeltaTime * 30.0f >= 1.0f)
+		{
+			Effects::BasicFX->SetDiffuseMap(mDiffuseMapSRVSet[mTextureIndex%MAX_TEXTURES]);
+			mLastTime = mTimer.TotalTime();
+			++mTextureIndex;
+		}
 
 		activeTech->GetPassByIndex(p)->Apply(0, md3dImmediateContext);
 		md3dImmediateContext->DrawIndexed(mBoxIndexCount, mBoxIndexOffset, mBoxVertexOffset);

@@ -25,41 +25,8 @@ cbuffer cbPerObject
 	Material gMaterial;
 }; 
 
-// exercise 8.1
-SamplerState mySamplerPoint
-{
-	Filter = MIN_MAG_MIP_POINT;
-};
-
-// Use linear filtering for minification, magnification, and mipmapping.
-SamplerState mySampler0
-{
-	Filter = MIN_MAG_MIP_LINEAR;
-};
-// Use linear filtering for minification, point filtering for magnification,
-// and point filtering for mipmapping.
-SamplerState mySampler1
-{
-	Filter = MIN_LINEAR_MAG_MIP_POINT;
-};
-// Use point filtering for minification, linear filtering for magnification,
-// and point filtering for mipmapping.
-SamplerState mySampler2
-{
-	Filter = MIN_POINT_MAG_LINEAR_MIP_POINT;
-};
-// Use anisotropic interpolation for minification, magnification,
-// and mipmapping.
-SamplerState mySampler3
-{
-	Filter = ANISOTROPIC;
-	MaxAnisotropy = 4;
-};
-
 // Nonnumeric values cannot be added to a cbuffer.
 Texture2D gDiffuseMap;
-//exercise 8.3
-Texture2D gDiffuseMapMulti;
 
 SamplerState samAnisotropic
 {
@@ -68,24 +35,6 @@ SamplerState samAnisotropic
 
 	AddressU = WRAP;
 	AddressV = WRAP;
-};
-
-//exercise 8.1
-SamplerState samTriLinear
-{
-	Filter = MIN_MAG_MIP_LINEAR;
-	//AddressU = WRAP;
-	//AddressV = WRAP;
-
-	//AddressU = BORDER;
-	//AddressV = BORDER;
-
-	// 这是默认不填的效果
-	AddressU = CLAMP;
-	AddressV = CLAMP;
-
-	//AddressU = MIRROR;
-	//AddressV = MIRROR;
 };
 
 struct VertexIn
@@ -117,13 +66,6 @@ VertexOut VS(VertexIn vin)
 	// Output vertex attributes for interpolation across triangle.
 	vout.Tex = mul(float4(vin.Tex, 0.0f, 1.0f), gTexTransform).xy;
 
-	// exercise 8.4
-	//vout.Tex = mul(float4(vin.Tex - float2(0.5f, 0.5f), 0.0f, 1.0f), gTexTransform).xy;
-
-	// exercise 8.1
-	//vout.Tex.x += 0.3;
-	//vout.Tex.y += 0.3;
-
 	return vout;
 }
  
@@ -136,7 +78,7 @@ float4 PS(VertexOut pin, uniform int gLightCount, uniform bool gUseTexure) : SV_
 	float3 toEye = gEyePosW - pin.PosW;
 
 	// Cache the distance to the eye from this surface point.
-	float distToEye = length(toEye); 
+	float distToEye = length(toEye);
 
 	// Normalize.
 	toEye /= distToEye;
@@ -147,22 +89,6 @@ float4 PS(VertexOut pin, uniform int gLightCount, uniform bool gUseTexure) : SV_
 	{
 		// Sample texture.
 		texColor = gDiffuseMap.Sample( samAnisotropic, pin.Tex );
-
-		// exercise 8.1
-		//texColor = gDiffuseMap.Sample( mySamplerPoint, pin.Tex );
-		//texColor = gDiffuseMap.Sample( samTriLinear, pin.Tex );
-		////texColor = gDiffuseMap.Sample( mySampler0, pin.Tex );
-		
-		// erercise 8.3
-		//float4 texColor1 = gDiffuseMapMulti.Sample( samTriLinear, pin.Tex );
-		//texColor = (gDiffuseMap.Sample( samTriLinear, pin.Tex ) + texColor1) / 2;
-
-		// erercise 8.3 网上的写法
-		//float4 texFlareColor = float4(1, 1, 1, 1);
-		//float4 texFlareAlphaColor = float4(1, 1, 1, 1);
-		//texFlareColor = gDiffuseMap.Sample( samTriLinear, pin.Tex);
-		//texFlareAlphaColor = gDiffuseMapMulti.Sample( samTriLinear, pin.Tex );
-		//texColor = texFlareColor * texFlareAlphaColor;
 	}
 	 
 	//

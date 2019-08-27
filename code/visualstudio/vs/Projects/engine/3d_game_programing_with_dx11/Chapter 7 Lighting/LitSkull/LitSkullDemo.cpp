@@ -125,8 +125,72 @@ LitSkullApp::LitSkullApp(HINSTANCE hInstance)
 	XMStoreFloat4x4(&mBoxWorld, XMMatrixMultiply(boxScale, boxOffset));
 
 	XMMATRIX skullScale = XMMatrixScaling(0.5f, 0.5f, 0.5f);
+	XMMATRIX skullRotate = XMMatrixRotationRollPitchYaw(0.0f, 0.0f, XM_PI/6);
 	XMMATRIX skullOffset = XMMatrixTranslation(0.0f, 1.0f, 0.0f);
 	XMStoreFloat4x4(&mSkullWorld, XMMatrixMultiply(skullScale, skullOffset));
+	// test M=SRT Ë³Ðò
+	//XMStoreFloat4x4(&mSkullWorld, XMMatrixMultiply(skullOffset, skullScale));
+	XMMATRIX M = XMMatrixMultiply(skullScale, skullRotate);
+	M = XMMatrixMultiply(M, skullOffset);
+	XMStoreFloat4x4(&mSkullWorld, M);
+
+	// test 2
+	XMMATRIX xmModelScale = XMMatrixScaling(1.0f, 1.0f, 1.0f);
+	XMMATRIX xmModelTrans = XMMatrixTranslation(0.0f, 100.0f, 100.0f);
+	XMMATRIX xmModel = XMMatrixMultiply(xmModelScale, xmModelTrans);
+	XMFLOAT4X4 f4x4Model;
+	XMStoreFloat4x4(&f4x4Model, xmModel);
+
+	XMMATRIX xmLocalTrans = XMMatrixTranslation(0.0f, 0.0f, 200.0f);
+	XMMATRIX xmBone = XMMatrixMultiply(xmLocalTrans, xmModel);
+	XMFLOAT4X4 f4x4Bone;
+	XMStoreFloat4x4(&f4x4Bone, xmBone);
+
+	xmModelScale = XMMatrixScaling(1.5f, 1.5f, 1.5f);
+	xmModel = XMMatrixMultiply(xmModelScale, xmModelTrans);
+	xmBone = XMMatrixMultiply(xmLocalTrans, xmModel);
+	XMStoreFloat4x4(&f4x4Bone, xmBone);
+
+	XMMATRIX m1, m2;
+	m1._11=0.0184343867;
+	m1._12=-0.999813437;
+	m1._13=0.0145743424;
+	m1._14=0.000000000;
+	m1._21=0.999778986;
+	m1._22=0.0181855131;
+	m1._23=-0.0170322284;
+	m1._24=0.000000000;
+	m1._31=0.0167625081;
+	m1._32=0.0148837706;
+	m1._33=0.999838173;
+	m1._34=0.000000000;
+	m1._41=71218.4688;
+	m1._42=139.587753;
+	m1._43=73932.5469;
+	m1._44=1.00000000;
+
+	m2._11 = 0.0221212879;
+	m2._12 = -1.19977605;
+	m2._13 = 0.0174892154;
+	m2._14 = 0.000000000;
+	m2._21 = 1.19973493;
+	m2._22 = 0.0218225960;
+	m2._23 = -0.0204386767;
+	m2._24 = 0.000000000;
+	m2._31 = 0.0201150123;
+	m2._32 = 0.0178605262;
+	m2._33 = 1.19980597;
+	m2._34 = 0.000000000;
+	m2._41 = 71218.4688;
+	m2._42 = 139.587753;
+	m2._43 = 73932.5469;
+	m2._44 = 1.00000000;
+
+	xmModelScale = XMMatrixScaling(1.2f, 1.2f, 1.2f);
+	XMMATRIX xmTest = XMMatrixMultiply(xmModelScale, m1);
+	XMFLOAT4X4 f4x4Test;
+	XMStoreFloat4x4(&f4x4Test, xmTest);
+
 
 	for(int i = 0; i < 5; ++i)
 	{
