@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "macro_study", "macro_study\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "regex_study", "regex_study\regex_study.vcxproj", "{2A93261A-DBB2-4A15-B787-5FDAC02073D3}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rapidjson_study", "rapidjson_study\rapidjson_study.vcxproj", "{7DA129B3-71E4-4B5A-A0F2-822B35EDA4AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -61,6 +63,14 @@ Global
 		{2A93261A-DBB2-4A15-B787-5FDAC02073D3}.Release|Win32.Build.0 = Release|Win32
 		{2A93261A-DBB2-4A15-B787-5FDAC02073D3}.Release|x64.ActiveCfg = Release|x64
 		{2A93261A-DBB2-4A15-B787-5FDAC02073D3}.Release|x64.Build.0 = Release|x64
+		{7DA129B3-71E4-4B5A-A0F2-822B35EDA4AE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7DA129B3-71E4-4B5A-A0F2-822B35EDA4AE}.Debug|Win32.Build.0 = Debug|Win32
+		{7DA129B3-71E4-4B5A-A0F2-822B35EDA4AE}.Debug|x64.ActiveCfg = Debug|x64
+		{7DA129B3-71E4-4B5A-A0F2-822B35EDA4AE}.Debug|x64.Build.0 = Debug|x64
+		{7DA129B3-71E4-4B5A-A0F2-822B35EDA4AE}.Release|Win32.ActiveCfg = Release|Win32
+		{7DA129B3-71E4-4B5A-A0F2-822B35EDA4AE}.Release|Win32.Build.0 = Release|Win32
+		{7DA129B3-71E4-4B5A-A0F2-822B35EDA4AE}.Release|x64.ActiveCfg = Release|x64
+		{7DA129B3-71E4-4B5A-A0F2-822B35EDA4AE}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

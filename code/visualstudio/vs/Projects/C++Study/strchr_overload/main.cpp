@@ -1,3 +1,9 @@
+// ***************************************************************
+//  FileName	: $FILE_BASE$.h 
+//  Creator 	: page(pk)  
+//  Date		: $MONTH_02$/$DAY_02$/$YEAR$ $HOUR$:$MINUTE$:$SECOND$
+//  Comment	: 
+// ***************************************************************
 #include <stdio.h>
 #include <string.h>
 

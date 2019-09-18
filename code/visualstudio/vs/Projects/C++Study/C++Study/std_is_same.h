@@ -40,26 +40,26 @@ public:
 		double imaginary_a;
 		double imaginary_b;
 
-		if (std::is_same<T, Complex>::value)//if lhs is a Complex
-		{
-			real_a = lhs.real_part;
-			imaginary_a = lhs.imaginary_part;
-		}
-		else //base type, some sort of number
-		{
-			real_a = lhs;
-			imaginary_a = 0;
-		}
-		if (std::is_same<D, Complex>::value)//if rhs is a Complex
-		{
-			real_b = rhs.real_part;
-			imaginary_b = rhs.imaginary_part;
-		}
-		else //base type, some sort of number
-		{
-			real_b = rhs;
-			imaginary_b = 0;
-		}
+		//if (std::is_same<T, Complex>::value)//if lhs is a Complex
+		//{
+		//	real_a = lhs.real_part;
+		//	imaginary_a = lhs.imaginary_part;
+		//}
+		//else //base type, some sort of number
+		//{
+		//	real_a = lhs;
+		//	imaginary_a = 0;
+		//}
+		//if (std::is_same<D, Complex>::value)//if rhs is a Complex
+		//{
+		//	real_b = rhs.real_part;
+		//	imaginary_b = rhs.imaginary_part;
+		//}
+		//else //base type, some sort of number
+		//{
+		//	real_b = rhs;
+		//	imaginary_b = 0;
+		//}
 		Complex result;
 		result.real_part = (real_b*real_a - imaginary_b*imaginary_a);
 		result.imaginary_part = (real_b*imaginary_a + imaginary_b*real_a);

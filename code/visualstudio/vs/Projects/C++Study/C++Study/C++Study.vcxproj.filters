@@ -42,6 +42,9 @@
     <ClCompile Include="std_is_same.cpp">
       <Filter>Source Files\c++11</Filter>
     </ClCompile>
+    <ClCompile Include="stackoverflow_study.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="StringStudy.h">
@@ -54,6 +57,9 @@
       <Filter>Source Files\stl</Filter>
     </ClInclude>
     <ClInclude Include="std_is_same.h">
+      <Filter>Source Files\c++11</Filter>
+    </ClInclude>
+    <ClInclude Include="rvalue_refrences_study.h">
       <Filter>Source Files\c++11</Filter>
     </ClInclude>
   </ItemGroup>

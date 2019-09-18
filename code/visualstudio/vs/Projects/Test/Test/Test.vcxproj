@@ -11,10 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F4DB64CC-28E0-48B7-947A-11B7E9F0BFF8}</ProjectGuid>
-    <RootNamespace>CStudy</RootNamespace>
+    <ProjectGuid>{7687FBB9-AD6C-4F49-B777-D1BC03ED3A7C}</ProjectGuid>
+    <RootNamespace>Test</RootNamespace>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -39,7 +38,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <_ProjectFileVersion>11.0.50727.1</_ProjectFileVersion>
+    <_ProjectFileVersion>11.0.61030.0</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
@@ -54,6 +53,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../../DevEnv/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -63,6 +63,8 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
+      <AdditionalDependencies>DataExportD.lib;EngineD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../Lib;../../../../Base/Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
@@ -85,21 +87,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BigLittleEndian.cpp" />
-    <ClCompile Include="functionoverload.cpp" />
-    <ClCompile Include="lambda_study.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="stackoverflow_study.cpp" />
-    <ClCompile Include="std_is_same.cpp" />
-    <ClCompile Include="stl_study.cpp" />
-    <ClCompile Include="StringStudy.cpp" />
+    <ClCompile Include="IreaderTest.cpp" />
+    <ClCompile Include="KGTest.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="rvalue_refrences_study.h" />
-    <ClInclude Include="std_is_same.h" />
-    <ClInclude Include="lamada_study.h" />
-    <ClInclude Include="stl_study.h" />
-    <ClInclude Include="StringStudy.h" />
+    <ClInclude Include="KGTest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
