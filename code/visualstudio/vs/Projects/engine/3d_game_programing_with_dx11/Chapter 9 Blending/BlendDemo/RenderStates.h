@@ -20,6 +20,19 @@ public:
 	 
 	static ID3D11BlendState* AlphaToCoverageBS;
 	static ID3D11BlendState* TransparentBS;
+
+	static ID3D11BlendState* TransparentEffectBS;
+
+	static ID3D11BlendState* DeathColroBS;
+	static ID3D11BlendState* NoRenderTargetWritesBS;
+
+	
+	// Depth/stencil states
+	// exercise 10.8
+	static ID3D11DepthStencilState* DeathStencilColorDSS;
+	static ID3D11DepthStencilState* DeathStencilColorGreenDSS;
+	// exercise 10.7
+	static ID3D11DepthStencilState* DepthWriteOffDSS;
 };
 
 #endif // RENDERSTATES_H

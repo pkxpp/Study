@@ -332,8 +332,14 @@ void MirrorApp::DrawScene()
 
 		// Wall
 		Effects::BasicFX->SetDiffuseMap(mWallDiffuseMapSRV);
+		// exercise 10.5
+		//md3dImmediateContext->OMSetDepthStencilState(RenderStates::WallDSS, 1);
+
 		pass->Apply(0, md3dImmediateContext);
 		md3dImmediateContext->Draw(18, 6);
+
+		// exercise 10.5
+		//md3dImmediateContext->OMSetDepthStencilState(0, 0);
 	}
 
 	//
@@ -438,6 +444,9 @@ void MirrorApp::DrawScene()
 
 		// Only draw reflection into visible mirror pixels as marked by the stencil buffer. 
 		md3dImmediateContext->OMSetDepthStencilState(RenderStates::DrawReflectionDSS, 1);
+
+		// exercise 10.5 结果就是如果关掉了强的深度test，那么骷髅的反射是在墙的前面
+		//md3dImmediateContext->OMSetDepthStencilState(RenderStates::DrawReflectionNoStencilDSS, 1);
 		pass->Apply(0, md3dImmediateContext);
 		md3dImmediateContext->DrawIndexed(mSkullIndexCount, 0, 0);
 

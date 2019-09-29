@@ -15,6 +15,9 @@ ID3D11BlendState*      RenderStates::NoRenderTargetWritesBS = 0;
 ID3D11DepthStencilState* RenderStates::MarkMirrorDSS     = 0;
 ID3D11DepthStencilState* RenderStates::DrawReflectionDSS = 0;
 ID3D11DepthStencilState* RenderStates::NoDoubleBlendDSS  = 0;
+//exercise 10.5
+ID3D11DepthStencilState* RenderStates::WallDSS							= 0;
+ID3D11DepthStencilState* RenderStates::DrawReflectionNoStencilDSS		= 0;
 
 void RenderStates::InitAll(ID3D11Device* device)
 {
@@ -149,6 +152,8 @@ void RenderStates::InitAll(ID3D11Device* device)
 	drawReflectionDesc.FrontFace.StencilDepthFailOp = D3D11_STENCIL_OP_KEEP;
 	drawReflectionDesc.FrontFace.StencilPassOp = D3D11_STENCIL_OP_KEEP;
 	drawReflectionDesc.FrontFace.StencilFunc   = D3D11_COMPARISON_EQUAL;
+	// exercise 10.3
+	//drawReflectionDesc.FrontFace.StencilFunc   = D3D11_COMPARISON_ALWAYS;
 
 	// We are not rendering backfacing polygons, so these settings do not matter.
 	drawReflectionDesc.BackFace.StencilFailOp      = D3D11_STENCIL_OP_KEEP;
@@ -174,6 +179,8 @@ void RenderStates::InitAll(ID3D11Device* device)
 	noDoubleBlendDesc.FrontFace.StencilDepthFailOp = D3D11_STENCIL_OP_KEEP;
 	noDoubleBlendDesc.FrontFace.StencilPassOp = D3D11_STENCIL_OP_INCR;
 	noDoubleBlendDesc.FrontFace.StencilFunc   = D3D11_COMPARISON_EQUAL;
+	//exercise 10.4
+	//noDoubleBlendDesc.FrontFace.StencilFunc   = D3D11_COMPARISON_ALWAYS;
 
 	// We are not rendering backfacing polygons, so these settings do not matter.
 	noDoubleBlendDesc.BackFace.StencilFailOp      = D3D11_STENCIL_OP_KEEP;
@@ -182,6 +189,22 @@ void RenderStates::InitAll(ID3D11Device* device)
 	noDoubleBlendDesc.BackFace.StencilFunc   = D3D11_COMPARISON_EQUAL;
 
 	HR(device->CreateDepthStencilState(&noDoubleBlendDesc, &NoDoubleBlendDSS));
+
+	// exercise 10.5
+	D3D11_DEPTH_STENCIL_DESC wallDesc;
+	wallDesc.DepthEnable      = true;
+	wallDesc.DepthWriteMask   = D3D11_DEPTH_WRITE_MASK_ALL;
+	wallDesc.DepthFunc        = D3D11_COMPARISON_LESS;
+	wallDesc.StencilEnable    = false;
+	HR(device->CreateDepthStencilState(&wallDesc, &WallDSS));
+
+	D3D11_DEPTH_STENCIL_DESC drawReflectionNoStencilDesc;
+	drawReflectionNoStencilDesc.DepthEnable      = true;
+	drawReflectionNoStencilDesc.DepthWriteMask   = D3D11_DEPTH_WRITE_MASK_ALL;
+	drawReflectionNoStencilDesc.DepthFunc        = D3D11_COMPARISON_LESS;
+	drawReflectionNoStencilDesc.StencilEnable    = false;
+	HR(device->CreateDepthStencilState(&drawReflectionNoStencilDesc, &DrawReflectionNoStencilDSS));
+
 }
 
 void RenderStates::DestroyAll()
@@ -197,4 +220,8 @@ void RenderStates::DestroyAll()
 	ReleaseCOM(MarkMirrorDSS);
 	ReleaseCOM(DrawReflectionDSS);
 	ReleaseCOM(NoDoubleBlendDSS);
+
+	// exercise
+	ReleaseCOM(WallDSS);
+	ReleaseCOM(DrawReflectionNoStencilDSS);
 }
