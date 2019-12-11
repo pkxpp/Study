@@ -7,12 +7,14 @@
 //////////////////////////////////////////////////////////////////////////
 #include <cstdio>
 #include <iostream>
+#include <bitset>
 #include "StringStudy.h"
 #include "lamada_study.h"
 #include "stl_study.h"
 #include "std_is_same.h"
-//#include "stackoverflow_study.cpp"
+#include "stackoverflow_study.h"
 #include "rvalue_refrences_study.h"
+#include "cmd_study.h"
 
 using namespace std;
 
@@ -148,6 +150,108 @@ void TestOverloadMatchRule();
  // convert_point_to_array
 void convert_point_to_array();
 
+/************************************************************************/
+/* 11. float test
+* 2019/11/07
+*/
+/************************************************************************/
+void float_test()
+{
+	//float x = -4.10000086;
+
+	float y = 4.76143503;
+	float y1 = -0.200000167;
+	float y2 = -0.200000077;
+
+	float y1Add = y + y1;
+	float y2Add = y + y2;
+
+	std::cout << std::bitset<32>(*(_ULonglong*)&y) << std::endl;
+	std::cout << std::bitset<32>(*(_ULonglong*)&y1) << std::endl;
+	std::cout << std::bitset<32>(*(_ULonglong*)&y1Add) << std::endl;
+
+	std::cout << std::bitset<32>(*(_ULonglong*)&y2) << std::endl;
+	std::cout << std::bitset<32>(*(_ULonglong*)&y2Add) << std::endl;
+
+	cout << "fTest = " << y1Add << endl;
+	cout << "fTest1 = " << y2Add << endl;
+
+	// float精度，十进制有效位
+	float f = 0.123456789;
+	std::cout << std::bitset<32>(*(_ULonglong*)&f) << std::endl;
+	cout << f << endl;
+	printf("f = %lf\n", f);
+
+	f = 12345.6789f;
+	cout << f << endl;
+	double df = f;
+	cout << df << endl;
+	printf("f = %lf\n", f);
+	printf("df = %lf\n", df);
+
+	//////////////////////////////////////////////////////////////////////////
+	// 以下是浮点数转二进制的学习
+	//IEEE754 参考：https://blog.csdn.net/crjmail/article/details/79723051
+	{
+		//float n = 125.125; // 01000010111110100100000000000000 
+		//std::cout << std::bitset<32>(*(_ULonglong*)&n) << std::endl;
+
+		//n = 0.125; // 00111110000000000000000000000000 
+		//std::cout << std::bitset<32>(*(_ULonglong*)&n) << std::endl;
+
+		//n = 5.5; // 01000000101100000000000000000000
+		//std::cout << std::bitset<32>(*(_ULonglong*)&n) << std::endl;
+	}
+	
+
+	// 这个也是对的
+	{
+		//float f = 5.5f;
+		//std::bitset<sizeof(float)*CHAR_BIT> foo(*reinterpret_cast<unsigned long*>(&f));
+		//cout << foo << endl;
+	}
+	
+
+	// 这个是错的
+	//float f = 0.125;
+	//char* bits = reinterpret_cast<char*>(&f);
+	//for (std::size_t n = 0; n < sizeof f; ++n)
+	//	std::cout << std::bitset<8>(bits[n]);
+	//std::cout << '\n';
+	// 00000000000000000000000000111110
+
+	// 这个是对的
+	{
+		//union
+		//{
+		//	float input;   // assumes sizeof(float) == sizeof(int)
+		//	int   output;
+		//}    data;
+
+		//data.input = 0.125/*2.25125*/;
+
+		//std::bitset<sizeof(float) * CHAR_BIT>   bits(data.output);
+
+
+		//std::cout << bits << std::endl;
+
+		//// or
+
+		//std::cout << "BIT 4: " << bits[4] << std::endl;
+		//std::cout << "BIT 7: " << bits[7] << std::endl;
+	}
+	
+	//////////////////////////////////////////////////////////////////////////
+}
+/************************************************************************/
+/* 12. c++ definition
+* 2019/11/19
+*/
+/************************************************************************/
+/* 13. cmd dos
+* 2019/11/20
+*/
+/************************************************************************/
 
 /////////////////////////////////////////////////////////////////////
 int main()
@@ -184,7 +288,7 @@ int main()
 	//lambda.TestValueAndReferenceCapture(5);
 
 	// 7.2 rvalue references
-	TestRvalueReferences();
+	//TestRvalueReferences();
 
 	// 8. stl
 	//testSTLStudy();
@@ -195,6 +299,15 @@ int main()
 	// 10.
 	// 10.1
 	//convert_point_to_array();
+
+	// 11.
+	//float_test();
+
+	// 12.
+	Access<double> a;
+
+	// 13.
+	CreateConsoleBackground();
 
 	getchar();
 	return 0;

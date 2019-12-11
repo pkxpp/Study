@@ -95,7 +95,9 @@
     <ClCompile Include="StringStudy.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cmd_study.h" />
     <ClInclude Include="rvalue_refrences_study.h" />
+    <ClInclude Include="stackoverflow_study.h" />
     <ClInclude Include="std_is_same.h" />
     <ClInclude Include="lamada_study.h" />
     <ClInclude Include="stl_study.h" />

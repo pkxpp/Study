@@ -5,6 +5,8 @@
 // desc		: some content can't class puted here
 //////////////////////////////////////////////////////////////////////////
 #include <iostream>
+#include "stackoverflow_study.h"
+
 using namespace std;
 
 // https://stackoverflow.com/questions/56420390/converting-a-pointer-to-x-to-an-array-of-x

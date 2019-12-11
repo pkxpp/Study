@@ -87,6 +87,7 @@ private:
 
 	XMFLOAT4X4 mGrassTexTransform;
 	XMFLOAT4X4 mWaterTexTransform;
+	XMFLOAT4X4 mBoltTexTransform;
 	XMFLOAT4X4 mLandWorld;
 	XMFLOAT4X4 mWavesWorld;
 	XMFLOAT4X4 mBoxWorld;
@@ -154,6 +155,7 @@ BlendApp::BlendApp(HINSTANCE hInstance)
 	XMStoreFloat4x4(&mWavesWorld, I);
 	XMStoreFloat4x4(&mView, I);
 	XMStoreFloat4x4(&mProj, I);
+	XMStoreFloat4x4(&mBoltTexTransform, I);
 
 	XMMATRIX boxScale = XMMatrixScaling(15.0f, 15.0f, 15.0f);
 	XMMATRIX boxOffset = XMMatrixTranslation(8.0f, 5.0f, -15.0f);
@@ -335,6 +337,14 @@ void BlendApp::UpdateScene(float dt)
 	XMStoreFloat4x4(&mWaterTexTransform, wavesScale*wavesOffset);
 
 	//
+	// 10.7 Animate bolt texture.
+	//
+
+	//XMMATRIX boltScale = XMMatrixScaling(3.0f, 1.5f, 1.0f);
+	//XMMATRIX boltTranslation = XMMatrixTranslation(mTimer.TotalTime() * 0.02f, 0.0f, 0.0f);
+	//XMStoreFloat4x4(&mBoltTexTransform, boltScale*boltTranslation);
+
+	//
 	// Switch the render mode based in key input.
 	//
 	if( GetAsyncKeyState('1') & 0x8000 )
@@ -414,44 +424,44 @@ void BlendApp::DrawScene()
 		XMMATRIX worldInvTranspose = MathHelper::InverseTranspose(world);
 		XMMATRIX worldViewProj = world*view*proj;
 		
-		Effects::BasicFX->SetWorld(world);
-		Effects::BasicFX->SetWorldInvTranspose(worldInvTranspose);
-		Effects::BasicFX->SetWorldViewProj(worldViewProj);
-		Effects::BasicFX->SetTexTransform(XMMatrixIdentity());
-		Effects::BasicFX->SetMaterial(mBoxMat);
-		Effects::BasicFX->SetDiffuseMap(mBoxMapSRV);
+		//Effects::BasicFX->SetWorld(world);
+		//Effects::BasicFX->SetWorldInvTranspose(worldInvTranspose);
+		//Effects::BasicFX->SetWorldViewProj(worldViewProj);
+		//Effects::BasicFX->SetTexTransform(XMMatrixIdentity());
+		//Effects::BasicFX->SetMaterial(mBoxMat);
+		//Effects::BasicFX->SetDiffuseMap(mBoxMapSRV);
 
-		md3dImmediateContext->RSSetState(RenderStates::NoCullRS);
-		boxTech->GetPassByIndex(p)->Apply(0, md3dImmediateContext);
-		md3dImmediateContext->DrawIndexed(36, 0, 0);
+		//md3dImmediateContext->RSSetState(RenderStates::NoCullRS);
+		//boxTech->GetPassByIndex(p)->Apply(0, md3dImmediateContext);
+		//md3dImmediateContext->DrawIndexed(36, 0, 0);
 
 		//////////////////////////////////////////////////////////////////////////
 		//
 		// exercise 10.7 Draw the cylinder with stencile.
 		//
-		//md3dImmediateContext->IASetVertexBuffers(0, 1, &mCylinderVB, &stride, &offset);
-		//md3dImmediateContext->IASetIndexBuffer(mCylinderBoxIB, DXGI_FORMAT_R32_UINT, 0);
 
 		// Set per object constants.
-		world = XMLoadFloat4x4(&mLandWorld);
+		world = XMLoadFloat4x4(&mBoltTexTransform);
 		worldInvTranspose = MathHelper::InverseTranspose(world);
 		worldViewProj = world*view*proj;
 
 		Effects::BasicFX->SetWorld(world);
 		Effects::BasicFX->SetWorldInvTranspose(worldInvTranspose);
 		Effects::BasicFX->SetWorldViewProj(worldViewProj);
-		Effects::BasicFX->SetTexTransform(XMLoadFloat4x4(&mGrassTexTransform));
-		Effects::BasicFX->SetMaterial(mCylinderMat);
-		Effects::BasicFX->SetDiffuseMap(mDiffuseMapSRVSet[mTextureIndex%MAX_TEXTURES]);
+		//Effects::BasicFX->SetTexTransform(XMLoadFloat4x4(&mGrassTexTransform));
+		//Effects::BasicFX->SetMaterial(mCylinderMat);
+		
 
 		float fTotalTime = mTimer.TotalTime();
 		float fDeltaTime = fTotalTime - mLastTime;
 		if (fDeltaTime * 30.0f >= 1.0f)
 		{
-			Effects::BasicFX->SetDiffuseMap(mDiffuseMapSRVSet[mTextureIndex%MAX_TEXTURES]);
+			//Effects::BasicFX->SetDiffuseMap(mDiffuseMapSRVSet[mTextureIndex%MAX_TEXTURES]);
 			mLastTime = mTimer.TotalTime();
 			++mTextureIndex;
 		}
+
+		Effects::BasicFX->SetDiffuseMap(mDiffuseMapSRVSet[mTextureIndex%MAX_TEXTURES]);
 
 
 		md3dImmediateContext->OMSetBlendState(RenderStates::TransparentEffectBS, blendFactor, 0xffffffff);
@@ -460,6 +470,7 @@ void BlendApp::DrawScene()
 		boxTech->GetPassByIndex(p)->Apply(0, md3dImmediateContext);
 		md3dImmediateContext->DrawIndexed(mCylinderIndexCount, mCylinderIndexOffset, mCylinderVertexOffset);
 		md3dImmediateContext->OMSetBlendState(0, blendFactor, 0xffffffff);
+		md3dImmediateContext->OMSetDepthStencilState(0, 0);
 		//////////////////////////////////////////////////////////////////////////
 
 		// Restore default render state.
@@ -491,8 +502,8 @@ void BlendApp::DrawScene()
 		Effects::BasicFX->SetMaterial(mLandMat);
 		Effects::BasicFX->SetDiffuseMap(mGrassMapSRV);
 
-		landAndWavesTech->GetPassByIndex(p)->Apply(0, md3dImmediateContext);
-		md3dImmediateContext->DrawIndexed(mLandIndexCount, 0, 0);
+		//landAndWavesTech->GetPassByIndex(p)->Apply(0, md3dImmediateContext);
+		//md3dImmediateContext->DrawIndexed(mLandIndexCount, 0, 0);
 
 		//
 		// Draw the waves.
@@ -516,8 +527,8 @@ void BlendApp::DrawScene()
 		// exercise 9.1
 		//md3dImmediateContext->OMSetBlendState(RenderStates::TransparentBS, blendFactor, 0xfffffffe);
 
-		landAndWavesTech->GetPassByIndex(p)->Apply(0, md3dImmediateContext);
-		md3dImmediateContext->DrawIndexed(3*mWaves.TriangleCount(), 0, 0);
+		//landAndWavesTech->GetPassByIndex(p)->Apply(0, md3dImmediateContext);
+		//md3dImmediateContext->DrawIndexed(3*mWaves.TriangleCount(), 0, 0);
 
 		// Restore default blend state
 		md3dImmediateContext->OMSetBlendState(0, blendFactor, 0xffffffff);
@@ -748,8 +759,8 @@ void BlendApp::DrawScene1()
 		// exercise 10.8
 		md3dImmediateContext->OMSetDepthStencilState(RenderStates::DeathStencilColorDSS, 1);
 
-		landAndWavesTech->GetPassByIndex(p)->Apply(0, md3dImmediateContext);
-		md3dImmediateContext->DrawIndexed(mLandIndexCount, 0, 0);
+		//landAndWavesTech->GetPassByIndex(p)->Apply(0, md3dImmediateContext);
+		//md3dImmediateContext->DrawIndexed(mLandIndexCount, 0, 0);
 
 		//
 		// Draw the waves.

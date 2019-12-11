@@ -62,5 +62,11 @@
     <ClInclude Include="rvalue_refrences_study.h">
       <Filter>Source Files\c++11</Filter>
     </ClInclude>
+    <ClInclude Include="stackoverflow_study.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cmd_study.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
