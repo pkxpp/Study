@@ -5,6 +5,7 @@
 // desc		: some content can't class puted here
 //////////////////////////////////////////////////////////////////////////
 #include <iostream>
+#include <queue>
 #include "stackoverflow_study.h"
 
 using namespace std;
@@ -32,3 +33,25 @@ void convert_point_to_array()
 /*summary
  * in vs2015 it's ok.And the question is happened in MISRA C++
  */
+
+
+
+// https://stackoverflow.com/questions/61072942/how-does-the-comparator-function-work-in-priority-queue-c-stl
+bool operator<(const Student& a, const Student& b)
+{
+	return a.age <= b.age;
+}
+
+void compare_self_define()
+{
+	priority_queue<Student> pq;
+	Student a("max", 1);
+	Student b("john", 1);
+	pq.push(a);
+	pq.push(b);
+	//cout << pq.top().a << " " << pq.top().age << endl;
+	pq.pop();
+	//cout << pq.top().a << " " << pq.top().age << endl;
+	pq.pop();
+}
+

@@ -15,6 +15,9 @@
 #include "stackoverflow_study.h"
 #include "rvalue_refrences_study.h"
 #include "cmd_study.h"
+#include <thread>
+#include "inherited_study.h"
+#include "effective c++/public.h"
 
 using namespace std;
 
@@ -166,19 +169,19 @@ void float_test()
 	float y1Add = y + y1;
 	float y2Add = y + y2;
 
-	std::cout << std::bitset<32>(*(_ULonglong*)&y) << std::endl;
-	std::cout << std::bitset<32>(*(_ULonglong*)&y1) << std::endl;
-	std::cout << std::bitset<32>(*(_ULonglong*)&y1Add) << std::endl;
+	//std::cout << std::bitset<32>(*(_ULonglong*)&y) << std::endl;
+	//std::cout << std::bitset<32>(*(_ULonglong*)&y1) << std::endl;
+	//std::cout << std::bitset<32>(*(_ULonglong*)&y1Add) << std::endl;
 
-	std::cout << std::bitset<32>(*(_ULonglong*)&y2) << std::endl;
-	std::cout << std::bitset<32>(*(_ULonglong*)&y2Add) << std::endl;
+	//std::cout << std::bitset<32>(*(_ULonglong*)&y2) << std::endl;
+	//std::cout << std::bitset<32>(*(_ULonglong*)&y2Add) << std::endl;
 
 	cout << "fTest = " << y1Add << endl;
 	cout << "fTest1 = " << y2Add << endl;
 
 	// float精度，十进制有效位
 	float f = 0.123456789;
-	std::cout << std::bitset<32>(*(_ULonglong*)&f) << std::endl;
+	//std::cout << std::bitset<32>(*(_ULonglong*)&f) << std::endl;
 	cout << f << endl;
 	printf("f = %lf\n", f);
 
@@ -252,7 +255,43 @@ void float_test()
 * 2019/11/20
 */
 /************************************************************************/
+/************************************************************************/
+/* 14. stack over flow compare
+* 2020/04/07
+*/
+/************************************************************************/
+// compare_self_define
+//void compare_self_define();
 
+/************************************************************************/
+/* 15. multi inherited
+* 2020/04/07
+*/
+/************************************************************************/
+/* 16. effective c++
+* 2020/07/026
+*/
+/************************************************************************/
+/*
+ * 17.GetFileAttributesA
+ */
+void TestGetFileAttributesA()
+{
+	const int TNUM = 10;
+	std::thread threads[TNUM];
+	for (int i = 0; i < TNUM; ++i)
+	{
+		threads[i] = std::thread ([]() {
+			DWORD dwRet = GetFileAttributesA("z:\\jx3_earth\\globe\\terrain\\terrainheightmaphigh\\3\\4\\1.terrain");
+			cout << "dwRet = " << dwRet << endl;
+			bool bExist = !(dwRet & FILE_ATTRIBUTE_DIRECTORY);
+		});
+	}
+	for (int i = 0; i < TNUM; ++i)
+	{
+		threads[i].join();
+	}
+}
 /////////////////////////////////////////////////////////////////////
 int main()
 {
@@ -304,10 +343,25 @@ int main()
 	//float_test();
 
 	// 12.
-	Access<double> a;
+	//Access<double> a;
 
 	// 13.
-	CreateConsoleBackground();
+	//CreateConsoleBackground();
+
+	// 14.
+	//compare_self_define();
+
+	// 15.
+	//TestInherited();
+
+	// 16.
+	effective_study::TestEffectiveStudy();
+	
+	// 17.
+	DWORD dwRet = GetFileAttributesA("z:\\jx3_earth\\globe\\terrain\\terrainheightmaphigh\\3\\4\\1.terrain");
+	bool bExist = !(dwRet & FILE_ATTRIBUTE_DIRECTORY);
+	TestGetFileAttributesA();
+	
 
 	getchar();
 	return 0;

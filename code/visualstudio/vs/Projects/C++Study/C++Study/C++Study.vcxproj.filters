@@ -19,6 +19,9 @@
     <Filter Include="Source Files\stl">
       <UniqueIdentifier>{0e6d2488-c21c-43fe-8955-dd2dc87d758b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\effective c++">
+      <UniqueIdentifier>{36c9ea08-e7db-40a2-b6fe-64949d2e212f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BigLittleEndian.cpp">
@@ -45,6 +48,9 @@
     <ClCompile Include="stackoverflow_study.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="inherited_study.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="StringStudy.h">
@@ -68,5 +74,22 @@
     <ClInclude Include="cmd_study.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="inherited_study.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="effective c++\item27.h">
+      <Filter>Source Files\effective c++</Filter>
+    </ClInclude>
+    <ClInclude Include="effective c++\item28.h">
+      <Filter>Source Files\effective c++</Filter>
+    </ClInclude>
+    <ClInclude Include="effective c++\public.h">
+      <Filter>Source Files\effective c++</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
 </Project>

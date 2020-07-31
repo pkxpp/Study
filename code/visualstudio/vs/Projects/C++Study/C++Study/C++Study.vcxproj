@@ -19,13 +19,13 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -87,6 +87,7 @@
   <ItemGroup>
     <ClCompile Include="BigLittleEndian.cpp" />
     <ClCompile Include="functionoverload.cpp" />
+    <ClCompile Include="inherited_study.cpp" />
     <ClCompile Include="lambda_study.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="stackoverflow_study.cpp" />
@@ -96,12 +97,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cmd_study.h" />
+    <ClInclude Include="effective c++\item27.h" />
+    <ClInclude Include="effective c++\item28.h" />
+    <ClInclude Include="effective c++\public.h" />
+    <ClInclude Include="inherited_study.h" />
     <ClInclude Include="rvalue_refrences_study.h" />
     <ClInclude Include="stackoverflow_study.h" />
     <ClInclude Include="std_is_same.h" />
     <ClInclude Include="lamada_study.h" />
     <ClInclude Include="stl_study.h" />
     <ClInclude Include="StringStudy.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -59,3 +59,20 @@ using lf_nam::Access;
 /*summary
 * in vs2015 it's ok.And the question is happened in tdm-g++ 5.1.0
 */
+
+//////////////////////////////////////////////////////////////////////////
+// 2. https://stackoverflow.com/questions/61072942/how-does-the-comparator-function-work-in-priority-queue-c-stl
+void compare_self_define();
+
+class Student
+{
+public:
+	string a;
+	int age;
+	Student(string a, int age)
+	{
+		this->a = a;
+		this->age = age;
+	}
+};
+
