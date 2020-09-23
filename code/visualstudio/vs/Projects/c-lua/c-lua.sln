@@ -1,11 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c-lua", "c-lua\c-lua.vcproj", "{B71D17FD-2D2E-4CA8-BB6E-2133FFE128D7}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c-lua", "c-lua\c-lua.vcxproj", "{B71D17FD-2D2E-4CA8-BB6E-2133FFE128D7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mystudylib", "mystudylib\mystudylib.vcproj", "{EDB4E30A-EFA0-4680-A834-53E82C30428F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mystudylib", "mystudylib\mystudylib.vcxproj", "{EDB4E30A-EFA0-4680-A834-53E82C30428F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "array", "array\array.vcproj", "{2E5CD5E4-43A1-4A1A-847C-780B32203CF5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "array", "array\array.vcxproj", "{2E5CD5E4-43A1-4A1A-847C-780B32203CF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,5 +30,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D535E546-12AD-4FE7-A340-4643C3879AC6}
 	EndGlobalSection
 EndGlobal
