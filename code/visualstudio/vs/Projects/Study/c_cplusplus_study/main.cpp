@@ -1,6 +1,7 @@
 #include <iostream>
 #include "ClassLayout.h"
 #include "ClassFragments.h"
+#include "6-7-1.h"
 
 using namespace std;
 //////////////////////////////////////////////////////////////////////////
@@ -8,6 +9,8 @@ using namespace std;
 // 1.
 // 2. Class Layout
 // 3.Class Fragments
+// 4.
+// 5. heap alogrithm test
 
 void TestDecimal(){
 	/*cout << "INT_MIN: " << INT_MIN << endl;
@@ -148,6 +151,45 @@ void TestClassFragments(){
 }
 
 //////////////////////////////////////////////////////////////////////////
+// 5.
+int even_by_two::_x = 0;
+
+void TestHeapAlogrithm(){
+	int ia[] = { 0, 1, 2, 3, 4, 5, 6, 6, 6, 7, 8 };
+	vector<int> iv(ia, ia + sizeof(ia) / sizeof(int));
+
+	for_each(iv.begin(), iv.end(), display<int>());
+	cout << endl;
+
+	vector<int> iv2(ia + 6, ia + 8);
+	generate(iv2.begin(), iv2.end(), even_by_two());
+	for_each(iv2.begin(), iv2.end(), display<int>());
+	cout << endl;
+
+	generate_n(iv.begin(), 3, even_by_two());
+	for_each(iv.begin(), iv.end(), display<int>());
+	cout << endl;
+
+	remove(iv.begin(), iv.end(), 6);
+	for_each(iv.begin(), iv.end(), display<int>());
+	cout << endl;
+
+	vector<int> iv3(12);
+	remove_copy(iv.begin(), iv.end(), iv3.begin(), 6);
+	for_each(iv3.begin(), iv3.end(), display<int>());
+	cout << endl;
+
+	remove_if(iv.begin(), iv.end(), bind2nd(less<int>(), 6));
+	for_each(iv.begin(), iv.end(), display<int>());
+	cout << endl;
+	cout << "sizeof(iv) = " << iv.size() << endl;
+
+	remove_copy_if(iv.begin(), iv.end(), iv3.begin(), bind2nd(less<int>(), 7));
+	for_each(iv3.begin(), iv3.end(), display<int>());
+	cout << endl;
+}
+
+//////////////////////////////////////////////////////////////////////////
 int main(){
 	//TestDecimal();
 
@@ -161,6 +203,8 @@ int main(){
 	// 4. Binary Tree
 	//TestBinaryTree();
 
+	// 5. heap alogrithm
+	TestHeapAlogrithm();
 
 	getchar();
 	return 0;

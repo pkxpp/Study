@@ -24,6 +24,9 @@
     <ClCompile Include="ClassFragments.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="6-7-1.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClassLayout.h">
