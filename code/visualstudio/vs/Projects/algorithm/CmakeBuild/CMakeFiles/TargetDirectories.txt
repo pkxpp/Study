@@ -1,5 +1,0 @@
-E:/study/c++/visualstudio/Projects/algorithm/CmakeBuild/CMakeFiles/algorithm.dir
-E:/study/c++/visualstudio/Projects/algorithm/CmakeBuild/CMakeFiles/ALL_BUILD.dir
-E:/study/c++/visualstudio/Projects/algorithm/CmakeBuild/CMakeFiles/ZERO_CHECK.dir
-E:/study/c++/visualstudio/Projects/algorithm/CmakeBuild/list/CMakeFiles/List.dir
-E:/study/c++/visualstudio/Projects/algorithm/CmakeBuild/heap/CMakeFiles/Heap.dir
