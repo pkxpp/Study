@@ -12,7 +12,7 @@
 
 using namespace std;
 
-#pragma comment( lib, "D:\\Program Files (x86)\\Lua\\5.1\\lib\\lua5.1.lib")
+//#pragma comment( lib, "D:\\Program Files (x86)\\Lua\\5.1\\lib\\lua5.1.lib")
 
 struct info{
 	string name;
