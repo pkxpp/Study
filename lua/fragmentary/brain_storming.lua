@@ -71,9 +71,9 @@ tbRaw1[3][2] = "z"
 tbRaw1[4][2] = "z1"
 
 local nRaw1 = tbRaw[1]
-print(nRaw1, tbRaw[1], tbRaw[3][2], tbRaw[4][2], tbRaw1[1], tbRaw1[3][2], tbRaw1[4][2])
+-- print(nRaw1, tbRaw[1], tbRaw[3][2], tbRaw[4][2], tbRaw1[1], tbRaw1[3][2], tbRaw1[4][2])
 nRaw1 = 5
-print(nRaw1, tbRaw[1], tbRaw1[1])
+-- print(nRaw1, tbRaw[1], tbRaw1[1])
 
 ---------------------------------------
 
@@ -434,9 +434,33 @@ end
 
 ------------------------------------------------------------
 -- double to int 2017-09-19 14:55:00
-local temp = 10/3
-local f2int = math.floor(temp)
-print(f2int)
-local d = 1.0680473940293e+088
-print("d = ", d)
-print(math.floor(d))
+function double2int()
+	local temp = 10/3
+	local f2int = math.floor(temp)
+	print(f2int)
+	local d = 1.0680473940293e+088
+	print("d = ", d)
+	print(math.floor(d))
+end
+
+-------------------------------------------------------------
+-- lua type is exist bool 2018-10-30 16:19:10
+-- print(type(true))
+
+------------------------------------------------------------
+-- ÈýÔªÔËËã·û
+function TestThreeMeta()
+	local fnTest1 = nil
+	if nil then
+		print("111111111111111111")
+	end
+	local fnTest2 = function() return true; end
+	local a = fnTest1;
+	local b = false;
+	local bRet = a and a() or b;
+	print(bRet)
+end
+TestThreeMeta();
+
+
+print(111, #(tbTest222 or {1, 2, 3}))

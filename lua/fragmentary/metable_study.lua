@@ -323,3 +323,30 @@ setmetatable(a, b)
 print(a[1])
 print("getmetatable£º", getmetatable(a), b)
 print(getmetatable(c), getmetatable(d), getmetatable(e), getmetatable(f))
+
+------------------------------------------------------------
+-- meta method 2018-10-19 16:01:37  jit email list
+local Class = {}
+
+function Class:__tostring()
+    print("1")
+    return "3"
+end
+
+local t = setmetatable({}, Class)
+
+print("2\n", tostring(t)) -- Produces proper output
+print()
+print("2\n", t) 
+
+-- strang result
+--[[
+1
+2
+	3
+
+2
+1
+	3
+]]
+

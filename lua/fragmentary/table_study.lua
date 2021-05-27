@@ -726,3 +726,46 @@ table.sort(tbAll, fnCompare);
 for k, v in ipairs(tbAll) do
 	-- print(v.messageId); -- result: 1 3
 end
+
+--stackoverflow 2019-03-22 15:03:15
+local result = {
+  {
+    data = {
+      language = "English",
+      name = "Freak Out",
+      list = {
+        {
+          type = "songs",
+          album = "1234"
+        }, {
+          type = "songs",
+          album = "4234"
+        }, {
+          type = "songs",
+          album = "5829"
+        }
+      }
+    }
+  }
+}
+
+for _, res in ipairs(result) do
+  for _, song in ipairs(res.data.list) do
+    print(song.type, song.album)
+  end
+end
+------------------------------------------------------------
+-- local tbTestMultiKey = {
+-- 	-- M1 = M1_Player = 1,	-- error
+-- 	M1 = 1,
+-- 	M2 = 2,
+-- 	M1_Player = tbTestMultiKey.M1,
+-- }
+-- tbTestMultiKey.M1_Player = tbTestMultiKey.M1
+-- print(tbTestMultiKey.M1_Player)
+
+------------------------------------------------------------
+local t1 = {a = 2, b = 3}
+local t2 = t1;
+t2.a = 5;
+print(t1.a)

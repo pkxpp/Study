@@ -75,4 +75,86 @@ function tst_CalcItemID(  )
 		print(szLog)
 	end
 end
-tst_CalcItemID();
+-- tst_CalcItemID();
+
+-- 武器向量计算 2018-10-06 11:50:22
+local tbAnim = {
+	{{["x"] =-20,  ["y"] =169,  ["z"] =-19 }, {["x"] =39, ["y"] =-93,   ["z"] =-3 }},
+	{{["x"] =-8,  ["y"] =82,  ["z"] =-34 }, {["x"] =-82, ["y"] =7,   ["z"] =-32 }},
+	{{["x"] =-65, ["y"] =141, ["z"] =16  }, {["x"] =-51, ["y"] =74,  ["z"] =95  }},
+	{{["x"] =-66, ["y"] =159, ["z"] =-9  }, {["x"] =37,  ["y"] =160, ["z"] =9   }},
+	{{["x"] =66,  ["y"] =56,  ["z"] =-19 }, {["x"] =166, ["y"] =37,  ["z"] =-44 }},
+	{{["x"] =68,  ["y"] =69,  ["z"] =-34 }, {["x"] =152, ["y"] =64,  ["z"] =-98 }},
+	{{["x"] =-19, ["y"] =78,  ["z"] =51  }, {["x"] =-46, ["y"] =41,  ["z"] =145 }},
+}
+
+function tst_CalcWeaponVector2D(tbAnim)
+	for i, tbOnePosition in pairs(tbAnim or {}) do
+		local tbStart = tbOnePosition[1]
+		local tbEnd = tbOnePosition[2]
+		if tbStart and tbEnd then
+			local x = tbEnd.x - tbStart.x
+			local y = tbEnd.y - tbStart.y
+			local z = tbEnd.z - tbStart.z
+			print(i .. ": (" .. x .. ", " .. y .. "," .. z .. ")" .. "-->" .. math.sqrt(x^2 + y^2 + z^2))
+		end 
+	end
+end
+-- tst_CalcWeaponVector2D(tbAnim);
+
+----------------------------------------------------------------------------
+-- https://stackoverflow.com/questions/61099927/how-to-iterate-through-results-in-sets
+local t = {
+	{6, 5, -3},
+	{12, 12.4, -5},
+	{18, 19.8, -7},
+}
+for _, v in ipairs(t) do
+	local l, p1, p2 = unpack(v)
+	print(l, p1, p2)
+end
+
+function emptyContents()
+    contents = self.getObjects()
+
+    for i, _ in ipairs(self.getObjects()) do
+		for _, v in ipairs(t) do
+			local l, p1, p2 = unpack(v)
+			if i <= l then
+				self.takeObject(setPosition(p1, p2))
+				break;
+			end
+		end
+    end
+end
+
+----------------------------------------------------------------------------
+-- https://stackoverflow.com/questions/61168399/how-to-transform-a-key-value-table-into-a-list-lua
+
+local tExpand = {a="hello", b="world"}
+function expand(t)
+  local i = 1
+  local res = {}
+  for k, v in pairs(t) do
+    res[i] = k
+    i = i + 1
+    res[i] = v
+    i = i + 1
+  end
+  return res
+end
+
+function expand1(t)
+	local res = {}
+	for k, v in pairs(t or {}) do
+		res[#res + 1] = k;
+		res[#res + 1] = v;
+	end
+	return res;
+end
+
+-- local tExpandRet = expand(tExpand);
+local tExpandRet = expand1(tExpand);
+for k, v in pairs(tExpandRet) do
+	print(k, v)
+end

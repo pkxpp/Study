@@ -86,22 +86,27 @@ end
 local width, height, area, perimeter
 
 -- intro text and user inputs
-print("Welcome to the Rectangle Area & Perimeter Calculator")
+-- print("Welcome to the Rectangle Area & Perimeter Calculator")
 
-print("Enter Rectangle Width")
-width = io.read()
-if width <0 then 
-	print "Error: Please enter a positive value for width"
-end
+-- print("Enter Rectangle Width")
+-- width = io.read()
+-- if width <0 then 
+-- 	print "Error: Please enter a positive value for width"
+-- end
 
-print("Enter Rectangle Height")
-height = io.read()
-if height <0 then 
-	print "Error: Please enter a positive value for height"
-end 
+-- print("Enter Rectangle Height")
+-- height = io.read()
+-- if height <0 then 
+-- 	print "Error: Please enter a positive value for height"
+-- end 
 
---Calculator
-area = width * height
-print("The area of the rectangle is ", area)
-perimeter = 2 * (width + height)
-print("The perimeter of the rectangle is ", perimeter)
+-- --Calculator
+-- area = width * height
+-- print("The area of the rectangle is ", area)
+-- perimeter = 2 * (width + height)
+-- print("The perimeter of the rectangle is ", perimeter)
+
+------------------------------------------------------------
+--- ini.lua
+local resty_ini = require "ini"
+local conf, err = resty_ini.parse_file("/path/to/file.ini")

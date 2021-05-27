@@ -72,10 +72,10 @@ setfenv(1, tEnv)
 local env1 = {
 	-- print = print,
 }
--- function testSetfenv( )
-	-- setfenv(1, env1)
+function testSetfenv( )
+	setfenv(1, env1)
 	-- print("testSetfenv")	-- Error: testSetFenv函数所在的环境设置为env1，但是env1是没有print函数的
--- end
+end
 -- testSetfenv()
 
 -- local MyModel={}
@@ -83,14 +83,38 @@ local env1 = {
 -- local func = loadfile("testSetfenv.lua")
 -- print(111, func)
 -- func()
---等价于setenv(func,MyModel);func();
+-- -- 等价于setenv(func,MyModel);func();
 -- local fenv = setfenv(func, MyModel)
 -- fenv() -- 新环境中没有print函数
 -- print("test = ", MyModel.test)
---MyModel就是新的模块啦，可以attempt to call field 'test' (a nil value)用其中的函数啦,其实，lua内部的model命令或者函数也是用的这个原理
+-- MyModel就是新的模块啦，可以attempt to call field 'test' (a nil value)用其中的函数啦,其实，lua内部的model命令或者函数也是用的这个原理
 -- print("var = ", MyModel.testvar)
 -- MyModel.test()
 
+-- @2020/06/17 setfenv loadstring返回的结果正确？
+function testImport(  )
+	local MyModel={}
+	setmetatable(MyModel, {__index = _G})
+	local func = loadfile("testSetfenv.lua")
+
+	local nType = 2
+	-- not setfenv
+	if nType == 1 then
+		func()
+		print("1 test = ", test)	-- test是有的，因为这个时候，我没有设置setfenv，所以环境就是当前文件
+	elseif nType == 2 then
+		-- setfenv
+		setfenv(func, MyModel)
+		func()
+		print("2 test = ", test)	-- test = nil
+	elseif nType == 3 then
+		local fenv = setfenv(func, MyModel)
+		fenv()
+		print("3 test = ", test)	-- test = nil
+	end
+
+end
+testImport()
 --[[
 sum:
 1. 注释掉setmetatable一行之后，print(111, func)正常执行，因为当前环境还是_G;但是f1()这一句报错，因为他的话你就能够是FuncEnv，而FuncEnv当中是没有print函数的，所以执行print会报错
@@ -254,7 +278,7 @@ function f3()
 	return 
 end
 
--- print(getfenv(f1), getfenv(f2), _G, f1, f2)
+-- print(getfenv(f1), debug.getinfo(2), getfenv(f2), _G, f1, f2)
 print(f1, f2)
 f1()
 
@@ -280,3 +304,6 @@ table: 000000000034a6d0	function: 000000000034eb50	main
 table: 000000000034a790	function: 000000000034eb50	main
 ]]
 
+
+
+------------------------------------------------------------

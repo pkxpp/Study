@@ -526,4 +526,100 @@ end
 ------------------------------------------------------------
 -- string array
 local szString = "abcdefghijklmnopqrstuvwxyz";
-print(szString[2])
+-- print(szString[2])
+
+------------------------------------------------------------
+ -- 2020-04-10 11:51:25
+ -- stackoverflow match
+function testMatch()
+	-- https://stackoverflow.com/questions/61130773/how-to-get-string-multi-word-between-characters
+	local str = "Reason = Failed to connect ( Nickname: Mc Gee ), Banned by: Andrew"
+	print(str)
+	-- local key, value = string.match(pair, "[%a%s]+(*(%a+)%s*=%s*(%a+)")
+	local szKey, szName = string.match(str, "Reason = [%a%s]+%([%a%s]+:%s+(.*)%s+%).*");
+	print(szName)
+	print(string.match(str, "Reason = [%a%s]+%([%a%s]+:%s+(.*)%s+%).*"))
+	-- print(string.match(str, "(.*)"))
+	-- print(str:match("%b()"):gsub("[()]","")) -- prints ` Nickname: Mc Gee `
+	-- print(str:match("%b()")) -- 
+end
+-- testMatch();
+
+
+------------------------------------------------------------
+-- data\source\player\f1\部件\mdl\f1.mdl
+function fnGetBodyType(szModel)
+	local szModel = szModel or "data\\source\\player\\f1\\部件\\mdl\\f1.mdl";
+	local szType = string.match(szModel, ".*\\(%a+%d+)_-[%a%d]-.mdl");
+	print(111, szType);
+end
+-- fnGetBodyType();
+-- fnGetBodyType("data\\source\\player\\m1\\部件\\mdl\\m1_player.mdl");
+
+
+print(string.format("xxx%d %%, %.1f", 1, 0.1));
+
+
+-------------------------------------------------------------------------
+string.split = function(str, sep)
+    local rt     = {};
+    local bEmpty = false;
+    if type(str) ~= "string" or type(sep) ~= "string" then
+        return rt, bEmpty;
+    end
+    string.gsub(str, '[^' .. sep .. ']+', function(w)
+        table.insert(rt, w)
+    end);
+    bEmpty = (rt and #rt == 1 and rt[1] == "\0");
+    return rt, bEmpty;
+end
+local tbSplit = string.split("aabbccbc", "bb");
+-- for k, v in ipairs(tbSplit) do
+-- 	print(k, v)
+-- end
+
+-------------------------------------------------------------------------
+-- 反向查找 @2021/05/07
+-- 不支持捕获
+string.rfind = function(str, pattern, pos)
+	local pos = pos or -1;
+	local rstr = string.reverse(str);
+	local rpattern = string.reverse(pattern);
+	local rpos = -pos;
+	print(1, rstr);
+	print(2, rpattern);
+	print(3, rpos);
+	local s, e = string.find(rstr, rpattern, rpos)
+	print("rfind: ", s, e)
+	local l = string.len(str);
+	return l - e + 1, l - s + 1;
+end
+
+function test_rfind()
+	a = "hello, world!hello, li!hello hi"
+	p, q = string.find(a, "hello")
+	print("p, q = ", p, q, t)
+	local s, e = string.rfind(a, "hello");
+	print(s, e)
+
+	-- b = "test(char)"
+	-- print(b)
+	-- print(string.find(b, "%(.*%)"))
+	-- string.rfind(b, "%(.*%)");
+
+	local szPath = "script/gameplay/building/anchor/building_anchor.lua";
+	-- local nPos = string.rfind(szPath, '%.');
+	-- print(nPos)
+	-- local szPath1 = string.sub(szPath, 1, nPos);
+	-- szPath1 = szPath1 .. ".Json"
+	-- print(szPath1)
+
+	--
+	-- 用math找后缀 : https://stackoverflow.com/questions/17386792/how-to-implement-string-rfind-in-lua
+	local szPath2 = string.match(szPath, ".*%.")
+	print(szPath2)
+
+	-- szPath = "data/source/maps/平野孤鸿/平野孤鸿.jsonmap"
+	-- szPath2 = string.match(szPath, ".*%.")
+end
+test_rfind();

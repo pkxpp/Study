@@ -119,3 +119,7 @@ end
 --(2)calc结果：1696132062
 --(3)c++程序结果：1696131389 = (2892209121597)%(0xffffffff+1)
 ]]
+
+for i = 1, 10 do
+print(math.random())
+end

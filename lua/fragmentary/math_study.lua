@@ -337,13 +337,13 @@ function AssignAverage1( nNpc, nMissile )
 end
 
 local tbAssign = AssignAverage(3, 8)
-print(table.concat( tbAssign, ", "))
-tbAssign = AssignAverage(8, 3)
-print(table.concat( tbAssign, ", "))
-tbAssign = AssignAverage1(3, 8)
-print(table.concat( tbAssign, ", "))
-tbAssign = AssignAverage1(8, 3)
-print(table.concat( tbAssign, ", "))
+-- print(table.concat( tbAssign, ", "))
+-- tbAssign = AssignAverage(8, 3)
+-- print(table.concat( tbAssign, ", "))
+-- tbAssign = AssignAverage1(3, 8)
+-- print(table.concat( tbAssign, ", "))
+-- tbAssign = AssignAverage1(8, 3)
+-- print(table.concat( tbAssign, ", "))
 ------------------------------------------------------------
 -- 计算加速度测试
 -- 2017-06-21 20:34:08
@@ -359,3 +359,68 @@ local Velocity = CurSpeed.X + AcclerSpeed * DeltaTime
 -- 112 {X=232.89420 Y=505.34073 Z=2284.9568 ...}
 -- 222 ---{X=-349.20822 Y=423.03687 Z=2370.1584 ...}, {X=232.89420 Y=505.34073 Z=2284.9568 ...}, {X=-198.62787 Y=431.45392 Z=2419.9751 ...}
 
+---------------------------------------------------------------
+-- vector.dot 
+-- page@2018-06-11 17:20:54
+function dot(tbA, tbB)
+	return tbA.x * tbB.x + tbA.y * tbB.y + tbA.z * tbB.z;
+end
+
+local tbPlane = {
+	[0] = {normal={x=-0.392222494, y=-0.916199923, z=0.0820929036}, d=36355.5742 },
+	[1] = {normal={x=0.404537171, y=0.333425373, z=0.851573408}, d=-121916.305 },
+	[2] = {normal={x=-0.475112110, y=-0.314784944, z=-0.821692705}, d=127058.109 },
+	[3] = {normal={x=0.396674424, y=-0.390141279, z=-0.830926657}, d=30842.7969 },
+	[4] = {normal={x=-0.149656221, y=-0.968787551, z=0.197620019}, d=-1071.68750 },
+	[5] = {normal={x=-0.927155316, y=-0.0814982802, z=-0.365706176}, d=136140.969 }
+}
+
+local tbCenter = {x=111243.070, y=88.0610352, z=90160.3906}
+
+-- for i = 0, 5 do
+-- 	local v = tbPlane[i];
+-- 	print(dot(v.normal, tbCenter), dot(v.normal, tbCenter) + v.d)
+-- end
+
+------------------------------------------------------------
+-- uuid
+local function uuid(nSeed)
+	local seed = nSeed or os.time();
+	print("seed = ", seed)
+	math.randomseed(seed)
+    local template ='xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
+    return string.gsub(template, '[xy]', function (c)
+        local v = (c == 'x') and math.random(0, 0xf) or math.random(8, 0xb)
+        return string.format('%x', v)
+    end)
+end
+local a = uuid(1);
+-- print(a)
+
+----------------------------------------------------------------
+---@ tbRate = {num1, num2, num3...}
+---@ return number index in tbRate
+function RandomTableIndex(tbRate)
+    local nSum = 0;
+    for _, v in ipairs(tbRate) do
+        nSum = nSum + v;
+    end
+
+    local nIndex = 0;
+    local nTemp = 0;
+    local nRand = math.random(nSum);
+    for k, v in ipairs(tbRate) do
+        nTemp = nTemp + v;
+        if nRand < nTemp then
+            nIndex = k;
+            break;
+        end
+    end
+
+    return nIndex;
+end
+
+for i = 1, 10 do
+	local nIndex = RandomTableIndex({0, 0, 16, 67, 12, 5});
+	print(nIndex)
+end
