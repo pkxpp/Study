@@ -20,6 +20,14 @@ int main()
 {
 	Base b;
 	b.f();
+
+	//printf("通过虚函数表获取的函数地址：\n");
+	////printf("%p\n", (int*)*(int*)*(int*)(&b));
+
+	//printf("\n通过函数指针赋值获取的函数地址：\n");
+	//pFun = &Base::f;
+	//printf("%p\n\n", pFun);
+
 	/*cout << "sizeof(int)		= " << sizeof(int) << endl
 		<< "sizeof(long)		= " << sizeof(long) << endl
 		<< "sizeof(int*)		= " << sizeof(int*) << endl
@@ -34,7 +42,7 @@ int main()
 	//typedef long* CUSTOM_PTR_TYPE;
 
 	long** pVtab = (long**)&b;
-	printf("%p\n", pVtab[0][0]);
+	//printf("%p\n", pVtab[0][0]);
 	//printf("&b = %p\n", &b);
 	//printf("(CUSTOM_PTR_TYPE)(&b) = %p\n", (CUSTOM_PTR_TYPE)(&b));
 	//printf("*(CUSTOM_PTR_TYPE)(&b) = %p\n", *(CUSTOM_PTR_TYPE)(&b));

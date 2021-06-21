@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="Header Files\luajit">
+      <UniqueIdentifier>{6adb3af5-42b9-4958-a524-0e1cbc0a0746}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="hello.cpp">
@@ -20,8 +23,23 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lua.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\include\luajit\lauxlib.h">
+      <Filter>Header Files\luajit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\luajit\lua.h">
+      <Filter>Header Files\luajit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\luajit\lua.hpp">
+      <Filter>Header Files\luajit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\luajit\luaconf.h">
+      <Filter>Header Files\luajit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\luajit\luajit.h">
+      <Filter>Header Files\luajit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\luajit\lualib.h">
+      <Filter>Header Files\luajit</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
