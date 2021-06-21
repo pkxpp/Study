@@ -18,6 +18,7 @@
 #include <thread>
 #include "inherited_study.h"
 #include "effective c++/public.h"
+#include "CastStudy.h"
 
 using namespace std;
 
@@ -275,6 +276,11 @@ void float_test()
 /*
  * 17.GetFileAttributesA
  */
+/************************************************************************/
+/* 18. type cast: static_cast/reinterpret_cast/dynamic_cast/const_cast
+ * 2021/01/26
+ */
+ /************************************************************************/
 void TestGetFileAttributesA()
 {
 	const int TNUM = 10;
@@ -292,6 +298,15 @@ void TestGetFileAttributesA()
 		threads[i].join();
 	}
 }
+
+/************************************************************************/
+/* 19. 想把一个std::function类型转成 函数指针，这个函数指针是一个接口的参数，但是怎么转都不对
+ * （1）直接std::function丢到参数里面不对
+ * （2）参数用lambda表示，然后把std::function捕获进去直接执行，结果也是不对，因为带捕获的lambda是不能转换为函数指针的
+ * 2021/04/21
+ */
+/************************************************************************/
+
 /////////////////////////////////////////////////////////////////////
 int main()
 {
@@ -355,12 +370,24 @@ int main()
 	//TestInherited();
 
 	// 16.
-	effective_study::TestEffectiveStudy();
+	//effective_study::TestEffectiveStudy();
 	
 	// 17.
-	DWORD dwRet = GetFileAttributesA("z:\\jx3_earth\\globe\\terrain\\terrainheightmaphigh\\3\\4\\1.terrain");
-	bool bExist = !(dwRet & FILE_ATTRIBUTE_DIRECTORY);
-	TestGetFileAttributesA();
+	//DWORD dwRet = GetFileAttributesA("z:\\jx3_earth\\globe\\terrain\\terrainheightmaphigh\\3\\4\\1.terrain");
+	//bool bExist = !(dwRet & FILE_ATTRIBUTE_DIRECTORY);
+	//TestGetFileAttributesA();
+
+	// 18.
+	/*{
+		CastStudy cs;
+		cs.TestStaticCastAndReinterpreCastOfGenericTypes();
+	}*/
+
+	// 19.
+	{
+		LambdaStudy lambda;
+		lambda.TestLambdaWithCaptureCannotToFunctionPointer();
+	}
 	
 
 	getchar();

@@ -51,6 +51,9 @@
     <ClCompile Include="inherited_study.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CastStudy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="StringStudy.h">
@@ -85,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="effective c++\public.h">
       <Filter>Source Files\effective c++</Filter>
+    </ClInclude>
+    <ClInclude Include="CastStudy.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
