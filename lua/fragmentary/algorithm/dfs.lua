@@ -21,6 +21,9 @@ function Chain2Graph(tbChain)
                 tbGraph[u] = {};
             end
             local v = tbOneChain[k+1];
+            if not tbGraph[v] then
+                tbGraph[v] = {};
+            end
 
             local bExist = false;
             for _, node in pairs(tbGraph[u]) do
@@ -76,15 +79,15 @@ function ConstructNodeGraph(tbGraph)
             tbNodeGraph.E[k] = {};
         end
 
-        for k1, v1 in pairs(v) do
-            table.insert(tbNodeGraph.E[k], tbNodeGraph.V[k]);
+        for _, v1 in pairs(v) do
+            table.insert(tbNodeGraph.E[k], tbNodeGraph.V[v1]);
         end
     end
     return tbNodeGraph;
 end
 
 local tbNodeGraph = ConstructNodeGraph(tbGraph1);
-for k, v in pairs(tbNodeGraph) do
+for k, v in pairs(tbNodeGraph.E) do
     print(111, k, #v)
 end
 
@@ -95,17 +98,20 @@ function DFS(G)
     end
 
     local nTime = 0;
-    local DFS_VISIT = function(G, u)
+    local DFS_VISIT;
+    DFS_VISIT = function(G, u)
         nTime = nTime + 1;
         u.StartTime = nTime;
         u.Color = 1;
-
+        print(110, u.Name)
         for _, v in ipairs(G.E[u.Name]) do
             if v.Color == 0 then
                 v.Parent = u;
+                print("\t", v.Name, v.Parent)
                 DFS_VISIT(G, v);
             end
         end
+        print(111)
         u.Color = 2;
         nTime = nTime + 1;
         u.EndTime = nTime;
@@ -122,7 +128,7 @@ print("DFS: ")
 DFS(tbNodeGraph);
 
 for k, v in pairs(tbNodeGraph.V) do
-    if not v.Parent then
-        print(k, v.Name, v.Color, v.StartTime, v.EndTime)
-    end
+    -- if not v.Parent then
+        print(v.Name, v.Parent, v.Parent and v.Parent.Name)
+    -- end
 end
