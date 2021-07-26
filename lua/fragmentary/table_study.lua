@@ -768,4 +768,45 @@ end
 local t1 = {a = 2, b = 3}
 local t2 = t1;
 t2.a = 5;
-print(t1.a)
+-- print(t1.a)
+
+------------------------------------------------------------
+--@在一个循环里对table中的元素先进行置空操作，再进行增加新元素的操作，就会报这个错误。
+function TestInvalidKetToNext()
+	local t = {1,2}
+
+	local remove_ele =function ()
+	 	t[1] = nil
+	end
+
+	local add_ele = function ()
+	  t[3] = 3 --err:增加原来没有的元素
+	  --t[1] = 1 --correct:修改原有的元素
+	end
+
+
+	for k,v in pairs(t) do
+		 remove_ele()
+		 add_ele()
+	end
+end
+-- TestInvalidKetToNext();
+
+-- local a = {1, 2, 3}
+-- print(a[2])
+-- local b = a;
+-- print(b[3])
+-- a = {};
+-- print(b[3])
+-- print(a[3])
+
+------------------------------------------------------------
+-- table作为参数的时候，函数内部设置为nil
+local tbOut = {1, 2, 3};
+function TestSetTableNilInFunction(t)
+	t = nil;
+end
+print(#tbOut)
+TestSetTableNilInFunction(tbOut)
+print(#tbOut)
+

@@ -375,9 +375,9 @@ end
 -- print(string.len(""))
 
 --2015/08/25 捕获
--- local pair = "name = Anna"
--- local key, value = string.match(pair, "(%a+)%s*=%s*(%a+)")
--- print(key, value)
+local pair = "name = Anna"
+local key, value = string.match(pair, "(%a+)%s*=%s*(%a+)")
+print(key, value)
 -- local pair1 = "【xxx】 jiu是这样的e"
 -- local s1, s2 = string.match(pair1, "【(.*)】%s*(.*)");
 -- print(pair1, s1, s2);
@@ -573,10 +573,11 @@ string.split = function(str, sep)
     bEmpty = (rt and #rt == 1 and rt[1] == "\0");
     return rt, bEmpty;
 end
-local tbSplit = string.split("aabbccbc", "bb");
--- for k, v in ipairs(tbSplit) do
--- 	print(k, v)
--- end
+-- local tbSplit = string.split("aabbccbc", "bb");
+local tbSplit = string.split(" ,123", ",");
+for k, v in ipairs(tbSplit) do
+	print(k, v, type(v))
+end
 
 -------------------------------------------------------------------------
 -- 反向查找 @2021/05/07
@@ -619,7 +620,18 @@ function test_rfind()
 	local szPath2 = string.match(szPath, ".*%.")
 	print(szPath2)
 
-	-- szPath = "data/source/maps/平野孤鸿/平野孤鸿.jsonmap"
-	-- szPath2 = string.match(szPath, ".*%.")
+	szPath = "data/source/maps/平野孤鸿/平野孤鸿.jsonmap"
+	szPath = "data\\source/maps/平野孤鸿\\平野孤鸿.jsonmap"
+	local name = string.match(szPath, ".+[/\\](.+)%..+")
+	print(name)
 end
-test_rfind();
+-- test_rfind();
+
+function test_lower(  )
+	local szPath = "data\\source\\M_buildingFinal\\基础建筑\\City_C_LV01_乱葬岗01_1x1.Scenenode"
+	szPath = string.lower(szPath);
+	print(szPath)
+
+	-- local szNil = stirng.lower(nil);
+end
+-- test_lower();
