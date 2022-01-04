@@ -270,13 +270,21 @@ function gf_GetPreciseDecimal_2(nNum, n)
 		n = 0;
 	end
 	local nDecimal = 1/(10 ^ n)
-	if nDecimal == 1 then
-		nDecimal = nNum;
-	end
+	-- if nDecimal == 1 then
+	-- 	nDecimal = nNum;
+	-- end
 	local nLeft = nNum % nDecimal;
 	return nNum - nLeft;
 end
+
+-- print("2. GetPreciseDecimal(19.90) = ", gf_GetPreciseDecimal_2(19.90, 2))
+-- print("2. GetPreciseDecimal(-100.98765) = ", gf_GetPreciseDecimal_2(-100.98765, 2))
+-- print("2. GetPreciseDecimal(0.5) = ", gf_GetPreciseDecimal_2(0.5, 1))
+-- print("2. GetPreciseDecimal(0.6) = ", gf_GetPreciseDecimal_2(0.6, 1))
 -- print("2. GetPreciseDecimal(0.7) = ", gf_GetPreciseDecimal_2(0.7, 1))
+-- print("2. GetPreciseDecimal(0.8) = ", gf_GetPreciseDecimal_2(0.8, 1))
+-- print("2. GetPreciseDecimal(1.5) = ", gf_GetPreciseDecimal_2(1.5, 1))
+-- print("2. GetPreciseDecimal(-19.5) = ", gf_GetPreciseDecimal_2(-19.5, 0))
 
 function gf_GetPreciseDecimal_3(nNum, n)
 	if type(nNum) ~= "number" then
@@ -288,16 +296,25 @@ function gf_GetPreciseDecimal_3(nNum, n)
 		n = 0;
 	end
 	local nDecimal = 10 ^ n
+	print(111, nNum * nDecimal)
 	local nTemp = math.floor(nNum * nDecimal);
+	if nNum < 0 then
+		nTemp = math.ceil(nNum * nDecimal);
+	end
+	print("nTemp = ", nTemp)
 	local nRet = nTemp / nDecimal;
 	return nRet;
 end
 -- print("3. GetPreciseDecimal(0.38461538461538) = ", gf_GetPreciseDecimal_3(0.7, 1))
 -- print("3. GetPreciseDecimal(0.7) = ", gf_GetPreciseDecimal_3(0.7, 1))
 -- print(0.6 %0.1, 0.5%0.1, 0.7%0.1, 0.8%0.1)
+
+-- print(gf_GetPreciseDecimal_3(19.90, 2));
+print(gf_GetPreciseDecimal_3(-100.987654321, 2));
 --[[
 sum:
-(1)
+(1) math.floor(19.90 * 100) = 1989，这都是什么鬼？
+(2) nNum是负数的话，math.floor是有问题的，需要用math.ceil
 ]]
 --------------------------------------------
 --2015、07、07 秋敏的题目2
@@ -460,7 +477,5 @@ function TestThreeMeta()
 	local bRet = a and a() or b;
 	print(bRet)
 end
-TestThreeMeta();
-
-
-print(111, #(tbTest222 or {1, 2, 3}))
+-- TestThreeMeta();
+-- print(111, #(tbTest222 or {1, 2, 3}))

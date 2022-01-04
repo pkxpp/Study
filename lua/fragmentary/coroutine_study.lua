@@ -1,4 +1,35 @@
 --coroutine
+function TestCoroutineStand()
+	function foo (a)
+		print("foo", a)
+		return coroutine.yield(2*a)
+	end
+
+	co = coroutine.create(function (a,b)
+		print("co-body", a, b)
+		local r = foo(a+1)
+		print("co-body", r)
+		local r, s = coroutine.yield(a+b, a-b)
+		print("co-body", r, s)
+		return b, "end"
+	end)
+	    
+	print("main", coroutine.resume(co, 1, 10))
+	print("main", coroutine.resume(co, "r"))
+	print("main", coroutine.resume(co, "x", "y"))
+	print("main", coroutine.resume(co, "x", "y"))
+end
+--[[
+* resume的返回值是bool, ...的形式
+* 后面的...来源有两种情况
+(1)coroutine.yield的
+(2)协程主函数返回的
+* yield的返回值来源于resume带的参数
+* 
+]]
+
+-- TestCoroutineStand();
+
 -- 2014/01/17
 --[[
 function producer1()
@@ -91,31 +122,41 @@ coroutine.resume(co, 3)
 coroutine.resume(co, 4, 5)
 ]]
 --(3)再写生产者和消费者
---[[
-producer = coroutine.create(function ()
-	while true do
-		local x = io.read()
-		print("before send(yield)")
-		send(x)
-		print("after send(yield)")
+function TestProducer2()
+	function send(x)
+		coroutine.yield(x)
 	end
-end)
 
-consumer = coroutine.create(function()
-	while true do
-		print("before resume")
-		local s, v = receive()
-		if s then
-			io.write(v, "\n")
-			print("after resume1")
-		end
-		print("after resume2")
+	function receive()
+		return coroutine.resume(producer)
 	end
-end)
-print("start............")
-coroutine.resume(producer)
-coroutine.resume(consumer)
-]]
+
+	producer = coroutine.create(function ()
+		while true do
+			local x = io.read()
+			print("before send(yield)")
+			send(x)
+			print("after send(yield)")
+		end
+	end)
+
+	consumer = coroutine.create(function()
+		while true do
+			print("before resume")
+			local r, v = receive()
+			if r then
+				io.write(v, "\n")
+				print("after resume1")
+			end
+			print("after resume2")
+		end
+	end)
+	print("start............")
+	coroutine.resume(producer)
+	coroutine.resume(consumer)
+end
+-- TestProducer2();
+
 --[[
 (1)消费者和生产者都是一个协同程序
 (2)加入一些打印信息，清楚了许多
@@ -280,7 +321,7 @@ function Test()
 	print("run here ")
 end
 
-Test();
+-- Test();
 --
 
 function LoadSpine()
@@ -308,3 +349,67 @@ function LoadSpine()
 end
 
 -- LoadSpine();
+
+------------------------------------------------------------------------------------------------------
+local LBuildingObject = {};
+function LBuildingObject:_UpdateCoroutineTask(...)
+    local tbFinishedIndex = {};
+    for k, co in ipairs(self.m_tbCoroutineTask or {}) do
+        local r, bFinished = coroutine.resume(co, ...);
+		print("Finished = ", bFinished)
+        if bFinished then
+            table.insert(tbFinishedIndex, k);
+        end
+    end
+
+    -- 删除掉结束的任务
+    for i = #tbFinishedIndex, 1, -1 do
+        table.remove(self.m_tbCoroutineTask, i);
+    end
+end
+
+---@function 创建一个携程封装的Task
+---@param fnTask function
+function LBuildingObject:_CreateCoroutineTask(fnTask, ...)
+    if type(fnTask) ~= "function" then
+        return;
+    end
+
+    local co = coroutine.create(function (...)
+		local tbParams = {...};
+		while true do
+			local bFinished = fnTask(unpack(tbParams));
+            tbParams = {coroutine.yield(bFinished)};
+			print("bRet = ", unpack(tbParams))
+		end
+	end)
+
+	print("resume...")
+    local r, bFinished = coroutine.resume(co, 5);
+	print("22 bFinished = ", bFinished)
+    if not bFinished then
+		self:_AddCoroutineTask(co);
+    end
+
+    return co;
+end
+
+---@param co coroutine
+function LBuildingObject:_AddCoroutineTask(co)
+    if not self.m_tbCoroutineTask then
+        self.m_tbCoroutineTask = {};
+    end
+
+    table.insert(self.m_tbCoroutineTask, co);
+end
+
+function TestCoroutineTask()
+	local co = LBuildingObject:_CreateCoroutineTask(function(a)
+		print(111, a);
+		return false;
+	end);
+
+	LBuildingObject:_UpdateCoroutineTask(0.5);
+end
+
+TestCoroutineTask();

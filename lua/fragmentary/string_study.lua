@@ -635,3 +635,56 @@ function test_lower(  )
 	-- local szNil = stirng.lower(nil);
 end
 -- test_lower();
+
+function test_replace()
+	-- 理解：
+	-- * 这里的%n的n是指的()的第几个，比如下面这个里面虽然(%w+)捕获了两次，分别是hello和world，但是max(n) = 1，所以我用%2的时候会报错
+	-- * 另外一点，可以看出来%n用的是当前捕获的值，因为一次捕获可能会满足多个，比如这里的hello和world
+	local x, y = string.gsub("hello world", "(%w+)", "%1 %1");
+	x, y = string.gsub("hello world", "%w+", "%1 %1");
+	print(x, y)
+	-- 理解：The sequence %0 stands for the whole match. 
+	-- * %0：先翻译一下上面的原文，理解为%0可以代表任意一个%n，但是要代表哪个呢？需要再加一个参数来决定
+	-- * 比如参数为1，那"%0 %0"就表示"%1 %1"，但是和上面不i一样的是，这里的1还有另外一个意思是只替换第几次捕获
+	-- * 可以理解为%n, n=[0, 9]的代码是这样
+	--[[
+	nCurIndex = 1
+	string.gsub(s, pattern, %n..., num)
+	对每一次捕获执行以下函数
+	hash[nMatchIndex1-9] = match string
+	function(v) 
+		if nCurIndex <= num then
+			local szNew = 把所有的%n换成hash[nMatchIndex]，对于n = 0，换成hash[nCurIndex]
+			-- replace pattern with szNew
+		end
+	end
+	]]
+	x = string.gsub("hello world", "%w+", "%0 %0", 1)	-- hello hello world
+	x = string.gsub("hello world", "%w+", "%0 %0 %0", 1)	-- hello hello hello world
+	x = string.gsub("hello world", "%w+", "%0 %0", 2)	-- hello hello world world
+	x = string.gsub("hello world", "%w+", "%0 %0 %0", 2)	-- hello hello hello world world world
+	x = string.gsub("hello world pnj", "%w+", "%0 %0", 3)	-- hello hello world
+	print(x)
+
+	x = string.gsub("hello world", "%w+", "a", 1)
+	print(x)
+	x = string.gsub("hello world", "%w+", function( v )
+		print(222, v)
+	end)
+
+	-- x = string.gsub("hello world", "%w+", function(v)
+	-- 	print(111, v); 
+	-- end)
+
+	local szPath = "Season_平野荒漠.anchor";
+	local szPath = "aaa_bbb.txt";
+	local szMatchName = string.match(szPath, ".+_(.+)%..+");
+	print("szMatchName = ", szMatchName)
+	local szNewName = string.gsub( szPath, "(_.+)%.", "_" .. 666 .. ".")
+	print("szNewName = ", szNewName)
+	local szNumber = string.match(szNewName, ".+_(.+)%..+");
+	print(szNumber, tonumber(szNumber))
+	szNumber = string.match("aaa_bbs6.anchor", ".+_(.+)%..+");
+	print(szNumber, tonumber(szNumber))
+end
+test_replace();

@@ -103,15 +103,13 @@ function DFS(G)
         nTime = nTime + 1;
         u.StartTime = nTime;
         u.Color = 1;
-        print(110, u.Name)
         for _, v in ipairs(G.E[u.Name]) do
             if v.Color == 0 then
                 v.Parent = u;
-                print("\t", v.Name, v.Parent)
+                -- 尾调用，lua5.3需要注意
                 DFS_VISIT(G, v);
             end
         end
-        print(111)
         u.Color = 2;
         nTime = nTime + 1;
         u.EndTime = nTime;
@@ -132,3 +130,51 @@ for k, v in pairs(tbNodeGraph.V) do
         print(v.Name, v.Parent, v.Parent and v.Parent.Name)
     -- end
 end
+
+function Copy(t)
+    local tNew = {};
+    for k, v in ipairs(t or {}) do
+        table.insert(tNew, v);
+    end
+    return tNew;
+end
+
+function GetChainFromGraph(tbGraph)
+    if not tbGraph then
+        return {};
+    end
+
+    local tbChain = {};
+
+    local DFS_VISIT;
+    DFS_VISIT = function(G, u, tbChainToParent)
+        local tbChainSelf = Copy(tbChainToParent);
+        table.insert(tbChainSelf, u);
+
+        -- local szChain = table.concat( tbChainSelf, ", " );
+        local szChain = "";
+        for k, v in ipairs(tbChainSelf or {}) do
+            szChain = szChain .. (v.Name or "") .. ", "
+        end
+        if #G.E[u.Name] <= 0 then
+            print(szChain);
+        end
+        
+        for _, v in ipairs(G.E[u.Name] or {}) do
+            -- 尾调用，lua5.3需要注意
+            DFS_VISIT(G, v, tbChainSelf);
+        end
+    end
+
+    
+    for k, v in pairs(tbGraph.V) do
+        -- root
+        if not v.Parent then
+            print(111, v.Name)
+            DFS_VISIT(tbGraph, v);
+        end
+    end
+end
+
+print("Chain: ")
+GetChainFromGraph(tbNodeGraph);

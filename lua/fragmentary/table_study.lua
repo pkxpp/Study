@@ -810,3 +810,8 @@ print(#tbOut)
 TestSetTableNilInFunction(tbOut)
 print(#tbOut)
 
+local tbArray = {1}
+for k, v in ipairs(tbArray) do
+	table.insert(tbArray, k);
+end
+print("#tbArray = ", #tbArray)
