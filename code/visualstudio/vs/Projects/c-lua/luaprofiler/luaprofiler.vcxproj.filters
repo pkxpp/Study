@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{0b983b13-d9f6-45d3-ac1e-e1745c78b647}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\clocks.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core_profiler.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\function_meter.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua50_profiler.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\stack.c">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\clocks.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core_profiler.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\function_meter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\luaprofiler.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\stack.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\profiler.def">
+      <Filter>src</Filter>
+    </None>
+  </ItemGroup>
+</Project>

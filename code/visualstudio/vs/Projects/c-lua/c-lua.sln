@@ -13,6 +13,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "luaxml", "luaxml\luaxml.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lua515", "Lua515\Lua515.vcxproj", "{39DF1BB5-5B51-49E1-9648-ADE77E8BDA57}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "luaprofiler", "luaprofiler\luaprofiler.vcxproj", "{FFE6B89B-3C7D-46B6-9F71-7DD19132450D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{39DF1BB5-5B51-49E1-9648-ADE77E8BDA57} = {39DF1BB5-5B51-49E1-9648-ADE77E8BDA57}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -61,6 +66,14 @@ Global
 		{39DF1BB5-5B51-49E1-9648-ADE77E8BDA57}.Release|Win32.Build.0 = Release|Win32
 		{39DF1BB5-5B51-49E1-9648-ADE77E8BDA57}.Release|x64.ActiveCfg = Release|x64
 		{39DF1BB5-5B51-49E1-9648-ADE77E8BDA57}.Release|x64.Build.0 = Release|x64
+		{FFE6B89B-3C7D-46B6-9F71-7DD19132450D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FFE6B89B-3C7D-46B6-9F71-7DD19132450D}.Debug|Win32.Build.0 = Debug|Win32
+		{FFE6B89B-3C7D-46B6-9F71-7DD19132450D}.Debug|x64.ActiveCfg = Debug|x64
+		{FFE6B89B-3C7D-46B6-9F71-7DD19132450D}.Debug|x64.Build.0 = Debug|x64
+		{FFE6B89B-3C7D-46B6-9F71-7DD19132450D}.Release|Win32.ActiveCfg = Release|Win32
+		{FFE6B89B-3C7D-46B6-9F71-7DD19132450D}.Release|Win32.Build.0 = Release|Win32
+		{FFE6B89B-3C7D-46B6-9F71-7DD19132450D}.Release|x64.ActiveCfg = Release|x64
+		{FFE6B89B-3C7D-46B6-9F71-7DD19132450D}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

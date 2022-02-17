@@ -44,6 +44,9 @@ int main(int argc, char **argv){
 	luaL_openlibs(L);
 	//lua_State *L = lua_open();
 
+	// lua math.floor(19.9 * 100) = 1989
+	int a = floor(19.9 * 100);
+
 	/* Load the file containing the script we are going to run */
 	status = luaL_loadfile(L, "script/main.lua");
 	if (status) {
@@ -96,4 +99,19 @@ int main(int argc, char **argv){
 //	double d = lua_tonumber(L, 1);
 //	lua_pushnumber(L, sin(d));
 //	return 1;
+//}
+
+//向下取整
+//double my_floor(double x)
+//{
+//	register double ret;
+//	unsigned short int temp1, temp2;
+//
+//	__asm__("fnstcw %0" : "=m" (temp1));
+//	temp2 = (temp1 & 0xf3ff) | 0x0400; /* rounding down */
+//	__asm__("fldcw %0" : : "m" (temp2));
+//	__asm__("frndint" : "=t" (ret) : "0" (x));
+//	__asm__("fldcw %0" : : "m" (temp1));
+//
+//	return ret;
 //}
