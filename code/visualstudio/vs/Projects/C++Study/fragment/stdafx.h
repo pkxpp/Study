@@ -18,3 +18,30 @@
 
 // function list
 void check_endian();
+
+void FnTestAPI();
+
+//////////////////////////////////////////////////////////////////////////
+/// 函数模板参数匹配问题
+//template<typename TSTR, typename LAMBDA>
+//__forceinline void EnqueueUniqueRenderCommand(LAMBDA&& Lambda)
+//{
+//	//if (Lambda)
+//	{
+//		Lambda();
+//	}
+//}
+//
+//#define ENQUEUE_RENDER_COMMAND(Type) \
+//	struct Type##Name \
+//	{  \
+//		static const char* CStr() { return #Type; } \
+//		static const TCHAR* TStr() { return TEXT(#Type); } \
+//	}; \
+//	EnqueueUniqueRenderCommand<Type##Name>
+//
+//template<typename LAMBDA>
+//__forceinline void EnqueueUniqueRenderCommand(LAMBDA& Lambda)
+//{
+//	static_assert(sizeof(LAMBDA) == 0, "EnqueueUniqueRenderCommand enforces use of rvalue and therefore move to avoid an extra copy of the Lambda");
+//}

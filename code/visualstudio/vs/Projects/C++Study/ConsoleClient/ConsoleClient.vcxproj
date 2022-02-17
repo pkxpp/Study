@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{966B8602-BD4E-44DB-9AE8-AD8C7A398DA4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ConsoleClient</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);$(DXSDK_DIR)include;$(ProjectDir)..\..\..\KG3DEngineE\Publish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3DWrap\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3D_FaceWorks\include\;$(ProjectDir)..\..\..\Animation\include;$(ProjectDir)..\include;$(ProjectDir)..\include\scaleform\include;$(ProjectDir)..\include\scaleform\src</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSDK_LibraryPath_x86);$(DXSDK_DIR)lib\$(PlatformTarget);$(ProjectDir)..\lib;$(ProjectDir)..\lib\3rdParty\$(PlatformTarget)\$(Configuration);$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Lib</LibraryPath>
+    <TargetName>$(ProjectName)D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);$(DXSDK_DIR)include;$(ProjectDir)..\..\..\KG3DEngineE\Publish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3DWrap\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3D_FaceWorks\include\;$(ProjectDir)..\..\..\Animation\include;$(ProjectDir)..\include;$(ProjectDir)..\include\scaleform\include;$(ProjectDir)..\include\scaleform\src;$(ProjectDir)..\..\..\SceneManager\Include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib\amd64;$(VCInstallDir)atlmfc\lib\amd64;$(WindowsSDK_LibraryPath_x64);$(DXSDK_DIR)lib\$(PlatformTarget);$(ProjectDir)..\lib\x64;$(ProjectDir)..\lib\3rdParty\$(PlatformTarget)\$(Configuration);$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Lib;$(LibraryPath)</LibraryPath>
+    <TargetName>$(ProjectName)x64D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);$(DXSDK_DIR)include;$(ProjectDir)..\..\..\KG3DEngineE\Publish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3DWrap\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3D_FaceWorks\include\;$(ProjectDir)..\..\..\Animation\include;$(ProjectDir)..\include;$(ProjectDir)..\include\scaleform\include;$(ProjectDir)..\include\scaleform\src</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSDK_LibraryPath_x86);$(DXSDK_DIR)lib\$(PlatformTarget);$(ProjectDir)..\lib;$(ProjectDir)..\lib\3rdParty\$(PlatformTarget)\$(Configuration);$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Lib</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);$(DXSDK_DIR)include;$(ProjectDir)..\..\..\KG3DEngineE\Publish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3DWrap\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3D_FaceWorks\include\;$(ProjectDir)..\..\..\Animation\include;$(ProjectDir)..\include;$(ProjectDir)..\include\scaleform\include;$(ProjectDir)..\include\scaleform\src;$(ProjectDir)..\..\..\SceneManager\Include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib\amd64;$(VCInstallDir)atlmfc\lib\amd64;$(WindowsSDK_LibraryPath_x64);$(DXSDK_DIR)lib\$(PlatformTarget);$(ProjectDir)..\lib\x64;$(ProjectDir)..\lib\3rdParty\$(PlatformTarget)\$(Configuration);$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Lib;$(LibraryPath)</LibraryPath>
+    <TargetName>$(ProjectName)x64</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;x86;%(PreprocessorDefinitions);KG_PHYSX_LIB</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\..\KG3DEngineE\Internal\InternalPublish\include;..\..\..\Schema\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Winmm.lib;semanticd.lib;d3d11.lib;dxguid.lib;dxgi.lib;d3dx11.lib;libgfx.lib;libgfx_air.lib;libgfx_as3.lib;libgfx_as2.lib;libgfxplatform_d3d11.lib;libgfxrender_d3d11.lib;libgfxsound_fmod.lib;libcurl.lib;zlib.lib;libpng.lib;libjpeg.lib;libgfxexpat.lib;Wldap32.lib;pcre.lib;JsonD.lib;ScaleformUID.lib;imm32.lib;fmodex_vc.lib;Msacm32.lib;AnimationEngineD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\Animation\lib;..\..\..\Schema\lib;..\..\..\KG3DEngineE\Internal\InternalPublish\Lib;..\..\..\KGCommon\Publish\Lib</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>md ..\..\..\..\sword3-products
+md ..\..\..\..\sword3-products\trunk
+md ..\..\..\..\sword3-products\trunk\client-console
+md ..\..\..\..\sword3-products\trunk\client-console\x86
+copy $(TargetDir)\$(TargetName).exe ..\..\..\..\sword3-products\trunk\client-console\x86\ClientD.exe
+copy $(TargetDir)\$(TargetName).pdb ..\..\..\..\sword3-products\trunk\client-console\x86\ClientD.pdb</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;x64;%(PreprocessorDefinitions);KG_PHYSX_LIB</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)include\Hummingbird;$(SemanticDir)include;..\..\..\KG3DEngineE\Internal\InternalPublish\include;..\..\..\Adaptor\include;..\..\..\Physics\publish;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Winmm.lib;cohtml.WindowsDesktop.lib;HummingbirdUIx64D.lib;semanticx64d.lib;d3d11.lib;d3dx11.lib;dxguid.lib;dxgi.lib;Wldap32.lib;JsonX64D.lib;imm32.lib;Msacm32.lib;KGCommonX64D.lib;KG3D_BaseX64D.lib;KG3D_JsonX64D.lib;HummingbirdWrapperX64D.lib;utilityd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\Common\Schema\lib;..\..\..\KG3DEngineE\Internal\InternalPublish\Lib;..\..\..\KGCommon\Publish\Lib;$(SolutionDir)..\..\DevEnv\Publish\DirectxTex\Lib\;$(SolutionDir)lib\Hummingbird\WinDesktop_$(PlatformShortName)\$(Configuration);$(SolutionDir)lib</AdditionalLibraryDirectories>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(TargetDir)\$(TargetName).exe ..\..\..\..\..\..\sword3-products\trunk\EditorTool\MiniClient\bin64\MiniClientD.exe
+copy $(TargetDir)\$(TargetName).pdb ..\..\..\..\..\..\sword3-products\trunk\EditorTool\MiniClient\bin64\MiniClientD.pdb</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;x86;%(PreprocessorDefinitions);KG_PHYSX_LIB</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>..\..\..\KG3DEngineE\Internal\InternalPublish\include;..\..\..\Schema\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Winmm.lib;semantic.lib;d3d11.lib;d3dx11.lib;dxguid.lib;dxgi.lib;libgfx.lib;libgfx_air.lib;libgfx_as3.lib;libgfx_as2.lib;libgfxplatform_d3d11.lib;libgfxrender_d3d11.lib;libgfxsound_fmod.lib;libcurl.lib;zlib.lib;libpng.lib;libjpeg.lib;libgfxexpat.lib;Wldap32.lib;pcre.lib;Json.lib;ScaleformUI.lib;imm32.lib;fmodex_vc.lib;Msacm32.lib;AnimationEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalLibraryDirectories>..\..\..\Animation\lib;..\..\..\Schema\lib;..\..\..\KG3DEngineE\Internal\InternalPublish\Lib;..\..\..\KGCommon\Publish\Lib</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>md ..\..\..\..\sword3-products
+md ..\..\..\..\sword3-products\trunk
+md ..\..\..\..\sword3-products\trunk\client-console
+md ..\..\..\..\sword3-products\trunk\client-console\x86
+copy $(TargetDir)\$(TargetName).exe ..\..\..\..\sword3-products\trunk\client-console\x86\Client.exe
+copy $(TargetDir)\$(TargetName).pdb ..\..\..\..\sword3-products\trunk\client-console\x86\Client.pdb</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;x64;%(PreprocessorDefinitions);KG_PHYSX_LIB</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)include\Hummingbird;..\..\..\KG3DEngineE\Internal\InternalPublish\include;..\..\..\..\Common\Schema\include;..\..\..\Adaptor\include;..\..\..\Physics\publish;$(SolutionDir)include\Hummingbird</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Winmm.lib;cohtml.WindowsDesktop.lib;HummingbirdUIx64.lib;semanticx64.lib;d3d11.lib;d3dx11.lib;dxguid.lib;dxgi.lib;Wldap32.lib;JsonX64.lib;imm32.lib;Msacm32.lib;KGCommonX64.lib;KG3D_BaseX64.lib;KG3D_JsonX64.lib;HummingbirdWrapperX64.lib;utility.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\Common\Schema\lib;..\..\..\KG3DEngineE\Internal\InternalPublish\Lib;..\..\..\KGCommon\Publish\Lib;$(SolutionDir)..\..\DevEnv\Publish\DirectxTex\Lib\;$(SolutionDir)lib\Hummingbird\WinDesktop_$(PlatformShortName)\$(Configuration);$(SolutionDir)lib</AdditionalLibraryDirectories>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(TargetDir)\$(TargetName).exe ..\..\..\..\..\..\sword3-products\trunk\EditorTool\MiniClient\bin64\MiniClient.exe
+copy $(TargetDir)\$(TargetName).pdb ..\..\..\..\..\..\sword3-products\trunk\EditorTool\MiniClient\bin64\MiniClient.pdb</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\ConsoleClient\IEngineAdaptor.h" />
+    <ClInclude Include="Component_Render.h" />
+    <ClInclude Include="Component_Physic.h" />
+    <ClInclude Include="CameraDefine.h" />
+    <ClInclude Include="CaptionManager.h" />
+    <ClInclude Include="Client.h" />
+    <ClInclude Include="fileassistor.h" />
+    <ClInclude Include="gEffectAutoReleaser.h" />
+    <ClInclude Include="HBUIBindings.h" />
+    <ClInclude Include="hotkey.h" />
+    <ClInclude Include="hotkeybase_win.h" />
+    <ClInclude Include="InputJoystick.h" />
+    <ClInclude Include="InteractionPointPainter.h" />
+    <ClInclude Include="InteractionSystem.h" />
+    <ClInclude Include="InteractiveObstacle.h" />
+    <ClInclude Include="KGList.h" />
+    <ClInclude Include="LineProjecile.h" />
+    <ClInclude Include="MovementDetector.h" />
+    <ClInclude Include="common.h" />
+    <ClInclude Include="Console.h" />
+    <ClInclude Include="Dispatcher.h" />
+    <ClInclude Include="DisplacementAdapterTag.h" />
+    <ClInclude Include="gSceneEntity.h" />
+    <ClInclude Include="GSceneEntityDefine.h" />
+    <ClInclude Include="InputDefine.h" />
+    <ClInclude Include="InputState.h" />
+    <ClInclude Include="InteractionSolver.h" />
+    <ClInclude Include="MultitrackStateMachine\IMultitrackStateMachine.h" />
+    <ClInclude Include="MultitrackStateMachine\IMSMState.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMBaseStateRequest.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMDefine.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_AirFight.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_BeAttacked.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_Block.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_Charge.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_Climb.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_Death.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_Dodge.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_DoubleJump.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_Fall.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_Fight.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_FightIdle.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_FightTransit.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_Forward.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_ForwardFall.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_GetUp.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_Grasp.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_Hang.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_HitReaction.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_Incline.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_Jump.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_Lean.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_QingGong.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_Stand.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_Start.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_Strafe.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_Through.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_Turn.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMMovementState_Unknow.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMStateRequestDefine.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMStateRequests.h" />
+    <ClInclude Include="MultitrackStateMachine\MultitrackStateMachine.h" />
+    <ClInclude Include="MultitrackStateMachine\MSMStateAllocator.h" />
+    <ClInclude Include="Projectile.h" />
+    <ClInclude Include="ProjectileDefine.h" />
+    <ClInclude Include="ProjectileManager.h" />
+    <ClInclude Include="RebindTag.h" />
+    <ClInclude Include="RedirectTag.h" />
+    <ClInclude Include="SceneEntityLoader.h" />
+    <ClInclude Include="SceneEntityManager.h" />
+    <ClInclude Include="ShapeDefine.h" />
+    <ClInclude Include="InteractiveObstaclePainter.h" />
+    <ClInclude Include="ShapeSolver.h" />
+    <ClInclude Include="ShiftTag.h" />
+    <ClInclude Include="SkillTag.h" />
+    <ClInclude Include="DisableTag.h" />
+    <ClInclude Include="dumper.h" />
+    <ClInclude Include="EffectTag.h" />
+    <ClInclude Include="EngineAdaptor.h" />
+    <ClInclude Include="EngineType.h" />
+    <ClInclude Include="FootprintMgr.h" />
+    <ClInclude Include="gamePhysX3.h" />
+    <ClInclude Include="GameWorld.h" />
+    <ClInclude Include="gEffect.h" />
+    <ClInclude Include="gEffectDefine.h" />
+    <ClInclude Include="GlobalConfigData.h" />
+    <ClInclude Include="GodCamera.h" />
+    <ClInclude Include="gSoundDefine.h" />
+    <ClInclude Include="HotkeyCallback.h" />
+    <ClInclude Include="ICamera.h" />
+    <ClInclude Include="IGEffect.h" />
+    <ClInclude Include="InputControl.h" />
+    <ClInclude Include="InputEvent.h" />
+    <ClInclude Include="InputEventDelegate.h" />
+    <ClInclude Include="InternalEvent.h" />
+    <ClInclude Include="InternalEventDelegate.h" />
+    <ClInclude Include="ITagEntity.h" />
+    <ClInclude Include="LoadingWindow.h" />
+    <ClInclude Include="ModelManagerDefine.h" />
+    <ClInclude Include="ModelType.h" />
+    <ClInclude Include="MoveCtrl.h" />
+    <ClInclude Include="MoveCtrlDefine.h" />
+    <ClInclude Include="MoveCtrlObj.h" />
+    <ClInclude Include="MovementController.h" />
+    <ClInclude Include="Profile.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ModelCommand.h" />
+    <ClInclude Include="ModelManager.h" />
+    <ClInclude Include="RoleCamera.h" />
+    <ClInclude Include="StaticMemory.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TagDefine.h" />
+    <ClInclude Include="TagEntityManager.h" />
+    <ClInclude Include="TagManager.h" />
+    <ClInclude Include="Task.h" />
+    <ClInclude Include="TOPClient.h" />
+    <ClInclude Include="TrackingProjectile.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Component_Render.cpp" />
+    <ClCompile Include="Component_Physic.cpp" />
+    <ClCompile Include="CaptionManager.cpp" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="fileassistor.cpp" />
+    <ClCompile Include="gEffectAutoReleaser.cpp" />
+    <ClCompile Include="HBUIBindings.cpp" />
+    <ClCompile Include="hotkey.cpp" />
+    <ClCompile Include="hotkeybase_win.cpp" />
+    <ClCompile Include="InputJoystick.cpp" />
+    <ClCompile Include="InteractionPointPainter.cpp" />
+    <ClCompile Include="InteractionSystem.cpp" />
+    <ClCompile Include="InteractiveObstacle.cpp" />
+    <ClCompile Include="LineProjecile.cpp" />
+    <ClCompile Include="MovementDetector.cpp" />
+    <ClCompile Include="Console.cpp" />
+    <ClCompile Include="Dispatcher.cpp" />
+    <ClCompile Include="DisplacementAdapterTag.cpp" />
+    <ClCompile Include="gSceneEntity.cpp" />
+    <ClCompile Include="InputState.cpp" />
+    <ClCompile Include="InteractionSolver.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMBaseStateRequest.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_AirFight.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_BeAttacked.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_Block.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_Charge.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_Climb.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_Death.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_Dodge.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_DoubleJump.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_Fall.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_Fight.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_FightIdle.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_FightTransit.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_Forward.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_ForwardFall.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_GetUp.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_Grasp.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_Hang.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_HitReaction.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_Incline.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_Jump.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_Lean.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_QingGong.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_Stand.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_Start.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_Strafe.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_Through.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_Turn.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMMovementState_Unknow.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMState.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MultitrackStateMachine.cpp" />
+    <ClCompile Include="MultitrackStateMachine\MSMStateAllocator.cpp" />
+    <ClCompile Include="Projectile.cpp" />
+    <ClCompile Include="ProjectileManager.cpp" />
+    <ClCompile Include="RebindTag.cpp" />
+    <ClCompile Include="RedirectTag.cpp" />
+    <ClCompile Include="SceneEntityLoader.cpp" />
+    <ClCompile Include="SceneEntityManager.cpp" />
+    <ClCompile Include="ShapeDefine.cpp" />
+    <ClCompile Include="InteractiveObstaclePainter.cpp" />
+    <ClCompile Include="ShapeSolver.cpp" />
+    <ClCompile Include="ShiftTag.cpp" />
+    <ClCompile Include="SkillTag.cpp" />
+    <ClCompile Include="DisableTag.cpp" />
+    <ClCompile Include="DisposeEvents.cpp" />
+    <ClCompile Include="EffectTag.cpp" />
+    <ClCompile Include="EngineAdaptor.cpp" />
+    <ClCompile Include="FootprintMgr.cpp" />
+    <ClCompile Include="GameWorld.cpp" />
+    <ClCompile Include="gEffect.cpp" />
+    <ClCompile Include="GlobalConfigData.cpp" />
+    <ClCompile Include="GodCamera.cpp" />
+    <ClCompile Include="HotkeyCallback.cpp" />
+    <ClCompile Include="InputControl.cpp" />
+    <ClCompile Include="InputEventDelegate.cpp" />
+    <ClCompile Include="InternalEventDelegate.cpp" />
+    <ClCompile Include="LoadingWindow.cpp" />
+    <ClCompile Include="ModelManager.cpp" />
+    <ClCompile Include="MoveCtrl.cpp" />
+    <ClCompile Include="MoveCtrlObj.cpp" />
+    <ClCompile Include="MovementController.cpp" />
+    <ClCompile Include="Profile.cpp" />
+    <ClCompile Include="RoleCamera.cpp" />
+    <ClCompile Include="StaticMemory.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TagManager.cpp" />
+    <ClCompile Include="Task.cpp" />
+    <ClCompile Include="TOPClient.cpp" />
+    <ClCompile Include="TrackingProjectile.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ConsoleClient.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="main.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

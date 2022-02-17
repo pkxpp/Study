@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Private">
+      <UniqueIdentifier>{af48fd18-fcfc-42b5-8d50-a120e7dc0341}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\HAL">
+      <UniqueIdentifier>{61ee73b9-fb5a-4f2e-b9c1-7423eef38e18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public">
+      <UniqueIdentifier>{206b25b7-12cb-436a-bc95-4c7a6ffa57df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\HAL">
+      <UniqueIdentifier>{32d2cf0f-f835-4a86-9d19-8e927da9c7a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Windows">
+      <UniqueIdentifier>{2db59d30-d717-4868-a12c-6750da4f1917}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Windows">
+      <UniqueIdentifier>{348ca9a5-d8ad-426b-9f3c-d18658f2b4b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Containers">
+      <UniqueIdentifier>{5c05b570-9d84-4fb8-8143-8bc95a57ba0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Private\Memory">
+      <UniqueIdentifier>{c061472f-020e-41d8-ad90-8bbdafedc5fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Async">
+      <UniqueIdentifier>{e91878a1-7de0-4c24-bcca-801f7bde28f5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Async\TaskGraph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\HAL\ThreadingBase.cpp">
+      <Filter>Private\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\Windows\WindowsRunnableThread.cpp">
+      <Filter>Private\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\Containers\LockFreeList.cpp">
+      <Filter>Private\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\Memory\KMemory.cpp">
+      <Filter>Private\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\Async\Async.cpp">
+      <Filter>Private\Async</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\Windows\WindowsPlatformProcess.cpp">
+      <Filter>Private\Windows</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Async\TaskGraphInterfaces.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Private\Windows\WindowsRunnableThread.h">
+      <Filter>Private\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Private\Memory\KG_InterlockedVariable.h">
+      <Filter>Private\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Private\Memory\KG_InterlockSingleList.h">
+      <Filter>Private\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Private\Memory\KMemory.h">
+      <Filter>Private\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\HAL\Event.h">
+      <Filter>Public\HAL</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_OpenGL|Win32">
+      <Configuration>Debug_OpenGL</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_OpenGL|x64">
+      <Configuration>Debug_OpenGL</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_DX11|Win32">
+      <Configuration>Debug_DX11</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_DX11|x64">
+      <Configuration>Debug_DX11</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_OpenGL|Win32">
+      <Configuration>Release_OpenGL</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_OpenGL|x64">
+      <Configuration>Release_OpenGL</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_DX11|Win32">
+      <Configuration>Release_DX11</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_DX11|x64">
+      <Configuration>Release_DX11</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{966B8602-BD4E-44DB-9AE8-AD8C7A398DA4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ConsoleClient</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <VCToolsVersion Condition="'$(VCToolsVersion)' == ''">
+    </VCToolsVersion>
+    <VCToolsRedistVersion Condition="'$(VCToolsRedistVersion)' == ''">14.23.27820</VCToolsRedistVersion>
+    <ProjectName>ConsoleClient</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_DX11|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_OpenGL|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_DX11|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <EnableASAN>false</EnableASAN>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_OpenGL|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_DX11|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_OpenGL|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_DX11|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_OpenGL|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug_DX11|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_OpenGL|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_DX11|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_OpenGL|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release_DX11|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_OpenGL|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_DX11|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_OpenGL|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_DX11|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);$(DXSDK_DIR)include;$(ProjectDir)..\..\..\KG3DEngineE\Publish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3DWrap\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3D_FaceWorks\include\;$(ProjectDir)..\..\..\Animation\include;$(ProjectDir)..\include;$(ProjectDir)..\include\scaleform\include;$(ProjectDir)..\include\scaleform\src</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSDK_LibraryPath_x86);$(DXSDK_DIR)lib\$(PlatformTarget);$(ProjectDir)..\lib;$(ProjectDir)..\lib\3rdParty\$(PlatformTarget)\$(Configuration);$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Lib</LibraryPath>
+    <TargetName>$(ProjectName)D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_OpenGL|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);$(DXSDK_DIR)include;$(ProjectDir)..\..\..\KG3DEngineE\Publish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3DWrap\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3D_FaceWorks\include\;$(ProjectDir)..\..\..\Animation\include;$(ProjectDir)..\include;$(ProjectDir)..\include\scaleform\include;$(ProjectDir)..\include\scaleform\src</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSDK_LibraryPath_x86);$(DXSDK_DIR)lib\$(PlatformTarget);$(ProjectDir)..\lib;$(ProjectDir)..\lib\3rdParty\$(PlatformTarget)\$(Configuration);$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Lib</LibraryPath>
+    <TargetName>$(ProjectName)D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_DX11|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);$(DXSDK_DIR)include;$(ProjectDir)..\..\..\KG3DEngineE\Publish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3DWrap\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3D_FaceWorks\include\;$(ProjectDir)..\..\..\Animation\include;$(ProjectDir)..\include;$(ProjectDir)..\include\scaleform\include;$(ProjectDir)..\include\scaleform\src;$(ProjectDir)..\..\..\SceneManager\Include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib\amd64;$(VCInstallDir)atlmfc\lib\amd64;$(WindowsSDK_LibraryPath_x64);$(DXSDK_DIR)lib\$(PlatformTarget);$(ProjectDir)..\lib\x64;$(ProjectDir)..\lib\3rdParty\$(PlatformTarget)\$(Configuration);$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Lib;$(LibraryPath)</LibraryPath>
+    <TargetName>$(ProjectName)x64D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_OpenGL|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);$(DXSDK_DIR)include;$(ProjectDir)..\..\..\KG3DEngineE\Publish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3DWrap\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3D_FaceWorks\include\;$(ProjectDir)..\..\..\Animation\include;$(ProjectDir)..\include;$(ProjectDir)..\include\scaleform\include;$(ProjectDir)..\include\scaleform\src;$(ProjectDir)..\..\..\SceneManager\Include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib\amd64;$(VCInstallDir)atlmfc\lib\amd64;$(WindowsSDK_LibraryPath_x64);$(DXSDK_DIR)lib\$(PlatformTarget);$(ProjectDir)..\lib\x64;$(ProjectDir)..\lib\3rdParty\$(PlatformTarget)\$(Configuration);$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Lib;$(LibraryPath)</LibraryPath>
+    <TargetName>$(ProjectName)x64D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_DX11|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);$(DXSDK_DIR)include;$(ProjectDir)..\..\..\KG3DEngineE\Publish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3DWrap\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3D_FaceWorks\include\;$(ProjectDir)..\..\..\Animation\include;$(ProjectDir)..\include;$(ProjectDir)..\include\scaleform\include;$(ProjectDir)..\include\scaleform\src</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSDK_LibraryPath_x86);$(DXSDK_DIR)lib\$(PlatformTarget);$(ProjectDir)..\lib;$(ProjectDir)..\lib\3rdParty\$(PlatformTarget)\$(Configuration);$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Lib</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_OpenGL|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);$(DXSDK_DIR)include;$(ProjectDir)..\..\..\KG3DEngineE\Publish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3DWrap\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3D_FaceWorks\include\;$(ProjectDir)..\..\..\Animation\include;$(ProjectDir)..\include;$(ProjectDir)..\include\scaleform\include;$(ProjectDir)..\include\scaleform\src</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSDK_LibraryPath_x86);$(DXSDK_DIR)lib\$(PlatformTarget);$(ProjectDir)..\lib;$(ProjectDir)..\lib\3rdParty\$(PlatformTarget)\$(Configuration);$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Lib</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_DX11|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);$(DXSDK_DIR)include;$(ProjectDir)..\..\..\KG3DEngineE\Publish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3DWrap\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3D_FaceWorks\include\;$(ProjectDir)..\..\..\Animation\include;$(ProjectDir)..\include;$(ProjectDir)..\include\scaleform\include;$(ProjectDir)..\include\scaleform\src;$(ProjectDir)..\..\..\SceneManager\Include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib\amd64;$(VCInstallDir)atlmfc\lib\amd64;$(WindowsSDK_LibraryPath_x64);$(DXSDK_DIR)lib\$(PlatformTarget);$(ProjectDir)..\lib\x64;$(ProjectDir)..\lib\3rdParty\$(PlatformTarget)\$(Configuration);$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Lib;$(LibraryPath)</LibraryPath>
+    <TargetName>$(ProjectName)x64</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_OpenGL|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);$(DXSDK_DIR)include;$(ProjectDir)..\..\..\KG3DEngineE\Publish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3DWrap\Include;$(ProjectDir)..\..\..\KG3DEngineE\Internal\Module\KG3D_FaceWorks\include\;$(ProjectDir)..\..\..\Animation\include;$(ProjectDir)..\include;$(ProjectDir)..\include\scaleform\include;$(ProjectDir)..\include\scaleform\src;$(ProjectDir)..\..\..\SceneManager\Include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib\amd64;$(VCInstallDir)atlmfc\lib\amd64;$(WindowsSDK_LibraryPath_x64);$(DXSDK_DIR)lib\$(PlatformTarget);$(ProjectDir)..\lib\x64;$(ProjectDir)..\lib\3rdParty\$(PlatformTarget)\$(Configuration);$(ProjectDir)..\..\..\KG3DEngineE\Internal\InternalPublish\Lib;$(LibraryPath)</LibraryPath>
+    <TargetName>$(ProjectName)x64</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_DX11|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;x86;%(PreprocessorDefinitions);KG_PHYSX_LIB</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\..\KG3DEngineE\Internal\InternalPublish\include;..\..\..\Schema\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Winmm.lib;semanticd.lib;d3d11.lib;dxguid.lib;dxgi.lib;d3dx11.lib;libgfx.lib;libgfx_air.lib;libgfx_as3.lib;libgfx_as2.lib;libgfxplatform_d3d11.lib;libgfxrender_d3d11.lib;libgfxsound_fmod.lib;libcurl.lib;zlib.lib;libpng.lib;libjpeg.lib;libgfxexpat.lib;Wldap32.lib;pcre.lib;JsonD.lib;ScaleformUID.lib;imm32.lib;fmodex_vc.lib;Msacm32.lib;AnimationEngineD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\Animation\lib;..\..\..\Schema\lib;..\..\..\KG3DEngineE\Internal\InternalPublish\Lib;..\..\..\KGCommon\Publish\Lib</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>md ..\..\..\..\sword3-products
+md ..\..\..\..\sword3-products\trunk
+md ..\..\..\..\sword3-products\trunk\client-console
+md ..\..\..\..\sword3-products\trunk\client-console\x86
+copy $(TargetDir)\$(TargetName).exe ..\..\..\..\sword3-products\trunk\client-console\x86\ClientD.exe
+copy $(TargetDir)\$(TargetName).pdb ..\..\..\..\sword3-products\trunk\client-console\x86\ClientD.pdb</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_OpenGL|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;x86;%(PreprocessorDefinitions);KG_PHYSX_LIB</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\..\KG3DEngineE\Internal\InternalPublish\include;..\..\..\Schema\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Winmm.lib;semanticd.lib;d3d11.lib;dxguid.lib;dxgi.lib;d3dx11.lib;libgfx.lib;libgfx_air.lib;libgfx_as3.lib;libgfx_as2.lib;libgfxplatform_d3d11.lib;libgfxrender_d3d11.lib;libgfxsound_fmod.lib;libcurl.lib;zlib.lib;libpng.lib;libjpeg.lib;libgfxexpat.lib;Wldap32.lib;pcre.lib;JsonD.lib;ScaleformUID.lib;imm32.lib;fmodex_vc.lib;Msacm32.lib;AnimationEngineD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\Animation\lib;..\..\..\Schema\lib;..\..\..\KG3DEngineE\Internal\InternalPublish\Lib;..\..\..\KGCommon\Publish\Lib</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>md ..\..\..\..\sword3-products
+md ..\..\..\..\sword3-products\trunk
+md ..\..\..\..\sword3-products\trunk\client-console
+md ..\..\..\..\sword3-products\trunk\client-console\x86
+copy $(TargetDir)\$(TargetName).exe ..\..\..\..\sword3-products\trunk\client-console\x86\ClientD.exe
+copy $(TargetDir)\$(TargetName).pdb ..\..\..\..\sword3-products\trunk\client-console\x86\ClientD.pdb</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_DX11|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>
+      </SDLCheck>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Winmm.lib;d3d11.lib;d3dx11.lib;dxguid.lib;dxgi.lib;Wldap32.lib;imm32.lib;ws2_32.lib;Msacm32.lib;icuuc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)../lib;$(ProjectDir)..\x64\Debug</AdditionalLibraryDirectories>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <StackReserveSize>2097152</StackReserveSize>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_OpenGL|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;x64;KG_PHYSX_LIB;_CRT_SECURE_NO_WARNINGS;OPENGL;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)/../../KG3DEngineOpenGL;$(ProjectDir)/../CoreMath;$(ProjectDir)/../../KG3DEngineOpenGL/KEnginePub/interface;$(ProjectDir)/../CoreBase;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4099</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Winmm.lib;d3d11.lib;d3dx11.lib;dxguid.lib;dxgi.lib;Wldap32.lib;imm32.lib;Lua5X64D.lib;CoreFileSystemd.lib;CoreLuad.lib;libprotobufd.lib;libprotocd.lib;zlib-1.2.8.lib;CoreBased.lib;CoreSemanticd.lib;CoreMathd.lib;CoreEngined.lib;Cored.lib;CoreImguid.lib;CoreNetd.lib;KLogicAdapter.lib;LuaAppd.lib;pthreadVC2.lib;freetype26d.lib;KEnginePub.lib;KEngine.lib;KMaterialSystem.lib;KSceneResponse.lib;KMovie.lib;K3DUI.lib;KAdapter.lib;KReplayer.lib;PhysX3CommonDEBUG_x64.lib;PhysX3DEBUG_x64.lib;PhysX3ExtensionsDEBUG.lib;PhysXVisualDebuggerSDKDEBUG.lib;PhysXProfileSDKDEBUG.lib;PhysX3CookingDEBUG_x64.lib;libcurl.lib;OpenAL32.lib;ws2_32.lib;Msacm32.lib;HASMLibCSX64D.lib;RUSTLibCSX64D.lib;KESMBaseX64D.lib;PhysX3CharacterKinematicDEBUG_x64.lib;PhysX3VehicleDEBUG.lib;PxTaskDEBUG.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)../lib;$(ProjectDir)../CoreDevEnv/zlib/lib/x64/Debug;$(ProjectDir)../../Common/RUST/lib;$(ProjectDir)../CoreDevEnv/physx/Lib/vc142/x64;$(ProjectDir)../CoreDevEnv/curl-7.49.1/windows/Debug;$(ProjectDir)../lib/OpenGLEngine/Debug;$(ProjectDir)../../KG3DEngineOpenGL/libs/OpenAL/libs/Win64;$(ProjectDir)../../KG3DEngineOpenGL/libs/freetype2/lib/vc142/x64;$(ProjectDir)../CoreDevEnv/pthread/lib/x64;$(ProjectDir)../CoreDevEnv/CoreDevEnv/physx/Lib/vc142/x64;$(ProjectDir)../CoreDevEnv/protobuf-3.11.4/libs/Windows</AdditionalLibraryDirectories>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <StackReserveSize>2097152</StackReserveSize>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(TargetDir)\$(TargetName).exe ..\..\..\..\sword3-products\trunk\EditorTool\MiniClient\bin64\MiniClientD.exe
+copy $(TargetDir)\$(TargetName).pdb ..\..\..\..\sword3-products\trunk\EditorTool\MiniClient\bin64\MiniClientD.pdb</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_DX11|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;x86;%(PreprocessorDefinitions);KG_PHYSX_LIB</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>..\..\..\KG3DEngineE\Internal\InternalPublish\include;..\..\..\Schema\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Winmm.lib;semantic.lib;d3d11.lib;d3dx11.lib;dxguid.lib;dxgi.lib;libgfx.lib;libgfx_air.lib;libgfx_as3.lib;libgfx_as2.lib;libgfxplatform_d3d11.lib;libgfxrender_d3d11.lib;libgfxsound_fmod.lib;libcurl.lib;zlib.lib;libpng.lib;libjpeg.lib;libgfxexpat.lib;Wldap32.lib;pcre.lib;Json.lib;ScaleformUI.lib;imm32.lib;fmodex_vc.lib;Msacm32.lib;AnimationEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalLibraryDirectories>..\..\..\Animation\lib;..\..\..\Schema\lib;..\..\..\KG3DEngineE\Internal\InternalPublish\Lib;..\..\..\KGCommon\Publish\Lib</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>md ..\..\..\..\sword3-products
+md ..\..\..\..\sword3-products\trunk
+md ..\..\..\..\sword3-products\trunk\client-console
+md ..\..\..\..\sword3-products\trunk\client-console\x86
+copy $(TargetDir)\$(TargetName).exe ..\..\..\..\sword3-products\trunk\client-console\x86\Client.exe
+copy $(TargetDir)\$(TargetName).pdb ..\..\..\..\sword3-products\trunk\client-console\x86\Client.pdb</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_OpenGL|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;x86;%(PreprocessorDefinitions);KG_PHYSX_LIB</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>..\..\..\KG3DEngineE\Internal\InternalPublish\include;..\..\..\Schema\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Winmm.lib;semantic.lib;d3d11.lib;d3dx11.lib;dxguid.lib;dxgi.lib;libgfx.lib;libgfx_air.lib;libgfx_as3.lib;libgfx_as2.lib;libgfxplatform_d3d11.lib;libgfxrender_d3d11.lib;libgfxsound_fmod.lib;libcurl.lib;zlib.lib;libpng.lib;libjpeg.lib;libgfxexpat.lib;Wldap32.lib;pcre.lib;Json.lib;ScaleformUI.lib;imm32.lib;fmodex_vc.lib;Msacm32.lib;AnimationEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalLibraryDirectories>..\..\..\Animation\lib;..\..\..\Schema\lib;..\..\..\KG3DEngineE\Internal\InternalPublish\Lib;..\..\..\KGCommon\Publish\Lib</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>md ..\..\..\..\sword3-products
+md ..\..\..\..\sword3-products\trunk
+md ..\..\..\..\sword3-products\trunk\client-console
+md ..\..\..\..\sword3-products\trunk\client-console\x86
+copy $(TargetDir)\$(TargetName).exe ..\..\..\..\sword3-products\trunk\client-console\x86\Client.exe
+copy $(TargetDir)\$(TargetName).pdb ..\..\..\..\sword3-products\trunk\client-console\x86\Client.pdb</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_DX11|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;x64;KG_PHYSX_LIB;_CRT_SECURE_NO_WARNINGS;DX11;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)../../KGCommon/Publish/include;E:\work\git\EngineCode\Base\Include\Engine;E:\work\git\EngineCode\Base\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4099</DisableSpecificWarnings>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Winmm.lib;d3d11.lib;d3dx11.lib;dxguid.lib;dxgi.lib;Wldap32.lib;imm32.lib;ws2_32.lib;Msacm32.lib;icuuc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)../lib;$(ProjectDir)../CoreDevEnv/zlib/lib/x64/Release;$(ProjectDir)../../Common/RUST/lib;$(ProjectDir)../CoreDevEnv/protobuf-3.11.4/libs/Windows;$(ProjectDir)..\x64\Release;$(ProjectDir)../Thirdparty/steamworks_sdk_151/sdk/redistributable_bin/win64;E:\work\git\EngineCode\sword3\Source\KG3DEngineDX11\KGCommon\Publish\Lib;e:\work\git\EngineCode\Base\Lib2019\</AdditionalLibraryDirectories>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_OpenGL|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;x64;KG_PHYSX_LIB;_CRT_SECURE_NO_WARNINGS;OPENGL;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)/../../KG3DEngineOpenGL;$(ProjectDir)/../CoreMath;$(ProjectDir)/../../KG3DEngineOpenGL/KEnginePub/interface;$(ProjectDir)/../CoreBase;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4099</DisableSpecificWarnings>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>dxgi.lib;Wldap32.lib;imm32.lib;Lua5X64D.lib;CoreFileSystem.lib;CoreLua.lib;libprotobuf.lib;libprotoc.lib;zlib-1.2.8.lib;CoreBase.lib;CoreSemantic.lib;CoreMath.lib;CoreEngine.lib;Core.lib;CoreImgui.lib;CoreNet.lib;KLogicAdapter.lib;LuaApp.lib;pthreadVC2.lib;freetype26.lib;KEnginePub.lib;KEngine.lib;KMaterialSystem.lib;KSceneResponse.lib;KMovie.lib;K3DUI.lib;KAdapter.lib;KReplayer.lib;PhysX3Common_x64.lib;PhysX3_x64.lib;PhysX3Extensions.lib;PhysXVisualDebuggerSDK.lib;PhysXProfileSDK.lib;PhysX3Cooking_x64.lib;PhysX3CharacterKinematic_x64.lib;PhysX3Vehicle.lib;PxTask.lib;libcurl.lib;OpenAL32.lib;ws2_32.lib;Msacm32.lib;HASMLibCSX64.lib;RUSTLibCSX64.lib;KESMBaseX64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)../lib;$(ProjectDir)../CoreDevEnv/zlib/lib/x64/Debug;$(ProjectDir)../../Common/RUST/lib;$(ProjectDir)../CoreDevEnv/physx/Lib/vc142/x64;$(ProjectDir)../CoreDevEnv/curl-7.49.1/windows/Release;$(ProjectDir)../lib/OpenGLEngine/Release;$(ProjectDir)../../KG3DEngineOpenGL/libs/OpenAL/libs/Win64;$(ProjectDir)../../KG3DEngineOpenGL/libs/freetype2/lib/vc142/x64;$(ProjectDir)../CoreDevEnv/pthread/lib/x64;$(ProjectDir)../CoreDevEnv/CoreDevEnv/physx/Lib/vc142/x64;$(ProjectDir)../CoreDevEnv/protobuf-3.11.4/libs/Windows</AdditionalLibraryDirectories>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(TargetDir)\$(TargetName).exe ..\..\..\..\sword3-products\trunk\EditorTool\MiniClient\bin64\MiniClient.exe</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TOPClient.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DX11|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OpenGL|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_DX11|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OpenGL|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DX11|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OpenGL|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_DX11|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OpenGL|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TOPClient.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ConsoleClient.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="main.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

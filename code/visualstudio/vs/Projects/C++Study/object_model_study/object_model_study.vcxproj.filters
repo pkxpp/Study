@@ -21,9 +21,15 @@
     <ClCompile Include="TestBase.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ObjectMemoryStudy.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TestBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMemoryStudy.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
