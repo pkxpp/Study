@@ -108,5 +108,92 @@ local width, height, area, perimeter
 
 ------------------------------------------------------------
 --- ini.lua
-local resty_ini = require "ini"
-local conf, err = resty_ini.parse_file("/path/to/file.ini")
+-- local resty_ini = require "ini"
+-- local conf, err = resty_ini.parse_file("/path/to/file.ini")
+
+------------------------------------------------------------------------------------------------------
+---
+require "lfs"
+-- local path = lfs.currentdir()
+-- print(path)
+-- print(package.path)
+require ("io/fs")
+require ("string/string")
+
+function GetFilesByExt(szPath, szExt, bRecursive)
+	if not FS.Path.IsDir(szPath) then
+		return;
+	end
+
+	local tbFiles = {};
+	local fnGetFiles = nil;
+	fnGetFiles = function(szInPath, tbInFiles)
+		local tbFiles = FS.ListDir(szInPath);
+		for k, v in ipairs(tbFiles or {}) do
+			local szFullName = szInPath .. "/" .. v;
+			if bRecursive then
+				if FS.Path.IsDir(szFullName) then
+					fnGetFiles(szFullName, tbInFiles);
+				end
+			end
+			-- print(k, szFullName, FS.Path.IsFile(szFullName))
+			if FS.Path.IsFile(szFullName) then
+				local szFileExt = FS.Path.SplitExt(szFullName);
+				-- print(111, szFullName, szFileExt)
+				if szFileExt == szExt then
+					table.insert(tbInFiles, szFullName);
+				end
+			end
+		end
+	end
+
+	fnGetFiles(szPath, tbFiles);
+
+	return tbFiles;
+end
+
+-- local tbFiles = GetFilesByExt("f:/work/svn/MiniClient_Sim/EditorTool/MiniClient/tools/pakv4_tools/JX3Tool", ".list", true);
+-- for k, v in ipairs(tbFiles or {}) do
+-- 	print(k, v)
+-- end
+
+function CompareList(szPakDir, szList)
+	if not FS.Path.IsDir(szPakDir) then
+		return;
+	end
+
+	if not FS.Path.IsFile(szList) then
+		return;
+	end
+
+	local tbList = {};
+	local tbNotExist = {};
+	-- 现在打全包生成的一个list里面的文件
+	local file = FS.File(szList);
+	local szLine = file:ReadNextLine();
+	while(szLine) do
+		tbList[szLine] = true;
+	end
+
+	-- 打包工具生产的list里面所有的文件
+	local tbListFiles = GetFilesByExt(szPakDir, ".list", true);
+	for k, v in pairs(tbListFiles) do
+		local file = FS.File(szList);
+		local szLine = file:ReadNextLine();
+		while(szLine) do
+			if not tbList[szLine] then
+				table.insert(tbNotExist, szLine);
+			end
+		end
+	end
+
+	for i = 1, 10 do
+		if not tbNotExist[i] then
+			break;
+		end
+
+		-- print(tbNotExist[i]);
+	end
+
+end
+CompareList("f:/work/svn/MiniClient_Sim/EditorTool/MiniClient/tools/pakv4_tools/JX3Tool", "F:/work/svn/MiniClient_Sim/EditorTool/MiniClient/tools/PakV4PlusMaker/OutPutNameList/common_2.txt");

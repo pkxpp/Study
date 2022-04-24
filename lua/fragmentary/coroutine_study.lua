@@ -351,12 +351,14 @@ end
 -- LoadSpine();
 
 ------------------------------------------------------------------------------------------------------
-local LBuildingObject = {};
+local LBuildingObject = {
+	
+};
 function LBuildingObject:_UpdateCoroutineTask(...)
     local tbFinishedIndex = {};
     for k, co in ipairs(self.m_tbCoroutineTask or {}) do
         local r, bFinished = coroutine.resume(co, ...);
-		print("Finished = ", bFinished)
+		print("r, Finished = ", r, bFinished)
         if bFinished then
             table.insert(tbFinishedIndex, k);
         end
@@ -386,7 +388,7 @@ function LBuildingObject:_CreateCoroutineTask(fnTask, ...)
 
 	print("resume...")
     local r, bFinished = coroutine.resume(co, 5);
-	print("22 bFinished = ", bFinished)
+	print("22 bFinished = ", r, bFinished)
     if not bFinished then
 		self:_AddCoroutineTask(co);
     end
@@ -412,4 +414,192 @@ function TestCoroutineTask()
 	LBuildingObject:_UpdateCoroutineTask(0.5);
 end
 
-TestCoroutineTask();
+-- TestCoroutineTask();
+
+------------------------------------------------------------------------------------------------------
+--- 分帧更新
+local LBuildingMgr = {};
+-- function LBuildingMgr:_CreateCoroutineTask1(fnTask, ...)
+--     if type(fnTask) ~= "function" then
+--         return;
+--     end
+
+--     local co = coroutine.create(function (...)
+-- 		local tbParams = {...};
+-- 		return fnTask(unpack(tbParams));
+-- 	end)
+
+--     return co;
+-- end
+
+function LBuildingMgr:_CreateCoroutineTask(fnTask, ...)
+    if type(fnTask) ~= "function" then
+        return;
+    end
+
+    local co = coroutine.create(function (...)
+		local tbParams = {...};
+		while true do
+			local bFinished = fnTask(unpack(tbParams));
+            tbParams = {coroutine.yield(bFinished)};
+		end
+	end)
+
+    return co;
+end
+
+function LBuildingMgr:TickByCoroutine(bFrame)
+	local nCount = 0;
+    for nIndex, tbInfo in pairs(self.BuildingList) do
+		local nBlockID, uuid = unpack(tbInfo);
+		local nNum = self:TickBlockByCoroutine(nIndex, nCount, bFrame);
+		nCount = nCount + nNum;
+	end
+
+	self.BuildingList = {};
+	print("end. Count = ", nCount)
+end
+
+function LBuildingMgr:TickBlockByCoroutine(nIndex, nStart, bFrame)
+	-- local tbDeletedBuilding = {};
+	local tbBuildingInfo = self.BuildingList[nIndex];
+	print("TickBlockByCoroutine = ", nBlockID, nStart, bFrame, tbBuidingList and #tbBuidingList)
+	if not tbBuildingInfo then
+		return 0;
+	end
+	local nBlockID, uuid = unpack(tbBuildingInfo);
+	local nCount = 0;
+	local tbParams = nil;
+	-- for nIndex, uuid in ipairs (tbBuidingList) do
+		-- local nBlockID, uuid = unpack(tbInfo or {});
+		local sBuilding = self:GetBlockBuildingByUUID(nBlockID, uuid);
+		print("111", nBlockID, uuid, sBuilding)
+		if sBuilding then
+			nCount = nCount + 1;
+		-- else
+		-- 	table.insert(tbDeletedBuilding, nIndex);
+		end
+		
+		if bFrame and (nStart + nCount) % 2 == 0 then
+			_, bFrame = coroutine.yield(false)
+			print("bNewFrame = ", bFrame)
+		end
+	-- end
+
+	-- print("Delete = ", #tbDeletedBuilding)
+    -- for i = #tbDeletedBuilding, 1, -1 do
+    --     table.remove(self.BuildingList, i);
+    -- end
+	
+    -- coroutine.yield(true);
+	return nCount;
+end
+
+function LBuildingMgr:FrameMove(fDeltaTimeInSecs)
+	print("FrameMove start---------------------", fDeltaTimeInSecs)
+	local r, bFinished = coroutine.resume(self.CoTick, self, true);
+	print("FrameMove", r, bFinished);
+	if not r then
+		-- Traceback();
+	end
+	print(coroutine.status( self.CoTick ))
+end
+
+function LBuildingMgr:Tick(fDeltaTimeInSecs)
+	print("Tick =============================================", fDeltaTimeInSecs)
+	print(coroutine.resume(self.CoTick, self, false));
+
+	-- 离开前准备数据
+	self.BuildingList = {};
+	-- 	{1, 1},
+	-- 	{1, 2},
+	-- 	{1, 3},
+	-- 	{2, 4},
+	-- };
+	for nBlockID, tbBuildings in pairs(self.m_tbBuildingList) do
+		for k, v in pairs(tbBuildings) do
+			self:AddFrameMoveItem(nBlockID, k);
+		end
+	end
+
+	-- for nBlockID, tbBuildings in pairs(self.BuildingList) do
+	-- 	for k, v in ipairs(tbBuildings) do
+	-- 		print(nBlockID, v);
+	-- 	end
+	-- end
+end
+
+function LBuildingMgr:AddFrameMoveItem(nBlockID, uuid)
+	-- if not self.BuildingList[nBlockID] then
+	-- 	self.BuildingList[nBlockID] = {};
+	-- end
+	table.insert(self.BuildingList, {nBlockID, uuid});
+end
+
+-- function LBuildingMgr:_CheckTickCoroutineInstanceAndUpdate(bFinised)
+-- 	if not bFinised and self.CoTick then
+-- 		return;
+-- 	end
+
+-- 	-- 更新完了就重新创建
+-- 	self.CoTick = self:_CreateCoroutineTask(function (bFrame)
+-- 		self:TickByCoroutine(bFrame);
+-- 		-- xpcall(LBuildingMgr.TickByCoroutine, bFrame, debug.traceback);
+-- 	end);
+-- end
+
+function LBuildingMgr:GetBlockBuildingByUUID(nBlock, nID)
+    if self.m_tbBuildingList[nBlock] then
+        return self.m_tbBuildingList[nBlock][nID];
+    end
+    return nil;
+end
+
+function TestBuildingMgrCoroutineTask()
+	LBuildingMgr.m_tbBuildingList = {
+		[1] = {
+			[1] = 1,
+			[2] = 1,
+			[3] = 1,
+		},
+		[2] = {
+			[4] = 1,
+		},
+		[3] = {
+			[5] = 1,
+		}
+	}
+	LBuildingMgr.BuildingList = {
+		-- [nBlockID] = {uuid1, uuid2, ...}
+	};
+	
+	LBuildingMgr.CoTick = LBuildingMgr:_CreateCoroutineTask(LBuildingMgr.TickByCoroutine, LBuildingMgr);
+	-- LBuildingMgr.CoTick = LBuildingMgr:_CreateCoroutineTask(function (bFrame)
+	-- 	LBuildingMgr:TickByCoroutine(bFrame);
+	-- -- 	-- xpcall(LBuildingMgr.TickByCoroutine, bFrame, debug.traceback);
+	-- end);
+
+	-- LBuildingMgr:TickByCoroutine(false);
+	LBuildingMgr:Tick(1);
+	LBuildingMgr:FrameMove(1);
+	-- table.insert(LBuildingMgr.BuildingList, {3, 5})
+	-- LBuildingMgr.m_tbBuildingList[2][4] = nil;
+
+	LBuildingMgr:FrameMove(2);
+	
+	-- LBuildingMgr:FrameMove(3);
+
+	-- LBuildingMgr:FrameMove(4);
+
+	LBuildingMgr.m_tbBuildingList[3][6] = 1;
+	LBuildingMgr:AddFrameMoveItem(3, 6);
+	LBuildingMgr.m_tbBuildingList[3][7] = 1;
+	LBuildingMgr:AddFrameMoveItem(3, 7);
+	LBuildingMgr.m_tbBuildingList[2][8] = 1;
+	LBuildingMgr:AddFrameMoveItem(2, 8);
+
+	LBuildingMgr:Tick(2);
+	LBuildingMgr:FrameMove(5);
+end
+
+TestBuildingMgrCoroutineTask();

@@ -1,5 +1,5 @@
 --------------------------------------------------------
---1. #table æ“ä½œæ³•é—®é¢˜ page@2013/12/23/15:03
+--1. #table ²Ù×÷·¨ÎÊÌâ page@2013/12/23/15:03
 --------------------------------------------------------
 --eg
 
@@ -25,9 +25,9 @@
 
 --[[
 summary:
-(1)iparisæ˜¯æŒ‰ç…§ç´¢å¼•æ¥éå†çš„ï¼Œå¦‚æœindexä¸­æ–­äº†ï¼Œé‚£ä¹ˆéå†ç»“æŸ
-(2)æ²¡æœ‰ç´¢å¼•çš„é»˜è®¤æ˜¯æŒ‰æ•°ç»„ç´¢å¼•æ¥çš„ï¼Œå¦‚ä¸Šé¢çš„1200,2100,å­—ç¬¦ä¸²ä¹Ÿæ˜¯ä¸€æ ·çš„
-(3)åé¢æŒ‡å®šç´¢å¼•çš„å€¼ä¼šè¢«è¦†ç›–æ‰ï¼Œå¦‚ä¸Šé¢çš„[2]=2200å°±æ²¡æœ‰äº†
+(1)iparisÊÇ°´ÕÕË÷ÒıÀ´±éÀúµÄ£¬Èç¹ûindexÖĞ¶ÏÁË£¬ÄÇÃ´±éÀú½áÊø
+(2)Ã»ÓĞË÷ÒıµÄÄ¬ÈÏÊÇ°´Êı×éË÷ÒıÀ´µÄ£¬ÈçÉÏÃæµÄ1200,2100,×Ö·û´®Ò²ÊÇÒ»ÑùµÄ
+(3)ºóÃæÖ¸¶¨Ë÷ÒıµÄÖµ»á±»¸²¸Çµô£¬ÈçÉÏÃæµÄ[2]=2200¾ÍÃ»ÓĞÁË
 ]]
 --[[
 tbIPairs = {
@@ -55,7 +55,7 @@ end
 -- print(tbTest.n)
 -- print(table.getn({10,2,4}))
 -- print(table.getn({10,2,nil}))
--- print(table.getn({10,2,nil, n=3}))		--> 2ä¸æ˜¯ä¹¦ä¸Šè®²çš„3
+-- print(table.getn({10,2,nil, n=3}))		--> 2²»ÊÇÊéÉÏ½²µÄ3
 -- print(table.getn({n=1000}))
 
 --page@2015/04/21
@@ -77,7 +77,7 @@ local t = {111, x = 222, nil, 333, [10] = 555, {}, nil, nil}
 
 
 -----------------------------
---insert æ˜¯ä¸æ˜¯å¯é‡å…¥çš„
+--insert ÊÇ²»ÊÇ¿ÉÖØÈëµÄ
 --[[
 local tbData = {}
 local n = 0;
@@ -105,7 +105,7 @@ for k, v in pairs(tbInsert) do
 end
 ]] 
 
---ä¸å®šé•¿å‚æ•°
+--²»¶¨³¤²ÎÊı
 function test_arg(...)
 	print(unpack(arg))
 end
@@ -201,11 +201,11 @@ end
 --print(#tbTemp)
 -- print("Test Remove ... ")
 local tbRemove = {1, 2, 3}
---é”™è¯¯ï¼šå¾ªç¯ä¸­åˆ é™¤å…ƒç´ 
+--´íÎó£ºÑ­»·ÖĞÉ¾³ıÔªËØ
 -- for k, v in pairs(tbRemove) do
 	-- table.remove(tbRemove, k)
 -- end
---æ–¹æ³•1ï¼š
+--·½·¨1£º
 -- for i=#tbRemove, 1, -1 do
 	-- print("i = ", i)
 	-- if i == 2 then
@@ -218,12 +218,12 @@ local tbRemove = {1, 2, 3}
 -- end
 --[[
 sum:
-1. tableçš„removeå‡½æ•°åªèƒ½ä»¥ç´¢å¼•ä¸ºå‚æ•°removeï¼Œè€Œä¸”è¿™ä¸ªç´¢å¼•æ˜¯åœ¨æ•°ç»„ä¸­çš„ç´¢å¼•ï¼Œä¸æ˜¯åœ¨hashè¡¨ä¸­çš„æ•°å­—ï¼Œå³ipairsèƒ½å¤Ÿéå†æ‰¾åˆ°çš„ç´¢å¼•
-2. å¯¹äºhashè¡¨çš„removeï¼Œç›´æ¥table[key] = nilå°±å¯ä»¥äº†
-3. ã€é‡è¦ã€‘table.removeçš„ä¹‹åï¼Œtableä¸­å‰©ä¸‹çš„å…ƒç´ ä¼šè‡ªåŠ¨é‡æ–°æ’åºï¼Œä½†æ˜¯å¦‚æœè¿™ä¸ªæ—¶å€™ä½¿ç”¨ipairsæ“ä½œè¿™ä¸ªtableçš„æ—¶å€™ï¼Œä¼šæ¼æ‰è¢«åˆ é™¤å…ƒç´ çš„ä¸‹ä¸€ä¸ªå…ƒç´ ï¼Œå› ä¸ºä»–çš„ç´¢å¼•ä¼šè‡ªåŠ¨å¡«åˆ°å‰é¢ä¸€ä¸ªåˆ æ‰å…ƒç´ çš„å‘
+1. tableµÄremoveº¯ÊıÖ»ÄÜÒÔË÷ÒıÎª²ÎÊıremove£¬¶øÇÒÕâ¸öË÷ÒıÊÇÔÚÊı×éÖĞµÄË÷Òı£¬²»ÊÇÔÚhash±íÖĞµÄÊı×Ö£¬¼´ipairsÄÜ¹»±éÀúÕÒµ½µÄË÷Òı
+2. ¶ÔÓÚhash±íµÄremove£¬Ö±½Ótable[key] = nil¾Í¿ÉÒÔÁË
+3. ¡¾ÖØÒª¡¿table.removeµÄÖ®ºó£¬tableÖĞÊ£ÏÂµÄÔªËØ»á×Ô¶¯ÖØĞÂÅÅĞò£¬µ«ÊÇÈç¹ûÕâ¸öÊ±ºòÊ¹ÓÃipairs²Ù×÷Õâ¸ötableµÄÊ±ºò£¬»áÂ©µô±»É¾³ıÔªËØµÄÏÂÒ»¸öÔªËØ£¬ÒòÎªËûµÄË÷Òı»á×Ô¶¯Ìîµ½Ç°ÃæÒ»¸öÉ¾µôÔªËØµÄ¿Ó
 ]]
 -------------------------------------------------
---table.sort æ¯”è¾ƒå‡½æ•°
+--table.sort ±È½Ïº¯Êı
 local tbTest = {}
 tbTest[1] = {1, 3}
 tbTest[2] = {3, 5}
@@ -271,7 +271,7 @@ end
 
 function tbTestClass:testFunc(fFunc, a, b)
 	print("a, b", a, b)
-	fFunc(self, a, b)		--é»˜è®¤å°±æ˜¯ tbTestClass.comps1(self, a, b)
+	fFunc(self, a, b)		--Ä¬ÈÏ¾ÍÊÇ tbTestClass.comps1(self, a, b)
 end
 
 --tbTestClass:testFunc(tbTestClass.comps1, tbTestClass[1], tbTestClass[2])
@@ -300,17 +300,17 @@ end
 -- 	print(i, tbSort[i])
 -- end
 
---å…¨å±€å‡½æ•°
+--È«¾Öº¯Êı
 local fComp = function (a, b) 
 	return a < b 
 end
 
---é¢å‘å¯¹è±¡
+--ÃæÏò¶ÔÏó
 function tbSort.fComp(a, b)
 	return a < b;
 end
 
---é¢å‘å¯¹è±¡éšè—self
+--ÃæÏò¶ÔÏóÒş²Øself
 function tbSort:fCompWrap(a, b)
 	print("fCompWrap(self, a, b)", self, a, b)
 	return a < b;
@@ -325,15 +325,15 @@ end
 -- 	print(k, v)
 -- end
 --[[
-æ€»ç»“ï¼š
-(1)table.sortçš„æ¯”è¾ƒå‡½æ•°åœ¨é¢å‘å¯¹è±¡ç¼–ç¨‹æ—¶å€™è¦æ³¨æ„äº†
-(2)luaé¢å‘å¯¹è±¡ä¸­çš„self, table:func(param) <==>table.func(self, param)
-(3)table:funcä½œä¸ºå‚æ•°ä¼ é€’
-	*ä½œä¸ºå‚æ•°ä¼ é€’å°±æ˜¯é»˜è®¤table:func(param)çš„å½¢å¼, å³table.func(self, param)çš„å½¢å¼è°ƒç”¨ï¼Œé‚£ä¹ˆæ€ä¹ˆæ ·æ˜¯table.func(param)çš„å½¢å¼å‘¢ï¼Ÿ
-	*lua_callè°ƒç”¨tableçš„æ–¹æ³•å°±æ˜¯table:func(param)çš„å½¢å¼
-	*åº”è¯¥ç†è§£ä¸ºå®šä¹‰function table:func(param)çš„æ—¶å€™å°±æ˜¯å®šä¹‰function table.func(self, param)ã€‚ä¹Ÿå°±è¡¨ç¤ºå‡½æ•°æ˜¯ä¸‰ä¸ªå‚æ•°äº†ï¼Œé‚£ä¹ˆåœ¨è°ƒç”¨çš„æ—¶å€™ä¹Ÿå°±ä¼ å…¥selfä½œä¸ºç¬¬ä¸€ä¸ªå‚æ•°äº†
-(4)ä¸ºä»€ä¹ˆæ‰“å°æ˜¯fCompWrap	15	25	nil?
-çœ‹æºç ï¼Œå¿«é€Ÿæ’åºï¼Œäº¤æ¢ç¬¬ä¸€ä¸ªå’Œæœ€åä¸€ä¸ªï¼Œç¬¬ä¸€ä¸ªå‚æ•°æ˜¯åé¢ç´¢å¼•çš„ï¼Œç¬¬äºŒä¸ªæ˜¯å‰é¢ä¸€ä¸ªçš„ç´¢å¼•
+×Ü½á£º
+(1)table.sortµÄ±È½Ïº¯ÊıÔÚÃæÏò¶ÔÏó±à³ÌÊ±ºòÒª×¢ÒâÁË
+(2)luaÃæÏò¶ÔÏóÖĞµÄself, table:func(param) <==>table.func(self, param)
+(3)table:func×÷Îª²ÎÊı´«µİ
+	*×÷Îª²ÎÊı´«µİ¾ÍÊÇÄ¬ÈÏtable:func(param)µÄĞÎÊ½, ¼´table.func(self, param)µÄĞÎÊ½µ÷ÓÃ£¬ÄÇÃ´ÔõÃ´ÑùÊÇtable.func(param)µÄĞÎÊ½ÄØ£¿
+	*lua_callµ÷ÓÃtableµÄ·½·¨¾ÍÊÇtable:func(param)µÄĞÎÊ½
+	*Ó¦¸ÃÀí½âÎª¶¨Òåfunction table:func(param)µÄÊ±ºò¾ÍÊÇ¶¨Òåfunction table.func(self, param)¡£Ò²¾Í±íÊ¾º¯ÊıÊÇÈı¸ö²ÎÊıÁË£¬ÄÇÃ´ÔÚµ÷ÓÃµÄÊ±ºòÒ²¾Í´«Èëself×÷ÎªµÚÒ»¸ö²ÎÊıÁË
+(4)ÎªÊ²Ã´´òÓ¡ÊÇfCompWrap	15	25	nil?
+¿´Ô´Âë£¬¿ìËÙÅÅĞò£¬½»»»µÚÒ»¸öºÍ×îºóÒ»¸ö£¬µÚÒ»¸ö²ÎÊıÊÇºóÃæË÷ÒıµÄ£¬µÚ¶ş¸öÊÇÇ°ÃæÒ»¸öµÄË÷Òı
 ]]
 ----------------------------------------------
 --[[
@@ -360,7 +360,7 @@ for i=1, 3 do
 end
 
 --]]
---nSorté¡ºåºï¼Œå€’å™
+--nSortË³Ğò£¬µ¹Ğğ
 function number2table(nNum, nSort)
 	nSort = nSort or 0
 	local tbRet = {}
@@ -388,7 +388,7 @@ for _, v in pairs(tbRet) do
 end
 ]]
 
---ç–‘é—®ï¼šé€šè¿‡å‡½æ•°è·å–çš„ä¸€ä¸ªtableï¼Œèƒ½ä¿®æ”¹å…¶ä¸­çš„å€¼ï¼Œä½†æ˜¯èµ‹å€¼æ²¡æœ‰æ•ˆæœ?
+--ÒÉÎÊ£ºÍ¨¹ıº¯Êı»ñÈ¡µÄÒ»¸ötable£¬ÄÜĞŞ¸ÄÆäÖĞµÄÖµ£¬µ«ÊÇ¸³ÖµÃ»ÓĞĞ§¹û?
 local tbConfig = {
 	tbData = {1, 2, 3},
 	n = 100,
@@ -412,13 +412,13 @@ tbData = {};
 -- print(112, tostring(tbData))
 -- printConfig();
 --[[sum:
-(1) tableé€šè¿‡å‡½æ•°å¾—åˆ°çš„å¼•ç”¨æ˜¯æŒ‡è¿™ä¸ªtableçš„åœ°å€ï¼Œå¯ä»¥æ“ä½œè¿™ä¸ªåœ°å€å¢åŠ å†…å®¹æˆ–è€…åˆ é™¤å†…å®¹
-(2) ä½†æ˜¯ä¸èƒ½æ”¹å˜è¿™ä¸ªåœ°å€æœ¬èº«ï¼Œéœ€è¦å­˜æ”¾è¿™ä¸ªåœ°å€çš„å˜é‡æ‰å¯ä»¥ï¼Œåœ¨cè¯­è¨€é‡Œé¢ä¸€ä¸ªæŒ‡é’ˆæŒ‡å‘ä¸€ä¸ªåœ°å€ï¼Œå¯ä»¥è·å–æˆ–è€…ä¿®æ”¹é‡Œé¢çš„å†…å®¹ï¼Œ*på³å¯ã€‚ä½†æ˜¯å¦‚æœå¸Œæœ›è¿™ä¸ªæŒ‡é’ˆæŒ‡å‘å¦å¤–ä¸€ä¸ªåœ°æ–¹å°±éœ€è¦ä¿®æ”¹æŒ‡å‘çš„å†…å®¹p = another
-(3) åè¿‡æ¥ä¹Ÿæ˜¯ï¼Œå¦‚æœä¸€ä¸ªæŒ‡é’ˆå˜é‡pæŒ‡å‘ä¸€ä¸ªåœ°æ–¹(æ¯”å¦‚æˆ‘ä»¬è¿™é‡Œçš„table), å¦‚æœpç›´æ¥èµ‹å€¼p = anotheræ˜¯æŒ‡å‘å¦å¤–ä¸€ä¸ªæŒ‡é’ˆï¼Œå¦‚æœéœ€è¦æ”¹å˜è¿™ä¸ªæŒ‡é’ˆæŒ‡å‘çš„åœ°æ–¹çš„å†…å®¹ï¼Œéœ€è¦ä½¿ç”¨*
+(1) tableÍ¨¹ıº¯ÊıµÃµ½µÄÒıÓÃÊÇÖ¸Õâ¸ötableµÄµØÖ·£¬¿ÉÒÔ²Ù×÷Õâ¸öµØÖ·Ôö¼ÓÄÚÈİ»òÕßÉ¾³ıÄÚÈİ
+(2) µ«ÊÇ²»ÄÜ¸Ä±äÕâ¸öµØÖ·±¾Éí£¬ĞèÒª´æ·ÅÕâ¸öµØÖ·µÄ±äÁ¿²Å¿ÉÒÔ£¬ÔÚcÓïÑÔÀïÃæÒ»¸öÖ¸ÕëÖ¸ÏòÒ»¸öµØÖ·£¬¿ÉÒÔ»ñÈ¡»òÕßĞŞ¸ÄÀïÃæµÄÄÚÈİ£¬*p¼´¿É¡£µ«ÊÇÈç¹ûÏ£ÍûÕâ¸öÖ¸ÕëÖ¸ÏòÁíÍâÒ»¸öµØ·½¾ÍĞèÒªĞŞ¸ÄÖ¸ÏòµÄÄÚÈİp = another
+(3) ·´¹ıÀ´Ò²ÊÇ£¬Èç¹ûÒ»¸öÖ¸Õë±äÁ¿pÖ¸ÏòÒ»¸öµØ·½(±ÈÈçÎÒÃÇÕâÀïµÄtable), Èç¹ûpÖ±½Ó¸³Öµp = anotherÊÇÖ¸ÏòÁíÍâÒ»¸öÖ¸Õë£¬Èç¹ûĞèÒª¸Ä±äÕâ¸öÖ¸ÕëÖ¸ÏòµÄµØ·½µÄÄÚÈİ£¬ĞèÒªÊ¹ÓÃ*
 ]]
 
--- 2015ã€09ã€22
--- æ•°å­—å’Œå­—ç¬¦ä¸²æ•°å­—ä½œç´¢å¼•
+-- 2015¡¢09¡¢22
+-- Êı×ÖºÍ×Ö·û´®Êı×Ö×÷Ë÷Òı
 local heroqualityconsume = {
 		["1"] = {15001,10},
 		["2"] = {15002,10},
@@ -439,7 +439,7 @@ local heroqualityconsume = {
 	-- print(type(k));
 -- end
 
--- 2015/11/25 tableéå† æœ‰nilé¡¹
+-- 2015/11/25 table±éÀú ÓĞnilÏî
 local tbDataWithNil = {
 	[1] = 1,
 	[2] = nil,
@@ -450,7 +450,7 @@ local tbDataWithNil = {
 -- end
 
 -- 2016/01/06
--- åˆ¤æ–­è¡¨æ˜¯å¦ä¸ºç©º
+-- ÅĞ¶Ï±íÊÇ·ñÎª¿Õ
 local t = {
 	["xxx"] = 2,
 }
@@ -458,7 +458,7 @@ local t = {
 
 
 -- 2016/02/18
--- å®ç°pairså’Œipairs
+-- ÊµÏÖpairsºÍipairs
 function selfIpairs(t)
 	local i = 0;
 	return function()
@@ -488,7 +488,7 @@ for k, v in selfPairs(tbPairs) do
 	-- print(k, v)
 end
 
--- å‚è€ƒå®ç°
+-- ²Î¿¼ÊµÏÖ
 --* http://www.jellythink.com/archives/506 *
 local function iter(a, i)
 	-- print("control val: ", i)
@@ -532,7 +532,7 @@ for k, v in pairs1(tbPairs) do
 end
 
 ------------------------------------------------------------
--- 2016/04/18 __indexåªæœ‰åœ¨keyä¸ºnilçš„æ—¶å€™æ‰è°ƒç”¨ï¼ˆby 1-ï¼‰
+-- 2016/04/18 __indexÖ»ÓĞÔÚkeyÎªnilµÄÊ±ºò²Åµ÷ÓÃ£¨by 1-£©
 local s = {
 	[1] = 1,
 	a = 'b',
@@ -595,12 +595,12 @@ setmetatable(tTest, tMetatable)
 
 --[[
 sum:
-1. __indexè¢«æ‰§è¡Œçš„æ¡ä»¶ï¼šNote that the metamethod is tried only when key is not present in table.[å‚è€ƒ5.2 Reference Manual]
-2. ä¸€ä¸ªtableçš„__indexå•ç‹¬æ‹¿å‡ºæ¥æ˜¯æ²¡æœ‰æ„ä¹‰çš„ï¼Œåªæœ‰è¿™ä¸ªtableä½œä¸ºå…ƒè¡¨çš„æ—¶å€™æ‰æœ‰æ„ä¹‰ï¼Œä¹Ÿå°±æ˜¯æ‰æœ‰æ‰§è¡Œçš„å¯èƒ½æ€§ã€‚
-eg: ä¾‹å¦‚tNormalè¿™ä¸ªè¡¨åœ¨æ‰§è¡ŒtNormal[3]çš„æ—¶å€™ä¸ä¼šè®¿é—®è‡ªå·±çš„__indexæ–¹æ³•
-3. metatableå¿…é¡»æœ‰__indexæ–¹æ³•ï¼Œä¸ç„¶ä¹Ÿæ˜¯æ²¡æœ‰æ„ä¹‰çš„ã€‚
-eg: tMetatable2æ²¡æœ‰__indexæ–¹æ³•ï¼Œç»“æœtTest2åœ¨è®¿é—®tTest2[3]çš„æ—¶å€™è¿˜æ˜¯nil
-4. å¯ä»¥çœ‹æºç 
+1. __index±»Ö´ĞĞµÄÌõ¼ş£ºNote that the metamethod is tried only when key is not present in table.[²Î¿¼5.2 Reference Manual]
+2. Ò»¸ötableµÄ__indexµ¥¶ÀÄÃ³öÀ´ÊÇÃ»ÓĞÒâÒåµÄ£¬Ö»ÓĞÕâ¸ötable×÷ÎªÔª±íµÄÊ±ºò²ÅÓĞÒâÒå£¬Ò²¾ÍÊÇ²ÅÓĞÖ´ĞĞµÄ¿ÉÄÜĞÔ¡£
+eg: ÀıÈçtNormalÕâ¸ö±íÔÚÖ´ĞĞtNormal[3]µÄÊ±ºò²»»á·ÃÎÊ×Ô¼ºµÄ__index·½·¨
+3. metatable±ØĞëÓĞ__index·½·¨£¬²»È»Ò²ÊÇÃ»ÓĞÒâÒåµÄ¡£
+eg: tMetatable2Ã»ÓĞ__index·½·¨£¬½á¹ûtTest2ÔÚ·ÃÎÊtTest2[3]µÄÊ±ºò»¹ÊÇnil
+4. ¿ÉÒÔ¿´Ô´Âë
 /********************************************
   function gettable_event (table, key)
        local h
@@ -613,7 +613,7 @@ eg: tMetatable2æ²¡æœ‰__indexæ–¹æ³•ï¼Œç»“æœtTest2åœ¨è®¿é—®tTest2[3]çš„æ—¶å€™è¿˜æ
        else
          h = metatable(table).__index
          if h == nil then
-           error(Â·Â·Â·)
+           error(¡¤¡¤¡¤)
          end
        end
        if type(h) == "function" then
@@ -624,7 +624,7 @@ eg: tMetatable2æ²¡æœ‰__indexæ–¹æ³•ï¼Œç»“æœtTest2åœ¨è®¿é—®tTest2[3]çš„æ—¶å€™è¿˜æ
 *********************************************/
 ]]
 
--- 2016/06/01 å…­ä¸€å„¿ç«¥èŠ‚
+-- 2016/06/01 ÁùÒ»¶ùÍ¯½Ú
 -- table contact
 function fnUnPack( ... )
 	local p = {...};
@@ -665,7 +665,7 @@ local tbTestLength4 = {nil, 2, 3, nil, nil, nil, 4, nil};
 -- print(table.concat({2, 0, 3, 0, 0, 4}, ","))
 
 
--- yunfengï¼šå®ç°ä¸€ä¸ªmap
+-- yunfeng£ºÊµÏÖÒ»¸ömap
 
 local function _convert(f, n, v, ...)
 if n > 0 then
@@ -677,7 +677,7 @@ function map(f, ...)
 return _convert(f, select("#", ...), ...)
 end
 
-print(map(function(v) return v * 2 end, 1,2,3))
+-- print(map(function(v) return v * 2 end, 1,2,3))
 
 
 ------------------------------------------------------------
@@ -749,11 +749,11 @@ local result = {
   }
 }
 
-for _, res in ipairs(result) do
-  for _, song in ipairs(res.data.list) do
-    print(song.type, song.album)
-  end
-end
+-- for _, res in ipairs(result) do
+--   for _, song in ipairs(res.data.list) do
+--     print(song.type, song.album)
+--   end
+-- end
 ------------------------------------------------------------
 -- local tbTestMultiKey = {
 -- 	-- M1 = M1_Player = 1,	-- error
@@ -771,7 +771,7 @@ t2.a = 5;
 -- print(t1.a)
 
 ------------------------------------------------------------
---@åœ¨ä¸€ä¸ªå¾ªç¯é‡Œå¯¹tableä¸­çš„å…ƒç´ å…ˆè¿›è¡Œç½®ç©ºæ“ä½œï¼Œå†è¿›è¡Œå¢åŠ æ–°å…ƒç´ çš„æ“ä½œï¼Œå°±ä¼šæŠ¥è¿™ä¸ªé”™è¯¯ã€‚
+--@ÔÚÒ»¸öÑ­»·Àï¶ÔtableÖĞµÄÔªËØÏÈ½øĞĞÖÃ¿Õ²Ù×÷£¬ÔÙ½øĞĞÔö¼ÓĞÂÔªËØµÄ²Ù×÷£¬¾Í»á±¨Õâ¸ö´íÎó¡£
 function TestInvalidKetToNext()
 	local t = {1,2}
 
@@ -780,8 +780,8 @@ function TestInvalidKetToNext()
 	end
 
 	local add_ele = function ()
-	  t[3] = 3 --err:å¢åŠ åŸæ¥æ²¡æœ‰çš„å…ƒç´ 
-	  --t[1] = 1 --correct:ä¿®æ”¹åŸæœ‰çš„å…ƒç´ 
+	  t[3] = 3 --err:Ôö¼ÓÔ­À´Ã»ÓĞµÄÔªËØ
+	  --t[1] = 1 --correct:ĞŞ¸ÄÔ­ÓĞµÄÔªËØ
 	end
 
 
@@ -801,17 +801,50 @@ end
 -- print(a[3])
 
 ------------------------------------------------------------
--- tableä½œä¸ºå‚æ•°çš„æ—¶å€™ï¼Œå‡½æ•°å†…éƒ¨è®¾ç½®ä¸ºnil
+-- table×÷Îª²ÎÊıµÄÊ±ºò£¬º¯ÊıÄÚ²¿ÉèÖÃÎªnil
 local tbOut = {1, 2, 3};
 function TestSetTableNilInFunction(t)
 	t = nil;
 end
-print(#tbOut)
-TestSetTableNilInFunction(tbOut)
-print(#tbOut)
+-- print(#tbOut)
+-- TestSetTableNilInFunction(tbOut)
+-- print(#tbOut)
 
 local tbArray = {1}
-for k, v in ipairs(tbArray) do
-	table.insert(tbArray, k);
+-- for k, v in ipairs(tbArray) do
+-- 	table.insert(tbArray, k);
+-- end
+-- print("#tbArray = ", #tbArray)
+
+------------------------------------------------------------------------------------------------------
+function TestInsertTableWhenPair()
+	local tb = {
+		-- [3] = 0,
+		[4] = 1,
+		[5] = 5
+	}
+
+	for k, v in pairs(tb) do
+		if k == 5  then
+			tb[6] = 6;
+		end
+		print(k ,v);
+		--[[
+			ÕâÒ»¾ä²åÈë£¬µ¼ÖÂµü´úÆ÷»á°Ñk=4Õâ¸ö²åÈëÁ½±é
+			4       1
+			5       5
+			6       6
+			4       1
+		]]
+	end
+
+	-- local tb1 = {1, 3, 5};
+	-- for k, v in ipairs(tb1) do
+	-- 	if k == 3 then
+	-- 		table.insert(tb1, 7);
+	-- 	end
+	-- 	print(k, v)
+	-- end
+
 end
-print("#tbArray = ", #tbArray)
+TestInsertTableWhenPair();
