@@ -96,7 +96,7 @@ public:
 	 * @return Name that was set by CreateThread
 	 * @see GetThreadID
 	 */
-	const std::string& GetThreadName() const
+	const std::wstring& GetThreadName() const
 	{
 		return ThreadName;
 	}
@@ -138,7 +138,7 @@ protected:
 	}
 
 	/** Holds the name of the thread. */
-	std::string ThreadName;
+	std::wstring ThreadName;
 
 	/** The runnable object to execute on this thread. */
 	FRunnable* Runnable;

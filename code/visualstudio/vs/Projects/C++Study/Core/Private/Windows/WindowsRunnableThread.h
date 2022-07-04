@@ -194,7 +194,7 @@ protected:
 		// Create a sync event to guarantee the Init() function is called first
 		//ThreadInitSyncEvent	= FPlatformProcess::GetSynchEventFromPool(true);
 
-		ThreadName = "Unnamed"/*InThreadName ? InThreadName : TEXT("Unnamed UE4")*/;
+		ThreadName = InThreadName ? InThreadName : TEXT("Unnamed");
 
 		// Create the new thread
 		{
@@ -227,7 +227,7 @@ protected:
 			// Let the thread start up, then set the name for debug purposes.
 			//ThreadInitSyncEvent->Wait(INFINITE);
 #if !PLATFORM_XBOXONE
-			SetThreadName( ThreadID, ThreadName.c_str()/*TCHAR_TO_ANSI( *ThreadName )*/ );
+			//SetThreadName( ThreadID, ThreadName.c_str()/*TCHAR_TO_ANSI( *ThreadName )*/ );
 #elif !UE_BUILD_SHIPPING
 			if (FPlatformMisc::IsDebuggerPresent())
 			{

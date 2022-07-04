@@ -28,7 +28,7 @@
 //FQueuedThreadPool* GLargeThreadPool = nullptr;
 //#endif
 
-#define CORE_API
+//#define CORE_API __declspec(dllexport)
 #define FORCEINLINE __forceinline
 
 CORE_API bool IsInSlateThread()

@@ -45,3 +45,6 @@ void FnTestAPI();
 //{
 //	static_assert(sizeof(LAMBDA) == 0, "EnqueueUniqueRenderCommand enforces use of rvalue and therefore move to avoid an extra copy of the Lambda");
 //}
+#define LUA_UNSIGNED		unsigned int
+/* unsigned integer type */
+typedef LUA_UNSIGNED lua_Unsigned;

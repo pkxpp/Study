@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{04a1e37b-0b5e-4f36-9fae-6512aaa8a12d}</ProjectGuid>
-    <RootNamespace>Core</RootNamespace>
+    <ProjectGuid>{875e1a78-3b6e-4ec3-ae3a-66a5aebc57e6}</ProjectGuid>
+    <RootNamespace>RenderCore</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -44,6 +44,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -78,7 +79,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <TargetName>$(ProjectName)D</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -115,13 +115,15 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;CORE_API;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;RENDERCORE_API;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)../../;$(ProjectDir)../../Core/;$(ProjectDir)../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>CoreD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -141,24 +143,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Async\TaskGraph.cpp" />
-    <ClCompile Include="Private\Async\Async.cpp" />
-    <ClCompile Include="Private\Containers\LockFreeList.cpp" />
-    <ClCompile Include="Private\HAL\ThreadingBase.cpp" />
-    <ClCompile Include="Private\Memory\KMemory.cpp" />
-    <ClCompile Include="Private\Misc\CoreGlobals.cpp" />
-    <ClCompile Include="Private\Windows\WindowsPlatformProcess.cpp" />
-    <ClCompile Include="Private\Windows\WindowsRunnableThread.cpp" />
+    <ClInclude Include="..\Public\RenderCore.h" />
+    <ClInclude Include="..\Public\RendererInterface.h" />
+    <ClInclude Include="..\Public\RenderingThread.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Async\TaskGraphInterfaces.h" />
-    <ClInclude Include="Private\Memory\KG_InterlockedVariable.h" />
-    <ClInclude Include="Private\Memory\KG_InterlockSingleList.h" />
-    <ClInclude Include="Private\Memory\KMemory.h" />
-    <ClInclude Include="Private\Windows\WindowsRunnableThread.h" />
-    <ClInclude Include="Public\CoreGlobals.h" />
-    <ClInclude Include="Public\HAL\Event.h" />
-    <ClInclude Include="Public\Templates\Atomic.h" />
+    <ClCompile Include="RenderCore.cpp" />
+    <ClCompile Include="RenderingThread.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

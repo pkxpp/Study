@@ -68,7 +68,7 @@ namespace KMemory
     BOOL Expend(KMBarrel* pBarrel);
 };
 
-BOOL KMemory::Initialize(const char cszFileName[])
+CORE_API BOOL KMemory::Initialize(const char cszFileName[])
 {
     BOOL        bResult      = false;
     int         nIndex       = 0;

@@ -15,8 +15,12 @@
 
 
 //#include "Public/Windows/WIndowsPlatform.h"
+#if CORE_API
+#define CORE_API __declspec(dllexport)
+#else
+#define CORE_API __declspec(dllimport)
+#endif
 
-#define CORE_API
 #define STDCALL		__stdcall
 #define FORCEINLINE __forceinline
 

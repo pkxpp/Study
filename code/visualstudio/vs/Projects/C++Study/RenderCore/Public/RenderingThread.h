@@ -6,17 +6,21 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
-#include "Stats/Stats.h"
+#include "RenderCore.h"
+//#include "CoreMinimal.h"
+#include "Public/CoreGlobals.h"
+//#include "Stats/Stats.h"
 #include "Async/TaskGraphInterfaces.h"
-#include "Templates/Atomic.h"
+#include "Public/Templates/Atomic.h"
+
+//#define RENDERCORE_API __declspec(dllexport)
 
 class FRHICommandListImmediate;
 
 ////////////////////////////////////
 // Render thread API
 ////////////////////////////////////
-
+extern int nTest;
 /**
  * Whether the renderer is currently running in a separate thread.
  * If this is false, then all rendering commands will be executed immediately instead of being enqueued in the rendering command buffer.
@@ -35,10 +39,10 @@ extern RENDERCORE_API void SetRHIThreadEnabled(bool bEnableDedicatedThread, bool
 	static FORCEINLINE void CheckNotBlockedOnRenderThread() {}
 #else // #if (UE_BUILD_SHIPPING || UE_BUILD_TEST)
 	/** Whether the main thread is currently blocked on the rendering thread, e.g. a call to FlushRenderingCommands. */
-	extern RENDERCORE_API TAtomic<bool> GMainThreadBlockedOnRenderThread;
+	//extern RENDERCORE_API TAtomic<bool> GMainThreadBlockedOnRenderThread;
 
 	/** Asserts if called from the main thread when the main thread is blocked on the rendering thread. */
-	static FORCEINLINE void CheckNotBlockedOnRenderThread() { ensure(!GMainThreadBlockedOnRenderThread.Load(EMemoryOrder::Relaxed) || !IsInGameThread()); }
+	//static FORCEINLINE void CheckNotBlockedOnRenderThread() { ensure(!GMainThreadBlockedOnRenderThread.Load(EMemoryOrder::Relaxed) || !IsInGameThread()); }
 #endif // #if (UE_BUILD_SHIPPING || UE_BUILD_TEST)
 
 
@@ -131,7 +135,7 @@ public:
 	// All render commands run on the render thread
 	static ENamedThreads::Type GetDesiredThread()
 	{
-		check(!GIsThreadedRendering || ENamedThreads::GetRenderThread() != ENamedThreads::GameThread);
+		//check(!GIsThreadedRendering || ENamedThreads::GetRenderThread() != ENamedThreads::GameThread);
 		return ENamedThreads::GetRenderThread();
 	}
 
@@ -149,7 +153,7 @@ public:
 extern RENDERCORE_API class FRHICommandListImmediate& GetImmediateCommandList_ForRenderCommand();
 
 
-DECLARE_STATS_GROUP(TEXT("Render Thread Commands"), STATGROUP_RenderThreadCommands, STATCAT_Advanced);
+//DECLARE_STATS_GROUP(TEXT("Render Thread Commands"), STATGROUP_RenderThreadCommands, STATCAT_Advanced);
 
 // Log render commands on server for debugging
 #if 0 // UE_SERVER && UE_BUILD_DEBUG
@@ -165,11 +169,11 @@ DECLARE_STATS_GROUP(TEXT("Render Thread Commands"), STATGROUP_RenderThreadComman
 	#define	ShouldExecuteOnRenderThread()			(LIKELY(GIsThreadedRendering || !IsInGameThread()))
 #endif // UE_SERVER
 
+//FRHICommandListImmediate& RHICmdList = GetImmediateCommandList_ForRenderCommand(); \
+//Code; \
 #define TASK_FUNCTION(Code) \
 		void DoTask(ENamedThreads::Type CurrentThread, const FGraphEventRef& MyCompletionGraphEvent) \
 		{ \
-			FRHICommandListImmediate& RHICmdList = GetImmediateCommandList_ForRenderCommand(); \
-			Code; \
 		} 
 
 #define TASKNAME_FUNCTION(TypeName) \
@@ -194,19 +198,19 @@ public:
 		}
 		FCpuProfilerTrace::FEventScope __CpuProfilerEventScope(__CpuProfilerEventSpecId);
 #endif
-		FRHICommandListImmediate& RHICmdList = GetImmediateCommandList_ForRenderCommand();
-		Lambda(RHICmdList);
+		//FRHICommandListImmediate& RHICmdList = GetImmediateCommandList_ForRenderCommand();
+		Lambda(/*RHICmdList*/);
 	}
 
-	FORCEINLINE_DEBUGGABLE TStatId GetStatId() const
-	{
-#if STATS
-		static struct FThreadSafeStaticStat<FStat_EnqueueUniqueRenderCommandType> StatPtr_EnqueueUniqueRenderCommandType;
-		return StatPtr_EnqueueUniqueRenderCommandType.GetStatId();
-#else
-		return TStatId();
-#endif
-	}
+//	FORCEINLINE_DEBUGGABLE TStatId GetStatId() const
+//	{
+//#if STATS
+//		static struct FThreadSafeStaticStat<FStat_EnqueueUniqueRenderCommandType> StatPtr_EnqueueUniqueRenderCommandType;
+//		return StatPtr_EnqueueUniqueRenderCommandType.GetStatId();
+//#else
+//		return TStatId();
+//#endif
+//	}
 
 private:
 #if STATS
@@ -244,6 +248,8 @@ private:
 	LAMBDA Lambda;
 };
 
+#define FORCEINLINE_DEBUGGABLE __forceinline									/* Force code to be inline */
+
 template<typename TSTR, typename LAMBDA>
 FORCEINLINE_DEBUGGABLE void EnqueueUniqueRenderCommand(LAMBDA&& Lambda)
 {
@@ -254,20 +260,20 @@ FORCEINLINE_DEBUGGABLE void EnqueueUniqueRenderCommand(LAMBDA&& Lambda)
 #endif
 	if (IsInRenderingThread())
 	{
-		FRHICommandListImmediate& RHICmdList = GetImmediateCommandList_ForRenderCommand();
-		Lambda(RHICmdList);
+		//FRHICommandListImmediate& RHICmdList = GetImmediateCommandList_ForRenderCommand();
+		//Lambda(RHICmdList);
 	}
 	else
 	{
 		if (ShouldExecuteOnRenderThread())
 		{
-			CheckNotBlockedOnRenderThread();
+			//CheckNotBlockedOnRenderThread();
 			TGraphTask<EURCType>::CreateTask().ConstructAndDispatchWhenReady(Forward<LAMBDA>(Lambda));
 		}
 		else
 		{
 			EURCType TempCommand(Forward<LAMBDA>(Lambda));
-			FScopeCycleCounter EURCMacro_Scope(TempCommand.GetStatId());
+			//FScopeCycleCounter EURCMacro_Scope(TempCommand.GetStatId());
 			TempCommand.DoTask(ENamedThreads::GameThread, FGraphEventRef());
 		}
 	}
@@ -649,8 +655,8 @@ class RENDERCORE_API FDeferredCleanupInterface
 public:
 	virtual ~FDeferredCleanupInterface() {}
 
-	UE_DEPRECATED(4.20, "FinishCleanup is deprecated. Use RAII in the destructor instead.")
-	virtual void FinishCleanup() final {}
+	/*UE_DEPRECATED(4.20, "FinishCleanup is deprecated. Use RAII in the destructor instead.")
+	virtual void FinishCleanup() final {}*/
 };
 
 /**
@@ -681,7 +687,7 @@ extern RENDERCORE_API FPendingCleanupObjects* GetPendingCleanupObjects();
 
 class RENDERCORE_API FRenderThreadScope
 {
-	typedef TFunction<void(FRHICommandListImmediate&)> RenderCommandFunction;
+	typedef /*TFunction*/std::function<void(FRHICommandListImmediate&)> RenderCommandFunction;
 	typedef TArray<RenderCommandFunction> RenderCommandFunctionArray;
 public:
 	FRenderThreadScope()

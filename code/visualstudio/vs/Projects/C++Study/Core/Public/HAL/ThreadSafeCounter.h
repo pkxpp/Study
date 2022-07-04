@@ -4,6 +4,7 @@
 
 #include "Public/CoreTypes.h"
 //#include "HAL/PlatformAtomics.h"
+#include "Public/Windows/WindowsPlatformAtomics.h"
 #include <intrin.h>
 
 /** Thread safe counter */

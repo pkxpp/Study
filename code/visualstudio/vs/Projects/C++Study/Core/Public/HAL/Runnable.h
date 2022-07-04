@@ -3,7 +3,7 @@
 #pragma once
 
 #include "Public/CoreTypes.h"
-#define CORE_API
+//#define CORE_API __declspec(dllexport)
 
 /**
  * Interface for "runnable" objects.

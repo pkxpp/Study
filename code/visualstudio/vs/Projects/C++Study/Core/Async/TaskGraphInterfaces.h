@@ -14,7 +14,7 @@
 //#include "Templates/Function.h"
 //#include "Delegates/Delegate.h"
 #include "Public/HAL/ThreadSafeCounter.h"
-//#include "Containers/LockFreeList.h"
+#include "Public/Containers/LockFreeList.h"
 //#include "Stats/Stats.h"
 //#include "HAL/IConsoleManager.h"
 //#include "HAL/Event.h"
@@ -22,12 +22,14 @@
 #include "Public/Templates/RefCounting.h"
 //#include "Containers/LockFreeFixedSizeAllocator.h"
 //#include "Misc/MemStack.h"
-//#include "Templates/Atomic.h"
+#include "Public/Templates/Atomic.h"
 #include "Public/Containers/Array.h"
 #include "Public/Templates/TypeCompatibleBytes.h"
 
 // what level of checking to perform...normally checkSlow but could be ensure or check
 #define checkThreadGraph checkSlow
+
+//#define CORE_API __declspec(dllexport)
 
 class FGraphEvent;
 
@@ -107,7 +109,7 @@ namespace ENamedThreads
 	{
 	private:
 		// These are private to prevent direct access by anything except the friend functions below
-		//static CORE_API TAtomic<Type> RenderThread;
+		static CORE_API TAtomic<Type> RenderThread;
 		//static CORE_API TAtomic<Type> RenderThread_Local;
 
 		friend Type GetRenderThread();
@@ -116,25 +118,25 @@ namespace ENamedThreads
 		friend void SetRenderThread_Local(Type Thread);
 	};
 
-	/*FORCEINLINE Type GetRenderThread()
+	FORCEINLINE Type GetRenderThread()
 	{
 		return FRenderThreadStatics::RenderThread.Load(EMemoryOrder::Relaxed);
 	}
 
-	FORCEINLINE Type GetRenderThread_Local()
-	{
-		return FRenderThreadStatics::RenderThread_Local.Load(EMemoryOrder::Relaxed);
-	}
+	//FORCEINLINE Type GetRenderThread_Local()
+	//{
+	//	return FRenderThreadStatics::RenderThread_Local.Load(EMemoryOrder::Relaxed);
+	//}
 
 	FORCEINLINE void SetRenderThread(Type Thread)
 	{
 		FRenderThreadStatics::RenderThread.Store(Thread, EMemoryOrder::Relaxed);
 	}
 
-	FORCEINLINE void SetRenderThread_Local(Type Thread)
-	{
-		FRenderThreadStatics::RenderThread_Local.Store(Thread, EMemoryOrder::Relaxed);
-	}*/
+	//FORCEINLINE void SetRenderThread_Local(Type Thread)
+	//{
+	//	FRenderThreadStatics::RenderThread_Local.Store(Thread, EMemoryOrder::Relaxed);
+	//}
 
 	// these allow external things to make custom decisions based on what sorts of task threads we are running now.
 	// this are bools to allow runtime tuning.
@@ -569,7 +571,7 @@ public:
 	**/
 	bool AddSubsequent(class FBaseGraphTask* Task)
 	{
-		//return SubsequentList.PushIfNotClosed(Task);
+		return SubsequentList.PushIfNotClosed(Task);
 	}
 
 	/**
@@ -675,7 +677,7 @@ public:
 private:
 
 	/** Threadsafe list of subsequents for the event **/
-	//TClosableLockFreePointerListUnorderedSingleConsumer<FBaseGraphTask, 0>	SubsequentList;
+	TClosableLockFreePointerListUnorderedSingleConsumer<FBaseGraphTask, 0>	SubsequentList;
 	/** List of events to wait for until firing. This is not thread safe as it is only legal to fill it in within the context of an executing task. **/
 	//FGraphEventArray														EventsToWaitFor;
 	/** Number of outstanding references to this graph event **/
@@ -835,13 +837,14 @@ private:
 			Subsequents->CheckDontCompleteUntilIsEmpty(); // we can only add wait for tasks while executing the task
 		}
 		
-		//TTask& Task = *(TTask*)&TaskStorage;
-		//{
-		//	//FScopeCycleCounter Scope(Task.GetStatId(), true); 
-		//	Task.DoTask(CurrentThread, Subsequents);
-		//	Task.~TTask();
-		//	checkThreadGraph(ENamedThreads::GetThreadIndex(CurrentThread) <= ENamedThreads::GetRenderThread() || FMemStack::Get().IsEmpty()); // you must mark and pop memstacks if you use them in tasks! Named threads are excepted.
-		//}
+		TTask& Task = *(TTask*)&TaskStorage;
+		{
+			//FScopeCycleCounter Scope(Task.GetStatId(), true); 
+			Task.DoTask(CurrentThread, Subsequents);
+			Task.~TTask();
+			//checkThreadGraph(ENamedThreads::GetThreadIndex(CurrentThread) <= ENamedThreads::GetRenderThread() || FMemStack::Get().IsEmpty()); // you must mark and pop memstacks if you use them in tasks! Named threads are excepted.
+			ENamedThreads::GetThreadIndex(CurrentThread) <= ENamedThreads::GetRenderThread(); // you must mark and pop memstacks if you use them in tasks! Named threads are excepted.
+		}
 		
 		TaskConstructed = false;
 
@@ -895,9 +898,9 @@ private:
 	 *	Attempt to add myself as a subsequent to each prerequisite
 	 *	Tell the base task that I am ready to start as soon as my prerequisites are ready.
 	 **/
-	void SetupPrereqs(/*const FGraphEventArray* Prerequisites, ENamedThreads::Type CurrentThreadIfKnown, bool bUnlock*/)
+	void SetupPrereqs(const FGraphEventArray* Prerequisites, ENamedThreads::Type CurrentThreadIfKnown, bool bUnlock)
 	{
-		/*checkThreadGraph(!TaskConstructed);
+		//checkThreadGraph(!TaskConstructed);
 		TaskConstructed = true;
 		TTask& Task = *(TTask*)&TaskStorage;
 		SetThreadToExecuteOn(Task.GetDesiredThread());
@@ -906,14 +909,14 @@ private:
 		{
 			for (int32 Index = 0; Index < Prerequisites->Num(); Index++)
 			{
-				check((*Prerequisites)[Index]);
+				//check((*Prerequisites)[Index]);
 				if (!(*Prerequisites)[Index]->AddSubsequent(this))
 				{
 					AlreadyCompletedPrerequisites++;
 				}
 			}
 		}
-		PrerequisitesComplete(CurrentThreadIfKnown, AlreadyCompletedPrerequisites, bUnlock);*/
+		PrerequisitesComplete(CurrentThreadIfKnown, AlreadyCompletedPrerequisites, bUnlock);
 	}
 
 	/** 
@@ -930,7 +933,7 @@ private:
 	FGraphEventRef Setup(const FGraphEventArray* Prerequisites = NULL, ENamedThreads::Type CurrentThreadIfKnown = ENamedThreads::AnyThread)
 	{
 		FGraphEventRef ReturnedEventRef = Subsequents; // very important so that this doesn't get destroyed before we return
-		SetupPrereqs(/*Prerequisites, CurrentThreadIfKnown, true*/);
+		SetupPrereqs(Prerequisites, CurrentThreadIfKnown, true);
 		return ReturnedEventRef;
 	}
 
@@ -947,7 +950,7 @@ private:
 	 **/
 	TGraphTask* Hold(const FGraphEventArray* Prerequisites = NULL, ENamedThreads::Type CurrentThreadIfKnown = ENamedThreads::AnyThread)
 	{
-		SetupPrereqs(/*Prerequisites, CurrentThreadIfKnown, false*/);
+		SetupPrereqs(Prerequisites, CurrentThreadIfKnown, false);
 		return this;
 	}
 

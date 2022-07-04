@@ -927,7 +927,8 @@ public:
 	*/
 	bool PushIfNotClosed(T *NewItem)
 	{
-		return FLockFreePointerListLIFOBase<T, TPaddingForCacheContention, 2>::PushIf(NewItem, [](uint64 State)->bool {return !(State & 1); });
+		//return FLockFreePointerListLIFOBase<T, TPaddingForCacheContention, 2>::PushIf(NewItem, [](uint64 State)->bool {return !(State & 1); });
+		return false;
 	}
 
 	/**

@@ -53,7 +53,7 @@ static int32 GNumWorkerThreadsToIgnore = 0;
 
 namespace ENamedThreads
 {
-	//CORE_API TAtomic<Type> FRenderThreadStatics::RenderThread(ENamedThreads::GameThread); // defaults to game and is set and reset by the render thread itself
+	CORE_API TAtomic<Type> FRenderThreadStatics::RenderThread(ENamedThreads::GameThread); // defaults to game and is set and reset by the render thread itself
 	//CORE_API TAtomic<Type> FRenderThreadStatics::RenderThread_Local(ENamedThreads::GameThread_Local); // defaults to game local and is set and reset by the render thread itself
 	CORE_API int32 bHasBackgroundThreads = CREATE_BACKGROUND_TASK_THREADS;
 	CORE_API int32 bHasHighPriorityThreads = CREATE_HIPRI_TASK_THREADS;
@@ -245,7 +245,8 @@ public:
 	/** A one-time call to set the TLS entry for this thread. **/
 	void InitializeForCurrentThread()
 	{
-		//FPlatformTLS::SetTlsValue(PerThreadIDTLSSlot,OwnerWorker);
+		//FPlatformTLS::SetTlsValue(PerThreadIDTLSSlot, OwnerWorker);
+		SetTlsValue(PerThreadIDTLSSlot, OwnerWorker);
 	}
 
 	/** Return the index of this thread. **/
@@ -488,17 +489,16 @@ public:
 		//checkThreadGraph(Task && Queue(QueueIndex).StallRestartEvent); // make sure we are started up
 
 		uint32 PriIndex = ENamedThreads::GetTaskPriority(Task->ThreadToExecuteOn) ? 0 : 1;
-		//int32 ThreadToStart = Queue(QueueIndex).StallQueue.Push(Task, PriIndex);
+		int32 ThreadToStart = Queue(QueueIndex).StallQueue.Push(Task, PriIndex);
 
-		//if (ThreadToStart >= 0)
-		//{
-		//	//QUICK_SCOPE_CYCLE_COUNTER(STAT_TaskGraph_EnqueueFromOtherThread_Trigger);
-		//	//checkThreadGraph(ThreadToStart == 0);
-		//	//TASKGRAPH_SCOPE_CYCLE_COUNTER(1, STAT_TaskGraph_EnqueueFromOtherThread_Trigger);
-		//	Queue(QueueIndex).StallRestartEvent->Trigger();
-		//	return true;
-		//}
-		return false;
+		if (ThreadToStart >= 0)
+		{
+			//QUICK_SCOPE_CYCLE_COUNTER(STAT_TaskGraph_EnqueueFromOtherThread_Trigger);
+			//checkThreadGraph(ThreadToStart == 0);
+			//TASKGRAPH_SCOPE_CYCLE_COUNTER(1, STAT_TaskGraph_EnqueueFromOtherThread_Trigger);
+			//Queue(QueueIndex).StallRestartEvent->Trigger();
+			return true;
+		}
 	}
 
 	virtual bool IsProcessingTasks(int32 QueueIndex) override
@@ -641,11 +641,11 @@ public:
 		//// Cap number of extra threads to the platform worker thread count
 		//// if we don't have enough threads to allow all of the sets asked for, then we can't create what was asked for.
 		//check(NumTaskThreadSets == 1 || FMath::Min(NumThreads, NumNamedThreads + NumTaskThreads * NumTaskThreadSets) == NumThreads);
-		//NumThreads = FMath::Min(NumThreads, NumNamedThreads + NumTaskThreads * NumTaskThreadSets);
+		NumThreads = min(NumThreads, NumNamedThreads + NumTaskThreads * NumTaskThreadSets);
 
 		//NumTaskThreadsPerSet = (NumThreads - NumNamedThreads) / NumTaskThreadSets;
 		//check((NumThreads - NumNamedThreads) % NumTaskThreadSets == 0); // should be equal numbers of threads per priority set
-		NumThreads = 1; // test
+		//NumThreads = 1; // test
 		//UE_LOG(LogTaskGraph, Log, TEXT("Started task graph with %d named threads and %d total threads with %d sets of task threads."), NumNamedThreads, NumThreads, NumTaskThreadSets);
 		//check(NumThreads - NumNamedThreads >= 1);  // need at least one pure worker thread
 		//check(NumThreads <= MAX_THREADS);
@@ -1112,7 +1112,7 @@ private:
 	/** Per thread data. **/
 	FWorkerThread		WorkerThreads[MAX_THREADS];
 	/** Number of threads actually in use. **/
-	int32				NumThreads;
+	uint32				NumThreads;
 	/** Number of named threads actually in use. **/
 	int32				NumNamedThreads;
 	/** Number of tasks thread sets for priority **/

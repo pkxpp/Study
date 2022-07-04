@@ -4,6 +4,14 @@
 #include <string>
 #include <wchar.h>
 //#include "../KBasePub.h"
+#include "Public/CoreTypes.h"
+
+//#if CORE_API
+//#define CORE_API __declspec(dllexport)
+//#else
+//#define CORE_API __declspec(dllimport)
+//#endif
+
 
 // 1. 不要在全局对象构造中调用到这些函数(此时可能内存管理器尚未构造)
 // 2. 这个内存分配器是线程安全的
@@ -12,7 +20,7 @@
 namespace KMemory
 {
 
-BOOL Initialize(const char cszFileName[]);
+BOOL CORE_API Initialize(const char cszFileName[]);
 void Finalize();
 
 // Alloc, Free会在用户空间前保留一块空间用来保存size等信息,类似于C库的做法

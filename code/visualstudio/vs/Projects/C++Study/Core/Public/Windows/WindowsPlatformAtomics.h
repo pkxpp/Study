@@ -32,6 +32,7 @@ struct CORE_API FWindowsPlatformAtomics
 	static FORCEINLINE int32 InterlockedIncrement( volatile int32* Value )
 	{
 		//return (int32)_InterlockedIncrement((long*)Value);
+		return 0;
 	}
 
 	static FORCEINLINE int64 InterlockedIncrement( volatile int64* Value )
@@ -450,4 +451,4 @@ struct CORE_API FWindowsPlatformAtomics
 
 
 
-//typedef FWindowsPlatformAtomics FPlatformAtomics;
+typedef FWindowsPlatformAtomics FPlatformAtomics;
