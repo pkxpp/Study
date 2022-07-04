@@ -169,6 +169,7 @@ function CompareList(szPakDir, szList)
 	local tbList = {};
 	local tbNotExist = {};
 	-- 现在打全包生成的一个list里面的文件
+	-- 20万行的记录，这个逻辑有点慢啊
 	local file = FS.File(szList);
 	local szLine = file:ReadNextLine();
 	while(szLine) do
@@ -196,4 +197,5 @@ function CompareList(szPakDir, szList)
 	end
 
 end
-CompareList("f:/work/svn/MiniClient_Sim/EditorTool/MiniClient/tools/pakv4_tools/JX3Tool", "F:/work/svn/MiniClient_Sim/EditorTool/MiniClient/tools/PakV4PlusMaker/OutPutNameList/common_2.txt");
+-- CompareList("f:/work/svn/MiniClient_Sim/EditorTool/MiniClient/tools/pakv4_tools/JX3Tool", "F:/work/svn/MiniClient_Sim/EditorTool/MiniClient/tools/PakV4PlusMaker/OutPutNameList/common_2.txt");
+

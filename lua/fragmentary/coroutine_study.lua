@@ -441,6 +441,13 @@ function LBuildingMgr:_CreateCoroutineTask(fnTask, ...)
 		local tbParams = {...};
 		while true do
 			local bFinished = fnTask(unpack(tbParams));
+
+			-- local status , bFinished = xpcall(fnTask, debug.traceback, unpack(tbParams)); -- 不能带参数
+			-- local status , bFinished = xpcall(function ()
+			-- 	return fnTask(unpack(tbParams));
+			-- end, debug.traceback); 
+
+			print("Status = ", status, bFinished)
             tbParams = {coroutine.yield(bFinished)};
 		end
 	end)
@@ -450,6 +457,7 @@ end
 
 function LBuildingMgr:TickByCoroutine(bFrame)
 	local nCount = 0;
+
     for nIndex, tbInfo in pairs(self.BuildingList) do
 		local nBlockID, uuid = unpack(tbInfo);
 		local nNum = self:TickBlockByCoroutine(nIndex, nCount, bFrame);
@@ -472,13 +480,19 @@ function LBuildingMgr:TickBlockByCoroutine(nIndex, nStart, bFrame)
 	local tbParams = nil;
 	-- for nIndex, uuid in ipairs (tbBuidingList) do
 		-- local nBlockID, uuid = unpack(tbInfo or {});
-		local sBuilding = self:GetBlockBuildingByUUID(nBlockID, uuid);
-		print("111", nBlockID, uuid, sBuilding)
-		if sBuilding then
-			nCount = nCount + 1;
-		-- else
-		-- 	table.insert(tbDeletedBuilding, nIndex);
+		local fnReal = function ()
+			local sBuilding = self:GetBlockBuildingByUUID(nBlockID, uuid);
+			print("111", nBlockID, uuid, sBuilding)
+			if sBuilding then
+				nCount = nCount + 1;
+			-- else
+			-- 	table.insert(tbDeletedBuilding, nIndex);
+			end
+			-- a.b = 5;
 		end
+		-- fnReal();
+		local bRet, szErr = xpcall(fnReal, debug.traceback)
+		print(bRet, szErr);
 		
 		if bFrame and (nStart + nCount) % 2 == 0 then
 			_, bFrame = coroutine.yield(false)
@@ -499,10 +513,12 @@ function LBuildingMgr:FrameMove(fDeltaTimeInSecs)
 	print("FrameMove start---------------------", fDeltaTimeInSecs)
 	local r, bFinished = coroutine.resume(self.CoTick, self, true);
 	print("FrameMove", r, bFinished);
+	print(coroutine.status( self.CoTick ))
 	if not r then
 		-- Traceback();
+		-- self.CoTick = self:_CreateCoroutineTask(self.TickByCoroutine, self);
 	end
-	print(coroutine.status( self.CoTick ))
+	
 end
 
 function LBuildingMgr:Tick(fDeltaTimeInSecs)
@@ -527,6 +543,10 @@ function LBuildingMgr:Tick(fDeltaTimeInSecs)
 	-- 		print(nBlockID, v);
 	-- 	end
 	-- end
+	if coroutine.status( self.CoTick ) == "dead" then
+		print("recreate coroutine")
+		-- self.CoTick = self:_CreateCoroutineTask(self.TickByCoroutine, self);
+	end
 end
 
 function LBuildingMgr:AddFrameMoveItem(nBlockID, uuid)
@@ -586,20 +606,25 @@ function TestBuildingMgrCoroutineTask()
 	-- LBuildingMgr.m_tbBuildingList[2][4] = nil;
 
 	LBuildingMgr:FrameMove(2);
+
+	-- 因为有报错，所以前面的所有FrameMove都会包一次错
+	-- LBuildingMgr:Tick(2);
+	-- LBuildingMgr:FrameMove(3);
 	
 	-- LBuildingMgr:FrameMove(3);
 
 	-- LBuildingMgr:FrameMove(4);
 
-	LBuildingMgr.m_tbBuildingList[3][6] = 1;
-	LBuildingMgr:AddFrameMoveItem(3, 6);
-	LBuildingMgr.m_tbBuildingList[3][7] = 1;
-	LBuildingMgr:AddFrameMoveItem(3, 7);
-	LBuildingMgr.m_tbBuildingList[2][8] = 1;
-	LBuildingMgr:AddFrameMoveItem(2, 8);
+	-- LBuildingMgr.m_tbBuildingList[3][6] = 1;
+	-- LBuildingMgr:AddFrameMoveItem(3, 6);
+	-- LBuildingMgr.m_tbBuildingList[3][7] = 1;
+	-- LBuildingMgr:AddFrameMoveItem(3, 7);
+	-- LBuildingMgr.m_tbBuildingList[2][8] = 1;
+	-- LBuildingMgr:AddFrameMoveItem(2, 8);
 
-	LBuildingMgr:Tick(2);
-	LBuildingMgr:FrameMove(5);
+	-- LBuildingMgr:Tick(2);
+	-- LBuildingMgr:FrameMove(5);
 end
 
 TestBuildingMgrCoroutineTask();
+-- xpcall(TestBuildingMgrCoroutineTask, debug.traceback)

@@ -1,0 +1,3 @@
+Genre	Detail	Particular	Level	Quality	Name
+大类	细类		等级	品质	名称
+10	1	1	1	1	五方见煞

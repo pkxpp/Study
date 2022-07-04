@@ -479,3 +479,18 @@ function TestThreeMeta()
 end
 -- TestThreeMeta();
 -- print(111, #(tbTest222 or {1, 2, 3}))
+
+------------------------------------------------------------------------------------------------------
+function TestSaveExecute()
+	local fnTest = function(...)
+		local tbParams = {...}
+		print("2222222222222222222222222")
+		return 666, tbParams[1];
+	end
+
+	-- xpcall (f, err)
+	-- 不能带参数
+	local status, msg1, msg2 = xpcall(fnTest, debug.traceback, 7);
+	print(status, msg1, msg2)
+end
+TestSaveExecute();
