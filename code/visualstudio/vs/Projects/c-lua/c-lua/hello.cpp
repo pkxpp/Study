@@ -48,7 +48,8 @@ int main(int argc, char **argv){
 	int a = floor(19.9 * 100);
 
 	/* Load the file containing the script we are going to run */
-	status = luaL_loadfile(L, "script/main.lua");
+	//status = luaL_loadfile(L, "script/main.lua");
+	status = luaL_loadfile(L, "script/coroutine_xpcall.lua");
 	if (status) {
 		/* If something went wrong, error message is at the top of */
 		/* the stack */
