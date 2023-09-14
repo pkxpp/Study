@@ -114,7 +114,7 @@ function testImport(  )
 	end
 
 end
-testImport()
+-- testImport()
 --[[
 sum:
 1. 注释掉setmetatable一行之后，print(111, func)正常执行，因为当前环境还是_G;但是f1()这一句报错，因为他的话你就能够是FuncEnv，而FuncEnv当中是没有print函数的，所以执行print会报错
@@ -279,8 +279,8 @@ function f3()
 end
 
 -- print(getfenv(f1), debug.getinfo(2), getfenv(f2), _G, f1, f2)
-print(f1, f2)
-f1()
+-- print(f1, f2)
+-- f1()
 
 
 --[[
@@ -307,3 +307,41 @@ table: 000000000034a790	function: 000000000034eb50	main
 
 
 ------------------------------------------------------------
+---2023/09/04 18:14:46 想要把一个类放在两个文件里面，代码大概长这样
+
+--[[
+	local fn, err = loadstring(text, script);
+    if not fn then
+        Traceback(string.format(
+            "[loader] Import <%s> but loadstring failed, raw msg is: %s", script, err
+        ));
+        return nil;
+    end
+
+    setfenv(fn, tab);
+    fn();
+    return tab;
+]]
+
+require ("lib/utils")
+local env = ImportScript("env_head_1.lua")
+function TestLoadString()
+	
+	print(222, env);
+	for k, v in pairs(env) do
+		print(222, k, v)
+	end
+	print("name = ", env.LNpcOpject.Name);
+	-- local  script="local ee={[0]={id=0,lv=5,text='yy'},[1]={id=1,lv=3,text='zz'}}  return ee"
+	local tbEnv = {};
+	local  script="ee={[0]={id=0,lv=5,text='yy'},[1]={id=1,lv=3,text='zz'}} "
+	local f = loadstring(script);
+	setfenv(f, tbEnv)
+	f();
+
+	for k, v in pairs(tbEnv) do
+		print(k, v)
+	end
+end
+TestLoadString();
+

@@ -115,11 +115,12 @@ print(a:size())
 ]]
 --fail
 
-package.loadlib("array", "luaopen_array")()
-a = array.new(1000)
-print(a:size())
-a:set(10, 3.4)
-print(a:get(10))
+-- package.loadlib("array", "luaopen_array")()
+-- a = array.new(1000)
+-- print(a:size())
+-- a:set(10, 3.4)
+-- print(a:get(10))
+
 --2014/03/24
 --[[
 总结：
@@ -196,3 +197,11 @@ int luaopen_mydir (lua_State *L){
         return 0;
 }
 ]]
+------------------------------------------------------------------------------------------------------
+-- require "mystudylib"  --指定包名称
+--[[ 报错：
+        error loading module 'mystudylib' from file '.\mystudylib.dll':
+        应用程序无法启动，因为应用程序的并行配置不正确。有关详细信息，请参阅应用程序事件日志，或使用命令行 sxstrace.exe 工具。
+]]
+-- package.loadlib("mystudylib", "luaopen_mystudylib")()
+-- print(mystudylib.add(1.0,2.0))

@@ -83,3 +83,39 @@ function tableAssign(  )
 	print("tbNew: ", tbNew[1], tbNew[2][2])
 end
 tableAssign();
+------------------------------------------------------------------------------------------------------
+-- DFS
+-- local Graph = {};
+-- local Node = {
+
+-- };
+
+-- function DFS(G)
+--     for k, v in pairs(G.V or {}) do
+--         v.Parent = nil;
+--         v.Color = 0;
+--     end
+
+--     local nTime = 0;
+--     local DFS_VISIT;
+--     ---@param u LChainGraphV
+--     DFS_VISIT = function(G, u)
+--         nTime = nTime + 1;
+--         u.StartTime = nTime;
+--         u.Color = 1;
+--         for _, v in ipairs(G.E[u.ID]) do
+--             v.Parent = u;
+--             -- 尾调用，lua5.3需要注意
+--             DFS_VISIT(G, v);
+--         end
+--         u.Color = 2;
+--         nTime = nTime + 1;
+--         u.EndTime = nTime;
+--     end
+
+--     for k, v in pairs(G.V or {}) do
+--         if v.Color == 0 then
+--             DFS_VISIT(G, v);
+--         end
+--     end
+-- end

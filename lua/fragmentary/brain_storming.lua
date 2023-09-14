@@ -493,4 +493,39 @@ function TestSaveExecute()
 	local status, msg1, msg2 = xpcall(fnTest, debug.traceback, 7);
 	print(status, msg1, msg2)
 end
-TestSaveExecute();
+-- TestSaveExecute();
+------------------------------------------------------------------------------------------------------
+--- optimize
+function TestPerformance()
+	local nStart = os.clock();
+	local nMax = 10000;
+	local nSum = 0;
+	for i = 1, nMax do
+		nSum = nSum + i;
+	end
+	local nEnd = os.clock();
+	print("Cost time = ", nEnd - nStart);
+end
+TestPerformance();
+
+-- ОўГо
+-- local ffi = require("ffi")
+-- ffi.cdef[[
+
+--         struct timeval {
+--                 long int tv_sec;
+--                 long int tv_usec;
+--         };
+--         int gettimeofday(struct timeval *tv, void *tz);
+-- ]];
+
+-- local tm = ffi.new("struct timeval");
+-- function NewTimeKey()
+--         ffi.C.gettimeofday(tm, nil)
+--         local sec = tonumber(tm.tv_sec)
+--         local usec = tonumber(tm.tv_usec);
+
+--         print("second : " .. tostring(sec))
+--         print("usecond : " .. tostring(usec))
+--         print("result : " .. tostring(sec) .. "." .. tostring(usec))
+-- end

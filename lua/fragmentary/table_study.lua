@@ -388,6 +388,40 @@ for _, v in pairs(tbRet) do
 end
 ]]
 
+-- table.sort 报错attempt to index local 'b' (a nil value)
+function TestTableSortNil()
+	local tbPackage = {
+		{4, 4},
+		{5, 3},
+		{4, 2},
+		{3, 4},
+	};
+	for k, v in ipairs(tbPackage) do
+		print (k, v, v[1], v[2]);
+	end
+	-- 正确的写法
+	table.sort(tbPackage, function(a, b)
+		print(a, b, a[1] > b[1], a[2] > b[2])
+		if a[1] ~= b[1] then
+			return a[1] > b[1];
+		end
+	
+		return a[2] > b[2];
+	end);
+	-- 错误写法: a[1] <= b[1]的时候，a和b反过来结果不一致，就会报错；跟常见的a >= b 这种写法当 a = b的时候 是一样性质的问题
+	table.sort(tbPackage, function(a, b)
+		print(a, b, a[1] > b[1], a[2] > b[2])
+		if a[1] > b[1] then
+			return true;
+		end
+	
+		return a[2] > b[2];
+	end);
+end
+TestTableSortNil();
+
+
+------------------------------------------------------------------------------------------------------
 --疑问：通过函数获取的一个table，能修改其中的值，但是赋值没有效果?
 local tbConfig = {
 	tbData = {1, 2, 3},
@@ -674,10 +708,10 @@ end
 end
 
 function map(f, ...)
-return _convert(f, select("#", ...), ...)
+	return _convert(f, select("#", ...), ...)
 end
 
--- print(map(function(v) return v * 2 end, 1,2,3))
+print(map(function(v) return v * 2 end, 1,2,3))
 
 
 ------------------------------------------------------------
@@ -847,4 +881,34 @@ function TestInsertTableWhenPair()
 	-- end
 
 end
-TestInsertTableWhenPair();
+-- TestInsertTableWhenPair();
+------------------------------------------------------------------------------------------------------
+---@function 根据编码获取模型，同时需要考虑同一种模型（编码）不同的情况
+--- --  -------------------     -------------------
+--- --  |  *  |  0  |  *  |     |  *  |  2  |  *  |
+--- --  |-----------------|     |-----------------|
+--- --  |  2  |  2  |  0  |  =  |  0  |  2  |  0  | = 2*0*0*0*2
+--- --  |-----------------|     |-----------------|
+--- --  |  *  |  0  |  *  |     |  *  |  0  |  *  |
+--- --  |-----------------|     |-----------------|
+---@param tbGridEncoding table{} 九宫格编码：中间-左上角-顺时针
+function GetPreviewModel(tbGridEncoding)
+    local szModel, nRotateCount;
+    -- 传入的参数是左上角开始的，需要考虑四个角分别开始的编码
+    local tbStartIndex = {2, 4, 6, 8};  -- {左上，右上，右下，左下}
+    local nEndIndex = #tbGridEncoding;
+    for k, v in pairs(tbStartIndex) do
+        local szEncoding = tbGridEncoding[1] .. table.concat(tbGridEncoding, "", v, nEndIndex) .. table.concat(tbGridEncoding, "", 2, v-1);
+        print("szEncoding = ", szEncoding)
+    end
+end
+
+function TestGridEncoding()
+	local tbEncoding = {2, 0, 0, 0, 0, 0, 0, 0, 2};
+	GetPreviewModel(tbEncoding);
+
+	tbEncoding = {2, 0, 2, 0, 0, 0, 0, 0, 0};
+	GetPreviewModel(tbEncoding);
+end
+TestGridEncoding();
+

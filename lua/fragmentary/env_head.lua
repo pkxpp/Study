@@ -1,0 +1,3 @@
+LNpcOpject = {};
+
+LNpcOpject.Name = "npc"

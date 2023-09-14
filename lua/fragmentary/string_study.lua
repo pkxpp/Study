@@ -1,3 +1,5 @@
+require "string/string"
+require "tool"
 --2013-09-18
 --[[
 a = "hello, world!hello, li!"
@@ -26,6 +28,16 @@ szFamilyName1 = string.sub(szFamilyName, 1, nPos1-1)
 print(11, szFamilyName1)
 ]]
 
+function find_test()
+	local szContent = "老友，你这沿街叫卖的手法可真是巧妙啊。";
+	local szContent = "大娘，不用担心。虽然年纪不小了，但我还有点力气，还能吸引些路人购买呢。";
+	-- local szContent = "这位兄弟, 你看这老头沿街叫卖的声音挺大，似乎吸引了不少人购买。";
+	local n, a, b = string.find(szContent, "[,，]");
+	local szTitle = string.sub(szContent, 1, n-1);
+	local szNewContent = string.sub(szContent, n);
+	print(n, a, b, szTitle, szNewContent);
+end
+find_test();
 ----------------------------------------
 --20.3 captures
 --[[
@@ -303,7 +315,7 @@ for i = 1, 10 do
 	end
 end
 
-local nRet, nPos = CmpKill2Mode("1", "112")
+-- local nRet, nPos = CmpKill2Mode("1", "112")
 -- print(nRet, nPos)
 --local szTest = string.sub("221", nPos, string.len("221"))
 --print(szTest, string.len(szTest))
@@ -377,7 +389,7 @@ end
 --2015/08/25 捕获
 local pair = "name = Anna"
 local key, value = string.match(pair, "(%a+)%s*=%s*(%a+)")
-print(key, value)
+-- print(key, value)
 -- local pair1 = "【xxx】 jiu是这样的e"
 -- local s1, s2 = string.match(pair1, "【(.*)】%s*(.*)");
 -- print(pair1, s1, s2);
@@ -391,8 +403,8 @@ print(key, value)
 -- add a postfix 2017/12/23
 local szTest = "PaperSprite'/Game/UI/Icon/Skill/GS/Frames/gs_icon0000.gs_icon0000'";
 local szPath, szEnd = string.match(szTest, "PaperSprite'(.+)%.(.+)'");
-print("szPath = ", szPath, szEnd)
-print("new = ", string.format("PaperSprite'%s_D.%s_D'", szPath, szEnd))
+-- print("szPath = ", szPath, szEnd)
+-- print("new = ", string.format("PaperSprite'%s_D.%s_D'", szPath, szEnd))
 
 -- 2015/08/26 不定长参数
 function addMessageTipsEx(...)
@@ -400,6 +412,11 @@ function addMessageTipsEx(...)
 	print(massage);
 end
 
+function addMessageTipsEx1(...)
+	
+end
+
+-- addMessageTipsEx("test", 6);
 -- addMessageTipsEx("test", 6);
 
 -- 2015/12/23 比较时间
@@ -542,10 +559,55 @@ function testMatch()
 	-- print(string.match(str, "(.*)"))
 	-- print(str:match("%b()"):gsub("[()]","")) -- prints ` Nickname: Mc Gee `
 	-- print(str:match("%b()")) -- 
+	local tbContentTest = {
+		-- "笑着回答：年级大了",
+		-- "就是年级大了",
+		-- ":你好啊",
+		-- "ABC:你说哈",
+		-- "我喜欢讲故事传说，这是我最大的爱好。我还喜欢观察和思考，总能从中获得乐趣和启示。",
+		-- "，",
+		"宋德祥：嗯，我认识李小花。她是村里年轻有为的女孩子，勤劳善良，受到大家的喜爱。她经营着一家小饭馆，做的菜非常美味。如果你想品尝一下当地的特色菜肴，可以去找她。",
+		[[
+			宋德祥听到提到钓鱼的问题，他笑了笑，说道："钓鱼啊，那可是一门好技术！我年轻时可是爱钓鱼的，每次都能钓到很多鱼呢。你有什么关于钓鱼的问题吗？我很乐意分享我的经验。"
+		]],
+	}
+	
+	-- \uff0c 为中文名冒号
+	for k, v in ipairs(tbContentTest) do
+		local szContent = string.match(v, ".*:(.*)");
+		local szContent1 = string.match(v, ".*：(.*)");
+		-- local nPos = string.find(v, "：");
+		-- local nPos1 = string.find(v, ":");
+		-- print(nPos, nPos1)
+		-- szContent = (nPos or nPos1) and szContent or szContent1 or v;
+		print("szContent = ", szContent, szContent1)
+
+		-- local szContent = string.match(v, ".*[:：](.*)");
+		-- print("match = ", szContent)
+	end
+
+	local szContent = [[
+		好感度变化得分：1
+		信息密度得分：1
+		恰当的回复：钓鱼可能对你来说无聊，但对我来说却是一种放松身心的方式，你可以尝试一下。
+	]]
+	szContent = string.trim(szContent);
+	local tbRet = string.split(szContent, "\n");
+	print(tbRet, #tbRet)
+	for k, v in ipairs(tbRet) do
+		local szReslt = string.match(v, ".*：(.*)");
+		print(k, v, szReslt);
+	end
 end
 -- testMatch();
 
-
+function GetFileName(szFullPath)
+	local szFullPath = szFullPath or "$(ProgramFiles)\\Windows Kits\\10\\Include\\10.0.18362.0\\um\\winresrc.h";
+	-- local szFileName = string.match(szFullPath, ".+/([^/]*%.%w+)$"); -- *linux
+	local szFileName = string.match(szFullPath, ".*\\([^\\]*%.%w+)$"); -- windows
+	print(szFileName);
+end
+-- GetFileName();
 ------------------------------------------------------------
 -- data\source\player\f1\部件\mdl\f1.mdl
 function fnGetBodyType(szModel)
@@ -557,7 +619,7 @@ end
 -- fnGetBodyType("data\\source\\player\\m1\\部件\\mdl\\m1_player.mdl");
 
 
-print(string.format("xxx%d %%, %.1f", 1, 0.1));
+-- print(string.format("xxx%d %%, %.1f", 1, 0.1));
 
 
 -------------------------------------------------------------------------
@@ -575,9 +637,9 @@ string.split = function(str, sep)
 end
 -- local tbSplit = string.split("aabbccbc", "bb");
 local tbSplit = string.split(" ,123", ",");
-for k, v in ipairs(tbSplit) do
-	print(k, v, type(v))
-end
+-- for k, v in ipairs(tbSplit) do
+-- 	print(k, v, type(v))
+-- end
 
 -------------------------------------------------------------------------
 -- 反向查找 @2021/05/07
@@ -687,4 +749,276 @@ function test_replace()
 	szNumber = string.match("aaa_bbs6.anchor", ".+_(.+)%..+");
 	print(szNumber, tonumber(szNumber))
 end
-test_replace();
+-- test_replace();
+
+------------------------------------------------------------------------------------------------------
+--- 正则表达式查找
+local tbEncoding = {
+	"2.0.0.0.0",
+	"2.0.0.0.[12]",
+	"2.0.0.[12]0[12]",
+	"2.0.[12].0.[12]",
+	"2.0.[12]0[12]0[12]",
+	"20[12]0[12]0[12]0[12]",
+	"2.0.0.[12][12][12]",
+	"2.0.[12][12][12][12][12]",
+	"2[12][12][12][12][12][12][12][12]",
+	"2.0.[12]0[12][12][12]",
+	"2.0.[12][12][12]0[12]",
+	"20[12]0[12]0[12][12][12]",
+	"20[12][12][12]0[12][12][12]",
+	"2[12][12][12][12]0[12][12][12]",
+	"2[12][12][12][12]0[12]0[12]",
+	"1.0.0.0.0",
+	"1.0.0.0.1",
+	"1.0.0.101",
+	"1.0.1.0.1",
+	"1.0.10101",
+	"101010101",
+	"1.0.0.1[12]1",
+	"1.0.1[12]1[12]1",
+	"1[12]1[12]1[12]1[12]1",
+	"1.0.101[12]1",
+	"1.0.1[12]101",
+	"1010101[12]1",
+	"101[12]101[12]1",
+	"1[12]1[12]101[12]1",
+	"1[12]1[12]10101",
+	"1.0.0.0.2",
+	"1.0.0.102",
+	"1.0.0.201",
+	"1.0.0.202",
+	"1.0.1.0.2",
+	"1.0.2.0.2",
+	"1.0.10102",
+	"1.0.20101",
+	"1.0.10201",
+	"1.0.20102",
+	"1.0.1.202",
+	"1.0.20201",
+	"1.0.20202",
+	"101010102",
+	"101020102",
+	"101010202",
+	"102010202",
+	"102020202",
+	"1.0.0.1[12]2",
+	"1.0.0.2[12]1",
+	"1.0.0.2[12]2",
+	"1.0.1[12].[12]2",
+	"1.0.2[12]1[12]1",
+	"1.0.1[12]2[12]1",
+	"1.0.2[12]1[12]2",
+	"1.0.1[12]2[12]2",
+	"1.0.2[12]2[12]1",
+	"1.0.2[12]2[12]2",
+	"1.1.1.1.2",
+	"1.1.2.1.2",
+	"1.1.1.2.2",
+	"1.1.2.2.2",
+	"1.2.2.2.2",
+	"1.0.101[12]2",
+	"1.0.201[12]1",
+	"1.0.102[12]1",
+	"1.0.201[12]2",
+	"1.0.102[12]2",
+	"1.0.202[12]1",
+	"1.0.202[12]2",
+	"1.0.1[12]102",
+	"1.0.2[12]101",
+	"1.0.1[12]201",
+	"1.0.2[12]102",
+	"1.0.1[12]202",
+	"1.0.2[12]201",
+	"1.0.2[12]202",
+}
+
+function TestExpFind()
+	-- local a1 = string.find("a1111", "a111.");
+	-- print("a1 = ", a1)
+
+	local szExp = "1.0.0.0.1";
+	local a= string.find("100000001", szExp);
+	-- print("a = ", a);
+
+	local szExp = "1.0.0.1[12]1";
+	a = string.find("100000121", szExp);
+	print("a = ", a);
+end
+
+-- TestExpFind();
+function CheckEncoding(tbEncoding, tbGridEncoding)
+	math.randomseed(os.time());
+	
+	if not tbGridEncoding then
+		tbGridEncoding = {};
+		for i = 1, 9 do
+			local nRandom = math.floor(math.random(1, 10000)) % 3;
+			table.insert(tbGridEncoding, nRandom);
+		end
+	end
+
+	local tbStartIndex = {2, 4, 6, 8};  -- {左上，右上，右下，左下}
+    local nEndIndex = #tbGridEncoding;
+    for k, v in pairs(tbStartIndex) do
+        local szEncoding = tbGridEncoding[1] .. table.concat(tbGridEncoding, "", v, nEndIndex) .. table.concat(tbGridEncoding, "", 2, v-1);
+        print("szEncoding = ", szEncoding);
+		for k, v in pairs(tbEncoding) do
+			local nPos = string.find(szEncoding, v);
+			if nPos then
+				print(v, nPos);
+			end
+		end
+    end
+end
+-- CheckEncoding(tbEncoding);
+
+------------------------------------------------------------------------------------------------------
+local ShaderKeyword = {
+    ["BRANCH"] = true,
+    ["return"] = true,
+    ["#elif"] = true,
+    ["elif"] = true,
+    ["else"] = true,
+}
+
+function _GetShaderFunctionName(szLine, nType)
+    if not szLine then
+        return;
+    end
+    
+    local nStartPos, nEndPos = string.find(szLine, "//");
+    if nStartPos == 1 and nEndPos == 2 then
+        return;
+    end
+    
+    local szPattern = "([%w_]+)%s+([%w_]+)%s*%(";
+    if nType == 2 then
+        szPattern = "([%w_]+)%s+([%w_]+)%s*=";
+    end
+    local szReturn, szName = string.match(szLine, szPattern);
+    if ShaderKeyword[szReturn] then
+        return;
+    end
+    if nType == 2 then
+        local nStartPos, nEndPos = string.find(szLine, "=");
+		local nNextPos = string.find(szLine, "%w", nStartPos + 1);
+		if nNextPos then
+			return;
+		end
+    end
+    return szReturn, szName;
+end
+
+function TestGetFunctionName()
+	------------------------------------------------------------------------------------------------------
+	-- local szLine = "float4 PixelShaderMain(VertexOutput Input, uniform bool RenderSoftMask, PixelSystemInput SystemInput) : SV_Target0";
+	-- local szLine = "				BRANCH if (EnableAlphaTest)";
+	-- local szLine = "void PS_GBufferWriting(	//VertexOutput Input, ";
+	-- local szLine = "#define SSSS_FOVY GetSSSFovY()"
+	-- local szLine = "float unPremultLinearToSRGB(float c)";
+	-- local szType, szName = string.match(szLine, "([%w_]+)%s+([%w_]+)%s*%(");
+	-- local szType, szName = _GetShaderFunctionName(szLine);
+	------------------------------------------------------------------------------------------------------
+	-- local szLine = "GeometryShader MainVoxelizationWithGbufferGeometryShader = ";
+	local szLine = "    int     g_nMatLayerMaskType = -1;   // Offset:   28, size:    4";
+	print(111, string.len(szLine));
+	szLine = (string.gsub(szLine, "^%s*(.-)%s*$", "%1"));
+	print(222, string.len(szLine));
+	local szType, szName = _GetShaderFunctionName(szLine, 2);
+	------------------------------------------------------------------------------------------------------
+	print("Name = ", szType, szName);
+end
+-- TestGetFunctionName();
+
+------------------------------------------------------------------------------------------------------
+function _GetShaderPathFromAssembly(szLine)
+    if not szLine then
+        return;
+    end
+    -- local szPattern = "%s*#line%s+([%d]+)%s+([%w\\/:%.-_]+)";
+    local szPattern = "%s*#line%s+([%d]+)%s+\"([%w\\/:%.-_]+)\"";
+    local szLine, szPath = string.match(szLine, szPattern);
+	return szLine, szPath;
+end
+
+function TestGetShaderPath()
+	-- local szLine = "        #line 196 h:\\svn\\BDCode\\sword3-products\\trunk\\client\\data\\material\\Shader_DX11_HD\\Voxelization.h5";
+	-- local szLine = "#line 1995 \"h:\\svn\\BDCode\\sword3-products\\trunk\\client\\data\\material\\Shader_DX11_HD\\CommonParam.h\""
+	local szLine = "#line 200";
+	local szPattern = "%s*#line%s+([%d]+)%s*";
+    local szLineNum = string.match(szLine, szPattern);
+	print("Line = ", szLineNum)
+	local nLine, szShaderPath = _GetShaderPathFromAssembly(szLine);
+	print(nLine, szShaderPath);
+end
+-- TestGetShaderPath();
+
+------------------------------------------------------------------------------------------------------
+function TestGetAssemblyFunctionName()
+	-- local szLine = "VertexShader MainVertexShader = KG3D_CompileVS(VertexShaderMain());";
+	local szLine = "PixelShader SSSBlurShellShader = KG3D_CompilePS(SSSBlurShell(g_tSceneColor/*g_tSSS*/, g_tSceneDepth, g_tSceneColor/*g_tSSSSpecular*/, false));";
+	-- local szLine = "PixelShader SoftMaskShader = KG3D_CompilePS(PixelShaderMain(true));";
+	-- local szPattern = "[%w]+%s+([%w_]+)%s*=%s*KG3D_CompileVS%(([%w_]+%(%w*%))%)";	-- MainVertexShader        VertexShaderMain()
+	-- local szPattern = "[%w]+%s+([%w_]+)%s*=%s*KG3D_CompileVS%(([%w_]+)(%(%w*%))%)";
+	local szPattern = "[%w]+%s+([%w_]+)%s*=%s*KG3D_CompilePS%(([%w_]+)(%([%w_/%*,%s]*%))%)";
+    local szFuncName1, szFuncName2, szParam = string.match(szLine, szPattern);
+	print(szFuncName1, szFuncName2, szParam);
+end
+-- TestGetAssemblyFunctionName();
+
+------------------------------------------------------------------------------------------------------
+local ExtractDataSheetWithBrace = function (srcStr, sep)
+	local sep = sep or ","
+	local tbData = {};
+
+	local nLen = string.len(srcStr);
+	local tbMatch = {};
+	local nLevel = 0;
+	local tbCur = tbData;
+	local tbLevels = {};
+	tbLevels[1] = tbCur;
+	for i = 1, nLen do
+		local c = string.sub(srcStr, i, i);
+		if c == '{' then
+			nLevel = nLevel + 1;
+			table.insert(tbMatch, i);
+			if nLevel ~= 1 then
+				tbCur = {};
+				tbLevels[nLevel] = tbCur
+				table.insert(tbLevels[nLevel - 1], tbCur);
+			end
+		elseif c == '}' then
+			local nStart = table.remove(tbMatch, #tbMatch);
+			local nEnd = i;
+			local nSubString = string.sub(srcStr, nStart + 1, nEnd - 1);
+			if nLevel ~= 1 and #tbCur <= 0 then
+				local tbParam = string.split(nSubString, sep);
+				for k, v in ipairs(tbParam or {}) do
+					table.insert(tbCur, v);
+				end
+				nLevel = nLevel - 1;
+				tbCur = tbLevels[nLevel];
+			end
+		end
+	end
+
+	return tbData;
+end
+
+function TestExtractDataSheetWithBrace()
+	-- local tb1 = ExtractDataSheetWithBrace("{巡逻安民,训练新兵,护卫县令,维护治安}");
+	-- local tb1 = ExtractDataSheetWithBrace("{{赵振华|父亲}{李秀珍|母亲}{王燕儿|妻子}{赵子龙|儿子}{赵秋莲|女儿}}", "|");
+	-- local tb1 = ExtractDataSheetWithBrace("{{{a|b}}{c|d}{e|f}}", "|");
+	local tb1 = ExtractDataSheetWithBrace("{}");
+	-- for k, v in pairs(tb1) do
+	-- 	-- print(k, v)
+	-- 	for k1, v1 in pairs(v) do
+	-- 		print(k1, v1)
+	-- 	end
+	-- end
+end
+-- TestExtractDataSheetWithBrace()
+
+
+------------------------------------------------------------------------------------------------------
