@@ -1,7 +1,12 @@
 #include <iostream>
+#include <vector>
+#include <functional>
 #include "ClassLayout.h"
 #include "ClassFragments.h"
 //#include "6-7-1.h"
+#include "namespace_interfaceprinciple.h"
+#include "template.h"
+
 
 using namespace std;
 //////////////////////////////////////////////////////////////////////////
@@ -11,6 +16,7 @@ using namespace std;
 // 3.Class Fragments
 // 4.
 // 5. heap alogrithm test
+// 7. templates
 
 void TestDecimal(){
 	/*cout << "INT_MIN: " << INT_MIN << endl;
@@ -152,45 +158,62 @@ void TestClassFragments(){
 
 //////////////////////////////////////////////////////////////////////////
 // 5.
-int even_by_two::_x = 0;
+//int even_by_two::_x = 0;
+//
+//void TestHeapAlogrithm(){
+//	int ia[] = { 0, 1, 2, 3, 4, 5, 6, 6, 6, 7, 8 };
+//	vector<int> iv(ia, ia + sizeof(ia) / sizeof(int));
+//
+//	for_each(iv.begin(), iv.end(), display<int>());
+//	cout << endl;
+//
+//	vector<int> iv2(ia + 6, ia + 8);
+//	generate(iv2.begin(), iv2.end(), even_by_two());
+//	for_each(iv2.begin(), iv2.end(), display<int>());
+//	cout << endl;
+//
+//	generate_n(iv.begin(), 3, even_by_two());
+//	for_each(iv.begin(), iv.end(), display<int>());
+//	cout << endl;
+//
+//	remove(iv.begin(), iv.end(), 6);
+//	for_each(iv.begin(), iv.end(), display<int>());
+//	cout << endl;
+//
+//	vector<int> iv3(12);
+//	remove_copy(iv.begin(), iv.end(), iv3.begin(), 6);
+//	for_each(iv3.begin(), iv3.end(), display<int>());
+//	cout << endl;
+//
+//	remove_if(iv.begin(), iv.end(), bind2nd(less<int>(), 6));
+//	for_each(iv.begin(), iv.end(), display<int>());
+//	cout << endl;
+//	cout << "sizeof(iv) = " << iv.size() << endl;
+//
+//	remove_copy_if(iv.begin(), iv.end(), iv3.begin(), bind2nd(less<int>(), 7));
+//	for_each(iv3.begin(), iv3.end(), display<int>());
+//	cout << endl;
+//}
 
-void TestHeapAlogrithm(){
-	int ia[] = { 0, 1, 2, 3, 4, 5, 6, 6, 6, 7, 8 };
-	vector<int> iv(ia, ia + sizeof(ia) / sizeof(int));
-
-	for_each(iv.begin(), iv.end(), display<int>());
-	cout << endl;
-
-	vector<int> iv2(ia + 6, ia + 8);
-	generate(iv2.begin(), iv2.end(), even_by_two());
-	for_each(iv2.begin(), iv2.end(), display<int>());
-	cout << endl;
-
-	generate_n(iv.begin(), 3, even_by_two());
-	for_each(iv.begin(), iv.end(), display<int>());
-	cout << endl;
-
-	remove(iv.begin(), iv.end(), 6);
-	for_each(iv.begin(), iv.end(), display<int>());
-	cout << endl;
-
-	vector<int> iv3(12);
-	remove_copy(iv.begin(), iv.end(), iv3.begin(), 6);
-	for_each(iv3.begin(), iv3.end(), display<int>());
-	cout << endl;
-
-	remove_if(iv.begin(), iv.end(), bind2nd(less<int>(), 6));
-	for_each(iv.begin(), iv.end(), display<int>());
-	cout << endl;
-	cout << "sizeof(iv) = " << iv.size() << endl;
-
-	remove_copy_if(iv.begin(), iv.end(), iv3.begin(), bind2nd(less<int>(), 7));
-	for_each(iv3.begin(), iv3.end(), display<int>());
-	cout << endl;
-}
+struct BigInt {
+	int64_t h;
+	int64_t l;
+};
+int64_t Fibonacci2(int64_t n)
+{
+	static int nDepth = 1;
+	++nDepth;
+	std::function<int64_t(int64_t, int64_t, int64_t)> iter = [&](int64_t n, int64_t prev, int64_t next)
+	{
+		if (n == 0)
+			return prev;
+		return iter(n - 1, next, prev + next);
+	};
+	return iter(n, 0, 1);
+};
 
 //////////////////////////////////////////////////////////////////////////
-int main(){
+int main() {
 	//TestDecimal();
 
 	//2. Class Layout
@@ -204,7 +227,49 @@ int main(){
 	//TestBinaryTree();
 
 	// 5. heap alogrithm
-	TestHeapAlogrithm();
+	//TestHeapAlogrithm();
+
+	// 6.
+	//TestNamespaceAndInterfacePrinciple();
+
+	// 7.
+	TestTemplate();
+
+	static int nDepth = 1;
+	std::function<int(int)> Fibonacci = [&](int n)
+	{
+		if (n <= 1)
+			return n;
+		else
+			return Fibonacci(n - 1) + Fibonacci(n - 2);
+	};
+
+	static int nDepth1 = 1;
+	std::function<int64_t(int64_t, int64_t, int64_t)> Fibonacci1 = [&](int64_t n, int64_t prev, int64_t next)
+	{
+		++nDepth1;
+		if (n == 0)
+			return prev;
+		return Fibonacci1(n - 1, next, prev + next);
+	};
+
+	std::cout << "[0] =" << Fibonacci(0) << std::endl;
+	std::cout << "[1] =" << Fibonacci(1) << std::endl;
+	std::cout << "[2] =" << Fibonacci(2) << std::endl;
+	std::cout << "[3] =" << Fibonacci(3) << std::endl;
+	std::cout << "[4] =" << Fibonacci(4) << std::endl;
+	std::cout << "[5] =" << Fibonacci(5) << std::endl;
+	std::cout << "[6] =" << Fibonacci(6) << std::endl;
+	std::cout << "[7] =" << Fibonacci(7) << std::endl;
+	std::cout << "[8] =" << Fibonacci(8) << std::endl;
+	std::cout << "[9] =" << Fibonacci(9) << std::endl;
+	std::cout << "[10] =" << Fibonacci(10) << ", " << Fibonacci1(10, 0, 1) << std::endl;
+	std::cout << "[20] =" << Fibonacci(20) << ", " << Fibonacci1(20, 0, 1) << std::endl;
+	std::cout << "[23] =" << Fibonacci(23) << ", " << Fibonacci1(23, 0, 1) << std::endl;
+	std::cout << "[24] =" << Fibonacci(24) << ", " << Fibonacci1(24, 0, 1) << std::endl;
+	std::cout << "[32] =" << Fibonacci(32) << ", " << Fibonacci1(32, 0, 1) << std::endl;
+	//std::cout << "[2024] =" << Fibonacci1(2024, 0, 1) << std::endl;
+	std::cout << "[32] =" << Fibonacci2(32) << std::endl;
 
 	getchar();
 	return 0;

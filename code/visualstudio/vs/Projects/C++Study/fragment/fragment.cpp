@@ -2,12 +2,28 @@
 //
 
 #include "stdafx.h"
+#include <stdio.h>
 #include <thread>
 #include <functional>
+#include <winsock2.h>
+#define WIN32_LEAN_AND_MEAN
 #include "Async/TaskGraphInterfaces.h"
 #include "Public/Containers/LockFreeList.h"
 #include "Private/Memory/KMemory.h"
 #include "Public/RenderingThread.h"
+
+#include <Iphlpapi.h>
+#pragma comment(lib, "IPHLPAPI.lib")
+//#pragma comment(lib, "Ws2_32.lib")
+
+#define win32_guard(expr) do { \
+  int r = (expr); \
+  if (r != S_OK) { \
+    return r; \
+  } \
+} while(0)
+
+
 
 void TestAsync()
 {
@@ -56,7 +72,7 @@ void TestAsync()
 		printf("[main]Tick: %u\n", GetTickCount());
 		ENQUEUE_RENDER_COMMAND(int)([]() {
 			printf("[main]: ENQUEUE_RENDER_COMMAND %u\n", GetTickCount());
-		});
+			});
 		//StallQueue.Push(task, 0);
 	}
 
@@ -102,7 +118,7 @@ void TestShaderHash()
 
 	//std::string strPath = "data\\source\\maps_source\\material\\长歌门幻影2_1.fx5;1;shader_mode=5,shader_x11_mtlsys=,simplify_lighting=,";
 	std::string strPath = "data\\material\\Material\\Mtl_Water\\Mtl_WaterFall_Stream_lod2.fx5;1;shader_mode=5,shader_x11_mtlsys=,simplify_lighting=,";
-	auto fnTest =[&](std::string strPath)
+	auto fnTest = [&](std::string strPath)
 	{
 		uint64_t uID = KG_BKDRHashForBuffer64Bit(strPath.c_str(), strPath.length());
 		GUID guid;
@@ -141,9 +157,46 @@ void TestShaderHash()
 
 		bResult = TRUE;
 	};
-	char szStandard[MAX_PATH] = {0};
+	char szStandard[MAX_PATH] = { 0 };
 	KG3D_NormalizePath(strPath.c_str(), szStandard, MAX_PATH);
 	printf("convert to: %s\n", szStandard);
+}
+
+// printf重定向，会看不到
+void TestLog()
+{
+	printf("-----------------\n");
+}
+
+// https://github.com/fastbuild/fastbuild/issues/814
+// Test GetAdaptersAddresses function. In particular I'm checking out if it's sorted according to InterfaceMetric.
+// Compile and run with:
+//   cl -Z7 list_adapters.cpp && ./list_adapters.exe
+
+int TestNetworCard()
+{
+	constexpr const auto InitialBufferSize = 16000;
+	ULONG AddressesSize = InitialBufferSize;
+	PIP_ADAPTER_ADDRESSES pAddresses = static_cast<PIP_ADAPTER_ADDRESSES>(malloc(InitialBufferSize));
+	do {
+		int res = GetAdaptersAddresses(AF_INET, 0 /* Flags */, NULL, pAddresses, &AddressesSize);
+		if (res == ERROR_BUFFER_OVERFLOW) {
+			// AddressesSize now contains the needed size, realloc.
+			pAddresses = static_cast<PIP_ADAPTER_ADDRESSES>(realloc(pAddresses, AddressesSize));
+			continue;
+		}
+		win32_guard(res);
+		break;
+	} while (true /* on error, retry */);
+
+	printf("GetAdapterAddresses returned %u\n", AddressesSize);
+
+	auto pCur = pAddresses;
+	for (pCur = pAddresses; pCur; pCur = pCur->Next) {
+		printf("\tFriendly name: %wS\n", pCur->FriendlyName);
+	}
+	return 0;
+
 }
 
 int _tmain(int argc, _TCHAR* argv[])
@@ -153,8 +206,15 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	FnTestAPI();
 	//TestAsync();
-	
-	TestShaderHash();
+
+	//TestShaderHash();
+
+	//TestLog();
+
+	TestNetworCard();
+
+
+
 
 	getchar();
 	return 0;

@@ -2,8 +2,8 @@
 //
 
 #include "stdafx.h"
-#include "document.h"
-#include "prettywriter.h"
+#include "rapidjson/document.h"
+#include "rapidjson/prettywriter.h"
 #include <string>
 
 #include "string_study.h"

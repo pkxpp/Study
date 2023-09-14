@@ -20,6 +20,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "luaprofiler", "luaprofiler\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lua515_Coco", "Lua515_Coco\Lua515_Coco.vcxproj", "{2C64A525-0583-43ED-8D4E-9C2FF482A1C7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "luaecs", "luaecs\luaecs.vcxproj", "{CC263265-E167-436A-A5AE-3AB32147E69F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -84,6 +86,14 @@ Global
 		{2C64A525-0583-43ED-8D4E-9C2FF482A1C7}.Release|Win32.Build.0 = Release|Win32
 		{2C64A525-0583-43ED-8D4E-9C2FF482A1C7}.Release|x64.ActiveCfg = Release|x64
 		{2C64A525-0583-43ED-8D4E-9C2FF482A1C7}.Release|x64.Build.0 = Release|x64
+		{CC263265-E167-436A-A5AE-3AB32147E69F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CC263265-E167-436A-A5AE-3AB32147E69F}.Debug|Win32.Build.0 = Debug|Win32
+		{CC263265-E167-436A-A5AE-3AB32147E69F}.Debug|x64.ActiveCfg = Debug|x64
+		{CC263265-E167-436A-A5AE-3AB32147E69F}.Debug|x64.Build.0 = Debug|x64
+		{CC263265-E167-436A-A5AE-3AB32147E69F}.Release|Win32.ActiveCfg = Release|Win32
+		{CC263265-E167-436A-A5AE-3AB32147E69F}.Release|Win32.Build.0 = Release|Win32
+		{CC263265-E167-436A-A5AE-3AB32147E69F}.Release|x64.ActiveCfg = Release|x64
+		{CC263265-E167-436A-A5AE-3AB32147E69F}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
