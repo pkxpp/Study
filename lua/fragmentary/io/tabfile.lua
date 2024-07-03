@@ -6,6 +6,7 @@
 
 require ("class/class")
 require ("io/fs")
+require ("string/string")
 ---
 --- @class LTabFile
 ---
@@ -70,21 +71,28 @@ end
 ---
 function LTabFile:parse()
     -- local vm = g_GetLuaVM()
-    local szContent = FS.readtxt(self.m_szFilePath)
+    local file = FS.Open(self.m_szFilePath)
+    if not file then
+        return;
+    end
+    local szContent = file:Read();
     if type(szContent) ~= "string" then
         LOG_E("[LTabFile:ctor] load file failed:", self.m_szFilePath)
+        file:Close();
         return false
     end
-
+    print("szContent =", type(szContent))
     local lines = string.split(szContent, "\r\n")
 
     if #lines < 1 then
+        file:Close();
         return true
     end
 
     local headers = self:parseLine(lines[1])
     if headers == nil then
         LOG_I("[LTabFile:parse] 2, ", lines[1])
+        file:Close();
         return false
     end
     table.insert(self.m_tabCells, headers)
@@ -98,6 +106,9 @@ function LTabFile:parse()
             table.insert(self.m_tabCells, cells)
         end
     end
+
+
+    file:Close();
     return true
 end
 

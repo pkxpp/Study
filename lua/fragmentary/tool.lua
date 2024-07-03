@@ -33,7 +33,7 @@ end
 --@return:
 function MergeTwo16Ints( nHight, nLow )
 	local nValue = nHight * 2 ^ 16 + nLow;
-	print("result: ", nValue);
+	-- print("result: ", nValue);
 end
 MergeTwo16Ints(1026, 10);
 MergeTwo16Ints(1027, 10);
